@@ -45,24 +45,19 @@ p.date {
 	border: 1px solid #444;
 	margin-top: -1px;
 }
-p.lead, p.inbrief, p.extended {
+.inbrief p, .extended p {
 	line-height: 26px;
 	margin-bottom: 0;
 	margin-top: 10px;
 	font-weight: 300;
 	font-family: "ff-meta-serif-web-pro", Georgia, serif;
 	text-indent: 20px;
-}
-p.inbrief {
 	font-size: 18px;
 }
-p.lead {
+.extended p:first-child {
 	font-size: 20px;
 	line-height: 28px;
 	padding-bottom: 20px;
-}
-p.extended {
-	font-size: 18px;
 }
 h1 {
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
