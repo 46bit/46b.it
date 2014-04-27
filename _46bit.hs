@@ -53,6 +53,7 @@ main = hakyll $ do
 	match "posts/*.md" $ do
 		route $ postRoute `composeRoutes` setExtension "html"
 		compile $ pandocCompiler
+			>>= saveSnapshot "content"
 			>>= loadAndApplyTemplate "templates/post.html" postCtx
 			>>= loadAndApplyTemplate "templates/default.html" postCtx
 			>>= deIndexUrls
@@ -80,6 +81,7 @@ postCtx :: Context String
 postCtx =
 	dateField "year" "%Y" `mappend`
 	dateField "date" "%B %e, %Y" `mappend`
+	teaserField "teaser" "content" `mappend`
 	defaultContext
 
 postRoute :: Routes
