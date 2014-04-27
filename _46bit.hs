@@ -8,8 +8,12 @@ import Data.List.Split (splitOn)
 import System.FilePath (combine, splitExtension, takeFileName)
 import Debug.Trace
 
+config :: Configuration
+config = defaultConfiguration
+	{deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'"}
+
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith config $ do
 	match "templates/*" $ do
 		compile templateCompiler
 
