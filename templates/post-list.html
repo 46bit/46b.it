@@ -1,0 +1,11 @@
+<ol>
+    $for(posts)$
+        <li>
+            <h2><a href="$url$">$title$</a></h2>
+            <p class="date">$date$</p>
+            $if(description)$
+	            <p class="inbrief">$description$</p>
+	        $endif$
+        </li>
+    $endfor$
+</ol>
