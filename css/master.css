@@ -1,6 +1,9 @@
-body {
+* {
 	padding: 0;
 	margin: 0;
+}
+a {
+	color: #DB0000;
 }
 .wrapper {
 	width: 50%;
@@ -8,93 +11,101 @@ body {
 	margin: 20px auto;
 	position: relative;
 }
-ol li {
-	margin: 0 0 15px;
-	border-bottom: 1px solid #000;
-	padding: 0 0 16px;
-	position: relative;
+
+.head {
+	overflow: hidden;
+	margin-bottom: 15px;
+	padding-bottom: 16px;
+	border-bottom: 2px solid #000;
 }
-ol a {
+.head h1 {
+	letter-spacing: -0.5px;
+	font: 300 24px/29px "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.head h1 a {
+	color: #000;
+	font-weight: 700;
+	letter-spacing: 0;
+	padding-right: 5px;
+	text-decoration: none;
+}
+.head h1 a:hover, h1 a:active {
 	color: #DB0000;
+}
+.sitenav ul {
+	top: 0;
+	right: 0;
+	font-size: 18px;
+	list-style: none;
+	line-height: 30px;
+	position: absolute;
+	text-transform: uppercase;
+}
+.sitenav ul li {
+	float: left;
+	padding-left: 20px;
+	font: 600 18px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.sitenav ul a {
+	color: #333;
+	text-decoration: none;
+}
+
+.pagecontent {
+	clear: both;
+}
+.pagecontent a {
 	text-decoration: none;
 	border-bottom: 1px solid #ccc;
 }
-ol h2 {
-	margin: 0;
-	font-family: "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 25px;
-	font-weight: 700;
-	line-height: 30px;
+.pagecontent h1 {
+	margin-bottom: 30px;
+	font: 700 30px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-p.date {
-	float: right;
-	margin: 0;
-	padding: -1;
-	clear: none;
-	position: absolute;
-	top: 0px;
+.pagecontent h1 a {
+	border-bottom: none;
+}
+.pagecontent h2 {
+	font: 700 25px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.pagecontent .date {
+	top: 0;
 	right: 0;
-	display: inline;
-	font-size: 14px;
-	line-height: 30px;
 	color: #333;
 	padding: 0 10px;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	border: 1px solid #444;
 	margin-top: -1px;
+	position: absolute;
+	border: 1px solid #444;
+	text-transform: uppercase;
+	font: 400 14px/30px "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.inbrief p, .extended p {
-	line-height: 26px;
-	margin-bottom: 0;
+.pagecontent p {
 	margin-top: 10px;
-	font-weight: 300;
-	font-family: "ff-meta-serif-web-pro", Georgia, serif;
 	text-indent: 20px;
-	font-size: 18px;
+	font: 300 18px/26px "ff-meta-serif-web-pro", Georgia, serif;
 }
-.extended p:first-child {
+.pagecontent .extended p:first-child {
 	font-size: 20px;
 	line-height: 28px;
 	padding-bottom: 20px;
 }
-h1 {
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+.pagecontent article {
+	padding: 20px 0 16px;
+	border-bottom: 1px solid #000;
+}
+.pagecontent article header {
+	position: relative;
+}
+
+.pagelist {
+	margin: 0;
 	padding: 0;
-	margin: 0;
-	font-size: 24px;
-	font-weight: 300;
-	letter-spacing: -0.5px;
-}
-h1 b {
-	font-weight: 700;
-	letter-spacing: 0;
-	padding-right: 5px;
-}
-ol {
-	padding-left: 0;
-	border-top: 2px solid #000;
-	padding-top: 15px;
 	list-style: none;
 }
-ul {
-	position: absolute;
-	right: 0;
-	top: 0;
-	list-style: none;
-	margin: 0;
-	line-height: 30px;
-	font-size: 18px;
-	text-transform: uppercase;
-}
-ul li {
-	float: left;
-	padding-left: 20px;
-	font-family: "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-ul a {
-	color: #333;
-	text-decoration: none;
-	font-weight: 600;
+.pagelist li {
+	margin: 0 0 15px;
+	padding: 0 0 16px;
+	position: relative;
+	border-bottom: 1px solid #000;
 }

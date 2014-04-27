@@ -1,8 +1,8 @@
-<ol>
+<ol class="pagelist">
     $for(posts)$
         <li>
             <h2><a href="$url$">$title$</a></h2>
-            <p class="date">$date$</p>
+            <span class="date">$date$</span>
             $if(teaser)$
 	            <div class="inbrief">$teaser$</div>
 	        $endif$
