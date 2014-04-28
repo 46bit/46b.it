@@ -3,14 +3,15 @@ import Hakyll
 import Data.Monoid
 import Data.Maybe
 import Data.Map
-import Data.List (intersperse, isSuffixOf, isPrefixOf)
+import Control.Monad
+import Data.List (intersperse, isSuffixOf)
 import Data.List.Split (splitOn)
-import System.FilePath (combine, splitExtension, takeFileName)
-import Debug.Trace
+import System.FilePath (splitExtension, takeFileName, takeBaseName)
 
 config :: Configuration
-config = defaultConfiguration
-	{deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'"}
+config = defaultConfiguration {
+	deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'"
+}
 
 main :: IO ()
 main = hakyllWith config $ do
@@ -37,84 +38,96 @@ main = hakyllWith config $ do
 			getResourceBody
 				>>= applyAsTemplate indexCtx
 				>>= loadAndApplyTemplate "templates/default.html" indexCtx
-				>>= deIndexUrls
+				>>= stripIndexFromUrls
 
-	-- Yearly post indexes
-	create (yearsString [2011, 2012, 2013, 2014]) $ do
-		route idRoute
-		compile $ do
-			posts <- recentFirst =<< loadAll "posts/*"
-			let archiveCtx =
-				constField "title" "YEAR" `mappend`
-				listField "posts" postCtx (return posts) `mappend`
-				defaultContext
-			makeItem ""
-				>>= loadAndApplyTemplate "templates/years.html" archiveCtx
-				>>= loadAndApplyTemplate "templates/default.html" archiveCtx
-				>>= deIndexUrls
+	-- Content pages
+	match (Hakyll.fromList ["about.md", "ident.md"]) $ do
+		route routeNormal
+		compile $ pandocCompiler
+			>>= loadAndApplyTemplate "templates/page.html" defaultContext
+			>>= loadAndApplyTemplate "templates/default.html" defaultContext
+			>>= stripIndexFromUrls
 
-	-- Individual posts
+	-- Posts
 	match "posts/*.md" $ do
-		route $ postRoute `composeRoutes` setExtension "html"
+		route routePost
 		compile $ pandocCompiler
 			>>= saveSnapshot "content"
 			>>= loadAndApplyTemplate "templates/post.html" postCtx
 			>>= loadAndApplyTemplate "templates/default.html" postCtx
-			>>= deIndexUrls
+			>>= stripIndexFromUrls
 
-	-- Simple content pages
-	match (Hakyll.fromList ["about.md", "ident.md"]) $ do
-		route $ dirIndexRoute `composeRoutes` setExtension "html"
-		compile $ pandocCompiler
-			>>= loadAndApplyTemplate "templates/page.html" defaultContext
-			>>= loadAndApplyTemplate "templates/default.html" defaultContext
-			>>= deIndexUrls
+	-- Yearly post archives
+	mapM_ createYearlyArchive [2011, 2012, 2013, 2014]
 
-yearsString :: [Int] -> [Identifier]
-yearsString ys = Prelude.map t ys
-	where t y = fromFilePath (show y ++ "/index.html")
+-- Yearly post archive helpers
+createYearlyArchive :: Int -> Rules ()
+createYearlyArchive year = create [archiveYearAsIdentifier year] $ do
+	route idRoute
+	compile $ do
+		posts <- (filterPostsByYear year) `fmap` loadAll "posts/*"
+		let archiveCtx =
+			constField "title" (show year) `mappend`
+			listField "posts" postCtx (return posts) `mappend`
+			defaultContext
+		makeItem ""
+			>>= loadAndApplyTemplate "templates/years.html" archiveCtx
+			>>= loadAndApplyTemplate "templates/default.html" archiveCtx
+			>>= stripIndexFromUrls
 
-dirIndexRoute :: Routes
-dirIndexRoute = customRoute (\i -> directorize $ toFilePath i)
+filterPostsByYear :: Int -> [Item a] -> [Item a]
+filterPostsByYear year = Prelude.filter (yearIs year . firstSegment . basename)
+	where
+		basename = takeBaseName . toFilePath . itemIdentifier
+		firstSegment bn = takeWhile (/= '-') bn
+		yearIs year yearTestStr = show year == yearTestStr
+
+archiveYearAsIdentifier :: Int -> Identifier
+archiveYearAsIdentifier year = fromFilePath (show year ++ "/index.html")
+
+-- Routing methods
+routeAtDir :: Routes
+routeAtDir = customRoute (\i -> directorize $ toFilePath i)
 	where
 		directorize path = dirs ++ "/index" ++ ext
 			where
 				(dirs, ext) = splitExtension path
 
-postCtx :: Context String
-postCtx =
-	dateField "year" "%Y" `mappend`
-	dateField "date" "%B %e, %Y" `mappend`
-	teaserField "teaser" "content" `mappend`
-	defaultContext
-
-postRoute :: Routes
-postRoute = postlessRoute `composeRoutes` directorizeYear
-
-postlessRoute :: Routes
-postlessRoute = gsubRoute "posts/" (const "")
-
--- https://github.com/ohbadiah/nickmcavoy-dotcom/blob/master/blog/src/Main.hs:191
-directorizeYear :: Routes
-directorizeYear = customRoute (\i -> directorize $ toFilePath i)
+routeByPostYear :: Routes
+routeByPostYear = customRoute (\i -> directorize $ toFilePath i)
 	where
-		directorize path = dirs ++ "/index" ++ ext
+		directorize path = year ++ "/" ++ concat slug
 			where
-				(dirs, ext) = splitExtension $ concat $
-					(intersperse "/" year) ++ ["/"] ++ (intersperse "-" slug)
-				(year, rest) = splitAt 1 $ splitOn "-" path
-				(_, slug) = splitAt 3 $ splitOn "-" path
+				tokens = splitOn "-" $ takeFileName path
+				year = head tokens
+				slug = intersperse "-" . snd $ splitAt 3 tokens
 
--- this version strips /index.html from non-home pages and index.html from home.
-stripIndex :: String -> String
-stripIndex url = if "index.html" `isSuffixOf` url
+routeWithoutPosts :: Routes
+routeWithoutPosts = gsubRoute "posts/" (const "")
+
+-- Rendering methods
+stripIndexFromUrls :: Item String -> Compiler (Item String)
+stripIndexFromUrls item = return $ fmap (withUrls stripIndexFromUrl) item
+
+stripIndexFromUrl :: String -> String
+stripIndexFromUrl url = if "index.html" `isSuffixOf` url
 	then
 		if length url > 11
 			then take (length url - 11) url
 			else take (length url - 10) url
 	else url
 
-deIndexUrls :: Item String -> Compiler (Item String)
-deIndexUrls item = return $ fmap (withUrls stripIndex) item
+-- Specific Routing
+routeNormal :: Routes
+routeNormal = routeAtDir `composeRoutes` setExtension "html"
 
+routePost :: Routes
+routePost = routeByPostYear `composeRoutes` routeWithoutPosts `composeRoutes` routeNormal
 
+-- Specific contexts
+postCtx :: Context String
+postCtx =
+	dateField "year" "%Y" `mappend`
+	dateField "date" "%B %e, %Y" `mappend`
+	teaserField "teaser" "content" `mappend`
+	defaultContext
