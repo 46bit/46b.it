@@ -14,6 +14,15 @@ config = defaultConfiguration {
 	providerDirectory = "./content"
 }
 
+feedConfig :: FeedConfiguration
+feedConfig = FeedConfiguration {
+	feedTitle = "46bit",
+	feedDescription = "Written by Michael Mokrysz",
+	feedAuthorName = "Michael Mokrysz",
+	feedAuthorEmail = "me@46b.it",
+	feedRoot = "https://46b.it"
+}
+
 main :: IO ()
 main = hakyllWith config $ do
 	match "templates/*" $ do
@@ -61,12 +70,22 @@ main = hakyllWith config $ do
 	-- Yearly post archives
 	mapM_ createYearlyArchive [2011, 2012, 2013, 2014]
 
+	-- ATOM feed
+	create ["meta/feed.atom"] $ do
+		route idRoute
+		compile $ do
+			let feedCtx =
+				bodyField "description" `mappend`
+				postCtx
+			posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
+			renderAtom feedConfig feedCtx posts
+
 -- Yearly post archive helpers
 createYearlyArchive :: Int -> Rules ()
 createYearlyArchive year = create [archiveYearAsIdentifier year] $ do
 	route idRoute
 	compile $ do
-		posts <- (filterPostsByYear year) `fmap` loadAll "posts/*"
+		posts <- (filterPostsByYear year) `fmap` (recentFirst =<< loadAll "posts/*")
 		let archiveCtx =
 			constField "title" (show year) `mappend`
 			listField "posts" postCtx (return posts) `mappend`
