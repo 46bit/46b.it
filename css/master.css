@@ -59,11 +59,19 @@ a {
 	border-bottom: 1px solid #ccc;
 }
 .pagecontent h1 {
-	margin-bottom: 30px;
+	margin-bottom: 14px;
+	padding-bottom: 16px;
 	font: 700 30px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .pagecontent h1 a {
 	border-bottom: none;
+}
+.pagecontent h1 .gentle {
+	font-weight: 400;
+}
+.pagecontent .lineheader {
+	padding-bottom: 14px;
+	border-bottom: 2px solid #000;
 }
 .pagecontent h2 {
 	font: 700 25px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
