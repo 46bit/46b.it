@@ -10,7 +10,8 @@ import System.FilePath (splitExtension, takeFileName, takeBaseName)
 
 config :: Configuration
 config = defaultConfiguration {
-	deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'"
+	deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'",
+	providerDirectory = "./content"
 }
 
 main :: IO ()
