@@ -106,11 +106,27 @@ createYearlyArchive year = create [archiveYearAsIdentifier year] $ do
 		let archiveCtx =
 			constField "title" (show year) `mappend`
 			listField "posts" postCtx (return posts) `mappend`
+--			constField "math" (postsMath posts) `mappend`
 			defaultContext
 		makeItem ""
 			>>= loadAndApplyTemplate "templates/years.html" archiveCtx
 			>>= loadAndApplyTemplate "templates/default.html" archiveCtx
 			>>= stripIndexFromUrls
+
+{-
+hasMath :: Item a -> Bool
+hasMath item = isJust math
+	where
+		ident = itemIdentifier item
+		math = getMetadataField ident "math"
+
+postsMath :: [Item a] -> String
+postsMath posts = if (length postsWithMath) > 0
+	then "math"
+	else ""
+	where
+		postsWithMath = Prelude.filter hasMath posts
+-}
 
 filterPostsByYear :: Int -> [Item a] -> [Item a]
 filterPostsByYear year = Prelude.filter (yearIs year . firstSegment . basename)
