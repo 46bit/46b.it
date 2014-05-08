@@ -7,6 +7,8 @@ import Control.Monad
 import Data.List (intersperse, isSuffixOf)
 import Data.List.Split (splitOn)
 import System.FilePath (splitExtension, takeFileName, takeBaseName)
+import Text.Pandoc.Options
+import Data.Set
 
 config :: Configuration
 config = defaultConfiguration {
@@ -23,13 +25,28 @@ feedConfig = FeedConfiguration {
 	feedRoot = "https://46b.it"
 }
 
+-- http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html
+pandocMathCompiler =
+    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash,
+                          Ext_latex_macros]
+        defaultExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions = Prelude.foldr Data.Set.insert defaultExtensions mathExtensions
+        writerOptions = defaultHakyllWriterOptions {
+                          writerExtensions = newExtensions,
+                          writerHTMLMathMethod = MathJax ""
+                        }
+    in pandocCompilerWith defaultHakyllReaderOptions writerOptions
+
 main :: IO ()
 main = hakyllWith config $ do
 	match "templates/*" $ do
 		compile templateCompiler
 
 	-- Asset compilation
-	match (Hakyll.fromList ["img/*", "js/*"]) $ do
+	match "img/*" $ do
+		route idRoute
+		compile copyFileCompiler
+	match "js/**/*" $ do
 		route idRoute
 		compile copyFileCompiler
 	match "css/*" $ do
@@ -53,7 +70,7 @@ main = hakyllWith config $ do
 	-- Content pages
 	match (Hakyll.fromList ["about.md", "ident.md"]) $ do
 		route routeNormal
-		compile $ pandocCompiler
+		compile $ pandocMathCompiler
 			>>= loadAndApplyTemplate "templates/page.html" defaultContext
 			>>= loadAndApplyTemplate "templates/default.html" defaultContext
 			>>= stripIndexFromUrls
@@ -61,7 +78,7 @@ main = hakyllWith config $ do
 	-- Posts
 	match "posts/*.md" $ do
 		route routePost
-		compile $ pandocCompiler
+		compile $ pandocMathCompiler
 			>>= saveSnapshot "content"
 			>>= loadAndApplyTemplate "templates/post.html" postCtx
 			>>= loadAndApplyTemplate "templates/default.html" postCtx
