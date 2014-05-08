@@ -1,5 +1,6 @@
 ---
 title: How probable are 3 consecutive birthdays?
+math: true
 ---
 Have you ever wondered what the likelihood is of having three consecutive birthdays in a row? It's a fun excursion from the classical statisical brain teaser on the [birthday problem](http://en.wikipedia.org/wiki/Birthday_problem).
 <!--more-->
