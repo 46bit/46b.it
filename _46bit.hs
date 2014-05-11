@@ -21,7 +21,7 @@ feedConfig = FeedConfiguration {
 	feedTitle = "46bit",
 	feedDescription = "Written by Michael Mokrysz",
 	feedAuthorName = "Michael Mokrysz",
-	feedAuthorEmail = "me@46b.it",
+	feedAuthorEmail = "",
 	feedRoot = "https://46b.it"
 }
 
@@ -52,6 +52,9 @@ main = hakyllWith config $ do
 	match "css/*" $ do
 		route idRoute
 		compile compressCssCompiler
+	match (Hakyll.fromList ["pgp.asc", "favicon.ico"]) $ do
+		route idRoute
+		compile copyFileCompiler
 
 	-- Home
 	match "index.html" $ do
@@ -106,27 +109,27 @@ createYearlyArchive year = create [archiveYearAsIdentifier year] $ do
 		let archiveCtx =
 			constField "title" (show year) `mappend`
 			listField "posts" postCtx (return posts) `mappend`
---			constField "math" (postsMath posts) `mappend`
+			constField "math" "true" `mappend`
 			defaultContext
+		{-	constField "math" (postsMath posts) `mappend`
+			defaultContext-}
 		makeItem ""
 			>>= loadAndApplyTemplate "templates/years.html" archiveCtx
 			>>= loadAndApplyTemplate "templates/default.html" archiveCtx
 			>>= stripIndexFromUrls
 
-{-
-hasMath :: Item a -> Bool
-hasMath item = isJust math
+{-hasMath :: Item a -> Compiler Bool
+hasMath item = fmap isJust math
 	where
 		ident = itemIdentifier item
 		math = getMetadataField ident "math"
 
 postsMath :: [Item a] -> String
-postsMath posts = if (length postsWithMath) > 0
+postsMath posts = if ((fmap length postsWithMath)) (>>=) (> 0)
 	then "math"
 	else ""
 	where
-		postsWithMath = Prelude.filter hasMath posts
--}
+		postsWithMath = filterM hasMath posts-}
 
 filterPostsByYear :: Int -> [Item a] -> [Item a]
 filterPostsByYear year = Prelude.filter (yearIs year . firstSegment . basename)
