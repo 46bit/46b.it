@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>46bit</title>
+    <link href="https://46b.it/meta/feed.atom" rel="self" />
+    <link href="https://46b.it" />
+    <id>https://46b.it/meta/feed.atom</id>
+    <author>
+        <name>Michael Mokrysz</name>
+        <email></email>
+    </author>
+    <updated>2014-02-24T00:00:00Z</updated>
+    <entry>
+    <title>You can't unsell Hospital Records</title>
+    <link href="https://46b.it/2014/cannot-unsell-hospital-records/index.html" />
+    <id>https://46b.it/2014/cannot-unsell-hospital-records/index.html</id>
+    <published>2014-02-24T00:00:00Z</published>
+    <updated>2014-02-24T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The Telegraph reported today that hospital records from 1997-2010 have been <a href="http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html">sold to insurance companies</a>. They appear to be referring to HSCIC’s <a href="http://www.hscic.gov.uk/hes">Hospital Episode Statistics</a>, a database of NHS hospital records. <!--more--></p>
+<blockquote>
+	<p>
+[…] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.
+</p>
+	<p>
+The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.
+</p>
+	<p>
+− <a href="http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html">Hospital records of all NHS patients sold to insurers</a>, The Telegraph, February 23rd 2014
+</p>
+</blockquote>
+
+<p>The Telegraph haven’t published the report being discussed which makes the details very hard to determine, although HSCIC offer a custom data extraction service that might be able to provide details beyond summary statistics.</p>
+<p>The combination of postcode and date of birth is absolutely not anonymised data, and so should be subject to the Data Protection Act. That Staple Inn were able to unmask it is further proof in this regard.</p>
+<p>HSCIC have questions to answer, but the naivete the Department of Health showed to The Telegraph is remarkable:</p>
+<blockquote>
+<p>The Department of Health said: “The rules changed last year so this would no longer be allowed. Information like this can only be accessed now if there is a clear benefit to improving health or health systems.”</p>
+</blockquote>
+<p>This is a huge misunderstanding of the situation. Having sold 13 years of medical records to the private sector, a rule change to prevent further sales is naive at best. The problem is not that the data is for sale, the issue is it was ever sold. In 5 years, in 10 years, the DOH can just sell the new data.</p>
+<p>In future, giving patients notional ownership of their records seems a good idea. Any sale should have to be approved by them, and a portion of any upside given to them. <a href="http://dpk.io/medicalrecords">David Kendal</a> has already started to try this approach, offering to sell his medical records to interested researchers.</p>
+<p>Certainly a start might be to add a clause to the data contracts stating that any attempt to deanonymise the data breaches contract. The Data Protection Act prevents reversible disclosure, so the loss of value of the data should not be a concern.</p>]]></summary>
+</entry>
+<entry>
+    <title>Back in York</title>
+    <link href="https://46b.it/2013/back-in-york/index.html" />
+    <id>https://46b.it/2013/back-in-york/index.html</id>
+    <published>2013-10-29T00:00:00Z</published>
+    <updated>2013-10-29T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>It’s been a while since my last post. After living in London for a few months and working out of <a href="http://shoreditchworks.com">Shoreditch Works</a>, I chose to head back to <a href="http://www.cs.york.ac.uk">York</a> with the new academic year - rather a tough choice given my other, international option. <!--more--></p>
+<p>It might seem strange to those I met in the last 18 months - UnCollege, friends in the YC and hacker crowds - that I’ve decided to go back to formal education. I deliberately chose to take a leave of absence rather than actually quit in order to make this possible, but I wasn’t convinced I would do it until late September.</p>
+<p>There’s a lot of truth in what groups like UnCollege are saying - the teaching you get at College might often be given just as well online. If teaching is the only thing you’ve gone to College for, replacing that could be rather easy. I’ve changed quite a bit, and I am enjoying myself a lot more than in the first year.</p>
+<p>I’ve a lot of respect for those who think differently on whether College is for them. It’s not for everyone, and isn’t a perfect <s>galaxy</s> system. Choosing to go into industry or explore things yourself is easily as legitimate as College - just treated differently by snotty culture.</p>
+<p>Computer Science lines up fairly well with my interests - it’s a good place to anchor my interests. Between Math, Physics and Electronics societies there’s a plenty of broader things I can learn, although I do wish I could take more elective modules in other departments than York allow.</p>
+<p>Years of events and long-distance friendships around the data/government crowd has left me needing time to recharge. I’d like to contribute to mySociety when I get back into this, but at the moment I’m too focused on other things like C and transport timetables.</p>
+<!--I've slowly become aware of tragedies littering some areas around hacking and governance. I'd be lying if I said it wasn't unnerving to realise how simple SQL Injections or a scraping bot can make areas of government determined to ruin your life. I'm hoping to chat a lot more about this come December at [30C3](https://events.ccc.de/congress/2013/) in Hamburg - hope to see you there.-->
+
+<p>So that’s an update. It might not be coming through well, but I am fairly happy. Being around people closer to my own age is proving very beneficial, as have courses and societies that are giving me a new viewpoint and encouraging deeper thought.</p>
+<p>Many thanks to the heaps of people who’ve given me an interesting 18 months, too many to even try to name.</p>]]></summary>
+</entry>
+<entry>
+    <title>How probable are 3 consecutive birthdays?</title>
+    <link href="https://46b.it/2013/three-birthday-problem/index.html" />
+    <id>https://46b.it/2013/three-birthday-problem/index.html</id>
+    <published>2013-04-01T00:00:00Z</published>
+    <updated>2013-04-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Have you ever wondered what the likelihood is of having three consecutive birthdays in a row? It’s a fun excursion from the classical statisical brain teaser on the <a href="http://en.wikipedia.org/wiki/Birthday_problem">birthday problem</a>. <!--more--></p>
+<p>To begin with we’ll <strong>consider the probability of a given three people - let’s call them Alex, Brian and Catherine - having consecutive birthdays.</strong> For those familiar with sets, we’ll represent them with the set <span class="math">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
+<h2 id="making-assumptions">Making assumptions</h2>
+<p>To keep the Math reasonably simple, we’ll make a few assumptions:</p>
+<ul>
+<li>Births <a href="http://www.stanford.edu/~dgleich/notebook/2009/04/birthday_distribution.html">aren’t evenly distributed</a> throughout the year, but we’ll assume they are.</li>
+<li>We’ll ignore leapyears and take a year as 365 days.</li>
+<li>We’ll assume these three people are picked at random.</li>
+</ul>
+<h2 id="applying-combinatorics">Applying Combinatorics</h2>
+<p>Recall that we defined the set of the 3 people as <span class="math">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
+<p>P can be <em>permuted</em> (ordered) in several different ways, for instance <span class="math">\(( Brian, Alex, Catherine )\)</span> or <span class="math">\(( Catherine, Alex, Brian )\)</span>. How many different permutations are there? Time for a little Combinatorics.</p>
+<p>If you’ve done this thing before, recall there are <span class="math">\(m!\)</span> ways to rearrange <span class="math">\(m\)</span> elements. If you’ve no idea what I just said, take a look at <a href="http://math.stackexchange.com/questions/108812/how-many-ways-can-we-order-a-set-of-n-elements">this explanation</a>. There are <span class="math">\(|\mathrm{P}| = 3\)</span> birthdays, so there are <span class="math">\(3! = 3 \times 2 \times 1 = \mathbf{6}\)</span> permutations.</p>
+<h2 id="applying-probability">Applying Probability</h2>
+<p>Thanks to the <a href="https://www.khanacademy.org/math/probability/independent-dependent-probability/addition_rule_probability/v/addition-rule-for-probability">addition rule</a> we just need to find the probability of a single permutation. We’ll consider <span class="math">\(( Alex, Brian, Catherine )\)</span>:</p>
+<ul>
+<li>Alex’s birthday can happen on <em>any day of the year</em>, with probability <span class="math">\(\frac{365}{365} = 1\)</span>.</li>
+<li>Brian’s birthday must happen on <em>the day after that of Alex</em>, with probability <span class="math">\(\frac{1}{365}\)</span>.</li>
+<li>Catherine’s must happen on <em>the day after that of Brian</em>, again with probability <span class="math">\(\frac{1}{365}\)</span>.</li>
+</ul>
+<p>These events are all independent, so we can just use the <a href="http://stattrek.com/probability/probability-rules.aspx">multiplication rule</a> to find the chance of them all occurring:</p>
+<p><span class="math">\(\frac{365}{365} \times \frac{1}{365} \times \frac{1}{365} = \frac{1}{365^2} = 0.000007506\ldots\)</span></p>
+<p>That’s roughly a <span class="math">\(0.00075\%\)</span> chance. Now let’s account for the 6 permutations:</p>
+<p><span class="math">\(6 \times \frac{1}{365^2} = \frac{6}{365^2} = 0.00004503\ldots\)</span></p>
+<p><b>So the probability of three people having consecutive birthdays is roughly <span class="math">\(0.0045\%\)</span>.</b></p>
+<h2 id="applying-this-result-to-groups-of-people">Applying this result to groups of people</h2>
+<p>The original Birthday problem ultimately concerns <em>how many people you need in a group for two or more of them to share birthdays</em>.</p>
+<p>To do this for our similar problem the key is to use how many different groups of 3 people can arise from a group of <span class="math">\(x\)</span> people. Where <span class="math">\(^{n}C_{k}\)</span> represents these <a href="http://en.wikipedia.org/wiki/Combinations#Number_of_k-combinations">k-combinations</a>, plot the function:</p>
+<p><span class="math">\(x \in \mathbb{Z}, x \ge 3,\ y =\ ^{x}C_{3} \times \frac{6}{365^2}\)</span></p>
+<p>Then find the first value of <span class="math">\(x\)</span> where <span class="math">\(y &gt; 0.5\)</span>, and you’ve got the smallest number of people where it is probable for there to be three consecutive birthdays.</p>
+<p>I’ll leave this final step as an exercise for the reader.</p>
+<h2 id="footnote">Footnote</h2>
+<p>You might get confused if trying to derive this. There are 4 different ways to make 3 days of birthdays as <span class="math">\(( Alex, Brian, Catherine )\)</span>, depending on whether the second two birthdays are the day before or after. However since these 4 different ways are each only of <span class="math">\(\frac{1}{4}\)</span> probability it all cancels out.</p>
+<p>Many thanks to the wonderful people that reviewed drafts of this post: the statistical <a href="https://www.toastwaffle.com">Samuel Littley</a>, the inventive <a href="http://toys.dreamforge.me/users/nemild">Nemil Dalal</a>, the organised <a href="https://twitter.com/AndyBursh">Andy Bursh</a>, the clarifying <a href="http://issyl0.co.uk">Isabell Long</a> &amp; the syntactical <a href="http://dpk.io">David Kendal</a>.</p>
+<p>Any statistical shortcomings are the fault of <a href="https://46b.it/about/">the author</a>, Michael Mokrysz.</p>
+<p><strong>UPDATE 1</strong>: I noticed I’d missed out the 4 different ways the birthdays can arise, so corrected for that.</p>
+<p><strong>UPDATE 2</strong>: <a href="https://www.toastwaffle.com">Samuel Littley</a> pointed out that whilst there are indeed 4 ways to make each triple, the probability of any specific one happening means that we divide by 4 again. Post updated with this reasoning.</p>]]></summary>
+</entry>
+<entry>
+    <title>Steady state community</title>
+    <link href="https://46b.it/2013/steady-state-community/index.html" />
+    <id>https://46b.it/2013/steady-state-community/index.html</id>
+    <published>2013-03-29T00:00:00Z</published>
+    <updated>2013-03-29T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p><a href="http://phx.corporate-ir.net/phoenix.zhtml?c=97664&amp;p=irol-newsArticle&amp;ID=1801561&amp;highlight=">Amazon’s purchase of Goodreads</a>, a social reading community, has reminded me of the difference between building a community and building a business. Goodreads definitely could be a value add for Amazon and the Kindle, yet unless they treat it with a light touch it could become far more of a Good<strong>kindle</strong>reads. <!--more--></p>
+<p>Companies will happily sell for millions and risk the evaporation of their communities, especially if current earnings aren’t that cracking. They also might start to commercialize a community in the way Twitter has, or close down a useful platform because it didn’t make much cash.</p>
+<p>Just look at <a href="https://tinkercad.com">TinkerCad</a>, the in-browser CAD environment for creating 3D models. It was a fantastic use of technology and very useful for me from time to time, yet now it is being retired - I suspect because the earnings never matched up to the time, money and effort invested.</p>
+<p>Wikipedia’s occasional funding drives are an interesting case. The complaints from people fed up of seeing Jimmy Wales’ face peering at them asking for donations act as pretty great promotion. The oft-repeated alternative is to become advertising-driven for some/all of the site’s income - yet much of the benefit of asking ordinary people to donate is that they feel personally invested in the project.</p>
+<p>I’m really just trying to work out where the differences between for- and not-for-profit organisations start, what we can aim for and how people can depend on cloud services that can die out of the blue as compared to desktop software that still works a decade after it’s authors are out of business.</p>
+<p>I hesitate to say that all true communities would need to be non-profits, that all platforms are nothing of the sort and so forth - but I do wonder.</p>]]></summary>
+</entry>
+<entry>
+    <title>A first look at Quantum Computers</title>
+    <link href="https://46b.it/2013/quantum-computers-first-look/index.html" />
+    <id>https://46b.it/2013/quantum-computers-first-look/index.html</id>
+    <published>2013-02-11T00:00:00Z</published>
+    <updated>2013-02-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>The computer in front of you is pretty powerful, but it can’t factor a 600-digit number before Earth gets cooked by the Sun. No supercomputer humanity does or could build could do that either, so it seemed a sure bet to base the security of some encryption schemes on factoring being (exponentially) hard. <!--more--></p>
+<p>A quantum computer of sufficient size could do it using <a href="http://en.wikipedia.org/wiki/Shor%27s_algorithm">Shor’s algorithm</a>. It could also allow you to simulate n-body problems in reasonable (polynomial) time. Thus you could break RSA encryption or simulate the interior of the sun right down to the sub-atomic scale.</p>
+<p>If you’ve ever looked at Physics like the two-slit experiment, what follows might seem a little reminiscent. That’s because it is.</p>
+<h2 id="a-hardwired-machine">A hardwired machine</h2>
+<p>In the early days, computers were often programmed by altering their wiring. Instead of running a program stored on disk, computers like <a href="http://en.wikipedia.org/wiki/ENIAC">ENIAC</a> had a number of units that were manually patched together every time you wanted to run a different program. You’d wire a floating-point multiplier up to vacuum tubes with it’s input, then wire the output up to the next stage.</p>
+<p>The model of quantum computers looks a lot like that. You’re not going to sit in front of a quantum computer and write some C++ to define the program to run: rather you’ll have to wire it up for every different program. It’s not quite as simple as a metal wire either, since you’ve got to be very careful to not destroy the quantum effects you look to exploit.</p>
+<p>I think it should be possible for a 2nd or 3rd generation computer to have this wiring quickly done by another computer, such that you could have most of the benefits of stored-programs. I speculate this mode of operation would be similar to programming modern FPGAs using VHDL, but I’ve not looked for research in this area yet.</p>
+<h2 id="what-the-flip-is-a-qubit">What the flip is a qubit?</h2>
+<p>A lot of people have heard that the quantum computer’s form of a <code>bit</code> is called a <code>qubit</code>. The principle behind them is relatively simple to read about but harder (as with everything in quantum mechanics) to appreciate.</p>
+<p>An ordinary <code>bit</code> is either 0 or 1. There’s no middle ground. A <code>qubit</code> on the other hand can be both 0 and 1 right up until the moment you observe it. There’s a probability you’ll observe it as a 0, and another probability you’ll observe a 1. This probability as to which state it’s in is called superposition.</p>
+<p>How you’d observe a <code>qubit</code> depends on your implementation of them, but it amounts to when you have an instrument measure their value. This measurement collapses the qubit into a classical state, so if you read the qubit again you’ll read the same value as you did earlier.</p>
+<p>Stopping this collapse into classical state from happening to the qubits whilst you’re computing is known as quantum decoherence. It’s one of the greatest problems to building a practical quantum computer.</p>
+<p>That’s it for a quick introduction. I’ve had to skip <a href="http://en.wikipedia.org/wiki/Quantum_entanglement">entanglement</a> for now until I’m a bit more comfortable explaining it from the point of view of quantum computation. Possible algorithms, some Math and implementation detail discussion is what I’ll start to discuss next time.</p>]]></summary>
+</entry>
+<entry>
+    <title>Train Data Revisited</title>
+    <link href="https://46b.it/2013/train-data-revisited/index.html" />
+    <id>https://46b.it/2013/train-data-revisited/index.html</id>
+    <published>2013-02-07T00:00:00Z</published>
+    <updated>2013-02-07T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I mentioned Network Rail’s feeds briefly last time but hadn’t yet looked into them much. Thanks to <a href="https://twitter.com/SMLittley/status/295175976818728963">Samuel Littley</a> for letting me know a bit more about them. <a href="https://datafeeds.networkrail.co.uk/ntrod/">Sign up</a> and your access will be activated within an hour or so. Given that mine was granted at 3am GMT I suspect it’s automated. <!--more--></p>
+<p>My interest in this data comes down to how much I take trains to London, Manchester and elsewhere. Ever since I <a href="/2011/08/13/yrs2011/">built TrainTrackr</a> in 2011 I’ve wanted to get a better idea of how late trains really are. These open data <s>feeds</s> firehoses offer me that chance.</p>
+<h2 id="using-the-data">Using the data</h2>
+<p><strong>After getting access I discovered that the entire Data Feeds is almost as close to undocumented as you can get.</strong> Thankfully I’d signed up to a talk at the <a href="http://www.theodi.org">Open Data Institute</a> on this topic, given by <a href="https://twitter.com/madprof">Jonathan Raper</a>.</p>
+<p>The honest truth is that it seems to be quite a pain. A few immediate problems:</p>
+<ul>
+<li>Network Rail may have released access to live train times, but the documentation around it is extremely lacking. This is apparently a result of the convoluted system the railways operate under.</li>
+<li><strong>The volume of data during the day is pretty big.</strong> At least 500 messages a second. There’s no reason you can’t deal with that amount of data but the real problem is that <strong>your API connection often drops</strong>, causing you to miss some trains setting off. If you miss trains setting off from their first station, you’ll struggle to work out where it’s going along the entire route.</li>
+</ul>
+<p>You then face the fact there’s half a dozen different datasets: the train timetable, the live updates, changes to train journeys - and when trains have to divert you can lose track of where it’s going altogether.</p>
+<h2 id="learning-more">Learning more</h2>
+<p>Unsurprisingly the train community got to this before I did, so there’s quite a bit of useful things out there. I’ve not managed to find any overview/introduction that’s up to date, so I might end up writing one next month.</p>
+<p>If you want train data in a format where it’s ready to build a Mobile API, try <strong><a href="https://developer.transportapi.com">Placr’s Transport API</a></strong>. Free for &lt;1000 hits a day, paid above that. Placr’s founder gave the ODI talk I mentioned, the slides are <strong><a href="http://www.scribd.com/doc/123365071/Friday-Lunchtime-Lectures-at-the-ODI-How-can-Open-Data-Revolutionise-your-Rail-Travel">available online</a></strong>.</p>
+<p>For an example of what can be done in terms of end-user applications, see <strong><a href="http://www.realtimetrains.co.uk">Real Time Trains</a></strong> by Tom Cairns. There’s also plenty of information <strong><a href="http://thomas-cairns.co.uk">on his blog</a></strong> regarding the different data formats - and better, lots of relevant code <strong><a href="https://github.com/swlines">on Github</a></strong>.</p>
+<p><strong><a href="http://blog.poggs.com">Peter Hicks</a></strong> also has some <strong><a href="https://github.com/poggs">useful code</a></strong> available, although seemingly focused on timetables rather than the live data. He gave a <strong><a href="http://blog.poggs.com/2012/09/okfestival/">relevant talk</a></strong> last September in Helsinki that dives a bit more into licensing issues and so forth.</p>
+<h2 id="my-next-step">My next step</h2>
+<p>I’ve got a much better idea what I’m doing than a couple of weeks ago, so I’m going to go out and start getting the data. Next post on this probably a few weeks away. <strong>Thanks a lot to all mentioned for their help.</strong></p>]]></summary>
+</entry>
+<entry>
+    <title>Trains and East Coast positioning data</title>
+    <link href="https://46b.it/2013/trains-east-coast-positioning/index.html" />
+    <id>https://46b.it/2013/trains-east-coast-positioning/index.html</id>
+    <published>2013-01-26T00:00:00Z</published>
+    <updated>2013-01-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
+<p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
+<p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
+<pre data-lang="javascript">> GET "https://www.ombord.info/api/jsonp/position/?callback=json"
+json( {
+  "version": "1.2",
+  "time": "1359167756.0", // unix timestamp
+  "age": "0",
+  "latitude": "53.059942",
+  "longitude": "-0.77284",
+  "altitude": "31.1", // altitude in metres
+  "speed": "33.171", // speed in metres/second
+  "cmg": "134.68",
+  "satellites": "12", // number of GPS signals being received
+  "mode": "3"
+});</pre>
+
+<p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
+<p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
+<p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
+<p>I know the same Ombord system is used on other trains internationally, so this is worth trying on other services with Wifi as well. I’d love to hear if you get it working.</p>
+<p>There’s a private <a href="https://datafeeds.networkrail.co.uk/ntrod/">API</a> for live train information now, but I don’t know it’s current status. I’ve heard literally nothing about it.</p>
+<p><strong>UPDATE</strong> (7th February 2012): I’ve now <a href="/2013/02/07/train-data-revisited/">written more about the Network Rail API</a>. If you’re interested in more than just playing around whilst on East Coast trains it’ll interest you more.</p>]]></summary>
+</entry>
+<entry>
+    <title>Remian: a modern virtual machine</title>
+    <link href="https://46b.it/2012/remian-vm/index.html" />
+    <id>https://46b.it/2012/remian-vm/index.html</id>
+    <published>2012-12-19T00:00:00Z</published>
+    <updated>2012-12-19T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Anyone who <a href="https://twitter.com/46Bit">follows me on Twitter</a> has probably read that <strong>I’m building a virtual machine of my own, named <a href="https://github.com/46Bit/remian">Remian</a></strong>. I’ve reached v0.1.1 and an initial release, so now is the perfect time to talk about why you should try it. <!--more--></p>
+<p>A powerful property of any true computer is the ability to simulate any other computer given sufficient time. This is known as Turing Completeness, and means that we can program our own computers: instead of designing a computer and wiring it up, we can build it in software as a virtual machine.</p>
+<h2 id="understanding-computers-improves-you-as-a-programmer">Understanding computers improves you as a programmer</h2>
+<p>As modern programmers we use high-level languages whenever possible, since programmer productivity tends to drop as we move to higher-performance languages. Yet when we try to solve difficult problems, <strong>it is all too easy to accidentally cripple code performance because you don’t understand what the computer is doing</strong>.</p>
+<p>The best way to avoid these problems is to learn about computer architecture and the basics of Assembly programming. Most programming code is executed as something like assembly code, so understanding it better can be invaluable. This might be unlikely to turn into your day job, but it’ll help you make better decisions.</p>
+<h2 id="the-bad-bad-and-ugly-of-x86-assembly">The bad, bad and ugly of x86 Assembly</h2>
+<p>Unfortunately, getting <strong>practical experience with Assembly proves not to be straightforward</strong>. Most modern computer processors are based on decades-old designs. As opposed to the instruction sets you might find in an undergraduate-level text, there’s decades-worth of rabbit-hole to follow before you can stop running into bizarre bugs.</p>
+<p>Finding a modern Assembly reference that’s not written for experts is difficult. Whilst I’ve written up notes on the matter, I’m interested in Assembly programming as a mere curiosity. I don’t want to program all my software in it, <strong>I just want others to be able to dive into hacking Assembly as easily as they might JavaScript</strong>.</p>
+<h2 id="virtual-machines-for-assembly">Virtual machines for Assembly</h2>
+<p><strong>The solution used by Universities seems to be virtual machines, in the form of unpolished software.</strong>.You sit in front of a GUI and type in your code. However all the experience with such software I’ve accrued suggests that <strong>the toolchains suck</strong>. At best you’ll have a working textarea to type in; at worst you’ll have constant crashes.</p>
+<p>Remian is built from my experience of this. There’s no bloated Windows installer, no barely-functional Java UI. <strong>Just install Remian with <code>gem install remian</code> and watch the instructions execute <code>remian execute your-assembly-file.rem</code></strong>.</p>
+<p>For now there’s a fairly short list of instructions and just one computer design, but the machine has deliberately been designed for flexibility. The long term plan is to support a wide range of computer designs, from tape-based Turing Machines to stack-based computation.</p>
+<p><strong>If you’d like to find out more, browse <a href="https://github.com/46Bit/remian">Remian’s source on Github</a> or take a look at a <a href="https://github.com/46Bit/remian/blob/develop/examples/multiply.rem">program I built earlier</a>.</strong></p>]]></summary>
+</entry>
+<entry>
+    <title>Two weeks with Go: an initial review</title>
+    <link href="https://46b.it/2012/two-weeks-with-go/index.html" />
+    <id>https://46b.it/2012/two-weeks-with-go/index.html</id>
+    <published>2012-11-14T00:00:00Z</published>
+    <updated>2012-11-14T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
+<p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
+<p>Here’s a simple “Hello World”-style example:</p>
+<pre data-lang="go">package main
+
+import "fmt"
+import "strconv"
+
+func main () {
+  for i := 0; i < 12; i++ {
+    fmt.Println("factorial(" + strconv.Itoa(i) + ") =", factorial(i))
+  }
+}
+
+func factorial (of int) int {
+  if of < 1 {
+    return 1
+  }
+  return of * factorial(of - 1)
+}</pre>
+
+<p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
+<p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
+<p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>
+<p>My next step is going to be parallelization. This is one of the things I’ve heard discussed most about Go. Rather than give you access to the underlying threads, Go tries to manage it for you automatically using <a href="http://golang.org/doc/effective_go.html#goroutines">goroutines</a>: when something blocks, other functions are executing concurrently wherever possible. At the moment I’m not taking advantage of goroutines at all, but I’ll come back with my thoughts in a few weeks time.</p>
+<p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p>]]></summary>
+</entry>
+<entry>
+    <title>How to Hack with iMessage</title>
+    <link href="https://46b.it/2012/hacking-with-imessage/index.html" />
+    <id>https://46b.it/2012/hacking-with-imessage/index.html</id>
+    <published>2012-11-01T00:00:00Z</published>
+    <updated>2012-11-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Earlier this year, <a href="http://dpk.org.uk">David Kendal</a> and I discovered you can fairly easily <strong>send and receive iMessages using Ruby</strong>. The key is to interact with OS X’s Messages app, more specifically it’s AppleScript bindings. We built and released <a href="http://irepl.im">iREPL</a>, a Scheme programming environment that you can use on your iPhone/iPad without having to jailbreak. I’ve been using it for months when I fancied hacking some Lisp. <!--more--></p>
+<figure>
+  <div class="enclosure">
+	  
+<a href="/assets/img/blog/2012/imessage-irepl-example.jpg" target="_blank"><img src="/assets/img/blog/2012/imessage-irepl-example.jpg" alt="An example of using iREPL to run some Scheme." /></a>
+</div>
+  <p>
+An example of using iREPL to run some Scheme. The executed replies are entirely automated and come back in roughly 1 second. It’s run without crashing since April, on a 2010 Mac Mini of mine.
+</p>
+</figure>
+
+<p>I’m going to show you how to get started on your own iMessage hack, that bounces your iMessages back to you. Let’s get started.</p>
+<h2 id="what-youll-need">What you’ll need</h2>
+<p>These instructions are for OSX Mountain Lion, but should work for Lion onwards. If using Lion you’ll have to <a href="http://appldnld.apple.com/MessagesBeta/041-4274.20120216.z5km/MessagesBeta.dmg">manually install Messages Beta</a>. I’ll talk about some tools you can use to go beyond this tutorial later.</p>
+<h2 id="about-applescript">About AppleScript</h2>
+<p>Included with OSX is a programming language called AppleScript, designed to resemble natural language as opposed to the syntax of languages like C or even Ruby. Open up the Preferences pane of Messages.app and click the Alerts tab. You’ll notice a long list of events with the option to “Run an Applescript script”.</p>
+<figure style="margin-bottom: 25px;">
+  <div class="enclosure">
+	  
+<a href="/assets/img/blog/2012/imessage-events-intro.png" target="_blank"><img src="/assets/img/blog/2012/imessage-events-intro.png" alt="Notice the AppleScript option. This is how we'll hook our programs up to iMessage." /></a>
+</div>
+  <p>
+Notice the AppleScript option. This is how we’ll hook our programs up to iMessage.
+</p>
+</figure>
+
+<h2 id="getting-going">Getting going</h2>
+<p>The first thing to bear in mind is that Messages is heavily based on the previous iChat app. So much so, in fact, that even for iMessage it still forces you to “Accept” a new contact. The first thing to do therefore is to work around this by scripting it. Save the following script as <code>imessage-accept.scpt</code>:</p>
+<pre data-lang="applescript">using terms from application "Messages"
+  on recieved text invitation the_message from the_buddy for the_chat
+    accept the_chat
+  end message received
+end using terms from</pre>
+
+<p>Now tell Messages to run this whenever a new chat is initated. In the app Preferences, browse to Events, select the Text Invitation event and Choose your <code>imessage-accept.scpt</code> script.</p>
+<figure style="margin-bottom: 25px;">
+  <div class="enclosure">
+	  
+<a href="/assets/img/blog/2012/imessage-autoaccept.png" target="_blank"><img src="/assets/img/blog/2012/imessage-autoaccept.png" alt="Notice the AppleScript option. This is how we'll hook our programs up to iMessage." /></a>
+</div>
+</figure>
+
+<p>If you send yourself an iMessage now, then you’ll notice nothing’s changed from before. You might think this script is pointless, and you’d be correct: it’s just needed if we’re to intercept the first iMessage.</p>
+<h2 id="replying-to-imessages">Replying to iMessages</h2>
+<p>Next up is the actual replying. To keep things simple we’re just going to reply to an iMessage saying the same thing (that is, we’ll ‘bounce’ the iMessage). Save the following as <code>imessage-received.scpt</code>:</p>
+<pre data-lang="applescript">using terms from application "Messages"
+  on message received the_message from the_buddy for the_chat
+    send the_message to the_buddy
+  end message received
+end using terms from</pre>
+
+<p>Similarly to what you did with <code>imessage-accept.scpt</code>, set the Message Received Event to run your new <code>imessage-received.scpt</code> script. If you</p>
+<p>You’ll also need to update your <code>imessage-accept.scpt</code> script by adding the <code>send text to buddy</code> line, so that the first iMessage from a new contact also gets replied to. You’ll need to reselect for the Text Invitation Event to update it’s copy of your script. If you’ve done that right, <code>imessage-accept.scpt</code> should now look like this:</p>
+<pre data-lang="applescript">using terms from application "Messages"
+  on recieved text invitation the_message from the_buddy for the_chat
+    accept the_chat
+    send the_message to the_buddy
+  end message received
+end using terms from</pre>
+
+<p>You’re probably starting to get the picture. Every time you alter a script you need to reselect it for the Event, and Text Invitation runs exclusively for the first message you recieve from an iMessage user.</p>
+<h2 id="where-to-go-from-here">Where to go from here</h2>
+<p>You’ve more than one option. What we did for iREPL was to use <a href="http://macruby.org">MacRuby</a>, a Ruby implementation designed for working closely with OS X. MacRuby makes it easy to interact with AppleScript bindings from a more popular programming language.</p>
+<p>If you’d like to look into a bit more of how we put iREPL together, examine the source in it’s <a href="https://github.com/46Bit/irepl">Github repository</a>.</p>
+<p>One final bit of help: as an example of how to run shell commands securely, protected from shell-injection vulnerabilities:</p>
+<pre data-lang="applescript">using terms from application "iChat"
+  on message received the_message from the_buddy for the_chat
+    set quoted_message to quoted form of the_message
+    set quoted_id to quoted form of (id of the_buddy as text)
+    do shell script "echo " & quoted_message & " | ~/your-script-here.sh " & quoted_id
+  end message received
+end using terms from</pre>
+
+<p><a href="/contact/">Let me know</a> if you’d like a further tutorial on the MacRuby side of things as used in iREPL - although I can’t claim to have more than a limited working knowledge.</p>]]></summary>
+</entry>
+
+</feed>
