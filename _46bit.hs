@@ -64,6 +64,7 @@ main = hakyllWith config $ do
 			let indexCtx =
 				constField "title" "Home" `mappend`
 				listField "posts" postCtx (return posts) `mappend`
+				constField "math" "true" `mappend`
 				defaultContext
 			getResourceBody
 				>>= applyAsTemplate indexCtx
@@ -71,7 +72,7 @@ main = hakyllWith config $ do
 				>>= stripIndexFromUrls
 
 	-- Content pages
-	match (Hakyll.fromList ["about.md", "ident.md"]) $ do
+	match (Hakyll.fromList ["about.md", "ident.md", "404.md"]) $ do
 		route routeNormal
 		compile $ pandocMathCompiler
 			>>= loadAndApplyTemplate "templates/page.html" defaultContext
