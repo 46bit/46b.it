@@ -4,11 +4,11 @@ title: You can't unsell Hospital Records
 The Telegraph reported today that hospital records from 1997-2010 have been [sold to insurance companies](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html). They appear to be referring to HSCIC's [Hospital Episode Statistics](http://www.hscic.gov.uk/hes), a database of NHS hospital records.
 <!--more-->
 
-> [&hellip;] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.
-
-> The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.
-
-> [Hospital records of all NHS patients sold to insurers](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html), The Telegraph, February 23rd 2014
+<blockquote>
+	<p>[&hellip;] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.</p>
+	<p>The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.</p>
+	<p>− [Hospital records of all NHS patients sold to insurers](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html), The Telegraph, February 23rd 2014</p>
+</blockquote>
 
 The Telegraph haven't published the report being discussed which makes the details very hard to determine, although HSCIC offer a custom data extraction service that might be able to provide details beyond summary statistics.
 

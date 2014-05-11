@@ -6,8 +6,9 @@ a {
 	color: #DB0000;
 }
 .wrapper {
-	width: 50%;
-	min-width: 600px;
+	width: 70%;
+	min-width: 560px;
+	max-width: 760px;
 	margin: 20px auto;
 	position: relative;
 }
@@ -74,6 +75,7 @@ a {
 	border-bottom: 2px solid #000;
 }
 .pagecontent h2 {
+	margin-top: 20px;
 	font: 700 25px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .pagecontent .date {
@@ -89,13 +91,25 @@ a {
 }
 .pagecontent p {
 	margin-top: 10px;
-	text-indent: 20px;
 	font: 300 18px/26px "ff-meta-serif-web-pro", Georgia, serif;
 }
 .pagecontent .extended p:first-child {
 	font-size: 20px;
 	line-height: 28px;
 	padding-bottom: 20px;
+}
+.pagecontent ul {
+	margin-top: 10px;
+	padding-left: 30px;
+	font: 300 18px/26px "ff-meta-serif-web-pro", Georgia, serif;
+}
+.pagecontent blockquote {
+	padding: 20px 0 20px 40px;
+}
+.pagecontent blockquote p {
+	font-size: 18px !important;
+	line-height: 26px !important;
+	padding-bottom: 0 !important;
 }
 
 .pagecontent article {
@@ -116,4 +130,10 @@ a {
 	padding: 0 0 16px;
 	position: relative;
 	border-bottom: 1px solid #000;
+}
+.pagelist h2 {
+	margin-top: 0;
+}
+.pagelist p {
+	text-indent: 20px;
 }

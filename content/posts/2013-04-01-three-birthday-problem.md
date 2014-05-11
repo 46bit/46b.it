@@ -52,16 +52,10 @@ I'll leave this final step as an exercise for the reader.
 ## Footnote
 You might get confused if trying to derive this. There are 4 different ways to make 3 days of birthdays as $( Alex, Brian, Catherine )$, depending on whether the second two birthdays are the day before or after. However since these 4 different ways are each only of $\frac{1}{4}$ probability it all cancels out.
 
----
-
 Many thanks to the wonderful people that reviewed drafts of this post: the statistical [Samuel Littley](https://www.toastwaffle.com), the inventive [Nemil Dalal](http://toys.dreamforge.me/users/nemild), the organised [Andy Bursh](https://twitter.com/AndyBursh), the clarifying [Isabell Long](http://issyl0.co.uk) &amp; the syntactical [David Kendal](http://dpk.io).
 
 Any statistical shortcomings are the fault of [the author](https://46b.it/about/), Michael Mokrysz.
 
----
-
 **UPDATE 1**: I noticed I'd missed out the 4 different ways the birthdays can arise, so corrected for that.
-
----
 
 **UPDATE 2**: [Samuel Littley](https://www.toastwaffle.com) pointed out that whilst there are indeed 4 ways to make each triple, the probability of any specific one happening means that we divide by 4 again. Post updated with this reasoning.
