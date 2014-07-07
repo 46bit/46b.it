@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>46bit</title>
+<script src="//use.typekit.net/uaf2fos.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+<link rel="stylesheet" href="/css/master.css">
+<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<body>
+	<div class="wrapper">
+		<header class="head">
+			<h1><a href="/">46bit</a> by Michael Mokrysz</h1>
+			<nav class="sitenav">
+				<ul>
+					<li><a href="/">Weblog</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="pagecontent">
+			<article>
+	<header>
+		<h1><a href="/2014/uoybus">2014-07-07-uoybus</a></h1>
+		<span class="date">July  7, 2014</span>
+	</header>
+	<div class="extended"><h1 id="major-improvement-to-uoy-live-bus-times">Major improvement to UoY live bus times</h1>
+<p>Since November I’ve been quietly running <a href="http://uoyb.us">UoYBus</a>, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving <a href="http://york.ac.uk">University of York</a>.</p>
+<h1 id="and-44-is-that-they-both-go-to-the-railway-station-and-both-go-to-the-far-end-of-campus-but-in-both-the-city-centre-and-on-campus-they-take-quite-different-routes.-thus-its-quite-handy-to-be-able-to-get-times-for-both-sets-of-stops-quickly.">4 and #44 is that they both go to the Railway Station and both go to the far end of Campus, but in both the City Centre and on Campus they take quite different routes. Thus it’s quite handy to be able to get times for both sets of stops quickly.</h1>
+<p>In January we put a jQuery UI-based frontend on it, but this bolt-on interface left much to be resolved in user experience. Since it’s holidays and I’ve had to take a month off, I decided to sketch up an improved design.</p>
+<h2 id="difficulties-in-design">Difficulties in design</h2>
+<p>The key thing about UoYBus is that it isn’t a generalised bus app, of which dozens exist already. Thus it needs a dead simple interface of (a) where in York are you and (b) where are you going?</p>
+<p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
+<p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
+<p>[YOBUS SCREENSHOT]</p>
+<p>That’s too bold a design, and picking so many colours proved tricky.</p>
+<p>Following this I decided to pick up the route concept from <a href>National Rail Enquiries</a> and <a href>CityMapper</a>, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
+<p>[HOMEPAGE]</p>
+<p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p></div>
+</article>
+
+		</div>
+	</div>
+	<script>
+	  // Tracking
+	  if (document.location.hostname != "localhost") {
+	    // GoSquared
+	    var GoSquared = {};
+	    GoSquared.acct = "GSN-207291-Q";
+	    (function(w){
+	      function gs(){
+	        w._gstc_lt = +new Date;
+	        var d = document, g = d.createElement("script");
+	        g.type = "text/javascript";
+	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+	        var s = d.getElementsByTagName("script")[0];
+	        s.parentNode.insertBefore(g, s);
+	      }
+	      w.addEventListener ?
+	        w.addEventListener("load", gs, false) :
+	        w.attachEvent("onload", gs);
+	    })(window);
+
+	    // Google Analytics
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', 'UA-22921213-1']);
+	    _gaq.push(['_trackPageview']);
+	    var ga = document.createElement('script');
+	    ga.type = 'text/javascript';
+	    ga.async = true;
+	    ga.src = 'https://ssl.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(ga, s);
+	  }
+	</script>
+</body>
+</html>
