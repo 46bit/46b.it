@@ -8,7 +8,7 @@ My efforts to optimise the process have led me to the curious practice of un-mat
 
 <figure>
   <div class="enclosure">
-	  <img alt="Two socks with different coloured bands" src="/assets/img/blog/2012/different-coloured-socks.jpg" />
+	  <img alt="Two socks with different coloured bands" src="/img/different-coloured-socks.jpg" />
   </div>
 </figure>
 
