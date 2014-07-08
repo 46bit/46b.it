@@ -9,7 +9,8 @@ One of the most regular train journeys I make is to head from Yorkshire to Londo
 
 Last year I noticed that **the Wifi login page displayed a position and speed for the train**. Fast forward some quick request monitoring and it turns out that **some [nice JSONP](https://www.ombord.info/api/jsonp/position/?callback=json) is available**.
 
-<pre data-lang="javascript">> GET "https://www.ombord.info/api/jsonp/position/?callback=json"
+``` javascript
+> GET "https://www.ombord.info/api/jsonp/position/?callback=json"
 json( {
   "version": "1.2",
   "time": "1359167756.0", // unix timestamp
@@ -21,7 +22,8 @@ json( {
   "cmg": "134.68",
   "satellites": "12", // number of GPS signals being received
   "mode": "3"
-});</pre>
+});
+```
 
 It's actually quite awesome. **There's no authentication tokens to deal with**: if you're on the Wifi of an East Coast train then it's **updated in real-time**. If you're on the public internet, you get demo data.
 

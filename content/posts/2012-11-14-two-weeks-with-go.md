@@ -8,7 +8,8 @@ What I want is a performant language, but one that doesn't seem like an argument
 
 Here's a simple "Hello World"-style example:
 
-<pre data-lang="go">package main
+``` go
+package main
 
 import "fmt"
 import "strconv"
@@ -24,7 +25,8 @@ func factorial (of int) int {
     return 1
   }
   return of * factorial(of - 1)
-}</pre>
+}
+```
 
 As opposed to having to free memory yourself everywhere, **Go has robust garbage collection**. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.
 
