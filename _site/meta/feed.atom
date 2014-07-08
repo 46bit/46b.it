@@ -8,8 +8,43 @@
         <name>Michael Mokrysz</name>
         <email></email>
     </author>
-    <updated>2014-02-24T00:00:00Z</updated>
+    <updated>2014-07-07T00:00:00Z</updated>
     <entry>
+    <title>UoYBus: bus times for the University of York</title>
+    <link href="https://46b.it/2014/uoybus/index.html" />
+    <id>https://46b.it/2014/uoybus/index.html</id>
+    <published>2014-07-07T00:00:00Z</published>
+    <updated>2014-07-07T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>Since November I’ve been quietly running <a href="http://uoyb.us">UoYBus</a>, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving <a href="http://york.ac.uk">University of York</a>. Today I released a big improvement. <!--more--></p>
+<p>Both bus routes go to the Railway Station and the far end of Campus, but in both the City Centre and on Campus they take quite different routes. Thus it’s quite handy to be able to get times for both sets of stops quickly.</p>
+<p>In January we put a jQuery UI-based frontend on it, but this bolt-on interface left much to be resolved in user experience. Since it’s holidays and I’ve had to take a month off, I decided to sketch up an improved design.</p>
+<h2 id="difficulties-in-design">Difficulties in design</h2>
+<p>The key thing about UoYBus is that it isn’t a generalised bus app, of which dozens exist already. Thus it needs a dead simple interface of (a) where in York are you and (b) where are you going?</p>
+<p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
+<p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
+<div class="figure">
+<img src="/img/uoybus-yo.png" />
+</div>
+<p>That’s too bold a design, and picking so many colours proved tricky.</p>
+<h2 id="route-based-design">Route-based design</h2>
+<p>Following this I decided to pick up the route concept from <a href="">National Rail Enquiries</a> and <a href="">CityMapper</a>, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
+<div class="figure">
+<img src="/img/uoybus-home.png" />
+</div>
+<p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
+<div class="figure">
+<img src="/img/uoybus-result.png" />
+</div>
+<p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
+<h2 id="open-development">Open development</h2>
+<p>The code behind UOYBus needs a lot of work, but is MIT-licensed on <a href="https://github.com/46bit/uoybus">Github</a>. Beyond adding a lot of useful information to UoYBus itself, I’d like to make the app easier to repurpose.</p>
+<p>I want to factor out the York-specific data and enable anyone to run this for their local busroute within minutes. I’ve some ideas about doing this, but it’s tricky to do.</p>
+<h2 id="commercial-viability">Commercial viability</h2>
+<p>The difficulty running this sort of live bus app is paying for the <a href="http://transportapi.com">API calls</a> when effectively nonprofit. I’m going to try ads whilst promoting UoYBus, given a lot of companies in York want to promote things to students.</p>
+<p>My big hope for this long-term is to build a Yorkshire guide integrating attractions, events, transport. Something of a travel guide for locals and non-locals alike. York is the perfect place to pilot something like this.</p>
+<p>For now, give <a href="http://uoyb.us">UoYBus</a> a try!</p>]]></summary>
+</entry>
+<entry>
     <title>You can't unsell Hospital Records</title>
     <link href="https://46b.it/2014/cannot-unsell-hospital-records/index.html" />
     <id>https://46b.it/2014/cannot-unsell-hospital-records/index.html</id>
@@ -238,87 +273,6 @@ func factorial (of int) int {
 <p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>
 <p>My next step is going to be parallelization. This is one of the things I’ve heard discussed most about Go. Rather than give you access to the underlying threads, Go tries to manage it for you automatically using <a href="http://golang.org/doc/effective_go.html#goroutines">goroutines</a>: when something blocks, other functions are executing concurrently wherever possible. At the moment I’m not taking advantage of goroutines at all, but I’ll come back with my thoughts in a few weeks time.</p>
 <p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p>]]></summary>
-</entry>
-<entry>
-    <title>How to Hack with iMessage</title>
-    <link href="https://46b.it/2012/hacking-with-imessage/index.html" />
-    <id>https://46b.it/2012/hacking-with-imessage/index.html</id>
-    <published>2012-11-01T00:00:00Z</published>
-    <updated>2012-11-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Earlier this year, <a href="http://dpk.org.uk">David Kendal</a> and I discovered you can fairly easily <strong>send and receive iMessages using Ruby</strong>. The key is to interact with OS X’s Messages app, more specifically it’s AppleScript bindings. We built and released <a href="http://irepl.im">iREPL</a>, a Scheme programming environment that you can use on your iPhone/iPad without having to jailbreak. I’ve been using it for months when I fancied hacking some Lisp. <!--more--></p>
-<figure>
-  <div class="enclosure">
-	  
-<a href="/assets/img/blog/2012/imessage-irepl-example.jpg" target="_blank"><img src="/assets/img/blog/2012/imessage-irepl-example.jpg" alt="An example of using iREPL to run some Scheme." /></a>
-</div>
-  <p>
-An example of using iREPL to run some Scheme. The executed replies are entirely automated and come back in roughly 1 second. It’s run without crashing since April, on a 2010 Mac Mini of mine.
-</p>
-</figure>
-
-<p>I’m going to show you how to get started on your own iMessage hack, that bounces your iMessages back to you. Let’s get started.</p>
-<h2 id="what-youll-need">What you’ll need</h2>
-<p>These instructions are for OSX Mountain Lion, but should work for Lion onwards. If using Lion you’ll have to <a href="http://appldnld.apple.com/MessagesBeta/041-4274.20120216.z5km/MessagesBeta.dmg">manually install Messages Beta</a>. I’ll talk about some tools you can use to go beyond this tutorial later.</p>
-<h2 id="about-applescript">About AppleScript</h2>
-<p>Included with OSX is a programming language called AppleScript, designed to resemble natural language as opposed to the syntax of languages like C or even Ruby. Open up the Preferences pane of Messages.app and click the Alerts tab. You’ll notice a long list of events with the option to “Run an Applescript script”.</p>
-<figure style="margin-bottom: 25px;">
-  <div class="enclosure">
-	  
-<a href="/assets/img/blog/2012/imessage-events-intro.png" target="_blank"><img src="/assets/img/blog/2012/imessage-events-intro.png" alt="Notice the AppleScript option. This is how we'll hook our programs up to iMessage." /></a>
-</div>
-  <p>
-Notice the AppleScript option. This is how we’ll hook our programs up to iMessage.
-</p>
-</figure>
-
-<h2 id="getting-going">Getting going</h2>
-<p>The first thing to bear in mind is that Messages is heavily based on the previous iChat app. So much so, in fact, that even for iMessage it still forces you to “Accept” a new contact. The first thing to do therefore is to work around this by scripting it. Save the following script as <code>imessage-accept.scpt</code>:</p>
-<pre data-lang="applescript">using terms from application "Messages"
-  on recieved text invitation the_message from the_buddy for the_chat
-    accept the_chat
-  end message received
-end using terms from</pre>
-
-<p>Now tell Messages to run this whenever a new chat is initated. In the app Preferences, browse to Events, select the Text Invitation event and Choose your <code>imessage-accept.scpt</code> script.</p>
-<figure style="margin-bottom: 25px;">
-  <div class="enclosure">
-	  
-<a href="/assets/img/blog/2012/imessage-autoaccept.png" target="_blank"><img src="/assets/img/blog/2012/imessage-autoaccept.png" alt="Notice the AppleScript option. This is how we'll hook our programs up to iMessage." /></a>
-</div>
-</figure>
-
-<p>If you send yourself an iMessage now, then you’ll notice nothing’s changed from before. You might think this script is pointless, and you’d be correct: it’s just needed if we’re to intercept the first iMessage.</p>
-<h2 id="replying-to-imessages">Replying to iMessages</h2>
-<p>Next up is the actual replying. To keep things simple we’re just going to reply to an iMessage saying the same thing (that is, we’ll ‘bounce’ the iMessage). Save the following as <code>imessage-received.scpt</code>:</p>
-<pre data-lang="applescript">using terms from application "Messages"
-  on message received the_message from the_buddy for the_chat
-    send the_message to the_buddy
-  end message received
-end using terms from</pre>
-
-<p>Similarly to what you did with <code>imessage-accept.scpt</code>, set the Message Received Event to run your new <code>imessage-received.scpt</code> script. If you</p>
-<p>You’ll also need to update your <code>imessage-accept.scpt</code> script by adding the <code>send text to buddy</code> line, so that the first iMessage from a new contact also gets replied to. You’ll need to reselect for the Text Invitation Event to update it’s copy of your script. If you’ve done that right, <code>imessage-accept.scpt</code> should now look like this:</p>
-<pre data-lang="applescript">using terms from application "Messages"
-  on recieved text invitation the_message from the_buddy for the_chat
-    accept the_chat
-    send the_message to the_buddy
-  end message received
-end using terms from</pre>
-
-<p>You’re probably starting to get the picture. Every time you alter a script you need to reselect it for the Event, and Text Invitation runs exclusively for the first message you recieve from an iMessage user.</p>
-<h2 id="where-to-go-from-here">Where to go from here</h2>
-<p>You’ve more than one option. What we did for iREPL was to use <a href="http://macruby.org">MacRuby</a>, a Ruby implementation designed for working closely with OS X. MacRuby makes it easy to interact with AppleScript bindings from a more popular programming language.</p>
-<p>If you’d like to look into a bit more of how we put iREPL together, examine the source in it’s <a href="https://github.com/46Bit/irepl">Github repository</a>.</p>
-<p>One final bit of help: as an example of how to run shell commands securely, protected from shell-injection vulnerabilities:</p>
-<pre data-lang="applescript">using terms from application "iChat"
-  on message received the_message from the_buddy for the_chat
-    set quoted_message to quoted form of the_message
-    set quoted_id to quoted form of (id of the_buddy as text)
-    do shell script "echo " & quoted_message & " | ~/your-script-here.sh " & quoted_id
-  end message received
-end using terms from</pre>
-
-<p><a href="/contact/">Let me know</a> if you’d like a further tutorial on the MacRuby side of things as used in iREPL - although I can’t claim to have more than a limited working knowledge.</p>]]></summary>
 </entry>
 
 </feed>

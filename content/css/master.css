@@ -111,6 +111,15 @@ a {
 	line-height: 26px !important;
 	padding-bottom: 0 !important;
 }
+.pagecontent .figure {
+	margin-top: 10px;
+	padding: 10px 0;
+}
+.pagecontent .figure img {
+	display: block;
+	padding: 10px;
+	border: 1px dotted #999;
+}
 
 .pagecontent article {
 	padding: 20px 0 16px;
