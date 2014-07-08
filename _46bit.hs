@@ -12,7 +12,7 @@ import Data.Set
 
 config :: Configuration
 config = defaultConfiguration {
-	deployCommand = "ssh 46gluon 'cd /server/www/46b.it/webroot && git pull origin release'",
+	deployCommand = "ssh vega 'cd /var/www/46b.it/webroot && git pull'",
 	providerDirectory = "./content"
 }
 
