@@ -27,20 +27,19 @@
 	<div class="extended"><p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
 <p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
 <p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
-<pre data-lang="javascript">&gt; GET &quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;
-json( {
-  &quot;version&quot;: &quot;1.2&quot;,
-  &quot;time&quot;: &quot;1359167756.0&quot;, // unix timestamp
-  &quot;age&quot;: &quot;0&quot;,
-  &quot;latitude&quot;: &quot;53.059942&quot;,
-  &quot;longitude&quot;: &quot;-0.77284&quot;,
-  &quot;altitude&quot;: &quot;31.1&quot;, // altitude in metres
-  &quot;speed&quot;: &quot;33.171&quot;, // speed in metres/second
-  &quot;cmg&quot;: &quot;134.68&quot;,
-  &quot;satellites&quot;: &quot;12&quot;, // number of GPS signals being received
-  &quot;mode&quot;: &quot;3&quot;
-});</pre>
-
+<pre class="sourceCode javascript"><code class="sourceCode javascript">&gt; GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
+<span class="fu">json</span>( {
+  <span class="st">&quot;version&quot;</span>: <span class="st">&quot;1.2&quot;</span>,
+  <span class="st">&quot;time&quot;</span>: <span class="st">&quot;1359167756.0&quot;</span>, <span class="co">// unix timestamp</span>
+  <span class="st">&quot;age&quot;</span>: <span class="st">&quot;0&quot;</span>,
+  <span class="st">&quot;latitude&quot;</span>: <span class="st">&quot;53.059942&quot;</span>,
+  <span class="st">&quot;longitude&quot;</span>: <span class="st">&quot;-0.77284&quot;</span>,
+  <span class="st">&quot;altitude&quot;</span>: <span class="st">&quot;31.1&quot;</span>, <span class="co">// altitude in metres</span>
+  <span class="st">&quot;speed&quot;</span>: <span class="st">&quot;33.171&quot;</span>, <span class="co">// speed in metres/second</span>
+  <span class="st">&quot;cmg&quot;</span>: <span class="st">&quot;134.68&quot;</span>,
+  <span class="st">&quot;satellites&quot;</span>: <span class="st">&quot;12&quot;</span>, <span class="co">// number of GPS signals being received</span>
+  <span class="st">&quot;mode&quot;</span>: <span class="st">&quot;3&quot;</span>
+});</code></pre>
 <p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
 <p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
 <p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>

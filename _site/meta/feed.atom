@@ -200,20 +200,19 @@ The report by the Staple Inn Actuarial Society – a major organisation for UK i
     <summary type="html"><![CDATA[<p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
 <p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
 <p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
-<pre data-lang="javascript">> GET "https://www.ombord.info/api/jsonp/position/?callback=json"
-json( {
-  "version": "1.2",
-  "time": "1359167756.0", // unix timestamp
-  "age": "0",
-  "latitude": "53.059942",
-  "longitude": "-0.77284",
-  "altitude": "31.1", // altitude in metres
-  "speed": "33.171", // speed in metres/second
-  "cmg": "134.68",
-  "satellites": "12", // number of GPS signals being received
-  "mode": "3"
-});</pre>
-
+<pre class="sourceCode javascript"><code class="sourceCode javascript">&gt; GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
+<span class="fu">json</span>( {
+  <span class="st">&quot;version&quot;</span>: <span class="st">&quot;1.2&quot;</span>,
+  <span class="st">&quot;time&quot;</span>: <span class="st">&quot;1359167756.0&quot;</span>, <span class="co">// unix timestamp</span>
+  <span class="st">&quot;age&quot;</span>: <span class="st">&quot;0&quot;</span>,
+  <span class="st">&quot;latitude&quot;</span>: <span class="st">&quot;53.059942&quot;</span>,
+  <span class="st">&quot;longitude&quot;</span>: <span class="st">&quot;-0.77284&quot;</span>,
+  <span class="st">&quot;altitude&quot;</span>: <span class="st">&quot;31.1&quot;</span>, <span class="co">// altitude in metres</span>
+  <span class="st">&quot;speed&quot;</span>: <span class="st">&quot;33.171&quot;</span>, <span class="co">// speed in metres/second</span>
+  <span class="st">&quot;cmg&quot;</span>: <span class="st">&quot;134.68&quot;</span>,
+  <span class="st">&quot;satellites&quot;</span>: <span class="st">&quot;12&quot;</span>, <span class="co">// number of GPS signals being received</span>
+  <span class="st">&quot;mode&quot;</span>: <span class="st">&quot;3&quot;</span>
+});</code></pre>
 <p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
 <p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
 <p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
@@ -250,24 +249,23 @@ json( {
     <summary type="html"><![CDATA[<p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
 <p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
 <p>Here’s a simple “Hello World”-style example:</p>
-<pre data-lang="go">package main
+<pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
 
-import "fmt"
-import "strconv"
+<span class="kw">import</span> <span class="st">&quot;fmt&quot;</span>
+<span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
 
-func main () {
-  for i := 0; i < 12; i++ {
-    fmt.Println("factorial(" + strconv.Itoa(i) + ") =", factorial(i))
+<span class="kw">func</span> main () {
+  <span class="kw">for</span> i := 0; i &lt; 12; i++ {
+    fmt.Println(<span class="st">&quot;factorial(&quot;</span> + strconv.Itoa(i) + <span class="st">&quot;) =&quot;</span>, factorial(i))
   }
 }
 
-func factorial (of int) int {
-  if of < 1 {
-    return 1
+<span class="kw">func</span> factorial (of <span class="dt">int</span>) <span class="dt">int</span> {
+  <span class="kw">if</span> of &lt; 1 {
+    <span class="kw">return</span> 1
   }
-  return of * factorial(of - 1)
-}</pre>
-
+  <span class="kw">return</span> of * factorial(of - 1)
+}</code></pre>
 <p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
 <p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>

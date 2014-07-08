@@ -27,24 +27,23 @@
 	<div class="extended"><p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
 <p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
 <p>Here’s a simple “Hello World”-style example:</p>
-<pre data-lang="go">package main
+<pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
 
-import &quot;fmt&quot;
-import &quot;strconv&quot;
+<span class="kw">import</span> <span class="st">&quot;fmt&quot;</span>
+<span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
 
-func main () {
-  for i := 0; i &lt; 12; i++ {
-    fmt.Println(&quot;factorial(&quot; + strconv.Itoa(i) + &quot;) =&quot;, factorial(i))
+<span class="kw">func</span> main () {
+  <span class="kw">for</span> i := 0; i &lt; 12; i++ {
+    fmt.Println(<span class="st">&quot;factorial(&quot;</span> + strconv.Itoa(i) + <span class="st">&quot;) =&quot;</span>, factorial(i))
   }
 }
 
-func factorial (of int) int {
-  if of &lt; 1 {
-    return 1
+<span class="kw">func</span> factorial (of <span class="dt">int</span>) <span class="dt">int</span> {
+  <span class="kw">if</span> of &lt; 1 {
+    <span class="kw">return</span> 1
   }
-  return of * factorial(of - 1)
-}</pre>
-
+  <span class="kw">return</span> of * factorial(of - 1)
+}</code></pre>
 <p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
 <p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>
