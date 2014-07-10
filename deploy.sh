@@ -1,18 +1,23 @@
-# read "rN" from ./release
-# merge latest develop commit into release
-# tag latest commit with "rN+1"
-# write "rN+1" to ./release
-# push release branch to github
-# ssh vega 'cd /var/www/46b.it/webroot && git pull origin release'
+git checkout release
 
+# Contain ./release file within release branch. Read only once checked out.
 let release_number=`cat release | sed -e s/r//g`+1
 release="r$release_number"
 echo "Performing release $release"
 
-git checkout release
+# Merge changes from develop
 git merge develop
-git tag -a $release
-echo $release > ./release
 
+# Write, commit, tag and push new release name.
+echo $release > ./release
+git add ./release
+git commit -m "Performing release $release"
+git tag -a $release -m "Release $release"
 git push origin release
-ssh vega 'cd /var/www/46b.it/webroot && git pull origin release'
+
+# Check develop back out. It would be nicer to require fast-forward merges so
+# this process could be done without checking out.
+git checkout develop
+
+# Deploy updated release branch to server.
+ssh vega "cd /var/www/46b.it/webroot && git pull origin release && git checkout $release"
