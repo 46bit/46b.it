@@ -12,7 +12,7 @@ import Data.Set
 
 config :: Configuration
 config = defaultConfiguration {
-	deployCommand = "./deploy.sh",
+	deployCommand = "./lib/deploy.sh",
 	providerDirectory = "./content"
 }
 
