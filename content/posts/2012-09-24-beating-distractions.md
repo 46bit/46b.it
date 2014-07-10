@@ -1,5 +1,6 @@
 ---
 title: Beat distractions and stop multitasking
+tags: Meta
 ---
 A big problem when working alone is keeping focus: it's way too easy to get distracted and find you've wasted 20 minutes on something that really doesn't matter. I used to just try to not run into this trap, but over the years I've come across a couple of tricks to tackle it.
 <!--more-->

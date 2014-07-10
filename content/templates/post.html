@@ -2,6 +2,9 @@
 	<header>
 		<h1><a href="$url$">$title$</a></h1>
 		<span class="date">$date$</span>
+		$if(tags)$
+			<span class="tags">$tags$</span>
+		$endif$
 	</header>
 	<div class="extended">$body$</div>
 </article>

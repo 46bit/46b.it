@@ -1,5 +1,6 @@
 ---
 title: On efficiently pairing socks
+tags: Math
 ---
 Anyone who has done an appreciable amount of laundry has probably noticed the time commonly taken matching up socks of different styles and colours.
 

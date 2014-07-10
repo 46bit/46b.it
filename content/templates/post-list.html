@@ -3,6 +3,9 @@
         <li>
             <h2><a href="$url$">$title$</a></h2>
             <span class="date">$date$</span>
+            $if(tags)$
+				<span class="tags">$tags$</span>
+			$endif$
             $if(teaser)$
 	            <div class="inbrief">$teaser$</div>
 	        $endif$

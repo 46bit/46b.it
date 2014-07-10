@@ -1,5 +1,6 @@
 ---
 title: Back in York
+tags: York
 ---
 It's been a while since my last post. After living in London for a few months and working out of [Shoreditch Works](http://shoreditchworks.com), I chose to head back to [York](http://www.cs.york.ac.uk) with the new academic year - rather a tough choice given my other, international option.
 <!--more-->
