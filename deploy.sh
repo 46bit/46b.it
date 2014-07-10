@@ -14,6 +14,7 @@ git add ./release
 git commit -m "Performing release $release"
 git tag -a $release -m "Release $release"
 git push origin release
+git push origin $release
 
 # Check develop back out. It would be nicer to require fast-forward merges so
 # this process could be done without checking out.
