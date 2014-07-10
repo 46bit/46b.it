@@ -20,5 +20,5 @@ git push origin $release
 # this process could be done without checking out.
 git checkout develop
 
-# Deploy updated release branch to server.
-ssh vega "cd /var/www/46b.it/webroot && git pull origin release && git checkout $release"
+# Deploy updated release branch to server. Checkout release as detached head.
+ssh vega "cd /var/www/46b.it/webroot && git fetch && git checkout $release"
