@@ -1,5 +1,6 @@
-_46bit
-_cache
+/_46bit
+/_cache
+/release
 
 dist
 cabal-dev
