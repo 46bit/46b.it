@@ -1,5 +1,6 @@
 ---
 title: Steady state community
+tags: Meta
 ---
 [Amazon's purchase of Goodreads](http://phx.corporate-ir.net/phoenix.zhtml?c=97664&p=irol-newsArticle&ID=1801561&highlight=), a social reading community, has reminded me of the difference between building a community and building a business. Goodreads definitely could be a value add for Amazon and the Kindle, yet unless they treat it with a light touch it could become far more of a Good**kindle**reads.
 <!--more-->

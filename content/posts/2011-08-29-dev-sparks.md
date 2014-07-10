@@ -1,5 +1,6 @@
 ---
 title: Development Sparks
+tags: Git, Math
 ---
 When we encounter a problem as developers, there's usually 3 ways to solve it. There's the hacky way with its attendant long-term maintainance costs. There's a way which works without too much trouble. And there's the spark of genius that solves all the troubles with the minimum of effort.
 <!--more-->

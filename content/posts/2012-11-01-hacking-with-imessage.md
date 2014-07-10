@@ -1,5 +1,6 @@
 ---
 title: Building services with iMessage
+tags: Hack
 ---
 Earlier this year, [David Kendal](http://dpk.org.uk) and I discovered you can fairly easily **send and receive iMessages using Ruby**. The key is to interact with OS X's Messages app, more specifically it's AppleScript bindings. We built and released [iREPL](http://irepl.im), a Scheme programming environment that you can use on your iPhone/iPad without having to jailbreak. I've been using it for months when I fancied hacking some Lisp.
 <!--more-->

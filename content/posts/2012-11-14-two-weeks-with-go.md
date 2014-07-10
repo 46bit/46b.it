@@ -1,5 +1,6 @@
 ---
 title: Two weeks with Go: an initial review
+tags: Hacking
 ---
 As someone who grew up with scripting languages, C and it's closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don't care for it, much as I like how fast the code can execute.
 <!--more-->

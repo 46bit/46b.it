@@ -1,5 +1,6 @@
 ---
 title: Trains and East Coast positioning data
+tags: Data
 ---
 
 Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface **to track train journeys**. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route.

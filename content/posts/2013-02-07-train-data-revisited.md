@@ -1,5 +1,6 @@
 ---
 title: Train Data Revisited
+tags: Data
 ---
 I mentioned Network Rail's feeds briefly last time but hadn't yet looked into them much. Thanks to [Samuel Littley](https://twitter.com/SMLittley/status/295175976818728963) for letting me know a bit more about them. [Sign up](https://datafeeds.networkrail.co.uk/ntrod/) and your access will be activated within an hour or so. Given that mine was granted at 3am GMT I suspect it's automated.
 <!--more-->
