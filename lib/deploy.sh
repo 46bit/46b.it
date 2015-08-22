@@ -21,4 +21,4 @@ git push origin $release
 git checkout develop
 
 # Deploy updated release branch to server. Checkout release as detached head.
-ssh sirius "cd /var/www/46b.it/webroot && git fetch && git checkout $release"
+ssh sirius "cd /var/www/46b.it/_46bit && git fetch && git checkout $release"
