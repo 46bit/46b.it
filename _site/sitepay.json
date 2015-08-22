@@ -1,0 +1,28 @@
+{
+    "ttl": 86400,
+    "last_updated": 1423717406807,
+    "protocol": {
+        "version": "0.1",
+        "name": "sitepay",
+        "info": "Sitepay is a standard to let any domain or web page 
+publicize where it can be paid. To learn more, or to add Sitepay to your 
+site, go to the specified URL.",
+        "url": "https://www.github.com/nemild/sitepay"
+    },
+    "entity": {
+        "url": "https://46b.it"
+    },
+    "payment_accounts": {
+        "destinations": [
+            {
+                "location": {
+                    "address": "18mZgnn87P2xp9tvF87kXwUXwfFnN4pp4k"
+                },
+                "currency_code": "XBT",
+                "method": "ecurrency",
+                "priority": 1
+            }
+        ],
+        "originations": []
+    }
+}
