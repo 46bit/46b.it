@@ -24,7 +24,7 @@
 		<h1><a href="/2012/two-weeks-with-go">Two weeks with Go: an initial review</a></h1>
 		<span class="date">November 14, 2012</span>
 		
-			<span class="tags">Hacking</span>
+			<!--<span class="tags">Hacking</span>-->
 		
 	</header>
 	<div class="extended"><p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
@@ -36,16 +36,16 @@
 <span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
 
 <span class="kw">func</span> main () {
-  <span class="kw">for</span> i := 0; i &lt; 12; i++ {
+  <span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="dv">12</span>; i++ {
     fmt.Println(<span class="st">&quot;factorial(&quot;</span> + strconv.Itoa(i) + <span class="st">&quot;) =&quot;</span>, factorial(i))
   }
 }
 
 <span class="kw">func</span> factorial (of <span class="dt">int</span>) <span class="dt">int</span> {
-  <span class="kw">if</span> of &lt; 1 {
-    <span class="kw">return</span> 1
+  <span class="kw">if</span> of &lt; <span class="dv">1</span> {
+    <span class="kw">return</span> <span class="dv">1</span>
   }
-  <span class="kw">return</span> of * factorial(of - 1)
+  <span class="kw">return</span> of * factorial(of - <span class="dv">1</span>)
 }</code></pre>
 <p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>

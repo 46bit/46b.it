@@ -52,17 +52,10 @@
     <updated>2014-02-24T00:00:00Z</updated>
     <summary type="html"><![CDATA[<p>The Telegraph reported today that hospital records from 1997-2010 have been <a href="http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html">sold to insurance companies</a>. They appear to be referring to HSCIC’s <a href="http://www.hscic.gov.uk/hes">Hospital Episode Statistics</a>, a database of NHS hospital records. <!--more--></p>
 <blockquote>
-	<p>
-[…] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.
-</p>
-	<p>
-The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.
-</p>
-	<p>
-− <a href="http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html">Hospital records of all NHS patients sold to insurers</a>, The Telegraph, February 23rd 2014
-</p>
+<pre><code>&lt;p&gt;[&amp;hellip;] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.&lt;/p&gt;
+&lt;p&gt;The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.&lt;/p&gt;
+&lt;p&gt;− [Hospital records of all NHS patients sold to insurers](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html), The Telegraph, February 23rd 2014&lt;/p&gt;</code></pre>
 </blockquote>
-
 <p>The Telegraph haven’t published the report being discussed which makes the details very hard to determine, although HSCIC offer a custom data extraction service that might be able to provide details beyond summary statistics.</p>
 <p>The combination of postcode and date of birth is absolutely not anonymised data, and so should be subject to the Data Protection Act. That Staple Inn were able to unmask it is further proof in this regard.</p>
 <p>HSCIC have questions to answer, but the naivete the Department of Health showed to The Telegraph is remarkable:</p>
@@ -86,7 +79,6 @@ The report by the Staple Inn Actuarial Society – a major organisation for UK i
 <p>Computer Science lines up fairly well with my interests - it’s a good place to anchor my interests. Between Math, Physics and Electronics societies there’s a plenty of broader things I can learn, although I do wish I could take more elective modules in other departments than York allow.</p>
 <p>Years of events and long-distance friendships around the data/government crowd has left me needing time to recharge. I’d like to contribute to mySociety when I get back into this, but at the moment I’m too focused on other things like C and transport timetables.</p>
 <!--I've slowly become aware of tragedies littering some areas around hacking and governance. I'd be lying if I said it wasn't unnerving to realise how simple SQL Injections or a scraping bot can make areas of government determined to ruin your life. I'm hoping to chat a lot more about this come December at [30C3](https://events.ccc.de/congress/2013/) in Hamburg - hope to see you there.-->
-
 <p>So that’s an update. It might not be coming through well, but I am fairly happy. Being around people closer to my own age is proving very beneficial, as have courses and societies that are giving me a new viewpoint and encouraging deeper thought.</p>
 <p>Many thanks to the heaps of people who’ve given me an interesting 18 months, too many to even try to name.</p>]]></summary>
 </entry>
@@ -255,16 +247,16 @@ The report by the Staple Inn Actuarial Society – a major organisation for UK i
 <span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
 
 <span class="kw">func</span> main () {
-  <span class="kw">for</span> i := 0; i &lt; 12; i++ {
+  <span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="dv">12</span>; i++ {
     fmt.Println(<span class="st">&quot;factorial(&quot;</span> + strconv.Itoa(i) + <span class="st">&quot;) =&quot;</span>, factorial(i))
   }
 }
 
 <span class="kw">func</span> factorial (of <span class="dt">int</span>) <span class="dt">int</span> {
-  <span class="kw">if</span> of &lt; 1 {
-    <span class="kw">return</span> 1
+  <span class="kw">if</span> of &lt; <span class="dv">1</span> {
+    <span class="kw">return</span> <span class="dv">1</span>
   }
-  <span class="kw">return</span> of * factorial(of - 1)
+  <span class="kw">return</span> of * factorial(of - <span class="dv">1</span>)
 }</code></pre>
 <p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
