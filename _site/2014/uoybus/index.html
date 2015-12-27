@@ -10,7 +10,7 @@
 <body>
 	<div class="wrapper">
 		<header class="head">
-			<h1><a href="/">46bit</a> by Michael Mokrysz</h1>
+			<h1><a href="/">46bit</a></h1>
 			<nav class="sitenav">
 				<ul>
 					<li><a href="/">Weblog</a></li>
@@ -35,17 +35,20 @@
 <p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
 <p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
 <div class="figure">
-<img src="/img/uoybus-yo.png" />
+<img src="/img/uoybus-yo.png" alt />
+
 </div>
 <p>That’s too bold a design, and picking so many colours proved tricky.</p>
 <h2 id="route-based-design">Route-based design</h2>
 <p>Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
 <div class="figure">
-<img src="/img/uoybus-home.png" />
+<img src="/img/uoybus-home.png" alt />
+
 </div>
 <p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
 <div class="figure">
-<img src="/img/uoybus-result.png" />
+<img src="/img/uoybus-result.png" alt />
+
 </div>
 <p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
 <h2 id="open-development">Open development</h2>

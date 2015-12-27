@@ -5,7 +5,7 @@
     <link href="https://46b.it" />
     <id>https://46b.it/meta/feed.atom</id>
     <author>
-        <name>Michael Mokrysz</name>
+        <name>46bit</name>
         <email></email>
     </author>
     <updated>2014-07-07T00:00:00Z</updated>
@@ -23,17 +23,20 @@
 <p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
 <p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
 <div class="figure">
-<img src="/img/uoybus-yo.png" />
+<img src="/img/uoybus-yo.png" alt="" />
+
 </div>
 <p>That’s too bold a design, and picking so many colours proved tricky.</p>
 <h2 id="route-based-design">Route-based design</h2>
 <p>Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
 <div class="figure">
-<img src="/img/uoybus-home.png" />
+<img src="/img/uoybus-home.png" alt="" />
+
 </div>
 <p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
 <div class="figure">
-<img src="/img/uoybus-result.png" />
+<img src="/img/uoybus-result.png" alt="" />
+
 </div>
 <p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
 <h2 id="open-development">Open development</h2>
@@ -89,7 +92,7 @@
     <published>2013-04-01T00:00:00Z</published>
     <updated>2013-04-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<p>Have you ever wondered what the likelihood is of having three consecutive birthdays in a row? It’s a fun excursion from the classical statisical brain teaser on the <a href="http://en.wikipedia.org/wiki/Birthday_problem">birthday problem</a>. <!--more--></p>
-<p>To begin with we’ll <strong>consider the probability of a given three people - let’s call them Alex, Brian and Catherine - having consecutive birthdays.</strong> For those familiar with sets, we’ll represent them with the set <span class="math">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
+<p>To begin with we’ll <strong>consider the probability of a given three people - let’s call them Alex, Brian and Catherine - having consecutive birthdays.</strong> For those familiar with sets, we’ll represent them with the set <span class="math inline">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
 <h2 id="making-assumptions">Making assumptions</h2>
 <p>To keep the Math reasonably simple, we’ll make a few assumptions:</p>
 <ul>
@@ -98,29 +101,29 @@
 <li>We’ll assume these three people are picked at random.</li>
 </ul>
 <h2 id="applying-combinatorics">Applying Combinatorics</h2>
-<p>Recall that we defined the set of the 3 people as <span class="math">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
-<p>P can be <em>permuted</em> (ordered) in several different ways, for instance <span class="math">\(( Brian, Alex, Catherine )\)</span> or <span class="math">\(( Catherine, Alex, Brian )\)</span>. How many different permutations are there? Time for a little Combinatorics.</p>
-<p>If you’ve done this thing before, recall there are <span class="math">\(m!\)</span> ways to rearrange <span class="math">\(m\)</span> elements. If you’ve no idea what I just said, take a look at <a href="http://math.stackexchange.com/questions/108812/how-many-ways-can-we-order-a-set-of-n-elements">this explanation</a>. There are <span class="math">\(|\mathrm{P}| = 3\)</span> birthdays, so there are <span class="math">\(3! = 3 \times 2 \times 1 = \mathbf{6}\)</span> permutations.</p>
+<p>Recall that we defined the set of the 3 people as <span class="math inline">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
+<p>P can be <em>permuted</em> (ordered) in several different ways, for instance <span class="math inline">\(( Brian, Alex, Catherine )\)</span> or <span class="math inline">\(( Catherine, Alex, Brian )\)</span>. How many different permutations are there? Time for a little Combinatorics.</p>
+<p>If you’ve done this thing before, recall there are <span class="math inline">\(m!\)</span> ways to rearrange <span class="math inline">\(m\)</span> elements. If you’ve no idea what I just said, take a look at <a href="http://math.stackexchange.com/questions/108812/how-many-ways-can-we-order-a-set-of-n-elements">this explanation</a>. There are <span class="math inline">\(|\mathrm{P}| = 3\)</span> birthdays, so there are <span class="math inline">\(3! = 3 \times 2 \times 1 = \mathbf{6}\)</span> permutations.</p>
 <h2 id="applying-probability">Applying Probability</h2>
-<p>Thanks to the <a href="https://www.khanacademy.org/math/probability/independent-dependent-probability/addition_rule_probability/v/addition-rule-for-probability">addition rule</a> we just need to find the probability of a single permutation. We’ll consider <span class="math">\(( Alex, Brian, Catherine )\)</span>:</p>
+<p>Thanks to the <a href="https://www.khanacademy.org/math/probability/independent-dependent-probability/addition_rule_probability/v/addition-rule-for-probability">addition rule</a> we just need to find the probability of a single permutation. We’ll consider <span class="math inline">\(( Alex, Brian, Catherine )\)</span>:</p>
 <ul>
-<li>Alex’s birthday can happen on <em>any day of the year</em>, with probability <span class="math">\(\frac{365}{365} = 1\)</span>.</li>
-<li>Brian’s birthday must happen on <em>the day after that of Alex</em>, with probability <span class="math">\(\frac{1}{365}\)</span>.</li>
-<li>Catherine’s must happen on <em>the day after that of Brian</em>, again with probability <span class="math">\(\frac{1}{365}\)</span>.</li>
+<li>Alex’s birthday can happen on <em>any day of the year</em>, with probability <span class="math inline">\(\frac{365}{365} = 1\)</span>.</li>
+<li>Brian’s birthday must happen on <em>the day after that of Alex</em>, with probability <span class="math inline">\(\frac{1}{365}\)</span>.</li>
+<li>Catherine’s must happen on <em>the day after that of Brian</em>, again with probability <span class="math inline">\(\frac{1}{365}\)</span>.</li>
 </ul>
 <p>These events are all independent, so we can just use the <a href="http://stattrek.com/probability/probability-rules.aspx">multiplication rule</a> to find the chance of them all occurring:</p>
-<p><span class="math">\(\frac{365}{365} \times \frac{1}{365} \times \frac{1}{365} = \frac{1}{365^2} = 0.000007506\ldots\)</span></p>
-<p>That’s roughly a <span class="math">\(0.00075\%\)</span> chance. Now let’s account for the 6 permutations:</p>
-<p><span class="math">\(6 \times \frac{1}{365^2} = \frac{6}{365^2} = 0.00004503\ldots\)</span></p>
-<p><b>So the probability of three people having consecutive birthdays is roughly <span class="math">\(0.0045\%\)</span>.</b></p>
+<p><span class="math inline">\(\frac{365}{365} \times \frac{1}{365} \times \frac{1}{365} = \frac{1}{365^2} = 0.000007506\ldots\)</span></p>
+<p>That’s roughly a <span class="math inline">\(0.00075\%\)</span> chance. Now let’s account for the 6 permutations:</p>
+<p><span class="math inline">\(6 \times \frac{1}{365^2} = \frac{6}{365^2} = 0.00004503\ldots\)</span></p>
+<p><b>So the probability of three people having consecutive birthdays is roughly <span class="math inline">\(0.0045\%\)</span>.</b></p>
 <h2 id="applying-this-result-to-groups-of-people">Applying this result to groups of people</h2>
 <p>The original Birthday problem ultimately concerns <em>how many people you need in a group for two or more of them to share birthdays</em>.</p>
-<p>To do this for our similar problem the key is to use how many different groups of 3 people can arise from a group of <span class="math">\(x\)</span> people. Where <span class="math">\(^{n}C_{k}\)</span> represents these <a href="http://en.wikipedia.org/wiki/Combinations#Number_of_k-combinations">k-combinations</a>, plot the function:</p>
-<p><span class="math">\(x \in \mathbb{Z}, x \ge 3,\ y =\ ^{x}C_{3} \times \frac{6}{365^2}\)</span></p>
-<p>Then find the first value of <span class="math">\(x\)</span> where <span class="math">\(y &gt; 0.5\)</span>, and you’ve got the smallest number of people where it is probable for there to be three consecutive birthdays.</p>
+<p>To do this for our similar problem the key is to use how many different groups of 3 people can arise from a group of <span class="math inline">\(x\)</span> people. Where <span class="math inline">\(^{n}C_{k}\)</span> represents these <a href="http://en.wikipedia.org/wiki/Combinations#Number_of_k-combinations">k-combinations</a>, plot the function:</p>
+<p><span class="math inline">\(x \in \mathbb{Z}, x \ge 3,\ y =\ ^{x}C_{3} \times \frac{6}{365^2}\)</span></p>
+<p>Then find the first value of <span class="math inline">\(x\)</span> where <span class="math inline">\(y &gt; 0.5\)</span>, and you’ve got the smallest number of people where it is probable for there to be three consecutive birthdays.</p>
 <p>I’ll leave this final step as an exercise for the reader.</p>
 <h2 id="footnote">Footnote</h2>
-<p>You might get confused if trying to derive this. There are 4 different ways to make 3 days of birthdays as <span class="math">\(( Alex, Brian, Catherine )\)</span>, depending on whether the second two birthdays are the day before or after. However since these 4 different ways are each only of <span class="math">\(\frac{1}{4}\)</span> probability it all cancels out.</p>
+<p>You might get confused if trying to derive this. There are 4 different ways to make 3 days of birthdays as <span class="math inline">\(( Alex, Brian, Catherine )\)</span>, depending on whether the second two birthdays are the day before or after. However since these 4 different ways are each only of <span class="math inline">\(\frac{1}{4}\)</span> probability it all cancels out.</p>
 <p>Many thanks to the wonderful people that reviewed drafts of this post: the statistical <a href="https://www.toastwaffle.com">Samuel Littley</a>, the inventive <a href="http://toys.dreamforge.me/users/nemild">Nemil Dalal</a>, the organised <a href="https://twitter.com/AndyBursh">Andy Bursh</a>, the clarifying <a href="http://issyl0.co.uk">Isabell Long</a> &amp; the syntactical <a href="http://dpk.io">David Kendal</a>.</p>
 <p>Any statistical shortcomings are the fault of <a href="https://46b.it/about/">the author</a>, Michael Mokrysz.</p>
 <p><strong>UPDATE 1</strong>: I noticed I’d missed out the 4 different ways the birthdays can arise, so corrected for that.</p>
@@ -192,19 +195,19 @@
     <summary type="html"><![CDATA[<p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
 <p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
 <p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript">&gt; GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
-<span class="fu">json</span>( {
-  <span class="st">&quot;version&quot;</span>: <span class="st">&quot;1.2&quot;</span>,
-  <span class="st">&quot;time&quot;</span>: <span class="st">&quot;1359167756.0&quot;</span>, <span class="co">// unix timestamp</span>
-  <span class="st">&quot;age&quot;</span>: <span class="st">&quot;0&quot;</span>,
-  <span class="st">&quot;latitude&quot;</span>: <span class="st">&quot;53.059942&quot;</span>,
-  <span class="st">&quot;longitude&quot;</span>: <span class="st">&quot;-0.77284&quot;</span>,
-  <span class="st">&quot;altitude&quot;</span>: <span class="st">&quot;31.1&quot;</span>, <span class="co">// altitude in metres</span>
-  <span class="st">&quot;speed&quot;</span>: <span class="st">&quot;33.171&quot;</span>, <span class="co">// speed in metres/second</span>
-  <span class="st">&quot;cmg&quot;</span>: <span class="st">&quot;134.68&quot;</span>,
-  <span class="st">&quot;satellites&quot;</span>: <span class="st">&quot;12&quot;</span>, <span class="co">// number of GPS signals being received</span>
-  <span class="st">&quot;mode&quot;</span>: <span class="st">&quot;3&quot;</span>
-});</code></pre>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">&gt;</span> GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
+<span class="at">json</span>( <span class="op">{</span>
+  <span class="st">&quot;version&quot;</span><span class="op">:</span> <span class="st">&quot;1.2&quot;</span><span class="op">,</span>
+  <span class="st">&quot;time&quot;</span><span class="op">:</span> <span class="st">&quot;1359167756.0&quot;</span><span class="op">,</span> <span class="co">// unix timestamp</span>
+  <span class="st">&quot;age&quot;</span><span class="op">:</span> <span class="st">&quot;0&quot;</span><span class="op">,</span>
+  <span class="st">&quot;latitude&quot;</span><span class="op">:</span> <span class="st">&quot;53.059942&quot;</span><span class="op">,</span>
+  <span class="st">&quot;longitude&quot;</span><span class="op">:</span> <span class="st">&quot;-0.77284&quot;</span><span class="op">,</span>
+  <span class="st">&quot;altitude&quot;</span><span class="op">:</span> <span class="st">&quot;31.1&quot;</span><span class="op">,</span> <span class="co">// altitude in metres</span>
+  <span class="st">&quot;speed&quot;</span><span class="op">:</span> <span class="st">&quot;33.171&quot;</span><span class="op">,</span> <span class="co">// speed in metres/second</span>
+  <span class="st">&quot;cmg&quot;</span><span class="op">:</span> <span class="st">&quot;134.68&quot;</span><span class="op">,</span>
+  <span class="st">&quot;satellites&quot;</span><span class="op">:</span> <span class="st">&quot;12&quot;</span><span class="op">,</span> <span class="co">// number of GPS signals being received</span>
+  <span class="st">&quot;mode&quot;</span><span class="op">:</span> <span class="st">&quot;3&quot;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
 <p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
 <p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
 <p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
@@ -241,7 +244,7 @@
     <summary type="html"><![CDATA[<p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
 <p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
 <p>Here’s a simple “Hello World”-style example:</p>
-<pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
+<div class="sourceCode"><pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
 
 <span class="kw">import</span> <span class="st">&quot;fmt&quot;</span>
 <span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
@@ -257,10 +260,10 @@
     <span class="kw">return</span> <span class="dv">1</span>
   }
   <span class="kw">return</span> of * factorial(of - <span class="dv">1</span>)
-}</code></pre>
+}</code></pre></div>
 <p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
-<p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>
+<p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of &amp;pi;. The language is aimed more at systems than Math, but it’s a place to start.</p>
 <p>My next step is going to be parallelization. This is one of the things I’ve heard discussed most about Go. Rather than give you access to the underlying threads, Go tries to manage it for you automatically using <a href="http://golang.org/doc/effective_go.html#goroutines">goroutines</a>: when something blocks, other functions are executing concurrently wherever possible. At the moment I’m not taking advantage of goroutines at all, but I’ll come back with my thoughts in a few weeks time.</p>
 <p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p>]]></summary>
 </entry>

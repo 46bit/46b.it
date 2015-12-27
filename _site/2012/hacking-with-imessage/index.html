@@ -10,7 +10,7 @@
 <body>
 	<div class="wrapper">
 		<header class="head">
-			<h1><a href="/">46bit</a> by Michael Mokrysz</h1>
+			<h1><a href="/">46bit</a></h1>
 			<nav class="sitenav">
 				<ul>
 					<li><a href="/">Weblog</a></li>
@@ -29,7 +29,8 @@
 	</header>
 	<div class="extended"><p>Earlier this year, <a href="http://dpk.org.uk">David Kendal</a> and I discovered you can fairly easily <strong>send and receive iMessages using Ruby</strong>. The key is to interact with OS X’s Messages app, more specifically it’s AppleScript bindings. We built and released <a href="http://irepl.im">iREPL</a>, a Scheme programming environment that you can use on your iPhone/iPad without having to jailbreak. I’ve been using it for months when I fancied hacking some Lisp. <!--more--></p>
 <div class="figure">
-<img src="/img/imessage-irepl-example.jpg" />
+<img src="/img/imessage-irepl-example.jpg" alt />
+
 </div>
 <p>An example of using iREPL to run some Scheme. The executed replies are entirely automated and come back in roughly 1 second. It’s run without crashing since April, on a 2010 Mac Mini of mine.</p>
 <p>I’m going to show you how to get started on your own iMessage hack, that bounces your iMessages back to you. Let’s get started.</p>
@@ -38,7 +39,8 @@
 <h2 id="about-applescript">About AppleScript</h2>
 <p>Included with OSX is a programming language called AppleScript, designed to resemble natural language as opposed to the syntax of languages like C or even Ruby. Open up the Preferences pane of Messages.app and click the Alerts tab. You’ll notice a long list of events with the option to “Run an Applescript script”.</p>
 <div class="figure">
-<img src="/img/imessage-events-intro.png" />
+<img src="/img/imessage-events-intro.png" alt />
+
 </div>
 <p>Notice the AppleScript option. This is how we’ll hook our programs up to iMessage.</p>
 <h2 id="getting-going">Getting going</h2>
@@ -50,7 +52,8 @@
 end using terms from</code></pre>
 <p>Now tell Messages to run this whenever a new chat is initated. In the app Preferences, browse to Events, select the Text Invitation event and Choose your <code>imessage-accept.scpt</code> script.</p>
 <div class="figure">
-<img src="/img/imessage-autoaccept.png" />
+<img src="/img/imessage-autoaccept.png" alt />
+
 </div>
 <p>If you send yourself an iMessage now, then you’ll notice nothing’s changed from before. You might think this script is pointless, and you’d be correct: it’s just needed if we’re to intercept the first iMessage.</p>
 <h2 id="replying-to-imessages">Replying to iMessages</h2>

@@ -19,8 +19,8 @@ config = defaultConfiguration {
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration {
 	feedTitle = "46bit",
-	feedDescription = "Written by Michael Mokrysz",
-	feedAuthorName = "Michael Mokrysz",
+	feedDescription = "",
+	feedAuthorName = "46bit",
 	feedAuthorEmail = "",
 	feedRoot = "https://46b.it"
 }
