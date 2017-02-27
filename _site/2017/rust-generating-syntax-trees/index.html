@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>46bit</title>
+<script src="//use.typekit.net/uaf2fos.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+<link rel="stylesheet" href="/css/master.css">
+<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<body>
+	<div class="wrapper">
+		<header class="head">
+			<h1><a href="/">46bit</a></h1>
+			<nav class="sitenav">
+				<ul>
+					<li><a href="/">Weblog</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="pagecontent">
+			<article>
+	<header>
+		<h1><a href="/2017/rust-generating-syntax-trees">Generating syntax trees in Rust</a></h1>
+		<span class="date">February 28, 2017</span>
+		
+			<!--<span class="tags">Hacking</span>-->
+		
+	</header>
+	<div class="extended"><p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
+<p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply: <!--more--></p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">use</span> Equation::*;
+
+<span class="co">// (17.2 × 50.0) ÷ (9.0 - 1.5)</span>
+<span class="kw">let</span> eq =
+  Div(
+    <span class="kw">box</span> Mul(
+      <span class="kw">box</span> Float(<span class="dv">17.2</span>),
+      <span class="kw">box</span> Float(<span class="dv">50.0</span>)
+    ),
+    Sub(
+      <span class="kw">box</span> Float(<span class="dv">9.0</span>),
+      <span class="kw">box</span> Float(<span class="dv">1.5</span>)
+    )
+  );</code></pre></div>
+<p>Now we want to evaluate a tree into an output <code>f64</code>. Here’s a simple recursion:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">impl</span> Equation <span class="op">{</span>
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() + right.eval(),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() - right.eval(),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() * right.eval(),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() / right.eval(),
+            Float(n) =&gt; n,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="taking-inputs">Taking inputs</h2>
+<p>But the tree has a fixed value! That sucks. Let’s make it a real equation:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+    Input,
+<span class="op">}</span>
+
+<span class="kw">impl</span> Equation <span class="op">{</span>
+    <span class="co">// Eval now takes an input!</span>
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
+            Float(n) =&gt; n,
+            Input =&gt; input,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="going-generic-with-evaluable">Going generic with <code>Evaluable</code></h2>
+<p>We can implement a trait to represent an evaluable type and implement it this way. I’m considering an approach like this to genericise over tree-based genetic agents and other forms.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">trait</span> Evaluable <span class="op">{</span>
+    <span class="kw">type</span> Input;
+    <span class="kw">type</span> Output;
+
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="kw">Self</span>::Input) -&gt; <span class="kw">Self</span>::Output;
+<span class="op">}</span>
+
+<span class="kw">impl</span> Evaluable <span class="kw">for</span> Equation <span class="op">{</span>
+    <span class="kw">type</span> Input = <span class="dt">f64</span>;
+    <span class="kw">type</span> Output = <span class="dt">f64</span>;
+
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
+            Float(n) =&gt; n,
+            Input =&gt; input,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="generation">Generation</h2>
+<p>Say we implement a function to generate a random nonterminal and a function to generate a random terminal. A new type that chooses whether to generate a nonterminal or terminal can then control various properties of generated trees. The details are a bit too lengthy to put here but this is something that <a href="https://docs.rs/evco/0.2.1/evco/gp/tree">evco’s <code>Tree</code> and <code>TreeGen</code></a> quite carefully perform.</p>
+<h2 id="practical-implementation">Practical implementation</h2>
+<p>I find this approach very pretty but it’s quite unsuitable to expect other people to implement to use a library. It’s <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/examples/symbolic_regression.rs#L27-L100">at least 50 ugly lines of code</a> for users of my library to implement methods to generate the tree.</p>
+<p>Having other people implement these methods also removes much hope of keeping things tail-recursive. Recursive datastructures are notorious for operations upon them blowing the stack and crashing the program.</p>
+<p>I implemented tail-recursive iteration <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/src/gp/tree/mod.rs#L98-L121">inside the library</a> but it’s too complex for third-parties to replicate without risking bugs.</p>
+<h2 id="custom-derive">Custom derive</h2>
+<p>One way around this issue of people having to implement tedious methods is <a href="https://doc.rust-lang.org/book/procedural-macros.html">a custom derivation</a> (<code>proc_macro_derive</code>.) The macro could analyse the types in the tree, identify enum variants as terminal vs nonterminal, and generate the methods accordingly.</p>
+<p>This has implementation questions. A typical program doesn’t want to be provided with a random <code>f64</code> - it wants one in a particular range. So we could require users to implement new types to wrap that, or allow attributes to mark the range to use:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span>GeneratableTree<span class="at">)]</span>
+<span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    <span class="at">#[</span>evco<span class="at">(</span>range <span class="at">=</span> <span class="st">&quot;-10..10&quot;</span><span class="at">)]</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="alternative-better-implementations">Alternative, better implementations</h2>
+<p>The biggest irritation with the datastructure is that accessing a particular node takes <code>O(n)</code> operations because you have to traverse the entire tree to find it.</p>
+<p>One can take an approach like a <a href="https://en.wikipedia.org/wiki/B-tree">B-tree</a> to optimise searching for elements. Sadly this doesn’t suit evolutionary computation very much: mutation is about as common as accessing and trees cannot be rebalanced.</p>
+<p>So it would be better to store trees as something other than a recursive datastructure where each node is in its own allocated memory.</p>
+<h2 id="heap">Heap</h2>
+<p>A common means of representing trees on a computer is a <a href="https://en.wikipedia.org/wiki/Heap_(data_structure)">Heap datastructure</a>. This structures nodes into an array thus getting better cache locality, quicker access times, etc. The problem is that the enum we have is inherently a recursive structure.</p>
+<p>Let’s try this:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>We could build and evaluate variants as we go, using this and the heap. But how do we indicate stored data versus arguments? We could supply stored data as a reference maybe?</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    Float(&amp;<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>This isn’t very pretty. One option would be that <code>f64</code> inherently is generated and <code>Float</code> becomes unnecessary.</p>
+<h2 id="types">Types</h2>
+<p>A further issue to consider: none of this uses generic types. All this only passes around <code>f64</code> and nothing else. I guess we could indicate return types by requiring mutable pointers? The code to make this work might be ugly but it’ll be custom derived after all.</p>
+<p>This allows specifying return type of each node, but generation logic would have to specify the tree’s root node to get a consistent type out the top of the trees:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    IfEq(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">bool</span>),
+<span class="op">}</span></code></pre></div>
+<p>It’s a pain.</p></div>
+</article>
+
+		</div>
+	</div>
+	<script>
+	  // Tracking
+	  if (document.location.hostname != "localhost") {
+	    // GoSquared
+	    var GoSquared = {};
+	    GoSquared.acct = "GSN-207291-Q";
+	    (function(w){
+	      function gs(){
+	        w._gstc_lt = +new Date;
+	        var d = document, g = d.createElement("script");
+	        g.type = "text/javascript";
+	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+	        var s = d.getElementsByTagName("script")[0];
+	        s.parentNode.insertBefore(g, s);
+	      }
+	      w.addEventListener ?
+	        w.addEventListener("load", gs, false) :
+	        w.attachEvent("onload", gs);
+	    })(window);
+
+	    // Google Analytics
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', 'UA-22921213-1']);
+	    _gaq.push(['_trackPageview']);
+	    var ga = document.createElement('script');
+	    ga.type = 'text/javascript';
+	    ga.async = true;
+	    ga.src = 'https://ssl.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(ga, s);
+	  }
+	</script>
+</body>
+</html>

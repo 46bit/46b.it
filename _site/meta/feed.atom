@@ -8,8 +8,172 @@
         <name>46bit</name>
         <email></email>
     </author>
-    <updated>2014-07-07T00:00:00Z</updated>
+    <updated>2017-02-28T00:00:00Z</updated>
     <entry>
+    <title>Generating syntax trees in Rust</title>
+    <link href="https://46b.it/2017/rust-generating-syntax-trees/index.html" />
+    <id>https://46b.it/2017/rust-generating-syntax-trees/index.html</id>
+    <published>2017-02-28T00:00:00Z</published>
+    <updated>2017-02-28T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
+<p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply: <!--more--></p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">use</span> Equation::*;
+
+<span class="co">// (17.2 × 50.0) ÷ (9.0 - 1.5)</span>
+<span class="kw">let</span> eq =
+  Div(
+    <span class="kw">box</span> Mul(
+      <span class="kw">box</span> Float(<span class="dv">17.2</span>),
+      <span class="kw">box</span> Float(<span class="dv">50.0</span>)
+    ),
+    Sub(
+      <span class="kw">box</span> Float(<span class="dv">9.0</span>),
+      <span class="kw">box</span> Float(<span class="dv">1.5</span>)
+    )
+  );</code></pre></div>
+<p>Now we want to evaluate a tree into an output <code>f64</code>. Here’s a simple recursion:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">impl</span> Equation <span class="op">{</span>
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() + right.eval(),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() - right.eval(),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() * right.eval(),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() / right.eval(),
+            Float(n) =&gt; n,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="taking-inputs">Taking inputs</h2>
+<p>But the tree has a fixed value! That sucks. Let’s make it a real equation:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+    Input,
+<span class="op">}</span>
+
+<span class="kw">impl</span> Equation <span class="op">{</span>
+    <span class="co">// Eval now takes an input!</span>
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
+            Float(n) =&gt; n,
+            Input =&gt; input,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="going-generic-with-evaluable">Going generic with <code>Evaluable</code></h2>
+<p>We can implement a trait to represent an evaluable type and implement it this way. I’m considering an approach like this to genericise over tree-based genetic agents and other forms.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">trait</span> Evaluable <span class="op">{</span>
+    <span class="kw">type</span> Input;
+    <span class="kw">type</span> Output;
+
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="kw">Self</span>::Input) -&gt; <span class="kw">Self</span>::Output;
+<span class="op">}</span>
+
+<span class="kw">impl</span> Evaluable <span class="kw">for</span> Equation <span class="op">{</span>
+    <span class="kw">type</span> Input = <span class="dt">f64</span>;
+    <span class="kw">type</span> Output = <span class="dt">f64</span>;
+
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
+            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
+            Float(n) =&gt; n,
+            Input =&gt; input,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="generation">Generation</h2>
+<p>Say we implement a function to generate a random nonterminal and a function to generate a random terminal. A new type that chooses whether to generate a nonterminal or terminal can then control various properties of generated trees. The details are a bit too lengthy to put here but this is something that <a href="https://docs.rs/evco/0.2.1/evco/gp/tree/index.html">evco’s <code>Tree</code> and <code>TreeGen</code></a> quite carefully perform.</p>
+<h2 id="practical-implementation">Practical implementation</h2>
+<p>I find this approach very pretty but it’s quite unsuitable to expect other people to implement to use a library. It’s <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/examples/symbolic_regression.rs#L27-L100">at least 50 ugly lines of code</a> for users of my library to implement methods to generate the tree.</p>
+<p>Having other people implement these methods also removes much hope of keeping things tail-recursive. Recursive datastructures are notorious for operations upon them blowing the stack and crashing the program.</p>
+<p>I implemented tail-recursive iteration <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/src/gp/tree/mod.rs#L98-L121">inside the library</a> but it’s too complex for third-parties to replicate without risking bugs.</p>
+<h2 id="custom-derive">Custom derive</h2>
+<p>One way around this issue of people having to implement tedious methods is <a href="https://doc.rust-lang.org/book/procedural-macros.html">a custom derivation</a> (<code>proc_macro_derive</code>.) The macro could analyse the types in the tree, identify enum variants as terminal vs nonterminal, and generate the methods accordingly.</p>
+<p>This has implementation questions. A typical program doesn’t want to be provided with a random <code>f64</code> - it wants one in a particular range. So we could require users to implement new types to wrap that, or allow attributes to mark the range to use:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span>GeneratableTree<span class="at">)]</span>
+<span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    <span class="at">#[</span>evco<span class="at">(</span>range <span class="at">=</span> <span class="st">&quot;-10..10&quot;</span><span class="at">)]</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="alternative-better-implementations">Alternative, better implementations</h2>
+<p>The biggest irritation with the datastructure is that accessing a particular node takes <code>O(n)</code> operations because you have to traverse the entire tree to find it.</p>
+<p>One can take an approach like a <a href="https://en.wikipedia.org/wiki/B-tree">B-tree</a> to optimise searching for elements. Sadly this doesn’t suit evolutionary computation very much: mutation is about as common as accessing and trees cannot be rebalanced.</p>
+<p>So it would be better to store trees as something other than a recursive datastructure where each node is in its own allocated memory.</p>
+<h2 id="heap">Heap</h2>
+<p>A common means of representing trees on a computer is a <a href="https://en.wikipedia.org/wiki/Heap_(data_structure)">Heap datastructure</a>. This structures nodes into an array thus getting better cache locality, quicker access times, etc. The problem is that the enum we have is inherently a recursive structure.</p>
+<p>Let’s try this:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>We could build and evaluate variants as we go, using this and the heap. But how do we indicate stored data versus arguments? We could supply stored data as a reference maybe?</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    Float(&amp;<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>This isn’t very pretty. One option would be that <code>f64</code> inherently is generated and <code>Float</code> becomes unnecessary.</p>
+<h2 id="types">Types</h2>
+<p>A further issue to consider: none of this uses generic types. All this only passes around <code>f64</code> and nothing else. I guess we could indicate return types by requiring mutable pointers? The code to make this work might be ugly but it’ll be custom derived after all.</p>
+<p>This allows specifying return type of each node, but generation logic would have to specify the tree’s root node to get a consistent type out the top of the trees:</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l + r</span>
+    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l - r</span>
+    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l × r</span>
+    Div(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
+    IfEq(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">bool</span>),
+<span class="op">}</span></code></pre></div>
+<p>It’s a pain.</p>]]></summary>
+</entry>
+<entry>
+    <title>Engineering as slowly as possible</title>
+    <link href="https://46b.it/2017/engineering-discipline-and-craft/index.html" />
+    <id>https://46b.it/2017/engineering-discipline-and-craft/index.html</id>
+    <published>2017-02-27T00:00:00Z</published>
+    <updated>2017-02-27T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">slow, logical, conscious System Two</a> thinking.</p>
+<p>The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard.</p>
+<p>So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft <em>in order to</em> still move fast: building things well rather than just building them. <!--more--></p>
+<p>There’s a balance between productivity (immediate gratification) and quality of craft. Small hacks and hobby projects which might be thrown away should favor early productivity. Larger projects, ones worked on infrequently, or ones shared with others should favor craft. One needs to pick correctly.</p>
+<p>The natural question is where do you place projects with potential? If a prototype can lead to bigger things but also be in the bin inside a week?</p>
+<ul>
+<li>Throwaway projects can have a long lifetime. I hacked together some scraping and cleanup tools for University of York Student Union candidates last year, but at least twenty people I had to email for their information. This year I <a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">published an analysis piece in Nouse student newspaper</a> on a 36-hour turnaround. My quick hack now had to automate the entire process because of time constraints.<br><br></li>
+<li>Involved projects can have a surprisingly short lifetime. The high-quality cybersecurity practicals I worked on all last summer have yet to see the light of day. The ambitious systems I built at Dreamforge in 2012-13 have mostly been offline for two years now - our proof-of-concept <a href="http://cookiecaster.com">Cookie Caster</a> is the sole brilliant survivor.<br><br></li>
+<li>Poor craft tends to bite you in the butt when you can least afford it. Our software at Dreamforge worked quite well for Cookie Caster and for much of the Fraemes project. Where it let us down was in trying to make Fraemes scale.<br><br>Five minutes checking for regressions after making changes is trivially affordable in the early months of a new project; 10× five minutes a day is unaffordable when you’re overworked and expending available brainpower working on complex things.</li>
+</ul>
+<p>Experience is a good teacher. The benefit of experience is identifying when to make tradeoffs and how to avoid tradeoffs you don’t have to make. I’ve been reading with a lot of interest about continuous deployment at <a href="https://www.theguardian.com/info/developer-blog/2016/dec/20/testing-in-production-rethinking-the-conventional-deployment-pipeline">The Guardian</a> and <a href="http://codevoyagers.com/2016/10/31/from-20-to-2-million-releases-a-year-part-2/">SkyScanner</a>.</p>]]></summary>
+</entry>
+<entry>
     <title>UoYBus: bus times for the University of York</title>
     <link href="https://46b.it/2014/uoybus/index.html" />
     <id>https://46b.it/2014/uoybus/index.html</id>
@@ -23,19 +187,19 @@
 <p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
 <p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
 <div class="figure">
-<img src="/img/uoybus-yo.png" alt="" />
+<img src="/img/uoybus-yo.png" />
 
 </div>
 <p>That’s too bold a design, and picking so many colours proved tricky.</p>
 <h2 id="route-based-design">Route-based design</h2>
 <p>Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
 <div class="figure">
-<img src="/img/uoybus-home.png" alt="" />
+<img src="/img/uoybus-home.png" />
 
 </div>
 <p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
 <div class="figure">
-<img src="/img/uoybus-result.png" alt="" />
+<img src="/img/uoybus-result.png" />
 
 </div>
 <p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
@@ -214,58 +378,6 @@
 <p>I know the same Ombord system is used on other trains internationally, so this is worth trying on other services with Wifi as well. I’d love to hear if you get it working.</p>
 <p>There’s a private <a href="https://datafeeds.networkrail.co.uk/ntrod/">API</a> for live train information now, but I don’t know it’s current status. I’ve heard literally nothing about it.</p>
 <p><strong>UPDATE</strong> (7th February 2012): I’ve now <a href="/2013/02/07/train-data-revisited/">written more about the Network Rail API</a>. If you’re interested in more than just playing around whilst on East Coast trains it’ll interest you more.</p>]]></summary>
-</entry>
-<entry>
-    <title>Remian: a modern virtual machine</title>
-    <link href="https://46b.it/2012/remian-vm/index.html" />
-    <id>https://46b.it/2012/remian-vm/index.html</id>
-    <published>2012-12-19T00:00:00Z</published>
-    <updated>2012-12-19T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Anyone who <a href="https://twitter.com/46Bit">follows me on Twitter</a> has probably read that <strong>I’m building a virtual machine of my own, named <a href="https://github.com/46Bit/remian">Remian</a></strong>. I’ve reached v0.1.1 and an initial release, so now is the perfect time to talk about why you should try it. <!--more--></p>
-<p>A powerful property of any true computer is the ability to simulate any other computer given sufficient time. This is known as Turing Completeness, and means that we can program our own computers: instead of designing a computer and wiring it up, we can build it in software as a virtual machine.</p>
-<h2 id="understanding-computers-improves-you-as-a-programmer">Understanding computers improves you as a programmer</h2>
-<p>As modern programmers we use high-level languages whenever possible, since programmer productivity tends to drop as we move to higher-performance languages. Yet when we try to solve difficult problems, <strong>it is all too easy to accidentally cripple code performance because you don’t understand what the computer is doing</strong>.</p>
-<p>The best way to avoid these problems is to learn about computer architecture and the basics of Assembly programming. Most programming code is executed as something like assembly code, so understanding it better can be invaluable. This might be unlikely to turn into your day job, but it’ll help you make better decisions.</p>
-<h2 id="the-bad-bad-and-ugly-of-x86-assembly">The bad, bad and ugly of x86 Assembly</h2>
-<p>Unfortunately, getting <strong>practical experience with Assembly proves not to be straightforward</strong>. Most modern computer processors are based on decades-old designs. As opposed to the instruction sets you might find in an undergraduate-level text, there’s decades-worth of rabbit-hole to follow before you can stop running into bizarre bugs.</p>
-<p>Finding a modern Assembly reference that’s not written for experts is difficult. Whilst I’ve written up notes on the matter, I’m interested in Assembly programming as a mere curiosity. I don’t want to program all my software in it, <strong>I just want others to be able to dive into hacking Assembly as easily as they might JavaScript</strong>.</p>
-<h2 id="virtual-machines-for-assembly">Virtual machines for Assembly</h2>
-<p><strong>The solution used by Universities seems to be virtual machines, in the form of unpolished software.</strong>.You sit in front of a GUI and type in your code. However all the experience with such software I’ve accrued suggests that <strong>the toolchains suck</strong>. At best you’ll have a working textarea to type in; at worst you’ll have constant crashes.</p>
-<p>Remian is built from my experience of this. There’s no bloated Windows installer, no barely-functional Java UI. <strong>Just install Remian with <code>gem install remian</code> and watch the instructions execute <code>remian execute your-assembly-file.rem</code></strong>.</p>
-<p>For now there’s a fairly short list of instructions and just one computer design, but the machine has deliberately been designed for flexibility. The long term plan is to support a wide range of computer designs, from tape-based Turing Machines to stack-based computation.</p>
-<p><strong>If you’d like to find out more, browse <a href="https://github.com/46Bit/remian">Remian’s source on Github</a> or take a look at a <a href="https://github.com/46Bit/remian/blob/develop/examples/multiply.rem">program I built earlier</a>.</strong></p>]]></summary>
-</entry>
-<entry>
-    <title>Two weeks with Go: an initial review</title>
-    <link href="https://46b.it/2012/two-weeks-with-go/index.html" />
-    <id>https://46b.it/2012/two-weeks-with-go/index.html</id>
-    <published>2012-11-14T00:00:00Z</published>
-    <updated>2012-11-14T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
-<p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
-<p>Here’s a simple “Hello World”-style example:</p>
-<div class="sourceCode"><pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
-
-<span class="kw">import</span> <span class="st">&quot;fmt&quot;</span>
-<span class="kw">import</span> <span class="st">&quot;strconv&quot;</span>
-
-<span class="kw">func</span> main () {
-  <span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="dv">12</span>; i++ {
-    fmt.Println(<span class="st">&quot;factorial(&quot;</span> + strconv.Itoa(i) + <span class="st">&quot;) =&quot;</span>, factorial(i))
-  }
-}
-
-<span class="kw">func</span> factorial (of <span class="dt">int</span>) <span class="dt">int</span> {
-  <span class="kw">if</span> of &lt; <span class="dv">1</span> {
-    <span class="kw">return</span> <span class="dv">1</span>
-  }
-  <span class="kw">return</span> of * factorial(of - <span class="dv">1</span>)
-}</code></pre></div>
-<p>As opposed to having to free memory yourself everywhere, <strong>Go has robust garbage collection</strong>. No more deallocating memory, yet you still have plenty of power - if you want to use them, Pointers are still here.</p>
-<p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
-<p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of &amp;pi;. The language is aimed more at systems than Math, but it’s a place to start.</p>
-<p>My next step is going to be parallelization. This is one of the things I’ve heard discussed most about Go. Rather than give you access to the underlying threads, Go tries to manage it for you automatically using <a href="http://golang.org/doc/effective_go.html#goroutines">goroutines</a>: when something blocks, other functions are executing concurrently wherever possible. At the moment I’m not taking advantage of goroutines at all, but I’ll come back with my thoughts in a few weeks time.</p>
-<p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p>]]></summary>
 </entry>
 
 </feed>
