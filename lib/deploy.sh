@@ -1,4 +1,4 @@
-git checkout release
+git checkout -b release
 
 # Contain ./release file within release branch. Read only once checked out.
 let release_number=`cat release | sed -e s/r//g`+1
@@ -21,4 +21,4 @@ git push origin $release
 git checkout develop
 
 # Deploy updated release branch to server. Checkout release as detached head.
-ssh sirius "cd /var/www/46b.it/_46bit && git fetch && git checkout $release"
+ssh sirius "cd /var/www/46b.it/_46bit && git fetch --tags && git checkout tags/$release"
