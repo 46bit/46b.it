@@ -1,5 +1,5 @@
 ---
-title: 'Securing legacy ColdFusion or: <br>Why Escape Spaces?'
+title: 'Securing legacy ColdFusion or: <br>Why escape spaces against XSS?'
 tags: Hacking
 ---
 I'm in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I'm also undertaking an MEng project (I'll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I've been filling one day a week doing security and maintainance work on old ColdFusion web applications.

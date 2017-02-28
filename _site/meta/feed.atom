@@ -10,7 +10,7 @@
     </author>
     <updated>2017-03-01T00:00:00Z</updated>
     <entry>
-    <title>Securing legacy ColdFusion or: <br>Why Escape Spaces?</title>
+    <title>Securing legacy ColdFusion or: <br>Why escape spaces against XSS?</title>
     <link href="https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html" />
     <id>https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html</id>
     <published>2017-03-01T00:00:00Z</published>
