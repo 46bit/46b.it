@@ -8,8 +8,48 @@
         <name>46bit</name>
         <email></email>
     </author>
-    <updated>2017-02-28T00:00:00Z</updated>
+    <updated>2017-03-01T00:00:00Z</updated>
     <entry>
+    <title>Securing legacy ColdFusion or: <br>Why Escape Spaces?</title>
+    <link href="https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html" />
+    <id>https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html</id>
+    <published>2017-03-01T00:00:00Z</published>
+    <updated>2017-03-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications.</p>
+<p>ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
+<p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and <strong>ColdFusion is insecure by default.</strong> Let’s take some typical Ruby <code>erb</code> markup: <!--more--></p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">&lt;input name=<span class="st">&quot;forename&quot;</span> value=<span class="st">&quot;&lt;%= forename %&gt;&quot;</span>&gt;</code></pre></div>
+<p>The <code>&lt;%= … %&gt;</code> tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the <code>raw</code> function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.</p>
+<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfinput name=&quot;forename&quot; value=&quot;#form.forename#&quot;&gt;</code></pre></div>
+<p>People running ColdFusion are generally moving to the open source <a href="@TODO">Railo</a> and <a href="@TODO">Lucee</a> servers. These applied a sanity pass to what they should support.</p>
+<p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
+<p><img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="100%" style="border: 1px solid #ccc;"></p>
+<p>The intersection of secure and available in both is to import the OSASP ESAPI API from Java.</p>
+<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfoutput&gt;
+    &lt;input name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;
+&lt;/cfoutput&gt;</code></pre></div>
+<p>Yuck, huh? You might notice we’re using <code>cfoutput</code> and <code>input</code> tags now. As I’ll explain, this works around double-escaping issues.</p>
+<h2 id="why-escape-spaces-against-xss">Why Escape Spaces against XSS?</h2>
+<p>In one of these application I was escaping a <code>cfinput value</code> with ESAPI:</p>
+<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfinput name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;</code></pre></div>
+<p>But on Lucee <code>cfinput</code> is running <code>encodeForHTMLAttribute</code> itself and so we’re double-escaping <code>form.forename</code>. So some characters got double escaped: <code>` (space) &amp;rarr;</code> <code>&amp;rarr;</code>&amp;#32;`.</p>
+<p>Instead of <code>Stranger Things</code> your prefilled form field now says <code>Stranger&amp;#32;Things</code>.</p>
+<p>You wanted this: <input value="Stranger&#32;Things"><br> You get this: <input value="Stranger&amp;#32;Things"></p>
+<p>This could have the approach of escaping almost any character outside <code>/a-z0-9/i</code> but I was genuinely surprised that spaces are escaped. I found myself wondering why. Turns out there is a very good reason. Let’s go back to <code>erb</code>, which escapes by default.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;input</span><span class="ot"> name=</span><span class="st">&quot;forename&quot;</span><span class="ot"> value=</span><span class="er">&lt;</span><span class="st">%=</span><span class="ot"> forename</span> <span class="er">%</span><span class="kw">&gt;</span>&gt;</code></pre></div>
+<p>See how there’s no quotation marks for the <code>value</code> attribute? HTML is happy without them. So a library that doesn’t escape spaces would leave you vulnerable.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">forename = &#39;Stranger<span class="dv">&amp;amp;</span>Things onload=alert(&quot;XSS&quot;)&#39;
+
+<span class="kw">&lt;input</span><span class="ot"> value=</span><span class="st">Stranger</span><span class="dv">&amp;amp;</span><span class="st">Things</span><span class="ot"> onload=</span><span class="st">alert(</span><span class="er">&#39;XSS&#39;)</span><span class="kw">&gt;</span></code></pre></div>
+<p>I think this fits into Defence In Depth. Attribute tags <em>should</em> have the quotation marks, but mistakes happen and nobody is looking for that particular mistake. You have a problem when it only takes one missing quotation mark to open up your website to XSS. Escaping spaces is therefore quite important.</p>
+<h2 id="salvaging-legacy-applications">Salvaging legacy applications</h2>
+<p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
+<p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last <code>#…#</code> and use of <code>cf</code> tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="https://en.wikibooks.org/wiki/PHP_Programming/Configuration:_Register_Globals">PHP with <code>register_globals</code> turned on</a>.</p>
+<p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
+<p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves.</p>
+<p>Until next time,<br> — 46bit</p>]]></summary>
+</entry>
+<entry>
     <title>Generating syntax trees in Rust</title>
     <link href="https://46b.it/2017/rust-generating-syntax-trees/index.html" />
     <id>https://46b.it/2017/rust-generating-syntax-trees/index.html</id>
@@ -349,35 +389,6 @@
 <p><strong><a href="http://blog.poggs.com">Peter Hicks</a></strong> also has some <strong><a href="https://github.com/poggs">useful code</a></strong> available, although seemingly focused on timetables rather than the live data. He gave a <strong><a href="http://blog.poggs.com/2012/09/okfestival/">relevant talk</a></strong> last September in Helsinki that dives a bit more into licensing issues and so forth.</p>
 <h2 id="my-next-step">My next step</h2>
 <p>I’ve got a much better idea what I’m doing than a couple of weeks ago, so I’m going to go out and start getting the data. Next post on this probably a few weeks away. <strong>Thanks a lot to all mentioned for their help.</strong></p>]]></summary>
-</entry>
-<entry>
-    <title>Trains and East Coast positioning data</title>
-    <link href="https://46b.it/2013/trains-east-coast-positioning/index.html" />
-    <id>https://46b.it/2013/trains-east-coast-positioning/index.html</id>
-    <published>2013-01-26T00:00:00Z</published>
-    <updated>2013-01-26T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
-<p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
-<p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">&gt;</span> GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
-<span class="at">json</span>( <span class="op">{</span>
-  <span class="st">&quot;version&quot;</span><span class="op">:</span> <span class="st">&quot;1.2&quot;</span><span class="op">,</span>
-  <span class="st">&quot;time&quot;</span><span class="op">:</span> <span class="st">&quot;1359167756.0&quot;</span><span class="op">,</span> <span class="co">// unix timestamp</span>
-  <span class="st">&quot;age&quot;</span><span class="op">:</span> <span class="st">&quot;0&quot;</span><span class="op">,</span>
-  <span class="st">&quot;latitude&quot;</span><span class="op">:</span> <span class="st">&quot;53.059942&quot;</span><span class="op">,</span>
-  <span class="st">&quot;longitude&quot;</span><span class="op">:</span> <span class="st">&quot;-0.77284&quot;</span><span class="op">,</span>
-  <span class="st">&quot;altitude&quot;</span><span class="op">:</span> <span class="st">&quot;31.1&quot;</span><span class="op">,</span> <span class="co">// altitude in metres</span>
-  <span class="st">&quot;speed&quot;</span><span class="op">:</span> <span class="st">&quot;33.171&quot;</span><span class="op">,</span> <span class="co">// speed in metres/second</span>
-  <span class="st">&quot;cmg&quot;</span><span class="op">:</span> <span class="st">&quot;134.68&quot;</span><span class="op">,</span>
-  <span class="st">&quot;satellites&quot;</span><span class="op">:</span> <span class="st">&quot;12&quot;</span><span class="op">,</span> <span class="co">// number of GPS signals being received</span>
-  <span class="st">&quot;mode&quot;</span><span class="op">:</span> <span class="st">&quot;3&quot;</span>
-<span class="op">}</span>)<span class="op">;</span></code></pre></div>
-<p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
-<p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
-<p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
-<p>I know the same Ombord system is used on other trains internationally, so this is worth trying on other services with Wifi as well. I’d love to hear if you get it working.</p>
-<p>There’s a private <a href="https://datafeeds.networkrail.co.uk/ntrod/">API</a> for live train information now, but I don’t know it’s current status. I’ve heard literally nothing about it.</p>
-<p><strong>UPDATE</strong> (7th February 2012): I’ve now <a href="/2013/02/07/train-data-revisited/">written more about the Network Rail API</a>. If you’re interested in more than just playing around whilst on East Coast trains it’ll interest you more.</p>]]></summary>
 </entry>
 
 </feed>
