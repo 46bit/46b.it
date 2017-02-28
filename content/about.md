@@ -1,13 +1,24 @@
 ---
-title: About
+title: A bit about me
 ---
 
-I'm a 21-year-old computer scientist with interests in [applied cryptography](https://github.com/46bit/pinocchio) and [computational geometry](https://github.com/46bit/soil). I'm a polyglot programmer and web developer, having [built](http://dreamforge.me) systems for designing 3D printable objects on the web during a year out.
+I'm a 23-year-old software engineer with interests in Rust, applied Cryptography and civic data.
 
-I've won quite a few open data hackdays and created services like [UOY Bus](http://uoyb.us) and [iREPL](http://irepl.im). As a member of the [Open Rights Group](https://www.openrightsgroup.org) I believe in internet freedom and strong civil liberties. I've an interest in the future path of humanity, encouraged by AI research and the [Long Now Foundation](http://longnow.org).
+I like to read [comic sociology](https://en.wikipedia.org/wiki/Bobos_in_Paradise), [SF](https://en.wikipedia.org/wiki/A_Fire_Upon_the_Deep)&[F](https://en.wikipedia.org/wiki/Old_Kingdom_(book_series)) and lots of [A Very Short Introductions](https://global.oup.com/academic/content/series/v/very-short-introductions-vsi/). I like romantic comedies, Baz Luhrmann and Wes Anderson movies. When not occupied with a Masters degree I have a habit of Swing Dancing.
 
-As a 2nd-year undergrad at [York](http://cs.york.ac.uk) I represent my year on department committees, organise outside sponsors and events for [HackSoc](http://hacksoc.org) and do publicity for [ShockSoc](https://www.facebook.com/ShockSoc). I also regularly raise eyebrows at [YUMS](http://yums.org.uk) by saying Math (without the s).
+I spent my teens on web development but I've diversified since. A few public things I've built:
 
-I grew up in West Yorkshire and plan to emigrate after graduating in 2016, probably to Germany or California.
+* **[Cookie Caster](http://www.cookiecaster.com)**: Draw your own custom cookie casters and have them 3D printed. Proof-of-concept for a Y Combinator startup I lead development at in 2012-13. See below.
+* **[sirpent-rust](https://github.com/sirpent-team/sirpent-rust)**: A high-performance asynchronous server written in Rust. As something that isn't Request-Response it breaks new ground for the [futures-rs](https://github.com/alexcrichton/futures-rs/) and [tokio](https://tokio.rs) libraries.
+    * [seequence](https://github.com/46bit/seequence): A quite simple server to understand the problem-solving approach those libraries use.
+* **[bind_before_connect](https://github.com/46bit/bind_before_connect)**: A library to allow binding to particular IP addresses and ports in Rust. I built the code for this in order to (socially-responsibly) connect 250 bots to IRC.
+* [evco](https://github.com/46bit/evco): An experimental evolutionary computing library. At the time of writing I'm deciding between specifying syntax trees at runtime or compile-time. The former allows pragmatic flexibility but the latter makes for lovely typed code.
+* [uoyb.us](http://uoyb.us): The competing bus services that lead to its design are gone but you can read about this at (UoYBus: bus times for the University of York)[/2014/uoybus/].
 
-You can email me at [michael@46b.it](mailto:michael@46b.it) ([PGP key](/pgp.asc)) or watch my work on [Github](https://github.com/46bit).
+Some years ago I participated in and won quite a few open data hackdays. This lead to a front-page feature in [The Observer](https://www.theguardian.com/education/2012/mar/31/young-coders-ideas-for-change). Shortly after that I lead development at a Y Combinator startup working on Computational Geometry for 3D Printing - you can see our early prototype [Cookie Caster](http://www.cookiecaster.com). Our former CEO [Nemil's blog](https://www.nemil.com/musings/) is a fantastic read.
+
+At the University of York I've been Treasurer of the [Swing Dance Society](http://www.yorkvision.co.uk/sport/spotlight-swing-dance-society/30/04/2014), Secretary of the [Computer Science society](https://www.hacksoc.org/), twice Course Representative and a number of other roles besides. Recently I've started [writing analysis pieces for the student newspaper, Nouse](www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/). I also built [UOY Bus](http://uoyb.us).
+
+As a member of the [Open Rights Group](https://www.openrightsgroup.org), the [Long Now Foundation](http://longnow.org) and someone interested in [Effective Altruism](https://www.effectivealtruism.org) I believe in internet freedom, strong civil liberties and sustainable growth. I'm concerned by [ongoing misrepresentation of free-speech](https://www.facebook.com/photo.php?fbid=1257833534308290&set=a.147155018709486.33009.100002449667634), very much [favour increasing diversity in Software Engineering](https://sites.google.com/a/yusu.org/swey/), and abhor Brexit.
+
+You can email me at **[michael@46b.it](mailto:michael@46b.it)**, read my blog here or see some of my programming work on [Github](https://github.com/46bit).
