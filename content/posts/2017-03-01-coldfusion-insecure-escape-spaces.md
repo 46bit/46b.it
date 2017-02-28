@@ -25,7 +25,7 @@ A decision I support is expecting the webapps to work and be secure on both old 
 
 <img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="100%" style="border: 1px solid #ccc;">
 
-The intersection of secure and available in both is to import the OSASP ESAPI API from Java.
+The intersection of secure and available in both is to import the [OSASP ESAPI API](https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API) from Java.
 
 ``` coldfusion
 <cfoutput>
@@ -74,7 +74,7 @@ I don't know how completely one can secure applications by hand when they're mes
 
 Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.
 
-I think my next step should be to fuzz these applications. That's how they'll be attacked, so I think it's absolutely necessary to do it ourselves.
+I think my next step should be to fuzz these applications. That's how they'll be attacked, so I think it's absolutely necessary to do it ourselves. I should also take a look into the `X-XSS-Protection` header, but I'm guessing it isn't something to rely upon.
 
 Until next time,<br>
 &mdash; 46bit

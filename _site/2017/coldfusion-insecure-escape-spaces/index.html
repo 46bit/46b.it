@@ -36,7 +36,7 @@
 <p>People running ColdFusion are generally moving to the open source <a href="@TODO">Railo</a> and <a href="@TODO">Lucee</a> servers. These applied a sanity pass to what they should support.</p>
 <p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
 <p><img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="100%" style="border: 1px solid #ccc;"></p>
-<p>The intersection of secure and available in both is to import the OSASP ESAPI API from Java.</p>
+<p>The intersection of secure and available in both is to import the <a href="https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API">OSASP ESAPI API</a> from Java.</p>
 <div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfoutput&gt;
     &lt;input name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;
 &lt;/cfoutput&gt;</code></pre></div>
@@ -58,7 +58,7 @@
 <p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
 <p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last <code>#…#</code> and use of <code>cf</code> tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="https://en.wikibooks.org/wiki/PHP_Programming/Configuration:_Register_Globals">PHP with <code>register_globals</code> turned on</a>.</p>
 <p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
-<p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves.</p>
+<p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the <code>X-XSS-Protection</code> header, but I’m guessing it isn’t something to rely upon.</p>
 <p>Until next time,<br> — 46bit</p></div>
 </article>
 
