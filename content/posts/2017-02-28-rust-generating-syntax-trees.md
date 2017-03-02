@@ -1,5 +1,5 @@
 ---
-title: Generating syntax trees in Rust
+title: Generating expression trees in Rust
 tags: Hacking
 ---
 I've been writing a lot of Rust. Since [\@Taneb](https://github.com/Taneb) persuaded me to try it the language has grown phenomenally on me. I've always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I've become a language fanboy.

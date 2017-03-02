@@ -120,7 +120,7 @@ a {
 	line-height: 28px;
 	padding-bottom: 20px;
 }
-.pagecontent ul {
+.pagecontent ul, .pagecontent ol {
 	margin-top: 10px;
 	padding-left: 30px;
 	font: 300 18px/26px "ff-meta-serif-web-pro", Georgia, serif;

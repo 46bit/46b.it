@@ -8,8 +8,112 @@
         <name>46bit</name>
         <email></email>
     </author>
-    <updated>2017-03-01T00:00:00Z</updated>
+    <updated>2017-03-03T00:00:00Z</updated>
     <entry>
+    <title>Recursive Enum expression trees in Rust</title>
+    <link href="https://46b.it/2017/evco/index.html" />
+    <id>https://46b.it/2017/evco/index.html</id>
+    <published>2017-03-03T00:00:00Z</published>
+    <updated>2017-03-03T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
+<p>As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.</p>
+<p>There are two common ways to represent a tree datastructure: <!--more--></p>
+<ul>
+<li>The most obvious way is similar to a Linked List: allocate a separate portion of memory for each node in the tree and store pointers to the child/parent nodes. This makes it cheap to expand the tree and is a very natural representation.</li>
+<li>The other way is to put the tree into an array. Map the parent-child relationships into indices and you can store a tree as a single block of memory. Adding nodes can require copying all this data into a larger region of memory but this has a variety of benefits such as cache locality.</li>
+</ul>
+<p>We can define the semantics of a heap-allocated expression tree at compile time. Here’s a cut-down example - you can get and play with the <a href="https://play.rust-lang.org/?gist=ddbde8dbeacb4f501995aef551f5ac7f&amp;version=stable&amp;backtrace=0">full code here</a>.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span><span class="bu">Clone</span><span class="at">,</span> <span class="bu">Debug</span><span class="at">,</span> <span class="bu">PartialEq</span><span class="at">,</span> <span class="bu">Eq</span><span class="at">)]</span>
+<span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a + b`</span>
+    Sub(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a - b`</span>
+    Mul(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a * b`</span>
+    Div(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a / b`</span>
+    Neg(Node&lt;Equation&gt;), <span class="co">// `-a`</span>
+    Sin(Node&lt;Equation&gt;), <span class="co">// `sin(a)`</span>
+    Float(<span class="dt">f64</span>), <span class="co">// evaluates to a constant 64-bit float</span>
+    Input, <span class="co">// evaluates to an inputted 64-bit float</span>
+<span class="op">}</span>
+
+<span class="kw">impl</span> Equation <span class="op">{</span>
+    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, env: &amp;<span class="kw">Self</span>::Environment) -&gt; <span class="kw">Self</span>::Action <span class="op">{</span>
+        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
+            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) + right.eval(env),
+            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) - right.eval(env),
+            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) * right.eval(env),
+            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; protected_div(left.eval(env), right.eval(env)),
+            Neg(<span class="kw">ref</span> left) =&gt; -left.eval(env),
+            Sin(<span class="kw">ref</span> left) =&gt; left.eval(env).sin(),
+            Float(i) =&gt; i,
+            Input =&gt; *env,
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="kw">fn</span> main() <span class="op">{</span>
+    <span class="co">// represent the equation `x` and evaluate for `x=5`</span>
+    <span class="kw">let</span> tree1 = Equation::Input;
+    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree1.eval(<span class="dv">5.0</span>));
+
+    <span class="co">// represent the equation `x * sin(4.0)` and evaluate for `x=-7.3`</span>
+    <span class="kw">let</span> tree2 =
+      Equation::Mul(
+        node(Equation::Input),
+        node(Equation::Sin(
+          node(Equation::Float(<span class="dv">4.0</span>))
+        ))
+      );
+    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree2.eval(-<span class="dv">7.3</span>));
+
+    <span class="co">// represent the equation `x + sin(x)` and evaluate for `x=99.1` and `x=16.3`</span>
+    <span class="kw">let</span> tree3 =
+      Equation::Add(
+        node(Equation::Input),
+        node(Equation::Sin(
+          node(Equation::Input)
+        ))
+      );
+    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree3.eval(<span class="dv">99.1</span>), tree3.eval(<span class="dv">16.3</span>));
+<span class="op">}</span></code></pre></div>
+<p>This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the <a href="https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs">Symbolic Regression example</a> and (this might not be obvious) <a href="https://46bit.github.io/evco/evco/gp/tree/index.html"><code>evco::gp::tree</code></a>.</p>
+<p>However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.</p>
+<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p>]]></summary>
+</entry>
+<entry>
+    <title>Introduction to Evolutionary Computing</title>
+    <link href="https://46b.it/2017/evolutionary-computing/index.html" />
+    <id>https://46b.it/2017/evolutionary-computing/index.html</id>
+    <published>2017-03-02T00:00:00Z</published>
+    <updated>2017-03-02T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>I took an Evolutionary Computation course last semester, <a href="https://www.cs.york.ac.uk/postgraduate/modules/evco.html">EVCO</a>. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:</p>
+<p style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uxourrlPlf8" frameborder="0" allowfullscreen>
+</iframe>
+</p>
+<p>I’d like to thank <a href="https://www.york.ac.uk/biology/research/ecology-evolution/daniel-franks/">Dr Daniel Franks</a> for a great course, enthusiastic teaching and many of the examples here.</p>
+<p>Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my <code>evco</code> examples <a href="https://github.com/46bit/evco/blob/v0.2.1/examples/snake.rs">evolves Snake players</a>. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.<!--more--> So if you want to approximate some data you might:</p>
+<ol style="list-style-type: decimal">
+<li>Randomly generate a population of equations. Each equation forms a genome of sorts.</li>
+<li>Test how good an approximation each equation (“individual”) gives.</li>
+<li>Select the best equations to take forward.</li>
+<li>Simulate sexual reproduction by swapping some randomly chosen parts of equations.</li>
+<li>Simulate random mutations by randomly changing some terms in the equations.</li>
+</ol>
+<h2 id="how-effective-can-this-be-impressively-creative.">How effective can this be? Impressively creative.</h2>
+<p>This process can be excellent at finding creative solutions. Over sufficient timescales biological evolution is remarkably creative - just look at your own body.</p>
+<div class="figure">
+<img src="/img/evolved-antenna.jpg" alt="NASA evolved this antenna for a 2006 mission." />
+<p class="caption"><strong>NASA <a href="https://en.wikipedia.org/wiki/Evolved_antenna">evolved this antenna</a> for a 2006 mission.</strong></p>
+</div>
+<p>But I’ve found that tuning an evolutionary process is quite intensive: it takes a lot of programmer time and (the challenge) a lot of unguided experimentation.</p>
+<p>Evolution often reaches local maxima: it isn’t generating individuals which act in usefully different ways and so all individuals bottleneck around the same maximum fitness. As the best individuals are bred preferentially, when an innovation occurs the effect in improving average fitness can be dramatic. A biological example of this might be how life on Earth was single-celled for billions of years before multicellular eukaryotes came along.</p>
+<p>Six months has taught me that Evolutionary Computing is quite time-intensive but a brilliant hobby. These processes are stochastic: while subject to random variation they can be analysed. A lot of computation and analysis is necessary to understand how well a process is working.</p>
+<h2 id="genetic-programming-in-python-with-deap">Genetic Programming in Python with DEAP</h2>
+<p>York’s course used the <a href="http://deap.readthedocs.io/en/master/">DEAP</a> library for Python. This feels something of a hobbyist’s tool: it contains implementations of the ingredients necessary for evolutionary computing but doesn’t get overly sophisticated.</p>
+<p>One drawback with DEAP is that a lot of examples and suggested tooling don’t work well with PyPy. (PyPy is a Just In Time compiler that can run many times faster than the reference CPython implementation.) For the assessment we had to evolve automated snake players, and it proved frustrating how much potential efficiency was lost.</p>
+<p><em>As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.</em></p>]]></summary>
+</entry>
+<entry>
     <title>Securing legacy ColdFusion or: <br>Why escape spaces against XSS?</title>
     <link href="https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html" />
     <id>https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html</id>
@@ -50,7 +154,7 @@
 <p>Until next time,<br> — 46bit</p>]]></summary>
 </entry>
 <entry>
-    <title>Generating syntax trees in Rust</title>
+    <title>Generating expression trees in Rust</title>
     <link href="https://46b.it/2017/rust-generating-syntax-trees/index.html" />
     <id>https://46b.it/2017/rust-generating-syntax-trees/index.html</id>
     <published>2017-02-28T00:00:00Z</published>
@@ -345,50 +449,6 @@
 <p>Wikipedia’s occasional funding drives are an interesting case. The complaints from people fed up of seeing Jimmy Wales’ face peering at them asking for donations act as pretty great promotion. The oft-repeated alternative is to become advertising-driven for some/all of the site’s income - yet much of the benefit of asking ordinary people to donate is that they feel personally invested in the project.</p>
 <p>I’m really just trying to work out where the differences between for- and not-for-profit organisations start, what we can aim for and how people can depend on cloud services that can die out of the blue as compared to desktop software that still works a decade after it’s authors are out of business.</p>
 <p>I hesitate to say that all true communities would need to be non-profits, that all platforms are nothing of the sort and so forth - but I do wonder.</p>]]></summary>
-</entry>
-<entry>
-    <title>A first look at Quantum Computers</title>
-    <link href="https://46b.it/2013/quantum-computers-first-look/index.html" />
-    <id>https://46b.it/2013/quantum-computers-first-look/index.html</id>
-    <published>2013-02-11T00:00:00Z</published>
-    <updated>2013-02-11T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The computer in front of you is pretty powerful, but it can’t factor a 600-digit number before Earth gets cooked by the Sun. No supercomputer humanity does or could build could do that either, so it seemed a sure bet to base the security of some encryption schemes on factoring being (exponentially) hard. <!--more--></p>
-<p>A quantum computer of sufficient size could do it using <a href="http://en.wikipedia.org/wiki/Shor%27s_algorithm">Shor’s algorithm</a>. It could also allow you to simulate n-body problems in reasonable (polynomial) time. Thus you could break RSA encryption or simulate the interior of the sun right down to the sub-atomic scale.</p>
-<p>If you’ve ever looked at Physics like the two-slit experiment, what follows might seem a little reminiscent. That’s because it is.</p>
-<h2 id="a-hardwired-machine">A hardwired machine</h2>
-<p>In the early days, computers were often programmed by altering their wiring. Instead of running a program stored on disk, computers like <a href="http://en.wikipedia.org/wiki/ENIAC">ENIAC</a> had a number of units that were manually patched together every time you wanted to run a different program. You’d wire a floating-point multiplier up to vacuum tubes with it’s input, then wire the output up to the next stage.</p>
-<p>The model of quantum computers looks a lot like that. You’re not going to sit in front of a quantum computer and write some C++ to define the program to run: rather you’ll have to wire it up for every different program. It’s not quite as simple as a metal wire either, since you’ve got to be very careful to not destroy the quantum effects you look to exploit.</p>
-<p>I think it should be possible for a 2nd or 3rd generation computer to have this wiring quickly done by another computer, such that you could have most of the benefits of stored-programs. I speculate this mode of operation would be similar to programming modern FPGAs using VHDL, but I’ve not looked for research in this area yet.</p>
-<h2 id="what-the-flip-is-a-qubit">What the flip is a qubit?</h2>
-<p>A lot of people have heard that the quantum computer’s form of a <code>bit</code> is called a <code>qubit</code>. The principle behind them is relatively simple to read about but harder (as with everything in quantum mechanics) to appreciate.</p>
-<p>An ordinary <code>bit</code> is either 0 or 1. There’s no middle ground. A <code>qubit</code> on the other hand can be both 0 and 1 right up until the moment you observe it. There’s a probability you’ll observe it as a 0, and another probability you’ll observe a 1. This probability as to which state it’s in is called superposition.</p>
-<p>How you’d observe a <code>qubit</code> depends on your implementation of them, but it amounts to when you have an instrument measure their value. This measurement collapses the qubit into a classical state, so if you read the qubit again you’ll read the same value as you did earlier.</p>
-<p>Stopping this collapse into classical state from happening to the qubits whilst you’re computing is known as quantum decoherence. It’s one of the greatest problems to building a practical quantum computer.</p>
-<p>That’s it for a quick introduction. I’ve had to skip <a href="http://en.wikipedia.org/wiki/Quantum_entanglement">entanglement</a> for now until I’m a bit more comfortable explaining it from the point of view of quantum computation. Possible algorithms, some Math and implementation detail discussion is what I’ll start to discuss next time.</p>]]></summary>
-</entry>
-<entry>
-    <title>Train Data Revisited</title>
-    <link href="https://46b.it/2013/train-data-revisited/index.html" />
-    <id>https://46b.it/2013/train-data-revisited/index.html</id>
-    <published>2013-02-07T00:00:00Z</published>
-    <updated>2013-02-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I mentioned Network Rail’s feeds briefly last time but hadn’t yet looked into them much. Thanks to <a href="https://twitter.com/SMLittley/status/295175976818728963">Samuel Littley</a> for letting me know a bit more about them. <a href="https://datafeeds.networkrail.co.uk/ntrod/">Sign up</a> and your access will be activated within an hour or so. Given that mine was granted at 3am GMT I suspect it’s automated. <!--more--></p>
-<p>My interest in this data comes down to how much I take trains to London, Manchester and elsewhere. Ever since I <a href="/2011/08/13/yrs2011/">built TrainTrackr</a> in 2011 I’ve wanted to get a better idea of how late trains really are. These open data <s>feeds</s> firehoses offer me that chance.</p>
-<h2 id="using-the-data">Using the data</h2>
-<p><strong>After getting access I discovered that the entire Data Feeds is almost as close to undocumented as you can get.</strong> Thankfully I’d signed up to a talk at the <a href="http://www.theodi.org">Open Data Institute</a> on this topic, given by <a href="https://twitter.com/madprof">Jonathan Raper</a>.</p>
-<p>The honest truth is that it seems to be quite a pain. A few immediate problems:</p>
-<ul>
-<li>Network Rail may have released access to live train times, but the documentation around it is extremely lacking. This is apparently a result of the convoluted system the railways operate under.</li>
-<li><strong>The volume of data during the day is pretty big.</strong> At least 500 messages a second. There’s no reason you can’t deal with that amount of data but the real problem is that <strong>your API connection often drops</strong>, causing you to miss some trains setting off. If you miss trains setting off from their first station, you’ll struggle to work out where it’s going along the entire route.</li>
-</ul>
-<p>You then face the fact there’s half a dozen different datasets: the train timetable, the live updates, changes to train journeys - and when trains have to divert you can lose track of where it’s going altogether.</p>
-<h2 id="learning-more">Learning more</h2>
-<p>Unsurprisingly the train community got to this before I did, so there’s quite a bit of useful things out there. I’ve not managed to find any overview/introduction that’s up to date, so I might end up writing one next month.</p>
-<p>If you want train data in a format where it’s ready to build a Mobile API, try <strong><a href="https://developer.transportapi.com">Placr’s Transport API</a></strong>. Free for &lt;1000 hits a day, paid above that. Placr’s founder gave the ODI talk I mentioned, the slides are <strong><a href="http://www.scribd.com/doc/123365071/Friday-Lunchtime-Lectures-at-the-ODI-How-can-Open-Data-Revolutionise-your-Rail-Travel">available online</a></strong>.</p>
-<p>For an example of what can be done in terms of end-user applications, see <strong><a href="http://www.realtimetrains.co.uk">Real Time Trains</a></strong> by Tom Cairns. There’s also plenty of information <strong><a href="http://thomas-cairns.co.uk">on his blog</a></strong> regarding the different data formats - and better, lots of relevant code <strong><a href="https://github.com/swlines">on Github</a></strong>.</p>
-<p><strong><a href="http://blog.poggs.com">Peter Hicks</a></strong> also has some <strong><a href="https://github.com/poggs">useful code</a></strong> available, although seemingly focused on timetables rather than the live data. He gave a <strong><a href="http://blog.poggs.com/2012/09/okfestival/">relevant talk</a></strong> last September in Helsinki that dives a bit more into licensing issues and so forth.</p>
-<h2 id="my-next-step">My next step</h2>
-<p>I’ve got a much better idea what I’m doing than a couple of weeks ago, so I’m going to go out and start getting the data. Next post on this probably a few weeks away. <strong>Thanks a lot to all mentioned for their help.</strong></p>]]></summary>
 </entry>
 
 </feed>
