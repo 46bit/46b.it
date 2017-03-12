@@ -8,8 +8,25 @@
         <name>46bit</name>
         <email></email>
     </author>
-    <updated>2017-03-03T00:00:00Z</updated>
+    <updated>2017-03-12T00:00:00Z</updated>
     <entry>
+    <title>Glad I was wearing a cycle helmet</title>
+    <link href="https://46b.it/2017/bicycle-skid/index.html" />
+    <id>https://46b.it/2017/bicycle-skid/index.html</id>
+    <published>2017-03-12T00:00:00Z</published>
+    <updated>2017-03-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<p>One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (<code>2017-03-10</code>) I had a bit of an accident. <!--more--></p>
+<p>Sam Hand (<code>sdhand</code>) took the initiative to organise some new <a href="https://www.hacksoc.org">HackSoc</a> movie nights this year, and I’ve been helping with little bits of logistics. I’d been watching Apollo 13 but skipped Moon because I’d seen it recently.</p>
+<p style="text-align: center;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.29712955826926!2d-1.0386286637597082!3d53.9533881908245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1489358465930" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+</iframe>
+</p>
+<p>It was at this bend on Yarburgh Way that I came off. Rather than my bicycle taking the turn it went over, my head slamming into the road surface and about a dozen different areas of me getting scraped, bruised or hurt. I don’t seem to have any bad injuries… but I’ve found it remarkable how incapacitated very bad scrapes on a knee and forearm can make you.</p>
+<p>I’m not particularly sure how it happened. My bicycle completely skidded out as if it had no grip, but it was far too warm for ice and I didn’t see any oil in the immediate aftermath. Given the extent of my injuries I have to wonder if my speed was just too high for the grip of the tyres - it’s an exceptionally tight bend.</p>
+<p>In any case, I was momentarily aware of the bicycle not moving correctly but then I don’t particularly remember anything until picking part of my bicycle bell off the road. I picked myself off the road after a time and was tremendously dazed for 20 minutes or so. A kind passerby walked with me for a time to check I was okay - I think they were worried about a concussion. Let’s face it: I was worried about a concussion.</p>
+<p>Now, Helmets aren’t exactly designed to protect against concussions. The foam is a bit too hard. But they do a good job of protection otherwise, and <strong>in this case I think that if the helmet didn’t take it the side of my head would have been in a horrible state - and me probably rather more seriously injured.</strong></p>]]></summary>
+</entry>
+<entry>
     <title>Recursive Enum expression trees in Rust</title>
     <link href="https://46b.it/2017/evco/index.html" />
     <id>https://46b.it/2017/evco/index.html</id>
@@ -436,19 +453,6 @@
 <p>Any statistical shortcomings are the fault of <a href="https://46b.it/about/">the author</a>, Michael Mokrysz.</p>
 <p><strong>UPDATE 1</strong>: I noticed I’d missed out the 4 different ways the birthdays can arise, so corrected for that.</p>
 <p><strong>UPDATE 2</strong>: <a href="https://www.toastwaffle.com">Samuel Littley</a> pointed out that whilst there are indeed 4 ways to make each triple, the probability of any specific one happening means that we divide by 4 again. Post updated with this reasoning.</p>]]></summary>
-</entry>
-<entry>
-    <title>Steady state community</title>
-    <link href="https://46b.it/2013/steady-state-community/index.html" />
-    <id>https://46b.it/2013/steady-state-community/index.html</id>
-    <published>2013-03-29T00:00:00Z</published>
-    <updated>2013-03-29T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p><a href="http://phx.corporate-ir.net/phoenix.zhtml?c=97664&amp;p=irol-newsArticle&amp;ID=1801561&amp;highlight=">Amazon’s purchase of Goodreads</a>, a social reading community, has reminded me of the difference between building a community and building a business. Goodreads definitely could be a value add for Amazon and the Kindle, yet unless they treat it with a light touch it could become far more of a Good<strong>kindle</strong>reads. <!--more--></p>
-<p>Companies will happily sell for millions and risk the evaporation of their communities, especially if current earnings aren’t that cracking. They also might start to commercialize a community in the way Twitter has, or close down a useful platform because it didn’t make much cash.</p>
-<p>Just look at <a href="https://tinkercad.com">TinkerCad</a>, the in-browser CAD environment for creating 3D models. It was a fantastic use of technology and very useful for me from time to time, yet now it is being retired - I suspect because the earnings never matched up to the time, money and effort invested.</p>
-<p>Wikipedia’s occasional funding drives are an interesting case. The complaints from people fed up of seeing Jimmy Wales’ face peering at them asking for donations act as pretty great promotion. The oft-repeated alternative is to become advertising-driven for some/all of the site’s income - yet much of the benefit of asking ordinary people to donate is that they feel personally invested in the project.</p>
-<p>I’m really just trying to work out where the differences between for- and not-for-profit organisations start, what we can aim for and how people can depend on cloud services that can die out of the blue as compared to desktop software that still works a decade after it’s authors are out of business.</p>
-<p>I hesitate to say that all true communities would need to be non-profits, that all platforms are nothing of the sort and so forth - but I do wonder.</p>]]></summary>
 </entry>
 
 </feed>
