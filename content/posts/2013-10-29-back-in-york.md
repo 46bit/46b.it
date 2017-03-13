@@ -1,13 +1,13 @@
 ---
-title: Back in York
+title: Going back to College
 tags: York
 ---
 It's been a while since my last post. After living in London for a few months and working out of [Shoreditch Works](http://shoreditchworks.com), I chose to head back to [York](http://www.cs.york.ac.uk) with the new academic year - rather a tough choice given my other, international option.
 <!--more-->
 
-It might seem strange to those I met in the last 18 months - UnCollege, friends in the YC and hacker crowds - that I've decided to go back to formal education. I deliberately chose to take a leave of absence rather than actually quit in order to make this possible, but I wasn't convinced I would do it until late September.
+It might seem strange to those I met in the last 18 months - UnCollege, friends in the Y Combinator and hacker crowds - that I've decided to go back to formal education. I deliberately chose to take a leave of absence rather than actually quit in order to make this possible, but I wasn't convinced I would do it until late September.
 
-There's a lot of truth in what groups like UnCollege are saying - the teaching you get at College might often be given just as well online. If teaching is the only thing you've gone to College for, replacing that could be rather easy. I've changed quite a bit, and I am enjoying myself a lot more than in the first year.
+There's a lot of truth in what groups like [UnCollege](https://www.uncollege.org) are saying - the teaching you get at College might often be given just as well online. If teaching is the only thing you've gone to College for, replacing that could be rather easy. I've changed quite a bit, and I am enjoying myself a lot more than in the first year.
 
 I've a lot of respect for those who think differently on whether College is for them. It's not for everyone, and isn't a perfect <s>galaxy</s> system. Choosing to go into industry or explore things yourself is easily as legitimate as College - just treated differently by snotty culture.
 
