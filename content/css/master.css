@@ -78,6 +78,10 @@ a {
 	margin-top: 20px;
 	font: 700 25px/30px "proxima-nova-alt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.pagecontent h3 {
+	font-size: 20px;
+	margin-top: 20px;
+}
 .pagecontent .date {
 	top: 0;
 	right: 0;
