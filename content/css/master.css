@@ -158,6 +158,10 @@ a {
 	position: relative;
 }
 
+.pagecontent .inbrief h2, .pagecontent .inbrief h3, .pagecontent .inbrief h4 {
+	font-size: 18px;
+}
+
 .pagelist {
 	margin: 0;
 	padding: 0;

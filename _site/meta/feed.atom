@@ -8,8 +8,39 @@
         <name>46bit</name>
         <email></email>
     </author>
-    <updated>2017-03-13T00:00:00Z</updated>
+    <updated>2017-03-14T00:00:00Z</updated>
     <entry>
+    <title>I've been published!</title>
+    <link href="https://46b.it/2017/writing-again/index.html" />
+    <id>https://46b.it/2017/writing-again/index.html</id>
+    <published>2017-03-14T00:00:00Z</published>
+    <updated>2017-03-14T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<h2 id="in-the-last-month-ive-published-twice-in-our-campus-newspaper-nouse">In the last month I’ve published twice in our campus newspaper, Nouse:</h2>
+<ul>
+<li><a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">Battle of the colleges: who’s got the BNOCs</a>: I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.</li>
+<li><strong><a href="http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/">YUSU elections put under the microscope: college chances, campus stances and gender imbalances</a></strong>: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions. <!--more--></li>
+</ul>
+<p>These are based on the same underlying data but the latter post gave me two weeks to make a deeper analysis. I found it a tough but exciting learning curve to collect the data, do analysis and publish it with the fantastic team at Nouse. So many thanks to <a href="http://www.nouse.co.uk/author/luke-rix-standing/">Luke Rix-Standing</a> (Editor), <a href="http://www.nouse.co.uk/author/finn-judge/">Finn Judge</a> (Deputy Editor) and <a href="http://www.nouse.co.uk/author/amelia-clarke/">Amelia Clarke</a> (News Editor).</p>
+<p>It might seem strange that a Computer Scientist is publishing on paper. I disagree: electronic media is growing hugely in appeal, and Kindles have eaten much of my use of paper for reading. But media is a diverse field and if you want to reach people in a particular but diverse organisation the organisation’s own newspaper is a good way. Something I need a better process for is my method of analysing data: Google Sheets charts don’t suffice.</p>
+<p>I am a little troubled by what I found. It isn’t necessarily surprising that Colleges more distant from the rest of the University get less attention. Given wider tends it isn’t necessarily surprising that female-identifying candidates run for more junior positions. But seeing the numbers show up consistently in a venue nobody else thought to look is illuminating.</p>
+<p>I set out to try and find out more about something public that wasn’t being looked at. I’ve developed an impression that a lot of real-world issues are widely known anecdotally, but nothing gets done because you can’t prove anything. As such, demonstrating an issue in a deep, quantitative analysis can be a useful step to arguing and driving for change.</p>
+<p>To an extent this belief is an artifact of my own mindset. Where possible I like to argue from evidence.</p>
+<p>I’m a Course Rep in the Computer Science department at York, responsible for acting on student feedback and improving the student experience. A lot of Course Reps probably just argue for things they believe, and resolutely keep arguing until something is done or they get worn out. My approach to many issues is along this axis, but if something seems harder to get done I turn to an analytical mindset. This worked for highlighting problems with a Machine Learning class I took last year, after 4 years of the problems seeming to be ignored.</p>
+<h2 id="ive-also-published-7-posts-here">I’ve also published 7 posts here:</h2>
+<ul>
+<li><a href="/2017/engineering-discipline-and-craft/">Engineering as slowly as possible</a>: some thoughts on developing maintainably</li>
+<li><a href="/2017/evolutionary-computing/">Introduction to Evolutionary Computing</a>: background to building <a href="https://github.com/46bit/evco">Rust Genetic Programming library</a> that I’ve been looking for good approaches into.
+<ul>
+<li><a href="/2017/rust-generating-syntax-trees/">Generating expression trees in Rust</a> and <a href="/2017/evco/">Recursive Enum expression trees in Rust</a>: some confused thoughts about specifying tree structures as Rust <code>enum</code> types.</li>
+</ul></li>
+<li><a href="/2017/coldfusion-insecure-escape-spaces/">Securing legacy ColdFusion or: Why escape spaces against XSS?</a>: in which I justify and classify ColdFusion websites as insecure-by-default.</li>
+<li><a href="/2017/bicycle-skid/">Glad I was wearing a cycle helmet</a>: personal update on a bicycle accident.</li>
+<li><a href="/2017/security-risk-assessment/">Security Risk Assessments of Semi-Autonomous Vehicles</a>: discussing the level of autonomy necessary to get adoption of automated road trains (the SARTRE project.)</li>
+</ul>
+<p>My blog will be relatively low-quality writing for the time being. I’ve never honed my skills at writing until now, which means that iterating on a blog post can be a slow and long process. <strong>My hope is that the (limited) editing I do will feed into my new writing, and my process will slowly improve.</strong> We’ll see whether this works out, but it’s the Growth Mindset I’m taking.</p>
+<p>Until next time,<br> —46bit</p>]]></summary>
+</entry>
+<entry>
     <title>Security Risk Assessments of <br> Semi-Autonomous Vehicles</title>
     <link href="https://46b.it/2017/security-risk-assessment/index.html" />
     <id>https://46b.it/2017/security-risk-assessment/index.html</id>
@@ -418,22 +449,6 @@
 <p>This is a huge misunderstanding of the situation. Having sold 13 years of medical records to the private sector, a rule change to prevent further sales is naive at best. The problem is not that the data is for sale, the issue is it was ever sold. In 5 years, in 10 years, the DOH can just sell the new data.</p>
 <p>In future, giving patients notional ownership of their records seems a good idea. Any sale should have to be approved by them, and a portion of any upside given to them. <a href="http://dpk.io/medicalrecords">David Kendal</a> has already started to try this approach, offering to sell his medical records to interested researchers.</p>
 <p>Certainly a start might be to add a clause to the data contracts stating that any attempt to deanonymise the data breaches contract. The Data Protection Act prevents reversible disclosure, so the loss of value of the data should not be a concern.</p>]]></summary>
-</entry>
-<entry>
-    <title>Back in York</title>
-    <link href="https://46b.it/2013/back-in-york/index.html" />
-    <id>https://46b.it/2013/back-in-york/index.html</id>
-    <published>2013-10-29T00:00:00Z</published>
-    <updated>2013-10-29T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>It’s been a while since my last post. After living in London for a few months and working out of <a href="http://shoreditchworks.com">Shoreditch Works</a>, I chose to head back to <a href="http://www.cs.york.ac.uk">York</a> with the new academic year - rather a tough choice given my other, international option. <!--more--></p>
-<p>It might seem strange to those I met in the last 18 months - UnCollege, friends in the YC and hacker crowds - that I’ve decided to go back to formal education. I deliberately chose to take a leave of absence rather than actually quit in order to make this possible, but I wasn’t convinced I would do it until late September.</p>
-<p>There’s a lot of truth in what groups like UnCollege are saying - the teaching you get at College might often be given just as well online. If teaching is the only thing you’ve gone to College for, replacing that could be rather easy. I’ve changed quite a bit, and I am enjoying myself a lot more than in the first year.</p>
-<p>I’ve a lot of respect for those who think differently on whether College is for them. It’s not for everyone, and isn’t a perfect <s>galaxy</s> system. Choosing to go into industry or explore things yourself is easily as legitimate as College - just treated differently by snotty culture.</p>
-<p>Computer Science lines up fairly well with my interests - it’s a good place to anchor my interests. Between Math, Physics and Electronics societies there’s a plenty of broader things I can learn, although I do wish I could take more elective modules in other departments than York allow.</p>
-<p>Years of events and long-distance friendships around the data/government crowd has left me needing time to recharge. I’d like to contribute to mySociety when I get back into this, but at the moment I’m too focused on other things like C and transport timetables.</p>
-<!--I've slowly become aware of tragedies littering some areas around hacking and governance. I'd be lying if I said it wasn't unnerving to realise how simple SQL Injections or a scraping bot can make areas of government determined to ruin your life. I'm hoping to chat a lot more about this come December at [30C3](https://events.ccc.de/congress/2013/) in Hamburg - hope to see you there.-->
-<p>So that’s an update. It might not be coming through well, but I am fairly happy. Being around people closer to my own age is proving very beneficial, as have courses and societies that are giving me a new viewpoint and encouraging deeper thought.</p>
-<p>Many thanks to the heaps of people who’ve given me an interesting 18 months, too many to even try to name.</p>]]></summary>
 </entry>
 
 </feed>
