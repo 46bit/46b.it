@@ -72,7 +72,7 @@ main = hakyllWith config $ do
 				>>= stripIndexFromUrls
 
 	-- Content pages
-	match (Hakyll.fromList ["about.md", "ident.md", "404.md"]) $ do
+	match (Hakyll.fromList ["about.md", "ident.md", "notepad.md", "404.md"]) $ do
 		route routeNormal
 		compile $ pandocMathCompiler
 			>>= loadAndApplyTemplate "templates/page.html" defaultContext

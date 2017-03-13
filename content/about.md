@@ -2,7 +2,7 @@
 title: A bit about me
 ---
 
-I'm a 23-year-old software engineer with interests in [Rust](https://www.rust-lang.org), crafting systems, applied Cryptography and civic data. (Email me at [michael@46b.it](mailto:michael@46b.it) or grab my [Resume/CV](https://r.46b.it/cv.pdf).)
+I'm a 23-year-old software engineer with interests in [Rust](https://www.rust-lang.org), systems and civic data. Email me at [michael@46b.it](mailto:michael@46b.it) or grab my [Resume/CV](https://r.46b.it/cv.pdf).
 
 ## Engineering
 
@@ -28,4 +28,4 @@ At the University of York I've been Treasurer of the [Swing Dance Society](http:
 
 As a member of the [Open Rights Group](https://www.openrightsgroup.org), the [Long Now Foundation](http://longnow.org) and someone interested in [Effective Altruism](https://www.effectivealtruism.org) I believe in internet freedom, strong civil liberties and sustainable growth. I'm concerned by [ongoing misrepresentation of free-speech](https://www.facebook.com/photo.php?fbid=1257833534308290&set=a.147155018709486.33009.100002449667634), very much [favour increasing diversity in Software Engineering](https://sites.google.com/a/yusu.org/swey/), and abhor Brexit.
 
-You can email me at **[michael@46b.it](mailto:michael@46b.it)**, read my blog here or see some of my programming work on [Github](https://github.com/46bit).
+You can email me at **[michael@46b.it](mailto:michael@46b.it)**, read my blog here or see some of my programming work on [Github](https://github.com/46bit). There's also a [notepad of things worth writing about](/notepad) you're welcome to suggest additions to.
