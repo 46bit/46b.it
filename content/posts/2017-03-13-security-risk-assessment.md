@@ -7,6 +7,7 @@ I'm in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Scie
 We're assessing how to bring an EU-funded project, [SARTRE](https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment), to market. The concept, "Safe Road Trains for the Environment," allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie&mdash;er, do productive work.
 
 <img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="100%" style="border: 1px solid #ccc;">
+<!--more-->
 
 ## Risks/viability of commercial deployment
 
