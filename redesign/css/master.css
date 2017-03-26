@@ -58,7 +58,7 @@ a {
 article .prelude {
   color: #fff;
   background: #d9560e;
-  padding: 33px 30px;
+  padding: 33px 0;
   font: 300 24px/38px 'Merriweather', serif;
   border-bottom: 6px solid #ffee36;
 }
@@ -107,20 +107,52 @@ article section {
 }
 article section h2, h3, h4, h5 {
   font-weight: 400;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #eee;
 }
 article section h2 {
   clear: both;
   font-size: 32px;
   padding-top: 12px;
+  line-height: 40px;
 }
 article section p, ul, ol, pre {
   margin-bottom: 18px;
 }
+article section ul, ol {
+  margin-left: 40px;
+}
+article section ul {
+  padding-left: 5px;
+  list-style-type: none;
+}
+article section ul li {
+  margin-top: 4px;
+}
+article section ul > li:before {
+  content: "◦";
+  width: 25px;
+  display: inline-block;
+  margin-left: -25px;
+}
+article section ul ul {
+  margin-bottom: 12px;
+}
+article section ul ul > li:before {
+  content: "–";
+  width: 25px;
+  display: inline-block;
+  margin-left: -25px;
+}
 article section b, article section strong {
   font-weight: 600;
+}
+article section hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #eee;
 }
 article section .intro {
   font-weight: 500;
@@ -130,10 +162,13 @@ article section .intro {
 article section .topspace {
   margin-top: 18px;
 }
+article section img {
+  max-width: 100%;
+  border: 6px solid #efefef;
+}
 article section .avatar {
   width: 90px;
   height: 90px;
   float: left;
   margin: 0 30px 30px 0;
-  border: 6px solid #efefef;
 }

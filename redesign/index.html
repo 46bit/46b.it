@@ -26,30 +26,22 @@
       </div>
     </header>
     <section class="wrapper">
-      <p>ColdFusion is an <a href="#">old web technology</a> that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
-      <p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and ColdFusion is insecure by default. Let’s take some typical Ruby erb markup:</p>
-      <pre><b>1</b> &lt;input name="forename" value="&lt;%= forename %&gt;"&gt;</pre>
+      <h2><a href="/2017/security-risk-assessment">I've been published!</a></h2>
+      <p>In the last month I’ve published twice in our campus newspaper, Nouse:</p>
+      <ul>
+        <li><a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">Battle of the colleges: who’s got the BNOCs</a>: I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.</li>
+        <li><strong><a href="http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/">YUSU elections put under the microscope: college chances, campus stances and gender imbalances</a></strong>: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions.  <a href="/2017/writing-again">[&hellip;]</a></li>
+      </ul>
+      <hr>
 
-      <p>The <code>&lt;%= … %&gt;</code> tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the raw function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.</p>
-      <pre>1 &lt;cfinput name="forename" value="#form.forename#"&gt;</pre>
+      <h2><a href="/2017/security-risk-assessment">Security Risk Assessments of Semi-Autonomous Vehicles</a></h2>
+      <p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
+      <p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work. <a href="/2017/security-risk-assessment">[&hellip;]</a></p>
+      <img src="https://46b.it/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600">
+      <hr>
 
-      <p>People running ColdFusion are generally moving to the open source <a href="#">Railo</a> and <a href="#">Lucee</a> servers. These applied a sanity pass to what they should support.
-      <p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
-      <p>The intersection of secure and available in both is to import the OSASP ESAPI API from Java.</p>
-
-<pre>1&lt;cfoutput&gt;
-2    &lt;input name="forename" value="#request.esapi.
-    encodeForHTMLAttribute(form.forename)#"&gt;
-3&lt;/cfoutput&gt;</pre>
-
-      <p>Yuck, huh? You might notice we’re using <code>cfoutput</code> and <code>input</code> tags now. As I’ll explain, this works around double-escaping issues.</p>
-
-      <h2>Why Escape Spaces against XSS?</h2>
-      <p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
-      <p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last #…# and use of cf tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="#">PHP with register_globals turned on.</a></p>
-      <p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
-      <p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the X-XSS-Protection header, but I’m guessing it isn’t something to rely upon.</p>
-      <p>Until next time,<br>— 46bit</p>
+      <h2><a href="/2017/bicycle-skid">Glad I was wearing a cycle helmet</a></h2>
+      <p>One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (<code>2017-03-10</code>) I had a bit of an accident.  <a href="/2017/bicycle-skid">[&hellip;]</a></p>
     </section>
   </article>
 </body>
