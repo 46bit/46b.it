@@ -48,8 +48,11 @@ a {
   padding: 22px;
 }
 #header nav ul li.active a {
-  font-weight: 600;
   background: #d9560e;
+  font-weight: 600;
+}
+#header nav ul li a:hover, #header nav ul li a:active {
+  background: #ca4f0c;
 }
 
 article .prelude {
@@ -58,6 +61,9 @@ article .prelude {
   padding: 33px 30px;
   font: 300 24px/38px 'Merriweather', serif;
   border-bottom: 6px solid #ffee36;
+}
+article .prelude .wrapper {
+  position: relative;
 }
 article .prelude a {
   color: #ffee36;
@@ -68,9 +74,9 @@ article .prelude .meta {
   color: #ffee36;
 }
 article .prelude .meta i {
-  opacity: 0.8;
+  opacity: 0.7;
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
 }
 article .prelude h1 {
   font-size: 36px;
@@ -82,6 +88,14 @@ article .prelude .intro {
   font-size: 21px;
   line-height: 33px;
   margin-top: 18px;
+}
+article .prelude .avatar {
+  position: absolute;
+  right: 30px;
+  top: -23px;
+  width: 90px;
+  height: 90px;
+  border: 3px solid #e45d13;
 }
 
 article section {
@@ -98,9 +112,25 @@ article section h2, h3, h4, h5 {
   border-bottom: 1px solid #eee;
 }
 article section h2 {
+  clear: both;
   font-size: 32px;
   padding-top: 12px;
 }
 article section p, ul, ol, pre {
   margin-bottom: 18px;
+}
+article section .intro {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 33px;
+}
+article section .topspace {
+  margin-top: 18px;
+}
+article section .avatar {
+  width: 90px;
+  height: 90px;
+  float: left;
+  margin: 0 30px 30px 0;
+  border: 6px solid #efefef;
 }

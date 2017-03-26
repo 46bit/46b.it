@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redesign of 46bit</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700|Open+Sans:300,400,400i,600,700" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li class="active"><a href="/">Blog</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+    <header class="prelude">
+      <div class="wrapper">
+        <h1>Blog</h1>
+      </div>
+    </header>
+    <section class="wrapper">
+      <p>ColdFusion is an <a href="#">old web technology</a> that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
+      <p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and ColdFusion is insecure by default. Let’s take some typical Ruby erb markup:</p>
+      <pre><b>1</b> &lt;input name="forename" value="&lt;%= forename %&gt;"&gt;</pre>
+
+      <p>The <code>&lt;%= … %&gt;</code> tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the raw function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.</p>
+      <pre>1 &lt;cfinput name="forename" value="#form.forename#"&gt;</pre>
+
+      <p>People running ColdFusion are generally moving to the open source <a href="#">Railo</a> and <a href="#">Lucee</a> servers. These applied a sanity pass to what they should support.
+      <p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
+      <p>The intersection of secure and available in both is to import the OSASP ESAPI API from Java.</p>
+
+<pre>1&lt;cfoutput&gt;
+2    &lt;input name="forename" value="#request.esapi.
+    encodeForHTMLAttribute(form.forename)#"&gt;
+3&lt;/cfoutput&gt;</pre>
+
+      <p>Yuck, huh? You might notice we’re using <code>cfoutput</code> and <code>input</code> tags now. As I’ll explain, this works around double-escaping issues.</p>
+
+      <h2>Why Escape Spaces against XSS?</h2>
+      <p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
+      <p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last #…# and use of cf tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="#">PHP with register_globals turned on.</a></p>
+      <p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
+      <p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the X-XSS-Protection header, but I’m guessing it isn’t something to rely upon.</p>
+      <p>Until next time,<br>— 46bit</p>
+    </section>
+  </article>
+</body>
+</html>
