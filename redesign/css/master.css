@@ -210,21 +210,10 @@ article section .meta {
   margin-top: 0;
   font-family: 'Merriweather', serif;
 }
-
-article .reduced {
-  padding: 0;
-  margin-top: 20px;
-}
-article .reduced h2 {
-  background: #f8f8f8;
-  padding-left: 20px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #008C88;
-}
-article .reduced h2 a {
-  color: #008C88;
-}
-article .reduced h2 a:hover, article .reduced h2 a:active {
-  border-bottom: 1px solid #008C88;
+article pre {
+  background: #fff1e9;
+  line-height: 24px;
+  font-size: 20px;
+  padding: 20px 0 20px 20px;
+  font-family: 'Operator Mono', monospace;
 }
