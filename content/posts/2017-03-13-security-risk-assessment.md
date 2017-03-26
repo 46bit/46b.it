@@ -6,7 +6,7 @@ I'm in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Scie
 
 We're assessing how to bring an EU-funded project, [SARTRE](https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment), to market. The concept, "Safe Road Trains for the Environment," allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie&mdash;er, do productive work.
 
-<img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="100%" style="border: 1px solid #ccc;">
+<img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600">
 <!--more-->
 
 ## Risks/viability of commercial deployment
@@ -17,7 +17,7 @@ On an actual highway unexpected things happen. If the platoon (convoy) is to ret
 
 The Parliamentary Science and Technology Office came up with a [classification system for automated road vehicles.](http://researchbriefings.parliament.uk/ResearchBriefing/Summary/POST-PN-443) *Under this classification the proof-of-concept only meets the concept of Partial Autonomy.*
 
-<img src="/img/hoc-autonomous-vehicle-levels.png" alt="UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy" width="100%" style="border: 1px solid #ccc;">
+<img src="/img/hoc-autonomous-vehicle-levels.png" alt="UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy">
 
 *Drivers not having to be attentive is classed as High Autonomy.* As with my musings, they've identified it as a hard step to take.
 

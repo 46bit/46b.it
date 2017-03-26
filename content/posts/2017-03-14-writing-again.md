@@ -26,7 +26,7 @@ I'm a Course Rep in the Computer Science department at York, responsible for act
 
 ## I argued that Free Speech arguments are being used out of confusion or even bad faith
 
-<a href="https://xkcd.com/1357/"><img src="/img/xkcd-free-speech-door.jpg" alt="The XKCD cartoon I posted to argue the point." width="100%" style="border: 1px solid #ccc;"></a>
+<a href="https://xkcd.com/1357/"><img src="/img/xkcd-free-speech-door.jpg" alt="The XKCD cartoon I posted to argue the point." width="700"></a>
 
 This cartoon is [XKCD #1357](https://xkcd.com/1357/), posted by J.K. Rowling on Twitter. I felt rather inspired by it. I believe that many anti-intellectual and illiberal attitudes are being used right now, and one is the concept everyone has the right to say their fill in your community.
 

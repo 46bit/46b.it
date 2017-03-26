@@ -38,7 +38,7 @@
 <div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfinput name=&quot;forename&quot; value=&quot;#form.forename#&quot;&gt;</code></pre></div>
 <p>People running ColdFusion are generally moving to the open source <a href="@TODO">Railo</a> and <a href="@TODO">Lucee</a> servers. These applied a sanity pass to what they should support.</p>
 <p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
-<p><img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="100%" style="border: 1px solid #ccc;"></p>
+<p><img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="600"></p>
 <p>The intersection of secure and available in both is to import the <a href="https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API">OSASP ESAPI API</a> from Java.</p>
 <div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfoutput&gt;
     &lt;input name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;
