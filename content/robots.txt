@@ -1,6 +1,4 @@
 # WELCOME ROBOTS.
-# Only 3 or 4 law positronic-brain-based robots are welcome.
-# More primitive robots are however still tolerated.
 
 User-agent: *
 Disallow: /blog/drafts/

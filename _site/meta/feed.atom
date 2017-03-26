@@ -15,7 +15,7 @@
     <id>https://46b.it/2017/writing-again/index.html</id>
     <published>2017-03-14T00:00:00Z</published>
     <updated>2017-03-14T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<h2 id="in-the-last-month-ive-published-twice-in-our-campus-newspaper-nouse">In the last month I’ve published twice in our campus newspaper, Nouse:</h2>
+    <summary type="html"><![CDATA[<p><strong>In the last month I’ve published twice in our campus newspaper, Nouse:</strong></p>
 <ul>
 <li><a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">Battle of the colleges: who’s got the BNOCs</a>: I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.</li>
 <li><strong><a href="http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/">YUSU elections put under the microscope: college chances, campus stances and gender imbalances</a></strong>: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions. <!--more--></li>
@@ -48,7 +48,7 @@
 <p>Until next time,<br> —46bit</p>]]></summary>
 </entry>
 <entry>
-    <title>Security Risk Assessments of <br> Semi-Autonomous Vehicles</title>
+    <title>Security Risk Assessments of Semi-Autonomous Vehicles</title>
     <link href="https://46b.it/2017/security-risk-assessment/index.html" />
     <id>https://46b.it/2017/security-risk-assessment/index.html</id>
     <published>2017-03-13T00:00:00Z</published>
@@ -194,7 +194,7 @@
 <p><em>As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.</em></p>]]></summary>
 </entry>
 <entry>
-    <title>Securing legacy ColdFusion or: <br>Why escape spaces against XSS?</title>
+    <title>Securing legacy ColdFusion or: Why escape spaces against XSS?</title>
     <link href="https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html" />
     <id>https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html</id>
     <published>2017-03-01T00:00:00Z</published>

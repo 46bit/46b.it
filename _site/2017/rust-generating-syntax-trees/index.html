@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>Generating expression trees in Rust - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2017/rust-generating-syntax-trees">Generating expression trees in Rust</a></h1>
-		<span class="date">February 28, 2017</span>
-		
-			<!--<span class="tags">Hacking</span>-->
-		
-	</header>
-	<div class="extended"><p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">February 28, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2017/rust-generating-syntax-trees">Generating expression trees in Rust</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
 <p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
 <div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
     Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
@@ -167,42 +168,41 @@
     Div(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
     IfEq(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">bool</span>),
 <span class="op">}</span></code></pre></div>
-<p>It’s a pain.</p></div>
+<p>It’s a pain.</p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

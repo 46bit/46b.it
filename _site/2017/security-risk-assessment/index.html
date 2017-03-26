@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>Security Risk Assessments of Semi-Autonomous Vehicles - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2017/security-risk-assessment">Security Risk Assessments of <br> Semi-Autonomous Vehicles</a></h1>
-		<span class="date">March 13, 2017</span>
-		
-			<!--<span class="tags">York</span>-->
-		
-	</header>
-	<div class="extended"><p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">March 13, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2017/security-risk-assessment">Security Risk Assessments of Semi-Autonomous Vehicles</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
 <p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</p>
 <p><img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="100%" style="border: 1px solid #ccc;"> <!--more--></p>
 <h2 id="risksviability-of-commercial-deployment">Risks/viability of commercial deployment</h2>
@@ -46,42 +47,41 @@
 <p>The problem for this project is that to the public, reduced fuel usage might not be worth the attention costs. If drivers are automatically monitored for paying attention to the road it is plausible to keep them attentive or evict them from a platoon. But staying immersed in the road environment when taking no action would be very tedious over long periods. As such I don’t think people will go for the project in high numbers unless this issue of having to pay constant attention is resolved.</p>
 <h2 id="summing-up">Summing up</h2>
 <p>It isn’t clear how directly this is being taken further in the real world. But it’s a nice model for semi-automated road vehicles, if only the emergency recovery of control can be worked out.</p>
-<p>I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.</p></div>
+<p>I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.</p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

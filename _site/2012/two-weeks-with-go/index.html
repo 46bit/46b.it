@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>Two weeks with Go: an initial review - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2012/two-weeks-with-go">Two weeks with Go: an initial review</a></h1>
-		<span class="date">November 14, 2012</span>
-		
-			<!--<span class="tags">Hacking</span>-->
-		
-	</header>
-	<div class="extended"><p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">November 14, 2012 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2012/two-weeks-with-go">Two weeks with Go: an initial review</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>As someone who grew up with scripting languages, C and it’s closer brethren always felt incredibly backward. The result of all their decades of history seems to be that obscure compiler flags and awkward syntax are an affectation of the entire community. I don’t care for it, much as I like how fast the code can execute. <!--more--></p>
 <p>What I want is a performant language, but one that doesn’t seem like an argument towards becoming an Assembly hacker. So recently, I’ve been trying out a language called <a href="http://golang.org">Go</a>, released in 2009 by Google. It’s billed as <strong>a pleasantly modern language</strong> that balances high performance with programmer productivity.</p>
 <p>Here’s a simple “Hello World”-style example:</p>
 <div class="sourceCode"><pre class="sourceCode go"><code class="sourceCode go"><span class="kw">package</span> main
@@ -53,42 +54,41 @@
 <p>What isn’t present is more interesting. The object orientation is relatively light: there’s little/no real sub-classing, everything is done from interfaces. There’s also no generics: you can’t ask for an interface in a function, you have to ask for a specific type. This means more code duplication, although there are some specific use-cases for genericness built into the language where sensible. The error model isn’t exactly exceptions, either.</p>
 <p>I’ve mostly been focusing on taking advantage of Go’s <a href="http://golang.org/pkg/math/big/">math/big</a> library so far, <a href="https://github.com/46Bit/the-go-sandpit/">playing with</a> calculating decimal places of π. The language is aimed more at systems than Math, but it’s a place to start.</p>
 <p>My next step is going to be parallelization. This is one of the things I’ve heard discussed most about Go. Rather than give you access to the underlying threads, Go tries to manage it for you automatically using <a href="http://golang.org/doc/effective_go.html#goroutines">goroutines</a>: when something blocks, other functions are executing concurrently wherever possible. At the moment I’m not taking advantage of goroutines at all, but I’ll come back with my thoughts in a few weeks time.</p>
-<p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p></div>
+<p><strong>If you’d like to try Go out, try the <a href="http://tour.golang.org">tutorial-as-REPL</a></strong>. Otherwise for OS X users, it’s just a <code>brew install go</code> and <code>go build ./hello_world.go</code> away - have a play.</p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

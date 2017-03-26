@@ -2,7 +2,7 @@
 title: I've been published!
 tags: York
 ---
-## In the last month I've published twice in our campus newspaper, Nouse:
+**In the last month I've published twice in our campus newspaper, Nouse:**
 
 * [Battle of the colleges: who’s got the BNOCs](http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/): I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.
 * **[YUSU elections put under the microscope: college chances, campus stances and gender imbalances](http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/)**: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions.

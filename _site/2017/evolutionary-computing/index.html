@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>Introduction to Evolutionary Computing - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2017/evolutionary-computing">Introduction to Evolutionary Computing</a></h1>
-		<span class="date">March  2, 2017</span>
-		
-			<!--<span class="tags">Hacking</span>-->
-		
-	</header>
-	<div class="extended"><p>I took an Evolutionary Computation course last semester, <a href="https://www.cs.york.ac.uk/postgraduate/modules/evco.html">EVCO</a>. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:</p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">March  2, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2017/evolutionary-computing">Introduction to Evolutionary Computing</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>I took an Evolutionary Computation course last semester, <a href="https://www.cs.york.ac.uk/postgraduate/modules/evco.html">EVCO</a>. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:</p>
 <p style="text-align: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uxourrlPlf8" frameborder="0" allowfullscreen>
 </iframe>
@@ -55,42 +56,41 @@
 <h2 id="genetic-programming-in-python-with-deap">Genetic Programming in Python with DEAP</h2>
 <p>York’s course used the <a href="http://deap.readthedocs.io/en/master/">DEAP</a> library for Python. This feels something of a hobbyist’s tool: it contains implementations of the ingredients necessary for evolutionary computing but doesn’t get overly sophisticated.</p>
 <p>One drawback with DEAP is that a lot of examples and suggested tooling don’t work well with PyPy. (PyPy is a Just In Time compiler that can run many times faster than the reference CPython implementation.) For the assessment we had to evolve automated snake players, and it proved frustrating how much potential efficiency was lost.</p>
-<p><em>As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.</em></p></div>
+<p><em>As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.</em></p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-title: Security Risk Assessments of <br> Semi-Autonomous Vehicles
+title: Security Risk Assessments of Semi-Autonomous Vehicles
 tags: York
 ---
 I'm in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I've taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.

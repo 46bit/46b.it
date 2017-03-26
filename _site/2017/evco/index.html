@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>Recursive Enum expression trees in Rust - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2017/evco">Recursive Enum expression trees in Rust</a></h1>
-		<span class="date">March  3, 2017</span>
-		
-			<!--<span class="tags">Hacking</span>-->
-		
-	</header>
-	<div class="extended"><p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">March  3, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2017/evco">Recursive Enum expression trees in Rust</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
 <p>As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.</p>
 <p>There are two common ways to represent a tree datastructure: <!--more--></p>
 <ul>
@@ -91,42 +92,41 @@
 <span class="op">}</span></code></pre></div>
 <p>This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the <a href="https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs">Symbolic Regression example</a> and (this might not be obvious) <a href="https://46bit.github.io/evco/evco/gp/tree"><code>evco::gp::tree</code></a>.</p>
 <p>However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.</p>
-<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p></div>
+<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

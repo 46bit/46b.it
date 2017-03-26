@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>46bit</title>
-<script src="//use.typekit.net/uaf2fos.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<script src="/js/mathjax/MathJax.js?config=46bit"></script>
-
-<link rel="stylesheet" href="/css/master.css">
-<link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+<head>
+	<meta charset="utf-8">
+  <title>How probable are 3 consecutive birthdays? - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+	<script src="/js/mathjax/MathJax.js?config=46bit"></script>
+	
+</head>
 <body>
-	<div class="wrapper">
-		<header class="head">
-			<h1><a href="/">46bit</a></h1>
-			<nav class="sitenav">
-				<ul>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/wiki/">Wiki</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="https://github.com/46bit">Github</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="pagecontent">
-			<article>
-	<header>
-		<h1><a href="/2013/three-birthday-problem">How probable are 3 consecutive birthdays?</a></h1>
-		<span class="date">April  1, 2013</span>
-		
-			<!--<span class="tags">Math</span>-->
-		
-	</header>
-	<div class="extended"><p>Have you ever wondered what the likelihood is of having three consecutive birthdays in a row? It’s a fun excursion from the classical statisical brain teaser on the <a href="http://en.wikipedia.org/wiki/Birthday_problem">birthday problem</a>. <!--more--></p>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">April  1, 2013 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="/2013/three-birthday-problem">How probable are 3 consecutive birthdays?</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    <p>Have you ever wondered what the likelihood is of having three consecutive birthdays in a row? It’s a fun excursion from the classical statisical brain teaser on the <a href="http://en.wikipedia.org/wiki/Birthday_problem">birthday problem</a>. <!--more--></p>
 <p>To begin with we’ll <strong>consider the probability of a given three people - let’s call them Alex, Brian and Catherine - having consecutive birthdays.</strong> For those familiar with sets, we’ll represent them with the set <span class="math inline">\(P = \{ Alex, Brian, Catherine \}\)</span>.</p>
 <h2 id="making-assumptions">Making assumptions</h2>
 <p>To keep the Math reasonably simple, we’ll make a few assumptions:</p>
@@ -67,42 +68,41 @@
 <p>Many thanks to the wonderful people that reviewed drafts of this post: the statistical <a href="https://www.toastwaffle.com">Samuel Littley</a>, the inventive <a href="http://toys.dreamforge.me/users/nemild">Nemil Dalal</a>, the organised <a href="https://twitter.com/AndyBursh">Andy Bursh</a>, the clarifying <a href="http://issyl0.co.uk">Isabell Long</a> &amp; the syntactical <a href="http://dpk.io">David Kendal</a>.</p>
 <p>Any statistical shortcomings are the fault of <a href="https://46b.it/about/">the author</a>, Michael Mokrysz.</p>
 <p><strong>UPDATE 1</strong>: I noticed I’d missed out the 4 different ways the birthdays can arise, so corrected for that.</p>
-<p><strong>UPDATE 2</strong>: <a href="https://www.toastwaffle.com">Samuel Littley</a> pointed out that whilst there are indeed 4 ways to make each triple, the probability of any specific one happening means that we divide by 4 again. Post updated with this reasoning.</p></div>
+<p><strong>UPDATE 2</strong>: <a href="https://www.toastwaffle.com">Samuel Littley</a> pointed out that whilst there are indeed 4 ways to make each triple, the probability of any specific one happening means that we divide by 4 again. Post updated with this reasoning.</p>
+  </section>
 </article>
 
-		</div>
-	</div>
 	<script>
-	  // Tracking
-	  if (document.location.hostname != "localhost") {
-	    // GoSquared
-	    var GoSquared = {};
-	    GoSquared.acct = "GSN-207291-Q";
-	    (function(w){
-	      function gs(){
-	        w._gstc_lt = +new Date;
-	        var d = document, g = d.createElement("script");
-	        g.type = "text/javascript";
-	        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-	        var s = d.getElementsByTagName("script")[0];
-	        s.parentNode.insertBefore(g, s);
-	      }
-	      w.addEventListener ?
-	        w.addEventListener("load", gs, false) :
-	        w.attachEvent("onload", gs);
-	    })(window);
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
 
-	    // Google Analytics
-	    var _gaq = _gaq || [];
-	    _gaq.push(['_setAccount', 'UA-22921213-1']);
-	    _gaq.push(['_trackPageview']);
-	    var ga = document.createElement('script');
-	    ga.type = 'text/javascript';
-	    ga.async = true;
-	    ga.src = 'https://ssl.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(ga, s);
-	  }
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
 	</script>
 </body>
 </html>

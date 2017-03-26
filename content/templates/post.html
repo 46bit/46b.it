@@ -1,10 +1,11 @@
 <article>
-	<header>
-		<h1><a href="$url$">$title$</a></h1>
-		<span class="date">$date$</span>
-		$if(tags)$
-			<!--<span class="tags">$tags$</span>-->
-		$endif$
-	</header>
-	<div class="extended">$body$</div>
+  <header class="prelude">
+    <div class="wrapper">
+      <p class="meta">$date$ <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
+      <h1><a href="$url$">$title$</a></h1>
+    </div>
+  </header>
+  <section class="wrapper">
+    $body$
+  </section>
 </article>
