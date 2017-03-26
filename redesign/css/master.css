@@ -59,6 +59,11 @@ article .prelude {
   font: 300 24px/38px 'Merriweather', serif;
   border-bottom: 6px solid #ffee36;
 }
+article .prelude a {
+  color: #ffee36;
+  font-weight: 400;
+  border-bottom-color: #ffee36;
+}
 article .prelude .meta {
   color: #ffee36;
 }
@@ -71,6 +76,12 @@ article .prelude h1 {
   font-size: 36px;
   line-height: 48px;
   font-weight: 300;
+}
+article .prelude .intro {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 33px;
+  margin-top: 18px;
 }
 
 article section {
@@ -92,11 +103,4 @@ article section h2 {
 }
 article section p, ul, ol, pre {
   margin-bottom: 18px;
-}
-article section .intro {
-  color: #000;
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 28px;
-  margin-bottom: 30px;
 }
