@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title>2017 - 46b.it</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/css/master.css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
+  
+	<script src="/js/mathjax/MathJax.js?config=46bit"></script>
+	
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/">46b.it</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Writing</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      <h1>Posts from 2017</h1>
+    </div>
+  </header>
+  
+<section class="wrapper zerotop">
+  <p class="meta">March 14, 2017</p>
+  <h3><a href="/2017/writing-again">I've been published!</a></h3>
+  
+  <p><strong>In the last month I’ve published twice in our campus newspaper, Nouse:</strong></p>
+<ul>
+<li><a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">Battle of the colleges: who’s got the BNOCs</a>: I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.</li>
+<li><strong><a href="http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/">YUSU elections put under the microscope: college chances, campus stances and gender imbalances</a></strong>: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions.  <a href="/2017/writing-again">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">March 13, 2017</p>
+  <h3><a href="/2017/security-risk-assessment">Security Risk Assessments of Semi-Autonomous Vehicles</a></h3>
+  
+  <p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
+<p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</p>
+<p><img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600">  <a href="/2017/security-risk-assessment">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">March 12, 2017</p>
+  <h3><a href="/2017/bicycle-skid">Glad I was wearing a cycle helmet</a></h3>
+  
+  <p>One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (<code>2017-03-10</code>) I had a bit of an accident.  <a href="/2017/bicycle-skid">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">March  3, 2017</p>
+  <h3><a href="/2017/evco">Recursive Enum expression trees in Rust</a></h3>
+  
+  <p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
+<p>As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.</p>
+<p>There are two common ways to represent a tree datastructure:  <a href="/2017/evco">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">March  2, 2017</p>
+  <h3><a href="/2017/evolutionary-computing">Introduction to Evolutionary Computing</a></h3>
+  
+  <p>I took an Evolutionary Computation course last semester, <a href="https://www.cs.york.ac.uk/postgraduate/modules/evco.html">EVCO</a>. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:</p>
+<p style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uxourrlPlf8" frameborder="0" allowfullscreen>
+</iframe>
+</p>
+<p>I’d like to thank <a href="https://www.york.ac.uk/biology/research/ecology-evolution/daniel-franks/">Dr Daniel Franks</a> for a great course, enthusiastic teaching and many of the examples here.</p>
+<p>Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my <code>evco</code> examples <a href="https://github.com/46bit/evco/blob/v0.2.1/examples/snake.rs">evolves Snake players</a>. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions. <a href="/2017/evolutionary-computing">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">March  1, 2017</p>
+  <h3><a href="/2017/coldfusion-insecure-escape-spaces">Securing legacy ColdFusion or: Why escape spaces against XSS?</a></h3>
+  
+  <p>I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications.</p>
+<p>ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
+<p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and <strong>ColdFusion is insecure by default.</strong> Let’s take some typical Ruby <code>erb</code> markup:  <a href="/2017/coldfusion-insecure-escape-spaces">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">February 28, 2017</p>
+  <h3><a href="/2017/rust-generating-syntax-trees">Generating expression trees in Rust</a></h3>
+  
+  <p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
+<p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
+<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
+    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
+    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
+    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
+    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
+    Float(<span class="dt">f64</span>), <span class="co">// n</span>
+<span class="op">}</span></code></pre></div>
+<p>This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply:  <a href="/2017/rust-generating-syntax-trees">[&hellip;]</a>
+  
+</section>
+
+<section class="wrapper zerotop">
+  <p class="meta">February 27, 2017</p>
+  <h3><a href="/2017/engineering-discipline-and-craft">Engineering as slowly as possible</a></h3>
+  
+  <p>I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">slow, logical, conscious System Two</a> thinking.</p>
+<p>The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard.</p>
+<p>So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft <em>in order to</em> still move fast: building things well rather than just building them.  <a href="/2017/engineering-discipline-and-craft">[&hellip;]</a>
+  
+</section>
+
+
+</article>
+
+	<script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+	</script>
+</body>
+</html>
