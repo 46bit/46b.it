@@ -52,7 +52,10 @@ main = hakyllWith config $ do
 	match "css/*" $ do
 		route idRoute
 		compile compressCssCompiler
-	match (Hakyll.fromList ["pgp.asc", "favicon.ico"]) $ do
+	match "fonts/*" $ do
+		route idRoute
+		compile copyFileCompiler
+	match (Hakyll.fromList ["favicon.ico"]) $ do
 		route idRoute
 		compile copyFileCompiler
 

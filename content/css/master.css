@@ -1,3 +1,14 @@
+/*@font-face {
+    font-family: 'fa-minified';
+    src: url('../fonts/fa-minified.eot');
+    src: url('../fonts/fa-minified.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fa-minified.woff') format('woff'),
+         url('../fonts/fa-minified.ttf') format('truetype'),
+         url('../fonts/fa-minified.svg#fa-minified') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
 * {
   margin: 0;
   padding: 0;
@@ -226,3 +237,26 @@ article code {
   padding: 0 6px 2px;
   font-family: 'Operator Mono', monospace;
 }
+/*
+a[href*="//"]::after {
+  font-family: fa-minified;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 70%;
+  content: " \0043";
+}
+a[href*="mailto"]::after {
+  font-family: fa-minified;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 70%;
+  content: " \0042";
+}
+a[href*="github.com"]::after {
+  font-family: fa-minified;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 70%;
+  content: " \0041";
+}
+*/
