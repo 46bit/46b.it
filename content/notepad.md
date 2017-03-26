@@ -9,3 +9,6 @@ title: Notepad of things worth writing about
 * What percentage of Britons can't afford an employment tribunal? Combine how many Brits can't afford a £1k unexpected expense with the new cost of an employment tribunal.
 * Why didn't York vote Brexit/why did Yorkshire vote Brexit? Issues of cosmopolitanism, prosperity, hope and class will naturally abound.
 * Your thoughts on Bobos in Paradise and The Preppy Handbook. Somewhat beyond what I know how to write, but I made a lot of notes on those books.
+* [Information Avoidance paper](http://pubs.aeaweb.org/doi/pdfplus/10.1257/jel.20151245)
+* [Ten Reasons People Resist Change](https://hbr.org/2012/09/ten-reasons-people-resist-chang)
+* [Intellectual Humility](https://news.ycombinator.com/item?id=13902710)
