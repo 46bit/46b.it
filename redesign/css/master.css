@@ -189,14 +189,17 @@ article section .avatar {
 article .reduced {
   padding: 0;
   margin-top: 20px;
-  border-radius: 3px;
 }
 article .reduced h2 {
-  background: #fafafa;
+  background: #005c8c;
   padding-left: 20px;
-  font-size: 25px;
-  font: 300 25px/35px 'Merriweather', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
 }
 article .reduced h2 a {
-  color: #3b3b3b;
+  color: #fff;
+}
+article .reduced h2 a:hover, article .reduced h2 a:active {
+  border-bottom: none;
 }
