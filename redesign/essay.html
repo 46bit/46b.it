@@ -48,7 +48,7 @@
 
       <h2>Why Escape Spaces against XSS?</h2>
       <p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
-      <p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last #…# and use of cf tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="#">PHP with register_globals turned on.</a></p>
+      <p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last <code>#…#</code> and use of cf tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="#">PHP with register_globals turned on.</a></p>
       <p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
       <p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the X-XSS-Protection header, but I’m guessing it isn’t something to rely upon.</p>
       <p>Until next time,<br>— 46bit</p>
