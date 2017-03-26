@@ -28,6 +28,9 @@ a {
   color: #fff;
   border-bottom: none;
 }
+#header a:hover, #header a:active {
+  color: #ffee36;
+}
 #header h1 {
   float: left;
   font-size: 30px;
@@ -47,7 +50,8 @@ a {
   display: block;
   padding: 22px;
 }
-#header nav ul li.active a {
+#header nav ul li.active a, #header nav ul li.active a:hover, #header nav ul li.active a:active {
+  color: #fff;
   background: #d9560e;
   font-weight: 600;
 }
