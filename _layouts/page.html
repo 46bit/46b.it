@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article>
+  <header class="prelude">
+    <div class="wrapper">
+      {% if page.title %}
+      <h1><a href="$url$">{{ page.title }}</a></h1>
+      {% endif %}
+    </div>
+  </header>
+  <section class="wrapper balancedbottom">
+    {{ content }}
+  </section>
+<article>

@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-  <title>Recursive Enum expression trees in Rust - 46b.it</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
-  <link href="/css/master-rebuild.css" rel="stylesheet">
-  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
-  
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="/2017/evco/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/feed.xml">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Recursive Enum expression trees in Rust - 46b.it</title>
 </head>
 <body>
   <header id="header">
     <div class="wrapper">
       <h1><a href="/">46b.it</a></h1>
       <nav>
+        
         <ul>
-          <li><a href="/">Writing</a></li>
+          <li class="active"><a href="/">Writing</a></li>
           <li><a href="/wiki/">Wiki</a></li>
-          <li><a href="/about/">About</a></li>
+          <li ><a href="/about/">About</a></li>
           <li><a href="https://github.com/46bit">Github</a></li>
         </ul>
       </nav>
@@ -25,78 +32,98 @@
   <article>
   <header class="prelude">
     <div class="wrapper">
-      <p class="meta">March  3, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
-      <h1><a href="/2017/evco">Recursive Enum expression trees in Rust</a></h1>
+      <p class="meta">
+        Mar 3, 2017
+        <!--
+        &nbsp;&bullet;&nbsp; saturday
+        &nbsp;&bullet;&nbsp; by Michael Mokrysz
+        -->
+      </p>
+      
+      <h1><a href="$url$">Recursive Enum expression trees in Rust</a></h1>
+      
     </div>
   </header>
-  <section class="wrapper">
+  <section class="wrapper narrowtop balancedbottom">
     <p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
+
 <p>As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.</p>
-<p>There are two common ways to represent a tree datastructure: <!--more--></p>
+
+<p>There are two common ways to represent a tree datastructure:
+<!--more--></p>
+
 <ul>
-<li>The most obvious way is similar to a Linked List: allocate a separate portion of memory for each node in the tree and store pointers to the child/parent nodes. This makes it cheap to expand the tree and is a very natural representation.</li>
-<li>The other way is to put the tree into an array. Map the parent-child relationships into indices and you can store a tree as a single block of memory. Adding nodes can require copying all this data into a larger region of memory but this has a variety of benefits such as cache locality.</li>
+  <li>The most obvious way is similar to a Linked List: allocate a separate portion of memory for each node in the tree and store pointers to the child/parent nodes. This makes it cheap to expand the tree and is a very natural representation.</li>
+  <li>The other way is to put the tree into an array. Map the parent-child relationships into indices and you can store a tree as a single block of memory. Adding nodes can require copying all this data into a larger region of memory but this has a variety of benefits such as cache locality.</li>
 </ul>
+
 <p>We can define the semantics of a heap-allocated expression tree at compile time. Here’s a cut-down example - you can get and play with the <a href="https://play.rust-lang.org/?gist=ddbde8dbeacb4f501995aef551f5ac7f&amp;version=stable&amp;backtrace=0">full code here</a>.</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span><span class="bu">Clone</span><span class="at">,</span> <span class="bu">Debug</span><span class="at">,</span> <span class="bu">PartialEq</span><span class="at">,</span> <span class="bu">Eq</span><span class="at">)]</span>
-<span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a + b`</span>
-    Sub(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a - b`</span>
-    Mul(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a * b`</span>
-    Div(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a / b`</span>
-    Neg(Node&lt;Equation&gt;), <span class="co">// `-a`</span>
-    Sin(Node&lt;Equation&gt;), <span class="co">// `sin(a)`</span>
-    Float(<span class="dt">f64</span>), <span class="co">// evaluates to a constant 64-bit float</span>
-    Input, <span class="co">// evaluates to an inputted 64-bit float</span>
-<span class="op">}</span>
 
-<span class="kw">impl</span> Equation <span class="op">{</span>
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, env: &amp;<span class="kw">Self</span>::Environment) -&gt; <span class="kw">Self</span>::Action <span class="op">{</span>
-        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
-            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) + right.eval(env),
-            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) - right.eval(env),
-            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) * right.eval(env),
-            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; protected_div(left.eval(env), right.eval(env)),
-            Neg(<span class="kw">ref</span> left) =&gt; -left.eval(env),
-            Sin(<span class="kw">ref</span> left) =&gt; left.eval(env).sin(),
-            Float(i) =&gt; i,
-            Input =&gt; *env,
-        <span class="op">}</span>
-    <span class="op">}</span>
-<span class="op">}</span>
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Clone</span><span class="p">,</span> <span class="n">Debug</span><span class="p">,</span> <span class="n">PartialEq</span><span class="p">,</span> <span class="nb">Eq</span><span class="p">)]</span>
+<span class="k">enum</span> <span class="n">Equation</span> <span class="p">{</span>
+    <span class="nf">Add</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `a + b`</span>
+    <span class="nf">Sub</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `a - b`</span>
+    <span class="nf">Mul</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `a * b`</span>
+    <span class="nf">Div</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `a / b`</span>
+    <span class="nf">Neg</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `-a`</span>
+    <span class="nf">Sin</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">Equation</span><span class="o">&gt;</span><span class="p">),</span> <span class="c">// `sin(a)`</span>
+    <span class="nf">Float</span><span class="p">(</span><span class="nb">f64</span><span class="p">),</span> <span class="c">// evaluates to a constant 64-bit float</span>
+    <span class="n">Input</span><span class="p">,</span> <span class="c">// evaluates to an inputted 64-bit float</span>
+<span class="p">}</span>
 
-<span class="kw">fn</span> main() <span class="op">{</span>
-    <span class="co">// represent the equation `x` and evaluate for `x=5`</span>
-    <span class="kw">let</span> tree1 = Equation::Input;
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree1.eval(<span class="dv">5.0</span>));
+<span class="k">impl</span> <span class="n">Equation</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">eval</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="o">&amp;</span><span class="nn">Self</span><span class="p">::</span><span class="n">Environment</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nn">Self</span><span class="p">::</span><span class="n">Action</span> <span class="p">{</span>
+        <span class="k">match</span> <span class="o">*</span><span class="k">self</span> <span class="p">{</span>
+            <span class="nf">Add</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">,</span> <span class="k">ref</span> <span class="n">right</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="o">+</span> <span class="n">right</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">),</span>
+            <span class="nf">Sub</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">,</span> <span class="k">ref</span> <span class="n">right</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="o">-</span> <span class="n">right</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">),</span>
+            <span class="nf">Mul</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">,</span> <span class="k">ref</span> <span class="n">right</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="o">*</span> <span class="n">right</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">),</span>
+            <span class="nf">Div</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">,</span> <span class="k">ref</span> <span class="n">right</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">protected_div</span><span class="p">(</span><span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">),</span> <span class="n">right</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">)),</span>
+            <span class="nf">Neg</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="o">-</span><span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">),</span>
+            <span class="nf">Sin</span><span class="p">(</span><span class="k">ref</span> <span class="n">left</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">left</span><span class="nf">.eval</span><span class="p">(</span><span class="n">env</span><span class="p">)</span><span class="nf">.sin</span><span class="p">(),</span>
+            <span class="nf">Float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">i</span><span class="p">,</span>
+            <span class="n">Input</span> <span class="k">=&gt;</span> <span class="o">*</span><span class="n">env</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-    <span class="co">// represent the equation `x * sin(4.0)` and evaluate for `x=-7.3`</span>
-    <span class="kw">let</span> tree2 =
-      Equation::Mul(
-        node(Equation::Input),
-        node(Equation::Sin(
-          node(Equation::Float(<span class="dv">4.0</span>))
-        ))
-      );
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree2.eval(-<span class="dv">7.3</span>));
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// represent the equation `x` and evaluate for `x=5`</span>
+    <span class="k">let</span> <span class="n">tree1</span> <span class="o">=</span> <span class="nn">Equation</span><span class="p">::</span><span class="n">Input</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">tree1</span><span class="nf">.eval</span><span class="p">(</span><span class="mf">5.0</span><span class="p">));</span>
 
-    <span class="co">// represent the equation `x + sin(x)` and evaluate for `x=99.1` and `x=16.3`</span>
-    <span class="kw">let</span> tree3 =
-      Equation::Add(
-        node(Equation::Input),
-        node(Equation::Sin(
-          node(Equation::Input)
-        ))
-      );
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree3.eval(<span class="dv">99.1</span>), tree3.eval(<span class="dv">16.3</span>));
-<span class="op">}</span></code></pre></div>
-<p>This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the <a href="https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs">Symbolic Regression example</a> and (this might not be obvious) <a href="https://46bit.github.io/evco/evco/gp/tree"><code>evco::gp::tree</code></a>.</p>
+    <span class="c">// represent the equation `x * sin(4.0)` and evaluate for `x=-7.3`</span>
+    <span class="k">let</span> <span class="n">tree2</span> <span class="o">=</span>
+      <span class="nn">Equation</span><span class="p">::</span><span class="nf">Mul</span><span class="p">(</span>
+        <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="n">Input</span><span class="p">),</span>
+        <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="nf">Sin</span><span class="p">(</span>
+          <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="nf">Float</span><span class="p">(</span><span class="mf">4.0</span><span class="p">))</span>
+        <span class="p">))</span>
+      <span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">tree2</span><span class="nf">.eval</span><span class="p">(</span><span class="o">-</span><span class="mf">7.3</span><span class="p">));</span>
+
+    <span class="c">// represent the equation `x + sin(x)` and evaluate for `x=99.1` and `x=16.3`</span>
+    <span class="k">let</span> <span class="n">tree3</span> <span class="o">=</span>
+      <span class="nn">Equation</span><span class="p">::</span><span class="nf">Add</span><span class="p">(</span>
+        <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="n">Input</span><span class="p">),</span>
+        <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="nf">Sin</span><span class="p">(</span>
+          <span class="nf">node</span><span class="p">(</span><span class="nn">Equation</span><span class="p">::</span><span class="n">Input</span><span class="p">)</span>
+        <span class="p">))</span>
+      <span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">tree3</span><span class="nf">.eval</span><span class="p">(</span><span class="mf">99.1</span><span class="p">),</span> <span class="n">tree3</span><span class="nf">.eval</span><span class="p">(</span><span class="mf">16.3</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the <a href="https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs">Symbolic Regression example</a> and (this might not be obvious) <a href="https://46bit.github.io/evco/evco/gp/tree/index.html"><code class="highlighter-rouge">evco::gp::tree</code></a>.</p>
+
 <p>However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.</p>
-<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p>
-  </section>
-</article>
 
-	<script>
+<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p>
+
+  </section>
+<article>
+
+  <script>
   // Tracking
   if (document.location.hostname != "localhost") {
     // GoSquared
@@ -127,6 +154,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
   }
-	</script>
+  </script>
 </body>
 </html>

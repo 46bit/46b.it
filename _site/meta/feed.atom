@@ -1,461 +1,561 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>46bit</title>
-    <link href="https://46b.it/meta/feed.atom" rel="self" />
-    <link href="https://46b.it" />
-    <id>https://46b.it/meta/feed.atom</id>
-    <author>
-        <name>46bit</name>
-        <email></email>
-    </author>
-    <updated>2017-03-14T00:00:00Z</updated>
-    <entry>
-    <title>I've been published!</title>
-    <link href="https://46b.it/2017/writing-again/index.html" />
-    <id>https://46b.it/2017/writing-again/index.html</id>
-    <published>2017-03-14T00:00:00Z</published>
-    <updated>2017-03-14T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p><strong>In the last month I’ve published twice in our campus newspaper, Nouse:</strong></p>
-<ul>
-<li><a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">Battle of the colleges: who’s got the BNOCs</a>: I waited a year collecting data on candidates for our Student Union. This was some preliminary analysis with a second year of data - I only had 48 hours.</li>
-<li><strong><a href="http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/">YUSU elections put under the microscope: college chances, campus stances and gender imbalances</a></strong>: our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions. <!--more--></li>
-</ul>
-<p>These are based on the same underlying data but the latter post gave me two weeks to make a deeper analysis. I found it a tough but exciting learning curve to collect the data, do analysis and publish it with the fantastic team at Nouse. So many thanks to <a href="http://www.nouse.co.uk/author/luke-rix-standing/">Luke Rix-Standing</a> (Editor), <a href="http://www.nouse.co.uk/author/finn-judge/">Finn Judge</a> (Deputy Editor) and <a href="http://www.nouse.co.uk/author/amelia-clarke/">Amelia Clarke</a> (News Editor).</p>
-<h3 id="yes-published-in-a-paper-newspaper.">Yes, published in a paper newspaper.</h3>
-<p>It might seem strange that a Computer Scientist is publishing on paper. I disagree: electronic media is growing hugely in appeal, and Kindles have eaten much of my use of paper for reading. But media is a diverse field and if you want to reach people in a particular but diverse organisation the organisation’s own newspaper is a good way. Something I need a better process for is my method of analysing data: Google Sheets charts don’t suffice.</p>
-<h3 id="evidence-based-policy">Evidence-based policy</h3>
-<p>I am a little troubled by what I found. It isn’t necessarily surprising that Colleges more distant from the rest of the University get less attention. Given wider tends it isn’t necessarily surprising that female-identifying candidates run for more junior positions. But seeing the numbers show up consistently in a venue nobody else thought to look is illuminating.</p>
-<p>I set out to try and find out more about something public that wasn’t being looked at. I’ve developed an impression that a lot of real-world issues are widely known anecdotally, but nothing gets done because you can’t prove anything. As such, demonstrating an issue in a deep, quantitative analysis can be a useful step to arguing and driving for change.</p>
-<p>To an extent this belief is an artifact of my own mindset. Where possible I like to argue from evidence. Some years ago I participated in government/civic data hackdays, and that interest is still around under the surface.</p>
-<p>I’m a Course Rep in the Computer Science department at York, responsible for acting on student feedback and improving the student experience. A lot of Course Reps probably just argue for things they believe, and resolutely keep arguing until something is done or they get worn out. My approach to many issues is along this axis, but if something seems harder to get done I turn to an analytical mindset. This worked for highlighting problems with a Machine Learning class I took last year, after 4 years of the problems seeming to be ignored.</p>
-<h2 id="i-argued-that-free-speech-arguments-are-being-used-out-of-confusion-or-even-bad-faith">I argued that Free Speech arguments are being used out of confusion or even bad faith</h2>
-<p><a href="https://xkcd.com/1357/"><img src="/img/xkcd-free-speech-door.jpg" alt="The XKCD cartoon I posted to argue the point." width="700"></a></p>
-<p>This cartoon is <a href="https://xkcd.com/1357/">XKCD #1357</a>, posted by J.K. Rowling on Twitter. I felt rather inspired by it. I believe that many anti-intellectual and illiberal attitudes are being used right now, and one is the concept everyone has the right to say their fill in your community.</p>
-<p>I very much disagree: hate speech and hate groups are not harmless; normalising their speech is a way to having us listen; and many of these groups are privileged and are not genuinely struggling for a platform (hence why their complaints are so loudly audible despite the supposed crushing censorship.)</p>
-<p>See my replies to Kragen at <strong><a href="https://www.facebook.com/photo.php?fbid=1257833534308290&amp;set=a.147155018709486.33009.100002449667634&amp;type=3&amp;theater">It’s just that the people listening think you’re an asshole and they’re showing you the door.</a></strong></p>
-<h2 id="ive-also-published-7-posts-here">I’ve also published 7 posts here:</h2>
-<ul>
-<li><a href="/2017/engineering-discipline-and-craft/">Engineering as slowly as possible</a>: some thoughts on developing maintainably</li>
-<li><a href="/2017/evolutionary-computing/">Introduction to Evolutionary Computing</a>: background to building <a href="https://github.com/46bit/evco">Rust Genetic Programming library</a> that I’ve been looking for good approaches into.
-<ul>
-<li><a href="/2017/rust-generating-syntax-trees/">Generating expression trees in Rust</a> and <a href="/2017/evco/">Recursive Enum expression trees in Rust</a>: some confused thoughts about specifying tree structures as Rust <code>enum</code> types.</li>
-</ul></li>
-<li><a href="/2017/coldfusion-insecure-escape-spaces/">Securing legacy ColdFusion or: Why escape spaces against XSS?</a>: in which I justify and classify ColdFusion websites as insecure-by-default.</li>
-<li><a href="/2017/bicycle-skid/">Glad I was wearing a cycle helmet</a>: personal update on a bicycle accident.</li>
-<li><a href="/2017/security-risk-assessment/">Security Risk Assessments of Semi-Autonomous Vehicles</a>: discussing the level of autonomy necessary to get adoption of automated road trains (the SARTRE project.)</li>
-</ul>
-<p>My blog will be relatively low-quality writing for the time being. I’ve never honed my skills at writing until now, which means that iterating on a blog post can be a slow and long process. <strong>My hope is that the (limited) editing I do will feed into my new writing, and my process will slowly improve.</strong> We’ll see whether this works out, but it’s the Growth Mindset I’m taking.</p>
-<p>Until next time,<br> —46bit</p>]]></summary>
-</entry>
-<entry>
-    <title>Security Risk Assessments of Semi-Autonomous Vehicles</title>
-    <link href="https://46b.it/2017/security-risk-assessment/index.html" />
-    <id>https://46b.it/2017/security-risk-assessment/index.html</id>
-    <published>2017-03-13T00:00:00Z</published>
-    <updated>2017-03-13T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
-<p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</p>
-<p><img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600"> <!--more--></p>
-<h2 id="risksviability-of-commercial-deployment">Risks/viability of commercial deployment</h2>
-<p>Deploying this commercially is to move from a proof-of-concept to a live system. The most immediate issue I’ve identified is with this concept of following drivers not paying attention to the road: in the demonstrator, following vehicles had professional drivers who were paying attention.</p>
-<p>On an actual highway unexpected things happen. If the platoon (convoy) is to return control to drivers should a sudden, unexpected thing happen then drivers cannot be doing other activities - they need road awareness.</p>
-<p>The Parliamentary Science and Technology Office came up with a <a href="http://researchbriefings.parliament.uk/ResearchBriefing/Summary/POST-PN-443">classification system for automated road vehicles.</a> <em>Under this classification the proof-of-concept only meets the concept of Partial Autonomy.</em></p>
-<p><img src="/img/hoc-autonomous-vehicle-levels.png" alt="UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy"></p>
-<p><em>Drivers not having to be attentive is classed as High Autonomy.</em> As with my musings, they’ve identified it as a hard step to take.</p>
-<p>The demonstrator dissolved convoys by having vehicles automatically back off to 50m separations and 50km/h speeds. Thus drivers could regain control in a gentle manner. Sadly this isn’t all that practical - in my opinion - on the road.</p>
-<h2 id="collective-vs-individual-appeal">Collective vs Individual appeal</h2>
-<p>The European Commision sees a major advantage of this project being reduced carbon emissions. The slipstream from vehicles a few metres ahead reduces the fuel used by vehicles in the platoon.</p>
-<p>The reduced fuel usage appeals to all drivers in the form of lower costs. That is, it has individualistic appeal. Having the necessary equipment fitted can apparently pay itself back within 3 years on trucks - if produced at scale something similar seems plausible for cars.</p>
-<p>Reducing CO<sub>2</sub> emissions is still more of a collective issue. As Europeans we’re seeing oddities in the climate but not particularly as a critical issue every day. I suspect when it becomes a more individually-obvious issue there will finally be the will to take serious action, but at that point it may be too late to try anything but climate engineering.</p>
-<p>The problem for this project is that to the public, reduced fuel usage might not be worth the attention costs. If drivers are automatically monitored for paying attention to the road it is plausible to keep them attentive or evict them from a platoon. But staying immersed in the road environment when taking no action would be very tedious over long periods. As such I don’t think people will go for the project in high numbers unless this issue of having to pay constant attention is resolved.</p>
-<h2 id="summing-up">Summing up</h2>
-<p>It isn’t clear how directly this is being taken further in the real world. But it’s a nice model for semi-automated road vehicles, if only the emergency recovery of control can be worked out.</p>
-<p>I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.</p>]]></summary>
-</entry>
-<entry>
-    <title>Glad I was wearing a cycle helmet</title>
-    <link href="https://46b.it/2017/bicycle-skid/index.html" />
-    <id>https://46b.it/2017/bicycle-skid/index.html</id>
-    <published>2017-03-12T00:00:00Z</published>
-    <updated>2017-03-12T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (<code>2017-03-10</code>) I had a bit of an accident. <!--more--></p>
-<p>Sam Hand (<code>sdhand</code>) took the initiative to organise some new <a href="https://www.hacksoc.org">HackSoc</a> movie nights this year, and I’ve been helping with little bits of logistics. I’d been watching Apollo 13 but skipped Moon because I’d seen it recently.</p>
-<p style="text-align: center;">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.29712955826926!2d-1.0386286637597082!3d53.9533881908245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1489358465930" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
-</iframe>
-</p>
-<p>It was at this bend on Yarburgh Way that I came off. Rather than my bicycle taking the turn it went over, my head slamming into the road surface and about a dozen different areas of me getting scraped, bruised or hurt. I don’t seem to have any bad injuries… but I’ve found it remarkable how incapacitated very bad scrapes on a knee and forearm can make you.</p>
-<p>I’m not particularly sure how it happened. My bicycle completely skidded out as if it had no grip, but it was far too warm for ice and I didn’t see any oil in the immediate aftermath. Given the extent of my injuries I have to wonder if my speed was just too high for the grip of the tyres - it’s an exceptionally tight bend.</p>
-<p>In any case, I was momentarily aware of the bicycle not moving correctly but then I don’t particularly remember anything until picking part of my bicycle bell off the road. I picked myself off the road after a time and was tremendously dazed for 20 minutes or so. A kind passerby walked with me for a time to check I was okay - I think they were worried about a concussion. Let’s face it: I was worried about a concussion.</p>
-<p>Now, Helmets aren’t exactly designed to protect against concussions. The foam is a bit too hard. But they do a good job of protection otherwise, and <strong>in this case I think that if the helmet didn’t take it the side of my head would have been in a horrible state - and me probably rather more seriously injured.</strong></p>]]></summary>
-</entry>
-<entry>
-    <title>Recursive Enum expression trees in Rust</title>
-    <link href="https://46b.it/2017/evco/index.html" />
-    <id>https://46b.it/2017/evco/index.html</id>
-    <published>2017-03-03T00:00:00Z</published>
-    <updated>2017-03-03T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I mused about an implementation of expression trees in Rust <a href="https://46b.it/2017/rust-generating-syntax-trees/">two days ago</a>. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.</p>
-<p>As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.</p>
-<p>There are two common ways to represent a tree datastructure: <!--more--></p>
-<ul>
-<li>The most obvious way is similar to a Linked List: allocate a separate portion of memory for each node in the tree and store pointers to the child/parent nodes. This makes it cheap to expand the tree and is a very natural representation.</li>
-<li>The other way is to put the tree into an array. Map the parent-child relationships into indices and you can store a tree as a single block of memory. Adding nodes can require copying all this data into a larger region of memory but this has a variety of benefits such as cache locality.</li>
-</ul>
-<p>We can define the semantics of a heap-allocated expression tree at compile time. Here’s a cut-down example - you can get and play with the <a href="https://play.rust-lang.org/?gist=ddbde8dbeacb4f501995aef551f5ac7f&amp;version=stable&amp;backtrace=0">full code here</a>.</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span><span class="bu">Clone</span><span class="at">,</span> <span class="bu">Debug</span><span class="at">,</span> <span class="bu">PartialEq</span><span class="at">,</span> <span class="bu">Eq</span><span class="at">)]</span>
-<span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a + b`</span>
-    Sub(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a - b`</span>
-    Mul(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a * b`</span>
-    Div(Node&lt;Equation&gt;, Node&lt;Equation&gt;), <span class="co">// `a / b`</span>
-    Neg(Node&lt;Equation&gt;), <span class="co">// `-a`</span>
-    Sin(Node&lt;Equation&gt;), <span class="co">// `sin(a)`</span>
-    Float(<span class="dt">f64</span>), <span class="co">// evaluates to a constant 64-bit float</span>
-    Input, <span class="co">// evaluates to an inputted 64-bit float</span>
-<span class="op">}</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-27T04:24:54+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">I’ve been published!</title><link href="/2017/writing-again/" rel="alternate" type="text/html" title="I've been published!" /><published>2017-03-14T00:00:00+00:00</published><updated>2017-03-14T00:00:00+00:00</updated><id>/2017/writing-again</id><content type="html" xml:base="/2017/writing-again/">&lt;h2 id=&quot;in-the-last-month-ive-published-twice-in-our-campus-newspaper-nouse&quot;&gt;In the last month I’ve published twice in our campus newspaper, Nouse&lt;/h2&gt;
 
-<span class="kw">impl</span> Equation <span class="op">{</span>
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, env: &amp;<span class="kw">Self</span>::Environment) -&gt; <span class="kw">Self</span>::Action <span class="op">{</span>
-        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
-            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) + right.eval(env),
-            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) - right.eval(env),
-            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(env) * right.eval(env),
-            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; protected_div(left.eval(env), right.eval(env)),
-            Neg(<span class="kw">ref</span> left) =&gt; -left.eval(env),
-            Sin(<span class="kw">ref</span> left) =&gt; left.eval(env).sin(),
-            Float(i) =&gt; i,
-            Input =&gt; *env,
-        <span class="op">}</span>
-    <span class="op">}</span>
-<span class="op">}</span>
+&lt;p&gt;In the last month I’ve had two articles printed in the student newspaper, Nouse. Over the last year I’ve been collecting data on student union election candidates, and it was fantastic to pull the findings together.&lt;/p&gt;
 
-<span class="kw">fn</span> main() <span class="op">{</span>
-    <span class="co">// represent the equation `x` and evaluate for `x=5`</span>
-    <span class="kw">let</span> tree1 = Equation::Input;
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree1.eval(<span class="dv">5.0</span>));
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/&quot;&gt;Battle of the colleges: who’s got the BNOCs&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+I had about 48 hours to do preliminary analysis with a second year of data. Given those constraints and having not done this before, I’m pretty happy with the printed results.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;http://www.nouse.co.uk/2017/03/07/yusu-elections-put-under-the-microscope-college-chances-campus-stances-and-gender-imbalances/&quot;&gt;YUSU elections put under the microscope: college chances, campus stances and gender imbalances&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+A few weeks later I came back with more thoroughly analysed findings. In summary - our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions.&lt;/li&gt;
+&lt;/ul&gt;
 
-    <span class="co">// represent the equation `x * sin(4.0)` and evaluate for `x=-7.3`</span>
-    <span class="kw">let</span> tree2 =
-      Equation::Mul(
-        node(Equation::Input),
-        node(Equation::Sin(
-          node(Equation::Float(<span class="dv">4.0</span>))
-        ))
-      );
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree2.eval(-<span class="dv">7.3</span>));
+&lt;!--more--&gt;
 
-    <span class="co">// represent the equation `x + sin(x)` and evaluate for `x=99.1` and `x=16.3`</span>
-    <span class="kw">let</span> tree3 =
-      Equation::Add(
-        node(Equation::Input),
-        node(Equation::Sin(
-          node(Equation::Input)
-        ))
-      );
-    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span>, tree3.eval(<span class="dv">99.1</span>), tree3.eval(<span class="dv">16.3</span>));
-<span class="op">}</span></code></pre></div>
-<p>This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the <a href="https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs">Symbolic Regression example</a> and (this might not be obvious) <a href="https://46bit.github.io/evco/evco/gp/tree/index.html"><code>evco::gp::tree</code></a>.</p>
-<p>However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.</p>
-<p><em>That’s all for now, it’s time for bed. Sometime soon I’d like to write about <a href="https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups">diversity experiences in tech</a>, and how EVCO generates trees.</em></p>]]></summary>
-</entry>
-<entry>
-    <title>Introduction to Evolutionary Computing</title>
-    <link href="https://46b.it/2017/evolutionary-computing/index.html" />
-    <id>https://46b.it/2017/evolutionary-computing/index.html</id>
-    <published>2017-03-02T00:00:00Z</published>
-    <updated>2017-03-02T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I took an Evolutionary Computation course last semester, <a href="https://www.cs.york.ac.uk/postgraduate/modules/evco.html">EVCO</a>. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:</p>
-<p style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uxourrlPlf8" frameborder="0" allowfullscreen>
-</iframe>
-</p>
-<p>I’d like to thank <a href="https://www.york.ac.uk/biology/research/ecology-evolution/daniel-franks/">Dr Daniel Franks</a> for a great course, enthusiastic teaching and many of the examples here.</p>
-<p>Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my <code>evco</code> examples <a href="https://github.com/46bit/evco/blob/v0.2.1/examples/snake.rs">evolves Snake players</a>. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.<!--more--> So if you want to approximate some data you might:</p>
-<ol style="list-style-type: decimal">
-<li>Randomly generate a population of equations. Each equation forms a genome of sorts.</li>
-<li>Test how good an approximation each equation (“individual”) gives.</li>
-<li>Select the best equations to take forward.</li>
-<li>Simulate sexual reproduction by swapping some randomly chosen parts of equations.</li>
-<li>Simulate random mutations by randomly changing some terms in the equations.</li>
-</ol>
-<h2 id="how-effective-can-this-be-impressively-creative.">How effective can this be? Impressively creative.</h2>
-<p>This process can be excellent at finding creative solutions. Over sufficient timescales biological evolution is remarkably creative - just look at your own body.</p>
-<div class="figure">
-<img src="/img/evolved-antenna.jpg" alt="NASA evolved this antenna for a 2006 mission." />
-<p class="caption"><strong>NASA <a href="https://en.wikipedia.org/wiki/Evolved_antenna">evolved this antenna</a> for a 2006 mission.</strong></p>
-</div>
-<p>But I’ve found that tuning an evolutionary process is quite intensive: it takes a lot of programmer time and (the challenge) a lot of unguided experimentation.</p>
-<p>Evolution often reaches local maxima: it isn’t generating individuals which act in usefully different ways and so all individuals bottleneck around the same maximum fitness. As the best individuals are bred preferentially, when an innovation occurs the effect in improving average fitness can be dramatic. A biological example of this might be how life on Earth was single-celled for billions of years before multicellular eukaryotes came along.</p>
-<p>Six months has taught me that Evolutionary Computing is quite time-intensive but a brilliant hobby. These processes are stochastic: while subject to random variation they can be analysed. A lot of computation and analysis is necessary to understand how well a process is working.</p>
-<h2 id="genetic-programming-in-python-with-deap">Genetic Programming in Python with DEAP</h2>
-<p>York’s course used the <a href="http://deap.readthedocs.io/en/master/">DEAP</a> library for Python. This feels something of a hobbyist’s tool: it contains implementations of the ingredients necessary for evolutionary computing but doesn’t get overly sophisticated.</p>
-<p>One drawback with DEAP is that a lot of examples and suggested tooling don’t work well with PyPy. (PyPy is a Just In Time compiler that can run many times faster than the reference CPython implementation.) For the assessment we had to evolve automated snake players, and it proved frustrating how much potential efficiency was lost.</p>
-<p><em>As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.</em></p>]]></summary>
-</entry>
-<entry>
-    <title>Securing legacy ColdFusion or: Why escape spaces against XSS?</title>
-    <link href="https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html" />
-    <id>https://46b.it/2017/coldfusion-insecure-escape-spaces/index.html</id>
-    <published>2017-03-01T00:00:00Z</published>
-    <updated>2017-03-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications.</p>
-<p>ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
-<p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and <strong>ColdFusion is insecure by default.</strong> Let’s take some typical Ruby <code>erb</code> markup: <!--more--></p>
-<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">&lt;input name=<span class="st">&quot;forename&quot;</span> value=<span class="st">&quot;&lt;%= forename %&gt;&quot;</span>&gt;</code></pre></div>
-<p>The <code>&lt;%= … %&gt;</code> tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the <code>raw</code> function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.</p>
-<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfinput name=&quot;forename&quot; value=&quot;#form.forename#&quot;&gt;</code></pre></div>
-<p>People running ColdFusion are generally moving to the open source <a href="@TODO">Railo</a> and <a href="@TODO">Lucee</a> servers. These applied a sanity pass to what they should support.</p>
-<p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
-<p><img src="/img/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="600"></p>
-<p>The intersection of secure and available in both is to import the <a href="https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API">OSASP ESAPI API</a> from Java.</p>
-<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfoutput&gt;
-    &lt;input name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;
-&lt;/cfoutput&gt;</code></pre></div>
-<p>Yuck, huh? You might notice we’re using <code>cfoutput</code> and <code>input</code> tags now. As I’ll explain, this works around double-escaping issues.</p>
-<h2 id="why-escape-spaces-against-xss">Why Escape Spaces against XSS?</h2>
-<p>In one of these application I was escaping a <code>cfinput value</code> with ESAPI:</p>
-<div class="sourceCode"><pre class="sourceCode coldfusion"><code class="sourceCode coldfusion">&lt;cfinput name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&gt;</code></pre></div>
-<p>But on Lucee <code>cfinput</code> is running <code>encodeForHTMLAttribute</code> itself and so we’re double-escaping <code>form.forename</code>. So some characters got double escaped: <code>` (space) &amp;rarr;</code> <code>&amp;rarr;</code>&amp;#32;`.</p>
-<p>Instead of <code>Stranger Things</code> your prefilled form field now says <code>Stranger&amp;#32;Things</code>.</p>
-<p>You wanted this: <input value="Stranger&#32;Things"><br> You get this: <input value="Stranger&amp;#32;Things"></p>
-<p>This could have the approach of escaping almost any character outside <code>/a-z0-9/i</code> but I was genuinely surprised that spaces are escaped. I found myself wondering why. Turns out there is a very good reason. Let’s go back to <code>erb</code>, which escapes by default.</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;input</span><span class="ot"> name=</span><span class="st">&quot;forename&quot;</span><span class="ot"> value=</span><span class="er">&lt;</span><span class="st">%=</span><span class="ot"> forename</span> <span class="er">%</span><span class="kw">&gt;</span>&gt;</code></pre></div>
-<p>See how there’s no quotation marks for the <code>value</code> attribute? HTML is happy without them. So a library that doesn’t escape spaces would leave you vulnerable.</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">forename = &#39;Stranger<span class="dv">&amp;amp;</span>Things onload=alert(&quot;XSS&quot;)&#39;
+&lt;p&gt;These are based on the same underlying data but the latter post gave me two weeks to make a deeper analysis. I found it a tough but exciting learning curve to collect the data, do analysis and publish it with the fantastic team at Nouse. So many thanks to &lt;a href=&quot;http://www.nouse.co.uk/author/luke-rix-standing/&quot;&gt;Luke Rix-Standing&lt;/a&gt; (Editor), &lt;a href=&quot;http://www.nouse.co.uk/author/finn-judge/&quot;&gt;Finn Judge&lt;/a&gt; (Deputy Editor) and &lt;a href=&quot;http://www.nouse.co.uk/author/amelia-clarke/&quot;&gt;Amelia Clarke&lt;/a&gt; (News Editor).&lt;/p&gt;
 
-<span class="kw">&lt;input</span><span class="ot"> value=</span><span class="st">Stranger</span><span class="dv">&amp;amp;</span><span class="st">Things</span><span class="ot"> onload=</span><span class="st">alert(</span><span class="er">&#39;XSS&#39;)</span><span class="kw">&gt;</span></code></pre></div>
-<p>I think this fits into Defence In Depth. Attribute tags <em>should</em> have the quotation marks, but mistakes happen and nobody is looking for that particular mistake. You have a problem when it only takes one missing quotation mark to open up your website to XSS. Escaping spaces is therefore quite important.</p>
-<h2 id="salvaging-legacy-applications">Salvaging legacy applications</h2>
-<p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
-<p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last <code>#…#</code> and use of <code>cf</code> tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="https://en.wikibooks.org/wiki/PHP_Programming/Configuration:_Register_Globals">PHP with <code>register_globals</code> turned on</a>.</p>
-<p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
-<p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the <code>X-XSS-Protection</code> header, but I’m guessing it isn’t something to rely upon.</p>
-<p>Until next time,<br> — 46bit</p>]]></summary>
-</entry>
-<entry>
-    <title>Generating expression trees in Rust</title>
-    <link href="https://46b.it/2017/rust-generating-syntax-trees/index.html" />
-    <id>https://46b.it/2017/rust-generating-syntax-trees/index.html</id>
-    <published>2017-02-28T00:00:00Z</published>
-    <updated>2017-02-28T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
-<p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
-    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
-    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
-    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
-    Float(<span class="dt">f64</span>), <span class="co">// n</span>
-<span class="op">}</span></code></pre></div>
-<p>This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply: <!--more--></p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">use</span> Equation::*;
+&lt;h3 id=&quot;yes-published-in-a-paper-newspaper&quot;&gt;Yes, published in a paper newspaper.&lt;/h3&gt;
 
-<span class="co">// (17.2 × 50.0) ÷ (9.0 - 1.5)</span>
-<span class="kw">let</span> eq =
-  Div(
-    <span class="kw">box</span> Mul(
-      <span class="kw">box</span> Float(<span class="dv">17.2</span>),
-      <span class="kw">box</span> Float(<span class="dv">50.0</span>)
-    ),
-    Sub(
-      <span class="kw">box</span> Float(<span class="dv">9.0</span>),
-      <span class="kw">box</span> Float(<span class="dv">1.5</span>)
-    )
-  );</code></pre></div>
-<p>Now we want to evaluate a tree into an output <code>f64</code>. Here’s a simple recursion:</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">impl</span> Equation <span class="op">{</span>
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
-        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
-            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() + right.eval(),
-            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() - right.eval(),
-            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() * right.eval(),
-            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
-            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval() / right.eval(),
-            Float(n) =&gt; n,
-        <span class="op">}</span>
-    <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
-<h2 id="taking-inputs">Taking inputs</h2>
-<p>But the tree has a fixed value! That sucks. Let’s make it a real equation:</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
-    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
-    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
-    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
-    Float(<span class="dt">f64</span>), <span class="co">// n</span>
-    Input,
-<span class="op">}</span>
+&lt;p&gt;It might seem strange that a Computer Scientist is publishing on paper. I disagree: electronic media is growing hugely in appeal, and Kindles have eaten much of my use of paper for reading. But media is a diverse field and if you want to reach people in a particular but diverse organisation the organisation’s own newspaper is a good way. Something I need a better process for is my method of analysing data: Google Sheets charts don’t suffice.&lt;/p&gt;
 
-<span class="kw">impl</span> Equation <span class="op">{</span>
-    <span class="co">// Eval now takes an input!</span>
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
-        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
-            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
-            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
-            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
-            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
-            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
-            Float(n) =&gt; n,
-            Input =&gt; input,
-        <span class="op">}</span>
-    <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
-<h2 id="going-generic-with-evaluable">Going generic with <code>Evaluable</code></h2>
-<p>We can implement a trait to represent an evaluable type and implement it this way. I’m considering an approach like this to genericise over tree-based genetic agents and other forms.</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">trait</span> Evaluable <span class="op">{</span>
-    <span class="kw">type</span> Input;
-    <span class="kw">type</span> Output;
+&lt;h3 id=&quot;evidence-based-policy&quot;&gt;Evidence-based policy&lt;/h3&gt;
 
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="kw">Self</span>::Input) -&gt; <span class="kw">Self</span>::Output;
-<span class="op">}</span>
+&lt;p&gt;I am a little troubled by what I found. It isn’t necessarily surprising that Colleges more distant from the rest of the University get less attention. Given wider tends it isn’t necessarily surprising that female-identifying candidates run for more junior positions. But seeing the numbers show up consistently in a venue nobody else thought to look is illuminating.&lt;/p&gt;
 
-<span class="kw">impl</span> Evaluable <span class="kw">for</span> Equation <span class="op">{</span>
-    <span class="kw">type</span> Input = <span class="dt">f64</span>;
-    <span class="kw">type</span> Output = <span class="dt">f64</span>;
+&lt;p&gt;I set out to try and find out more about something public that wasn’t being looked at. I’ve developed an impression that a lot of real-world issues are widely known anecdotally, but nothing gets done because you can’t prove anything. As such, demonstrating an issue in a deep, quantitative analysis can be a useful step to arguing and driving for change.&lt;/p&gt;
 
-    <span class="kw">fn</span> eval(&amp;<span class="kw">self</span>, input: <span class="dt">f64</span>) -&gt; <span class="dt">f64</span> <span class="op">{</span>
-        <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span>
-            Add(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) + right.eval(input),
-            Sub(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) - right.eval(input),
-            Mul(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) * right.eval(input),
-            <span class="co">// In practice I tend to implement a `protectedDiv` which avoids `NaN`.</span>
-            Div(<span class="kw">ref</span> left, <span class="kw">ref</span> right) =&gt; left.eval(input) / right.eval(input),
-            Float(n) =&gt; n,
-            Input =&gt; input,
-        <span class="op">}</span>
-    <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
-<h2 id="generation">Generation</h2>
-<p>Say we implement a function to generate a random nonterminal and a function to generate a random terminal. A new type that chooses whether to generate a nonterminal or terminal can then control various properties of generated trees. The details are a bit too lengthy to put here but this is something that <a href="https://docs.rs/evco/0.2.1/evco/gp/tree/index.html">evco’s <code>Tree</code> and <code>TreeGen</code></a> quite carefully perform.</p>
-<h2 id="practical-implementation">Practical implementation</h2>
-<p>I find this approach very pretty but it’s quite unsuitable to expect other people to implement to use a library. It’s <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/examples/symbolic_regression.rs#L27-L100">at least 50 ugly lines of code</a> for users of my library to implement methods to generate the tree.</p>
-<p>Having other people implement these methods also removes much hope of keeping things tail-recursive. Recursive datastructures are notorious for operations upon them blowing the stack and crashing the program.</p>
-<p>I implemented tail-recursive iteration <a href="https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/src/gp/tree/mod.rs#L98-L121">inside the library</a> but it’s too complex for third-parties to replicate without risking bugs.</p>
-<h2 id="custom-derive">Custom derive</h2>
-<p>One way around this issue of people having to implement tedious methods is <a href="https://doc.rust-lang.org/book/procedural-macros.html">a custom derivation</a> (<code>proc_macro_derive</code>.) The macro could analyse the types in the tree, identify enum variants as terminal vs nonterminal, and generate the methods accordingly.</p>
-<p>This has implementation questions. A typical program doesn’t want to be provided with a random <code>f64</code> - it wants one in a particular range. So we could require users to implement new types to wrap that, or allow attributes to mark the range to use:</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="at">#[</span>derive<span class="at">(</span>GeneratableTree<span class="at">)]</span>
-<span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l + r</span>
-    Sub(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l - r</span>
-    Mul(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l × r</span>
-    Div(<span class="dt">Box</span>&lt;Equation&gt;, <span class="dt">Box</span>&lt;Equation&gt;), <span class="co">// l ÷ r</span>
-    <span class="at">#[</span>evco<span class="at">(</span>range <span class="at">=</span> <span class="st">&quot;-10..10&quot;</span><span class="at">)]</span>
-    Float(<span class="dt">f64</span>), <span class="co">// n</span>
-<span class="op">}</span></code></pre></div>
-<h2 id="alternative-better-implementations">Alternative, better implementations</h2>
-<p>The biggest irritation with the datastructure is that accessing a particular node takes <code>O(n)</code> operations because you have to traverse the entire tree to find it.</p>
-<p>One can take an approach like a <a href="https://en.wikipedia.org/wiki/B-tree">B-tree</a> to optimise searching for elements. Sadly this doesn’t suit evolutionary computation very much: mutation is about as common as accessing and trees cannot be rebalanced.</p>
-<p>So it would be better to store trees as something other than a recursive datastructure where each node is in its own allocated memory.</p>
-<h2 id="heap">Heap</h2>
-<p>A common means of representing trees on a computer is a <a href="https://en.wikipedia.org/wiki/Heap_(data_structure)">Heap datastructure</a>. This structures nodes into an array thus getting better cache locality, quicker access times, etc. The problem is that the enum we have is inherently a recursive structure.</p>
-<p>Let’s try this:</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
-    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
-    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
-    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
-    Float(<span class="dt">f64</span>), <span class="co">// n</span>
-<span class="op">}</span></code></pre></div>
-<p>We could build and evaluate variants as we go, using this and the heap. But how do we indicate stored data versus arguments? We could supply stored data as a reference maybe?</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l + r</span>
-    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l - r</span>
-    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l × r</span>
-    Div(<span class="dt">f64</span>, <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
-    Float(&amp;<span class="dt">f64</span>), <span class="co">// n</span>
-<span class="op">}</span></code></pre></div>
-<p>This isn’t very pretty. One option would be that <code>f64</code> inherently is generated and <code>Float</code> becomes unnecessary.</p>
-<h2 id="types">Types</h2>
-<p>A further issue to consider: none of this uses generic types. All this only passes around <code>f64</code> and nothing else. I guess we could indicate return types by requiring mutable pointers? The code to make this work might be ugly but it’ll be custom derived after all.</p>
-<p>This allows specifying return type of each node, but generation logic would have to specify the tree’s root node to get a consistent type out the top of the trees:</p>
-<div class="sourceCode"><pre class="sourceCode rust"><code class="sourceCode rust"><span class="kw">enum</span> Equation <span class="op">{</span>
-    Add(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l + r</span>
-    Sub(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l - r</span>
-    Mul(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l × r</span>
-    Div(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">f64</span>), <span class="co">// l ÷ r</span>
-    IfEq(<span class="dt">f64</span>, <span class="dt">f64</span>, &amp;<span class="kw">mut</span> <span class="dt">bool</span>),
-<span class="op">}</span></code></pre></div>
-<p>It’s a pain.</p>]]></summary>
-</entry>
-<entry>
-    <title>Engineering as slowly as possible</title>
-    <link href="https://46b.it/2017/engineering-discipline-and-craft/index.html" />
-    <id>https://46b.it/2017/engineering-discipline-and-craft/index.html</id>
-    <published>2017-02-27T00:00:00Z</published>
-    <updated>2017-02-27T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">slow, logical, conscious System Two</a> thinking.</p>
-<p>The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard.</p>
-<p>So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft <em>in order to</em> still move fast: building things well rather than just building them. <!--more--></p>
-<p>There’s a balance between productivity (immediate gratification) and quality of craft. Small hacks and hobby projects which might be thrown away should favor early productivity. Larger projects, ones worked on infrequently, or ones shared with others should favor craft. One needs to pick correctly.</p>
-<p>The natural question is where do you place projects with potential? If a prototype can lead to bigger things but also be in the bin inside a week?</p>
-<ul>
-<li>Throwaway projects can have a long lifetime. I hacked together some scraping and cleanup tools for University of York Student Union candidates last year, but at least twenty people I had to email for their information. This year I <a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">published an analysis piece in Nouse student newspaper</a> on a 36-hour turnaround. My quick hack now had to automate the entire process because of time constraints.<br><br></li>
-<li>Involved projects can have a surprisingly short lifetime. The high-quality cybersecurity practicals I worked on all last summer have yet to see the light of day. The ambitious systems I built at Dreamforge in 2012-13 have mostly been offline for two years now - our proof-of-concept <a href="http://cookiecaster.com">Cookie Caster</a> is the sole brilliant survivor.<br><br></li>
-<li>Poor craft tends to bite you in the butt when you can least afford it. Our software at Dreamforge worked quite well for Cookie Caster and for much of the Fraemes project. Where it let us down was in trying to make Fraemes scale.<br><br>Five minutes checking for regressions after making changes is trivially affordable in the early months of a new project; 10× five minutes a day is unaffordable when you’re overworked and expending available brainpower working on complex things.</li>
-</ul>
-<p>Experience is a good teacher. The benefit of experience is identifying when to make tradeoffs and how to avoid tradeoffs you don’t have to make. I’ve been reading with a lot of interest about continuous deployment at <a href="https://www.theguardian.com/info/developer-blog/2016/dec/20/testing-in-production-rethinking-the-conventional-deployment-pipeline">The Guardian</a> and <a href="http://codevoyagers.com/2016/10/31/from-20-to-2-million-releases-a-year-part-2/">SkyScanner</a>.</p>]]></summary>
-</entry>
-<entry>
-    <title>UoYBus: bus times for the University of York</title>
-    <link href="https://46b.it/2014/uoybus/index.html" />
-    <id>https://46b.it/2014/uoybus/index.html</id>
-    <published>2014-07-07T00:00:00Z</published>
-    <updated>2014-07-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>Since November I’ve been quietly running <a href="http://uoyb.us">UoYBus</a>, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving <a href="http://york.ac.uk">University of York</a>. Today I released a big improvement. <!--more--></p>
-<p>Both bus routes go to the Railway Station and the far end of Campus, but in both the City Centre and on Campus they take quite different routes. Thus it’s quite handy to be able to get times for both sets of stops quickly.</p>
-<p>In January we put a jQuery UI-based frontend on it, but this bolt-on interface left much to be resolved in user experience. Since it’s holidays and I’ve had to take a month off, I decided to sketch up an improved design.</p>
-<h2 id="difficulties-in-design">Difficulties in design</h2>
-<p>The key thing about UoYBus is that it isn’t a generalised bus app, of which dozens exist already. Thus it needs a dead simple interface of (a) where in York are you and (b) where are you going?</p>
-<p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
-<p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
-<div class="figure">
-<img src="/img/uoybus-yo.png" />
+&lt;p&gt;To an extent this belief is an artifact of my own mindset. Where possible I like to argue from evidence. Some years ago I participated in government/civic data hackdays, and that interest is still around under the surface.&lt;/p&gt;
 
-</div>
-<p>That’s too bold a design, and picking so many colours proved tricky.</p>
-<h2 id="route-based-design">Route-based design</h2>
-<p>Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
-<div class="figure">
-<img src="/img/uoybus-home.png" />
+&lt;p&gt;I’m a Course Rep in the Computer Science department at York, responsible for acting on student feedback and improving the student experience. A lot of Course Reps probably just argue for things they believe, and resolutely keep arguing until something is done or they get worn out. My approach to many issues is along this axis, but if something seems harder to get done I turn to an analytical mindset. This worked for highlighting problems with a Machine Learning class I took last year, after 4 years of the problems seeming to be ignored.&lt;/p&gt;
 
-</div>
-<p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
-<div class="figure">
-<img src="/img/uoybus-result.png" />
+&lt;h2 id=&quot;i-argued-that-free-speech-arguments-are-being-used-out-of-confusion-or-even-bad-faith&quot;&gt;I argued that Free Speech arguments are being used out of confusion or even bad faith&lt;/h2&gt;
 
-</div>
-<p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
-<h2 id="open-development">Open development</h2>
-<p>The code behind UOYBus needs a lot of work, but is MIT-licensed on <a href="https://github.com/46bit/uoybus">Github</a>. Beyond adding a lot of useful information to UoYBus itself, I’d like to make the app easier to repurpose.</p>
-<p>I want to factor out the York-specific data and enable anyone to run this for their local busroute within minutes. I’ve some ideas about doing this, but it’s tricky to do.</p>
-<h2 id="commercial-viability">Commercial viability</h2>
-<p>The difficulty running this sort of live bus app is paying for the <a href="http://transportapi.com">API calls</a> when effectively nonprofit. I’m going to try ads whilst promoting UoYBus, given a lot of companies in York want to promote things to students.</p>
-<p>My big hope for this long-term is to build a Yorkshire guide integrating attractions, events, transport. Something of a travel guide for locals and non-locals alike. York is the perfect place to pilot something like this.</p>
-<p>For now, give <a href="http://uoyb.us">UoYBus</a> a try!</p>]]></summary>
-</entry>
-<entry>
-    <title>You can't unsell Hospital Records</title>
-    <link href="https://46b.it/2014/cannot-unsell-hospital-records/index.html" />
-    <id>https://46b.it/2014/cannot-unsell-hospital-records/index.html</id>
-    <published>2014-02-24T00:00:00Z</published>
-    <updated>2014-02-24T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<p>The Telegraph reported today that hospital records from 1997-2010 have been <a href="http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html">sold to insurance companies</a>. They appear to be referring to HSCIC’s <a href="http://www.hscic.gov.uk/hes">Hospital Episode Statistics</a>, a database of NHS hospital records. <!--more--></p>
-<blockquote>
-<pre><code>&lt;p&gt;[&amp;hellip;] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.&lt;/p&gt;
-&lt;p&gt;The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.&lt;/p&gt;
-&lt;p&gt;− [Hospital records of all NHS patients sold to insurers](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html), The Telegraph, February 23rd 2014&lt;/p&gt;</code></pre>
-</blockquote>
-<p>The Telegraph haven’t published the report being discussed which makes the details very hard to determine, although HSCIC offer a custom data extraction service that might be able to provide details beyond summary statistics.</p>
-<p>The combination of postcode and date of birth is absolutely not anonymised data, and so should be subject to the Data Protection Act. That Staple Inn were able to unmask it is further proof in this regard.</p>
-<p>HSCIC have questions to answer, but the naivete the Department of Health showed to The Telegraph is remarkable:</p>
-<blockquote>
-<p>The Department of Health said: “The rules changed last year so this would no longer be allowed. Information like this can only be accessed now if there is a clear benefit to improving health or health systems.”</p>
-</blockquote>
-<p>This is a huge misunderstanding of the situation. Having sold 13 years of medical records to the private sector, a rule change to prevent further sales is naive at best. The problem is not that the data is for sale, the issue is it was ever sold. In 5 years, in 10 years, the DOH can just sell the new data.</p>
-<p>In future, giving patients notional ownership of their records seems a good idea. Any sale should have to be approved by them, and a portion of any upside given to them. <a href="http://dpk.io/medicalrecords">David Kendal</a> has already started to try this approach, offering to sell his medical records to interested researchers.</p>
-<p>Certainly a start might be to add a clause to the data contracts stating that any attempt to deanonymise the data breaches contract. The Data Protection Act prevents reversible disclosure, so the loss of value of the data should not be a concern.</p>]]></summary>
-</entry>
+&lt;p&gt;&lt;a href=&quot;https://xkcd.com/1357/&quot;&gt;&lt;img src=&quot;/assets/xkcd-free-speech-door.jpg&quot; alt=&quot;The XKCD cartoon I posted to argue the point.&quot; width=&quot;700&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-</feed>
+&lt;p&gt;This cartoon is &lt;a href=&quot;https://xkcd.com/1357/&quot;&gt;XKCD #1357&lt;/a&gt;, posted by J.K. Rowling on Twitter. I felt rather inspired by it. I believe that many anti-intellectual and illiberal attitudes are being used right now, and one is the concept everyone has the right to say their fill in your community.&lt;/p&gt;
+
+&lt;p&gt;I very much disagree: hate speech and hate groups are not harmless; normalising their speech is a way to having us listen; and many of these groups are privileged and are not genuinely struggling for a platform (hence why their complaints are so loudly audible despite the supposed crushing censorship.)&lt;/p&gt;
+
+&lt;p&gt;See my replies to Kragen at &lt;strong&gt;&lt;a href=&quot;https://www.facebook.com/photo.php?fbid=1257833534308290&amp;amp;set=a.147155018709486.33009.100002449667634&amp;amp;type=3&amp;amp;theater&quot;&gt;It’s just that the people listening think you’re an asshole and they’re showing you the door.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ive-also-published-7-posts-here&quot;&gt;I’ve also published 7 posts here:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/2017/engineering-discipline-and-craft/&quot;&gt;Engineering as slowly as possible&lt;/a&gt;: some thoughts on developing maintainably&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2017/evolutionary-computing/&quot;&gt;Introduction to Evolutionary Computing&lt;/a&gt;: background to building &lt;a href=&quot;https://github.com/46bit/evco&quot;&gt;Rust Genetic Programming library&lt;/a&gt; that I’ve been looking for good approaches into.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/2017/rust-generating-syntax-trees/&quot;&gt;Generating expression trees in Rust&lt;/a&gt; and &lt;a href=&quot;/2017/evco/&quot;&gt;Recursive Enum expression trees in Rust&lt;/a&gt;: some confused thoughts about specifying tree structures as Rust &lt;code class=&quot;highlighter-rouge&quot;&gt;enum&lt;/code&gt; types.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2017/coldfusion-insecure-escape-spaces/&quot;&gt;Securing legacy ColdFusion or: Why escape spaces against XSS?&lt;/a&gt;: in which I justify and classify ColdFusion websites as insecure-by-default.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2017/bicycle-skid/&quot;&gt;Glad I was wearing a cycle helmet&lt;/a&gt;: personal update on a bicycle accident.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2017/security-risk-assessment/&quot;&gt;Security Risk Assessments of Semi-Autonomous Vehicles&lt;/a&gt;: discussing the level of autonomy necessary to get adoption of automated road trains (the SARTRE project.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My blog will be relatively low-quality writing for the time being. I’ve never honed my skills at writing until now, which means that iterating on a blog post can be a slow and long process. &lt;strong&gt;My hope is that the (limited) editing I do will feed into my new writing, and my process will slowly improve.&lt;/strong&gt; We’ll see whether this works out, but it’s the Growth Mindset I’m taking.&lt;/p&gt;
+
+&lt;p&gt;Until next time,&lt;br /&gt;
+—46bit&lt;/p&gt;</content><author><name></name></author><category term="York" /><summary type="html">In the last month I’ve had two articles printed in the student newspaper, Nouse. Over the last year I've been collecting data on student union election candidates, and it was fantastic to pull the findings together. Battle of the colleges: who’s got the BNOCs I had about 48 hours to do preliminary analysis with a second year of data. Given those constraints and having not done this before, I'm pretty happy with the printed results. YUSU elections put under the microscope: college chances, campus stances and gender imbalances A few weeks later I came back with more thoroughly analysed findings. In summary - our Student Union elections seem biased against underprovisioned Colleges and female candidates are running for much more junior positions.</summary></entry><entry><title type="html">Security Risk Assessments of Semi-Autonomous Vehicles</title><link href="/2017/security-risk-assessment/" rel="alternate" type="text/html" title="Security Risk Assessments of Semi-Autonomous Vehicles" /><published>2017-03-13T00:00:00+00:00</published><updated>2017-03-13T00:00:00+00:00</updated><id>/2017/security-risk-assessment</id><content type="html" xml:base="/2017/security-risk-assessment/">&lt;p&gt;I’m in my 4&lt;sup&gt;th&lt;/sup&gt; year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.&lt;/p&gt;
+
+&lt;p&gt;We’re assessing how to bring an EU-funded project, &lt;a href=&quot;https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment&quot;&gt;SARTRE&lt;/a&gt;, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sartre-drivers-doing-activities.png&quot; alt=&quot;SARTRE following drivers doing immersive non-driving tasks&quot; width=&quot;600&quot; /&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;risksviability-of-commercial-deployment&quot;&gt;Risks/viability of commercial deployment&lt;/h2&gt;
+
+&lt;p&gt;Deploying this commercially is to move from a proof-of-concept to a live system. The most immediate issue I’ve identified is with this concept of following drivers not paying attention to the road: in the demonstrator, following vehicles had professional drivers who were paying attention.&lt;/p&gt;
+
+&lt;p&gt;On an actual highway unexpected things happen. If the platoon (convoy) is to return control to drivers should a sudden, unexpected thing happen then drivers cannot be doing other activities - they need road awareness.&lt;/p&gt;
+
+&lt;p&gt;The Parliamentary Science and Technology Office came up with a &lt;a href=&quot;http://researchbriefings.parliament.uk/ResearchBriefing/Summary/POST-PN-443&quot;&gt;classification system for automated road vehicles.&lt;/a&gt; &lt;em&gt;Under this classification the proof-of-concept only meets the concept of Partial Autonomy.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hoc-autonomous-vehicle-levels.png&quot; alt=&quot;UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Drivers not having to be attentive is classed as High Autonomy.&lt;/em&gt; As with my musings, they’ve identified it as a hard step to take.&lt;/p&gt;
+
+&lt;p&gt;The demonstrator dissolved convoys by having vehicles automatically back off to 50m separations and 50km/h speeds. Thus drivers could regain control in a gentle manner. Sadly this isn’t all that practical - in my opinion - on the road.&lt;/p&gt;
+
+&lt;h2 id=&quot;collective-vs-individual-appeal&quot;&gt;Collective vs Individual appeal&lt;/h2&gt;
+
+&lt;p&gt;The European Commision sees a major advantage of this project being reduced carbon emissions. The slipstream from vehicles a few metres ahead reduces the fuel used by vehicles in the platoon.&lt;/p&gt;
+
+&lt;p&gt;The reduced fuel usage appeals to all drivers in the form of lower costs. That is, it has individualistic appeal. Having the necessary equipment fitted can apparently pay itself back within 3 years on trucks - if produced at scale something similar seems plausible for cars.&lt;/p&gt;
+
+&lt;p&gt;Reducing CO&lt;sub&gt;2&lt;/sub&gt; emissions is still more of a collective issue. As Europeans we’re seeing oddities in the climate but not particularly as a critical issue every day. I suspect when it becomes a more individually-obvious issue there will finally be the will to take serious action, but at that point it may be too late to try anything but climate engineering.&lt;/p&gt;
+
+&lt;p&gt;The problem for this project is that to the public, reduced fuel usage might not be worth the attention costs. If drivers are automatically monitored for paying attention to the road it is plausible to keep them attentive or evict them from a platoon. But staying immersed in the road environment when taking no action would be very tedious over long periods. As such I don’t think people will go for the project in high numbers unless this issue of having to pay constant attention is resolved.&lt;/p&gt;
+
+&lt;h2 id=&quot;summing-up&quot;&gt;Summing up&lt;/h2&gt;
+
+&lt;p&gt;It isn’t clear how directly this is being taken further in the real world. But it’s a nice model for semi-automated road vehicles, if only the emergency recovery of control can be worked out.&lt;/p&gt;
+
+&lt;p&gt;I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.&lt;/p&gt;</content><author><name></name></author><category term="York" /><summary type="html">I’m in my 4th year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys. We’re assessing how to bring an EU-funded project, SARTRE, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</summary></entry><entry><title type="html">Glad I was wearing a cycle helmet</title><link href="/2017/bicycle-skid/" rel="alternate" type="text/html" title="Glad I was wearing a cycle helmet" /><published>2017-03-12T00:00:00+00:00</published><updated>2017-03-12T00:00:00+00:00</updated><id>/2017/bicycle-skid</id><content type="html" xml:base="/2017/bicycle-skid/">&lt;p&gt;One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (&lt;code class=&quot;highlighter-rouge&quot;&gt;2017-03-10&lt;/code&gt;) I had a bit of an accident.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Sam Hand (&lt;code class=&quot;highlighter-rouge&quot;&gt;sdhand&lt;/code&gt;) took the initiative to organise some new &lt;a href=&quot;https://www.hacksoc.org&quot;&gt;HackSoc&lt;/a&gt; movie nights this year, and I’ve been helping with little bits of logistics. I’d been watching Apollo 13 but skipped Moon because I’d seen it recently.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.29712955826926!2d-1.0386286637597082!3d53.9533881908245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1489358465930&quot; width=&quot;600&quot; height=&quot;450&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;It was at this bend on Yarburgh Way that I came off. Rather than my bicycle taking the turn it went over, my head slamming into the road surface and about a dozen different areas of me getting scraped, bruised or hurt. I don’t seem to have any bad injuries… but I’ve found it remarkable how incapacitated very bad scrapes on a knee and forearm can make you.&lt;/p&gt;
+
+&lt;p&gt;I’m not particularly sure how it happened. My bicycle completely skidded out as if it had no grip, but it was far too warm for ice and I didn’t see any oil in the immediate aftermath. Given the extent of my injuries I have to wonder if my speed was just too high for the grip of the tyres - it’s an exceptionally tight bend.&lt;/p&gt;
+
+&lt;p&gt;In any case, I was momentarily aware of the bicycle not moving correctly but then I don’t particularly remember anything until picking part of my bicycle bell off the road. I picked myself off the road after a time and was tremendously dazed for 20 minutes or so. A kind passerby walked with me for a time to check I was okay - I think they were worried about a concussion. Let’s face it: I was worried about a concussion.&lt;/p&gt;
+
+&lt;p&gt;Now, Helmets aren’t exactly designed to protect against concussions. The foam is a bit too hard. But they do a good job of protection otherwise, and &lt;strong&gt;in this case I think that if the helmet didn’t take it the side of my head would have been in a horrible state - and me probably rather more seriously injured.&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="York" /><summary type="html">One of my favourite things about York is how bicyclable it is. I grew up in the countryside but somewhere decidedly not safe to cycle from, so it’s a very welcome change. Aside from a couple of minor things it’s worked fine for the last 5 years. On Friday (2017-03-10) I had a bit of an accident.</summary></entry><entry><title type="html">Recursive Enum expression trees in Rust</title><link href="/2017/evco/" rel="alternate" type="text/html" title="Recursive Enum expression trees in Rust" /><published>2017-03-03T00:00:00+00:00</published><updated>2017-03-03T00:00:00+00:00</updated><id>/2017/evco</id><content type="html" xml:base="/2017/evco/">&lt;p&gt;I mused about an implementation of expression trees in Rust &lt;a href=&quot;https://46b.it/2017/rust-generating-syntax-trees/&quot;&gt;two days ago&lt;/a&gt;. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems.&lt;/p&gt;
+
+&lt;p&gt;As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above.&lt;/p&gt;
+
+&lt;p&gt;There are two common ways to represent a tree datastructure:
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The most obvious way is similar to a Linked List: allocate a separate portion of memory for each node in the tree and store pointers to the child/parent nodes. This makes it cheap to expand the tree and is a very natural representation.&lt;/li&gt;
+  &lt;li&gt;The other way is to put the tree into an array. Map the parent-child relationships into indices and you can store a tree as a single block of memory. Adding nodes can require copying all this data into a larger region of memory but this has a variety of benefits such as cache locality.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can define the semantics of a heap-allocated expression tree at compile time. Here’s a cut-down example - you can get and play with the &lt;a href=&quot;https://play.rust-lang.org/?gist=ddbde8dbeacb4f501995aef551f5ac7f&amp;amp;version=stable&amp;amp;backtrace=0&quot;&gt;full code here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;derive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Clone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PartialEq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `a + b`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `a - b`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `a * b`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `a / b`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Neg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `-a`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// `sin(a)`&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// evaluates to a constant 64-bit float&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// evaluates to an inputted 64-bit float&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Action&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;protected_div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Neg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;// represent the equation `x` and evaluate for `x=5`&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{:?}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree1&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;// represent the equation `x * sin(4.0)` and evaluate for `x=-7.3`&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+      &lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{:?}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree2&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;// represent the equation `x + sin(x)` and evaluate for `x=99.1` and `x=16.3`&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+      &lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{:?}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree3&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;99.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree3&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;16.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This works for Genetic Programming and I’ve devised nice ways to randomly generate these trees - see the &lt;a href=&quot;https://github.com/46bit/evco/blob/master/examples/symbolic_regression.rs&quot;&gt;Symbolic Regression example&lt;/a&gt; and (this might not be obvious) &lt;a href=&quot;https://46bit.github.io/evco/evco/gp/tree/index.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;evco::gp::tree&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;That’s all for now, it’s time for bed. Sometime soon I’d like to write about &lt;a href=&quot;https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups&quot;&gt;diversity experiences in tech&lt;/a&gt;, and how EVCO generates trees.&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I mused about an implementation of expression trees in Rust two days ago. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems. As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above. There are two common ways to represent a tree datastructure:</summary></entry><entry><title type="html">Introduction to Evolutionary Computing</title><link href="/2017/evolutionary-computing/" rel="alternate" type="text/html" title="Introduction to Evolutionary Computing" /><published>2017-03-02T00:00:00+00:00</published><updated>2017-03-02T00:00:00+00:00</updated><id>/2017/evolutionary-computing</id><content type="html" xml:base="/2017/evolutionary-computing/">&lt;p&gt;I took an Evolutionary Computation course last semester, &lt;a href=&quot;https://www.cs.york.ac.uk/postgraduate/modules/evco.html&quot;&gt;EVCO&lt;/a&gt;. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/uxourrlPlf8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;I’d like to thank &lt;a href=&quot;https://www.york.ac.uk/biology/research/ecology-evolution/daniel-franks/&quot;&gt;Dr Daniel Franks&lt;/a&gt; for a great course, enthusiastic teaching and many of the examples here.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my &lt;code class=&quot;highlighter-rouge&quot;&gt;evco&lt;/code&gt; examples &lt;a href=&quot;https://github.com/46bit/evco/blob/v0.2.1/examples/snake.rs&quot;&gt;evolves Snake players&lt;/a&gt;. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.&lt;!--more--&gt; So if you want to approximate some data you might:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Randomly generate a population of equations. Each equation forms a genome of sorts.&lt;/li&gt;
+  &lt;li&gt;Test how good an approximation each equation (“individual”) gives.&lt;/li&gt;
+  &lt;li&gt;Select the best equations to take forward.&lt;/li&gt;
+  &lt;li&gt;Simulate sexual reproduction by swapping some randomly chosen parts of equations.&lt;/li&gt;
+  &lt;li&gt;Simulate random mutations by randomly changing some terms in the equations.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-effective-can-this-be-impressively-creative&quot;&gt;How effective can this be? Impressively creative.&lt;/h2&gt;
+
+&lt;p&gt;This process can be excellent at finding creative solutions. Over sufficient timescales biological evolution is remarkably creative - just look at your own body.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/evolved-antenna.jpg&quot; alt=&quot;**NASA [evolved this antenna](https://en.wikipedia.org/wiki/Evolved_antenna) for a 2006 mission.**&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But I’ve found that tuning an evolutionary process is quite intensive: it takes a lot of programmer time and (the challenge) a lot of unguided experimentation.&lt;/p&gt;
+
+&lt;p&gt;Evolution often reaches local maxima: it isn’t generating individuals which act in usefully different ways and so all individuals bottleneck around the same maximum fitness. As the best individuals are bred preferentially, when an innovation occurs the effect in improving average fitness can be dramatic. A biological example of this might be how life on Earth was single-celled for billions of years before multicellular eukaryotes came along.&lt;/p&gt;
+
+&lt;p&gt;Six months has taught me that Evolutionary Computing is quite time-intensive but a brilliant hobby. These processes are stochastic: while subject to random variation they can be analysed. A lot of computation and analysis is necessary to understand how well a process is working.&lt;/p&gt;
+
+&lt;h2 id=&quot;genetic-programming-in-python-with-deap&quot;&gt;Genetic Programming in Python with DEAP&lt;/h2&gt;
+
+&lt;p&gt;York’s course used the &lt;a href=&quot;http://deap.readthedocs.io/en/master/&quot;&gt;DEAP&lt;/a&gt; library for Python. This feels something of a hobbyist’s tool: it contains implementations of the ingredients necessary for evolutionary computing but doesn’t get overly sophisticated.&lt;/p&gt;
+
+&lt;p&gt;One drawback with DEAP is that a lot of examples and suggested tooling don’t work well with PyPy. (PyPy is a Just In Time compiler that can run many times faster than the reference CPython implementation.) For the assessment we had to evolve automated snake players, and it proved frustrating how much potential efficiency was lost.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I took an Evolutionary Computation course last semester, EVCO. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course: I’d like to thank Dr Daniel Franks for a great course, enthusiastic teaching and many of the examples here. Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my evco examples evolves Snake players. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.</summary></entry><entry><title type="html">Securing legacy ColdFusion or: Why escape spaces against XSS?</title><link href="/2017/coldfusion-insecure-escape-spaces/" rel="alternate" type="text/html" title="Securing legacy ColdFusion or: Why escape spaces against XSS?" /><published>2017-03-01T00:00:00+00:00</published><updated>2017-03-01T00:00:00+00:00</updated><id>/2017/coldfusion-insecure-escape-spaces</id><content type="html" xml:base="/2017/coldfusion-insecure-escape-spaces/">&lt;p&gt;I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications.&lt;/p&gt;
+
+&lt;p&gt;ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.&lt;/p&gt;
+
+&lt;p&gt;There’s a bit of a problem with securing these legacy apps. They’re a mess, and &lt;strong&gt;ColdFusion is insecure by default.&lt;/strong&gt; Let’s take some typical Ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;erb&lt;/code&gt; markup:
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;forename&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;%= forename %&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;%= … %&amp;gt;&lt;/code&gt; tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the &lt;code class=&quot;highlighter-rouge&quot;&gt;raw&lt;/code&gt; function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-coldfusion&quot;&gt;&amp;lt;cfinput name=&quot;forename&quot; value=&quot;#form.forename#&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;People running ColdFusion are generally moving to the open source &lt;a href=&quot;@TODO&quot;&gt;Railo&lt;/a&gt; and &lt;a href=&quot;@TODO&quot;&gt;Lucee&lt;/a&gt; servers. These applied a sanity pass to what they should support.&lt;/p&gt;
+
+&lt;p&gt;A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/coldfusion-insecure-intersection.png&quot; alt=&quot;Pictorial depiction of which solutions can be used.&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The intersection of secure and available in both is to import the &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API&quot;&gt;OSASP ESAPI API&lt;/a&gt; from Java.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-coldfusion&quot;&gt;&amp;lt;cfoutput&amp;gt;
+    &amp;lt;input name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&amp;gt;
+&amp;lt;/cfoutput&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yuck, huh? You might notice we’re using &lt;code class=&quot;highlighter-rouge&quot;&gt;cfoutput&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; tags now. As I’ll explain, this works around double-escaping issues.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-escape-spaces-against-xss&quot;&gt;Why Escape Spaces against XSS?&lt;/h2&gt;
+
+&lt;p&gt;In one of these application I was escaping a &lt;code class=&quot;highlighter-rouge&quot;&gt;cfinput value&lt;/code&gt; with ESAPI:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-coldfusion&quot;&gt;&amp;lt;cfinput name=&quot;forename&quot; value=&quot;#request.esapi.encodeForHTMLAttribute(form.forename)#&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But on Lucee &lt;code class=&quot;highlighter-rouge&quot;&gt;cfinput&lt;/code&gt; is running &lt;code class=&quot;highlighter-rouge&quot;&gt;encodeForHTMLAttribute&lt;/code&gt; itself and so we’re double-escaping &lt;code class=&quot;highlighter-rouge&quot;&gt;form.forename&lt;/code&gt;. So some characters got double escaped: ` ` (space) → &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;#32;&lt;/code&gt; → &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;amp;#32;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Stranger Things&lt;/code&gt; your prefilled form field now says &lt;code class=&quot;highlighter-rouge&quot;&gt;Stranger&amp;amp;#32;Things&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You wanted this: &lt;input value=&quot;Stranger&amp;#32;Things&quot; /&gt;&lt;br /&gt;
+You get this: &lt;input value=&quot;Stranger&amp;amp;#32;Things&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This could have the approach of escaping almost any character outside &lt;code class=&quot;highlighter-rouge&quot;&gt;/a-z0-9/i&lt;/code&gt; but I was genuinely surprised that spaces are escaped. I found myself wondering why. Turns out there is a very good reason. Let’s go back to &lt;code class=&quot;highlighter-rouge&quot;&gt;erb&lt;/code&gt;, which escapes by default.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;forename&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;forename&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;See how there’s no quotation marks for the &lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt; attribute? HTML is happy without them. So a library that doesn’t escape spaces would leave you vulnerable.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;forename = 'Stranger&lt;span class=&quot;ni&quot;&gt;&amp;amp;amp;&lt;/span&gt;Things onload=alert(&quot;XSS&quot;)'
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Stranger&amp;amp;amp;Things&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onload=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alert('XSS')&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I think this fits into Defence In Depth. Attribute tags &lt;em&gt;should&lt;/em&gt; have the quotation marks, but mistakes happen and nobody is looking for that particular mistake. You have a problem when it only takes one missing quotation mark to open up your website to XSS. Escaping spaces is therefore quite important.&lt;/p&gt;
+
+&lt;h2 id=&quot;salvaging-legacy-applications&quot;&gt;Salvaging legacy applications&lt;/h2&gt;
+
+&lt;p&gt;I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.&lt;/p&gt;
+
+&lt;p&gt;I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last &lt;code class=&quot;highlighter-rouge&quot;&gt;#…#&lt;/code&gt; and use of &lt;code class=&quot;highlighter-rouge&quot;&gt;cf&lt;/code&gt; tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like &lt;a href=&quot;https://en.wikibooks.org/wiki/PHP_Programming/Configuration:_Register_Globals&quot;&gt;PHP with &lt;code class=&quot;highlighter-rouge&quot;&gt;register_globals&lt;/code&gt; turned on&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.&lt;/p&gt;
+
+&lt;p&gt;I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the &lt;code class=&quot;highlighter-rouge&quot;&gt;X-XSS-Protection&lt;/code&gt; header, but I’m guessing it isn’t something to rely upon.&lt;/p&gt;
+
+&lt;p&gt;Until next time,&lt;br /&gt;
+— 46bit&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications. ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by. There’s a bit of a problem with securing these legacy apps. They’re a mess, and ColdFusion is insecure by default. Let’s take some typical Ruby erb markup:</summary></entry><entry><title type="html">Generating expression trees in Rust</title><link href="/2017/rust-generating-syntax-trees/" rel="alternate" type="text/html" title="Generating expression trees in Rust" /><published>2017-02-28T00:00:00+00:00</published><updated>2017-02-28T00:00:00+00:00</updated><id>/2017/rust-generating-syntax-trees</id><content type="html" xml:base="/2017/rust-generating-syntax-trees/">&lt;p&gt;I’ve been writing a lot of Rust. Since &lt;a href=&quot;https://github.com/Taneb&quot;&gt;\@Taneb&lt;/a&gt; persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.&lt;/p&gt;
+
+&lt;p&gt;While building my &lt;a href=&quot;https://github.com/46bit/evco&quot;&gt;Genetic Programming&lt;/a&gt; library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an &lt;strong&gt;interesting but problematic&lt;/strong&gt; Recursive Enum approach that’s worth discussing.&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// n&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply:
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;// (17.2 × 50.0) ÷ (9.0 - 1.5)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;17.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;50.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we want to evaluate a tree into an output &lt;code class=&quot;highlighter-rouge&quot;&gt;f64&lt;/code&gt;. Here’s a simple recursion:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;// In practice I tend to implement a `protectedDiv` which avoids `NaN`.&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;taking-inputs&quot;&gt;Taking inputs&lt;/h2&gt;
+
+&lt;p&gt;But the tree has a fixed value! That sucks. Let’s make it a real equation:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// n&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;// Eval now takes an input!&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;// In practice I tend to implement a `protectedDiv` which avoids `NaN`.&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;going-generic-with-evaluable&quot;&gt;Going generic with &lt;code class=&quot;highlighter-rouge&quot;&gt;Evaluable&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;We can implement a trait to represent an evaluable type and implement it this way. I’m considering an approach like this to genericise over tree-based genetic agents and other forms.&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Evaluable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Evaluable&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;// In practice I tend to implement a `protectedDiv` which avoids `NaN`.&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;generation&quot;&gt;Generation&lt;/h2&gt;
+
+&lt;p&gt;Say we implement a function to generate a random nonterminal and a function to generate a random terminal. A new type that chooses whether to generate a nonterminal or terminal can then control various properties of generated trees. The details are a bit too lengthy to put here but this is something that &lt;a href=&quot;https://docs.rs/evco/0.2.1/evco/gp/tree/index.html&quot;&gt;evco’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Tree&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;TreeGen&lt;/code&gt;&lt;/a&gt; quite carefully perform.&lt;/p&gt;
+
+&lt;h2 id=&quot;practical-implementation&quot;&gt;Practical implementation&lt;/h2&gt;
+
+&lt;p&gt;I find this approach very pretty but it’s quite unsuitable to expect other people to implement to use a library. It’s &lt;a href=&quot;https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/examples/symbolic_regression.rs#L27-L100&quot;&gt;at least 50 ugly lines of code&lt;/a&gt; for users of my library to implement methods to generate the tree.&lt;/p&gt;
+
+&lt;p&gt;Having other people implement these methods also removes much hope of keeping things tail-recursive. Recursive datastructures are notorious for operations upon them blowing the stack and crashing the program.&lt;/p&gt;
+
+&lt;p&gt;I implemented tail-recursive iteration &lt;a href=&quot;https://github.com/46bit/evco/blob/669dc40d2e4e3681e0f3d0c97c70fb0157784886/src/gp/tree/mod.rs#L98-L121&quot;&gt;inside the library&lt;/a&gt; but it’s too complex for third-parties to replicate without risking bugs.&lt;/p&gt;
+
+&lt;h2 id=&quot;custom-derive&quot;&gt;Custom derive&lt;/h2&gt;
+
+&lt;p&gt;One way around this issue of people having to implement tedious methods is &lt;a href=&quot;https://doc.rust-lang.org/book/procedural-macros.html&quot;&gt;a custom derivation&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;proc_macro_derive&lt;/code&gt;.) The macro could analyse the types in the tree, identify enum variants as terminal vs nonterminal, and generate the methods accordingly.&lt;/p&gt;
+
+&lt;p&gt;This has implementation questions. A typical program doesn’t want to be provided with a random &lt;code class=&quot;highlighter-rouge&quot;&gt;f64&lt;/code&gt; - it wants one in a particular range. So we could require users to implement new types to wrap that, or allow attributes to mark the range to use:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;derive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GeneratableTree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;#[evco(range&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-10..10&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// n&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;alternative-better-implementations&quot;&gt;Alternative, better implementations&lt;/h2&gt;
+
+&lt;p&gt;The biggest irritation with the datastructure is that accessing a particular node takes &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; operations because you have to traverse the entire tree to find it.&lt;/p&gt;
+
+&lt;p&gt;One can take an approach like a &lt;a href=&quot;https://en.wikipedia.org/wiki/B-tree&quot;&gt;B-tree&lt;/a&gt; to optimise searching for elements. Sadly this doesn’t suit evolutionary computation very much: mutation is about as common as accessing and trees cannot be rebalanced.&lt;/p&gt;
+
+&lt;p&gt;So it would be better to store trees as something other than a recursive datastructure where each node is in its own allocated memory.&lt;/p&gt;
+
+&lt;h2 id=&quot;heap&quot;&gt;Heap&lt;/h2&gt;
+
+&lt;p&gt;A common means of representing trees on a computer is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Heap_(data_structure)&quot;&gt;Heap datastructure&lt;/a&gt;. This structures nodes into an array thus getting better cache locality, quicker access times, etc. The problem is that the enum we have is inherently a recursive structure.&lt;/p&gt;
+
+&lt;p&gt;Let’s try this:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// n&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We could build and evaluate variants as we go, using this and the heap. But how do we indicate stored data versus arguments? We could supply stored data as a reference maybe?&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// n&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This isn’t very pretty. One option would be that &lt;code class=&quot;highlighter-rouge&quot;&gt;f64&lt;/code&gt; inherently is generated and &lt;code class=&quot;highlighter-rouge&quot;&gt;Float&lt;/code&gt; becomes unnecessary.&lt;/p&gt;
+
+&lt;h2 id=&quot;types&quot;&gt;Types&lt;/h2&gt;
+
+&lt;p&gt;A further issue to consider: none of this uses generic types. All this only passes around &lt;code class=&quot;highlighter-rouge&quot;&gt;f64&lt;/code&gt; and nothing else. I guess we could indicate return types by requiring mutable pointers? The code to make this work might be ugly but it’ll be custom derived after all.&lt;/p&gt;
+
+&lt;p&gt;This allows specifying return type of each node, but generation logic would have to specify the tree’s root node to get a consistent type out the top of the trees:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Equation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l + r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l - r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Mul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l × r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// l ÷ r&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;IfEq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;f64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s a pain.&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I’ve been writing a lot of Rust. Since \@Taneb persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy. While building my Genetic Programming library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an interesting but problematic Recursive Enum approach that’s worth discussing. enum Equation { Add(Box&amp;lt;Equation&amp;gt;, Box&amp;lt;Equation&amp;gt;), // l + r Sub(Box&amp;lt;Equation&amp;gt;, Box&amp;lt;Equation&amp;gt;), // l - r Mul(Box&amp;lt;Equation&amp;gt;, Box&amp;lt;Equation&amp;gt;), // l × r Div(Box&amp;lt;Equation&amp;gt;, Box&amp;lt;Equation&amp;gt;), // l ÷ r Float(f64), // n } This is a very neat representation of a syntax tree for basic mathematics. One can express math quite simply:</summary></entry><entry><title type="html">Engineering as slowly as possible</title><link href="/2017/engineering-discipline-and-craft/" rel="alternate" type="text/html" title="Engineering as slowly as possible" /><published>2017-02-27T00:00:00+00:00</published><updated>2017-02-27T00:00:00+00:00</updated><id>/2017/engineering-discipline-and-craft</id><content type="html" xml:base="/2017/engineering-discipline-and-craft/">&lt;p&gt;I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to &lt;a href=&quot;https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems&quot;&gt;slow, logical, conscious System Two&lt;/a&gt; thinking.&lt;/p&gt;
+
+&lt;p&gt;The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard.&lt;/p&gt;
+
+&lt;p&gt;So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft &lt;em&gt;in order to&lt;/em&gt; still move fast: building things well rather than just building them.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s a balance between productivity (immediate gratification) and quality of craft. Small hacks and hobby projects which might be thrown away should favor early productivity. Larger projects, ones worked on infrequently, or ones shared with others should favor craft. One needs to pick correctly.&lt;/p&gt;
+
+&lt;p&gt;The natural question is where do you place projects with potential? If a prototype can lead to bigger things but also be in the bin inside a week?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Throwaway projects can have a long lifetime. I hacked together some scraping and cleanup tools for University of York Student Union candidates last year, but at least twenty people I had to email for their information. This year I &lt;a href=&quot;http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/&quot;&gt;published an analysis piece in Nouse student newspaper&lt;/a&gt; on a 36-hour turnaround. My quick hack now had to automate the entire process because of time constraints.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Involved projects can have a surprisingly short lifetime. The high-quality cybersecurity practicals I worked on all last summer have yet to see the light of day. The ambitious systems I built at Dreamforge in 2012-13 have mostly been offline for two years now - our proof-of-concept &lt;a href=&quot;http://cookiecaster.com&quot;&gt;Cookie Caster&lt;/a&gt; is the sole brilliant survivor.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Poor craft tends to bite you in the butt when you can least afford it. Our software at Dreamforge worked quite well for Cookie Caster and for much of the Fraemes project. Where it let us down was in trying to make Fraemes scale.&lt;br /&gt;&lt;br /&gt;Five minutes checking for regressions after making changes is trivially affordable in the early months of a new project; 10× five minutes a day is unaffordable when you’re overworked and expending available brainpower working on complex things.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Experience is a good teacher. The benefit of experience is identifying when to make tradeoffs and how to avoid tradeoffs you don’t have to make. I’ve been reading with a lot of interest about continuous deployment at &lt;a href=&quot;https://www.theguardian.com/info/developer-blog/2016/dec/20/testing-in-production-rethinking-the-conventional-deployment-pipeline&quot;&gt;The Guardian&lt;/a&gt; and &lt;a href=&quot;http://codevoyagers.com/2016/10/31/from-20-to-2-million-releases-a-year-part-2/&quot;&gt;SkyScanner&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to slow, logical, conscious System Two thinking. The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard. So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft in order to still move fast: building things well rather than just building them.</summary></entry><entry><title type="html">UoYBus: bus times for the University of York</title><link href="/2014/uoybus/" rel="alternate" type="text/html" title="UoYBus: bus times for the University of York" /><published>2014-07-07T00:00:00+01:00</published><updated>2014-07-07T00:00:00+01:00</updated><id>/2014/uoybus</id><content type="html" xml:base="/2014/uoybus/">&lt;p&gt;Since November I’ve been quietly running &lt;a href=&quot;http://uoyb.us&quot;&gt;UoYBus&lt;/a&gt;, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving &lt;a href=&quot;http://york.ac.uk&quot;&gt;University of York&lt;/a&gt;. Today I released a big improvement.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Both bus routes go to the Railway Station and the far end of Campus, but in both the City Centre and on Campus they take quite different routes. Thus it’s quite handy to be able to get times for both sets of stops quickly.&lt;/p&gt;
+
+&lt;p&gt;In January we put a jQuery UI-based frontend on it, but this bolt-on interface left much to be resolved in user experience. Since it’s holidays and I’ve had to take a month off, I decided to sketch up an improved design.&lt;/p&gt;
+
+&lt;h2 id=&quot;difficulties-in-design&quot;&gt;Difficulties in design&lt;/h2&gt;
+&lt;p&gt;The key thing about UoYBus is that it isn’t a generalised bus app, of which dozens exist already. Thus it needs a dead simple interface of (a) where in York are you and (b) where are you going?&lt;/p&gt;
+
+&lt;p&gt;I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.&lt;/p&gt;
+
+&lt;p&gt;To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uoybus-yo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s too bold a design, and picking so many colours proved tricky.&lt;/p&gt;
+
+&lt;h2 id=&quot;route-based-design&quot;&gt;Route-based design&lt;/h2&gt;
+
+&lt;p&gt;Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uoybus-home.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uoybus-result.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.&lt;/p&gt;
+
+&lt;h2 id=&quot;open-development&quot;&gt;Open development&lt;/h2&gt;
+
+&lt;p&gt;The code behind UOYBus needs a lot of work, but is MIT-licensed on &lt;a href=&quot;https://github.com/46bit/uoybus&quot;&gt;Github&lt;/a&gt;. Beyond adding a lot of useful information to UoYBus itself, I’d like to make the app easier to repurpose.&lt;/p&gt;
+
+&lt;p&gt;I want to factor out the York-specific data and enable anyone to run this for their local busroute within minutes. I’ve some ideas about doing this, but it’s tricky to do.&lt;/p&gt;
+
+&lt;h2 id=&quot;commercial-viability&quot;&gt;Commercial viability&lt;/h2&gt;
+
+&lt;p&gt;The difficulty running this sort of live bus app is paying for the &lt;a href=&quot;http://transportapi.com&quot;&gt;API calls&lt;/a&gt; when effectively nonprofit. I’m going to try ads whilst promoting UoYBus, given a lot of companies in York want to promote things to students.&lt;/p&gt;
+
+&lt;p&gt;My big hope for this long-term is to build a Yorkshire guide integrating attractions, events, transport. Something of a travel guide for locals and non-locals alike. York is the perfect place to pilot something like this.&lt;/p&gt;
+
+&lt;p&gt;For now, give &lt;a href=&quot;http://uoyb.us&quot;&gt;UoYBus&lt;/a&gt; a try!&lt;/p&gt;</content><author><name></name></author><category term="Hack" /><summary type="html">Since November I’ve been quietly running UoYBus, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving University of York. Today I released a big improvement.</summary></entry><entry><title type="html">You can’t unsell Hospital Records</title><link href="/2014/cannot-unsell-hospital-records/" rel="alternate" type="text/html" title="You can't unsell Hospital Records" /><published>2014-02-24T00:00:00+00:00</published><updated>2014-02-24T00:00:00+00:00</updated><id>/2014/cannot-unsell-hospital-records</id><content type="html" xml:base="/2014/cannot-unsell-hospital-records/">&lt;p&gt;The Telegraph reported today that hospital records from 1997-2010 have been &lt;a href=&quot;http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html&quot;&gt;sold to insurance companies&lt;/a&gt;. They appear to be referring to HSCIC’s &lt;a href=&quot;http://www.hscic.gov.uk/hes&quot;&gt;Hospital Episode Statistics&lt;/a&gt;, a database of NHS hospital records.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+	&lt;p&gt;[&amp;hellip;] a report by a major UK insurance society discloses that it was able to obtain 13 years of hospital data – covering 47 million patients – in order to help companies “refine” their premiums.&lt;/p&gt;
+	&lt;p&gt;The report by the Staple Inn Actuarial Society – a major organisation for UK insurers – details how it was able to use NHS data covering all hospital in-patient stays between 1997 and 2010 to track the medical histories of patients, identified by date of birth and postcode.&lt;/p&gt;
+	&lt;p&gt;− [Hospital records of all NHS patients sold to insurers](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html), The Telegraph, February 23rd 2014&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The Telegraph haven’t published the report being discussed which makes the details very hard to determine, although HSCIC offer a custom data extraction service that might be able to provide details beyond summary statistics.&lt;/p&gt;
+
+&lt;p&gt;The combination of postcode and date of birth is absolutely not anonymised data, and so should be subject to the Data Protection Act. That Staple Inn were able to unmask it is further proof in this regard.&lt;/p&gt;
+
+&lt;p&gt;HSCIC have questions to answer, but the naivete the Department of Health showed to The Telegraph is remarkable:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Department of Health said: “The rules changed last year so this would no longer be allowed. Information like this can only be accessed now if there is a clear benefit to improving health or health systems.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a huge misunderstanding of the situation. Having sold 13 years of medical records to the private sector, a rule change to prevent further sales is naive at best. The problem is not that the data is for sale, the issue is it was ever sold. In 5 years, in 10 years, the DOH can just sell the new data.&lt;/p&gt;
+
+&lt;p&gt;In future, giving patients notional ownership of their records seems a good idea. Any sale should have to be approved by them, and a portion of any upside given to them.  &lt;a href=&quot;http://dpk.io/medicalrecords&quot;&gt;David Kendal&lt;/a&gt; has already started to try this approach, offering to sell his medical records to interested researchers.&lt;/p&gt;
+
+&lt;p&gt;Certainly a start might be to add a clause to the data contracts stating that any attempt to deanonymise the data breaches contract. The Data Protection Act prevents reversible disclosure, so the loss of value of the data should not be a concern.&lt;/p&gt;</content><author><name></name></author><category term="Data" /><summary type="html">The Telegraph reported today that hospital records from 1997-2010 have been sold to insurance companies. They appear to be referring to HSCIC’s Hospital Episode Statistics, a database of NHS hospital records.</summary></entry></feed>

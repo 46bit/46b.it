@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-  <title>Trains and East Coast positioning data - 46b.it</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
-  <link href="/css/master-rebuild.css" rel="stylesheet">
-  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
-  
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="/2013/trains-east-coast-positioning/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/feed.xml">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Trains and East Coast positioning data - 46b.it</title>
 </head>
 <body>
   <header id="header">
     <div class="wrapper">
       <h1><a href="/">46b.it</a></h1>
       <nav>
+        
         <ul>
-          <li><a href="/">Writing</a></li>
+          <li class="active"><a href="/">Writing</a></li>
           <li><a href="/wiki/">Wiki</a></li>
-          <li><a href="/about/">About</a></li>
+          <li ><a href="/about/">About</a></li>
           <li><a href="https://github.com/46bit">Github</a></li>
         </ul>
       </nav>
@@ -25,37 +32,58 @@
   <article>
   <header class="prelude">
     <div class="wrapper">
-      <p class="meta">January 26, 2013 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
-      <h1><a href="/2013/trains-east-coast-positioning">Trains and East Coast positioning data</a></h1>
+      <p class="meta">
+        Jan 26, 2013
+        <!--
+        &nbsp;&bullet;&nbsp; saturday
+        &nbsp;&bullet;&nbsp; by Michael Mokrysz
+        -->
+      </p>
+      
+      <h1><a href="$url$">Trains and East Coast positioning data</a></h1>
+      
     </div>
   </header>
-  <section class="wrapper">
-    <p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route. <!--more--></p>
-<p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
-<p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">&gt;</span> GET <span class="st">&quot;https://www.ombord.info/api/jsonp/position/?callback=json&quot;</span>
-<span class="at">json</span>( <span class="op">{</span>
-  <span class="st">&quot;version&quot;</span><span class="op">:</span> <span class="st">&quot;1.2&quot;</span><span class="op">,</span>
-  <span class="st">&quot;time&quot;</span><span class="op">:</span> <span class="st">&quot;1359167756.0&quot;</span><span class="op">,</span> <span class="co">// unix timestamp</span>
-  <span class="st">&quot;age&quot;</span><span class="op">:</span> <span class="st">&quot;0&quot;</span><span class="op">,</span>
-  <span class="st">&quot;latitude&quot;</span><span class="op">:</span> <span class="st">&quot;53.059942&quot;</span><span class="op">,</span>
-  <span class="st">&quot;longitude&quot;</span><span class="op">:</span> <span class="st">&quot;-0.77284&quot;</span><span class="op">,</span>
-  <span class="st">&quot;altitude&quot;</span><span class="op">:</span> <span class="st">&quot;31.1&quot;</span><span class="op">,</span> <span class="co">// altitude in metres</span>
-  <span class="st">&quot;speed&quot;</span><span class="op">:</span> <span class="st">&quot;33.171&quot;</span><span class="op">,</span> <span class="co">// speed in metres/second</span>
-  <span class="st">&quot;cmg&quot;</span><span class="op">:</span> <span class="st">&quot;134.68&quot;</span><span class="op">,</span>
-  <span class="st">&quot;satellites&quot;</span><span class="op">:</span> <span class="st">&quot;12&quot;</span><span class="op">,</span> <span class="co">// number of GPS signals being received</span>
-  <span class="st">&quot;mode&quot;</span><span class="op">:</span> <span class="st">&quot;3&quot;</span>
-<span class="op">}</span>)<span class="op">;</span></code></pre></div>
-<p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
-<p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code>cmg</code> value is - let me know if you do.</p>
-<p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
-<p>I know the same Ombord system is used on other trains internationally, so this is worth trying on other services with Wifi as well. I’d love to hear if you get it working.</p>
-<p>There’s a private <a href="https://datafeeds.networkrail.co.uk/ntrod/">API</a> for live train information now, but I don’t know it’s current status. I’ve heard literally nothing about it.</p>
-<p><strong>UPDATE</strong> (7th February 2012): I’ve now <a href="/2013/02/07/train-data-revisited/">written more about the Network Rail API</a>. If you’re interested in more than just playing around whilst on East Coast trains it’ll interest you more.</p>
-  </section>
-</article>
+  <section class="wrapper narrowtop balancedbottom">
+    <p>Back in 2011 I built TrainTrackr, a rapidly-built iOS app that worked together with a web interface <strong>to track train journeys</strong>. It seemed a brilliant way to tracing delays to trains and getting accurate data on their speeds along the route.
+<!--more--></p>
 
-	<script>
+<p>One of the most regular train journeys I make is to head from Yorkshire to London on an East Coast service. It’s at least a two hour journey, so I tend to get lots done.</p>
+
+<p>Last year I noticed that <strong>the Wifi login page displayed a position and speed for the train</strong>. Fast forward some quick request monitoring and it turns out that <strong>some <a href="https://www.ombord.info/api/jsonp/position/?callback=json">nice JSONP</a> is available</strong>.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">GET</span> <span class="s2">"https://www.ombord.info/api/jsonp/position/?callback=json"</span>
+<span class="nx">json</span><span class="p">(</span> <span class="p">{</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.2"</span><span class="p">,</span>
+  <span class="s2">"time"</span><span class="p">:</span> <span class="s2">"1359167756.0"</span><span class="p">,</span> <span class="c1">// unix timestamp</span>
+  <span class="s2">"age"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+  <span class="s2">"latitude"</span><span class="p">:</span> <span class="s2">"53.059942"</span><span class="p">,</span>
+  <span class="s2">"longitude"</span><span class="p">:</span> <span class="s2">"-0.77284"</span><span class="p">,</span>
+  <span class="s2">"altitude"</span><span class="p">:</span> <span class="s2">"31.1"</span><span class="p">,</span> <span class="c1">// altitude in metres</span>
+  <span class="s2">"speed"</span><span class="p">:</span> <span class="s2">"33.171"</span><span class="p">,</span> <span class="c1">// speed in metres/second</span>
+  <span class="s2">"cmg"</span><span class="p">:</span> <span class="s2">"134.68"</span><span class="p">,</span>
+  <span class="s2">"satellites"</span><span class="p">:</span> <span class="s2">"12"</span><span class="p">,</span> <span class="c1">// number of GPS signals being received</span>
+  <span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"3"</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>It’s actually quite awesome. <strong>There’s no authentication tokens to deal with</strong>: if you’re on the Wifi of an East Coast train then it’s <strong>updated in real-time</strong>. If you’re on the public internet, you get demo data.</p>
+
+<p>The only niggle is that you can’t remove the callback name to get truly valid JSON - some parentheses stick around. I also don’t know what the <code class="highlighter-rouge">cmg</code> value is - let me know if you do.</p>
+
+<p>Without planting Raspberry Pis to broadcast the data over the internet, it’s <strong>not as useful as a proper train-times system</strong>. It <em>is</em> quite handy though if you want to pass a train journey hacking on something interesting.</p>
+
+<p>I know the same Ombord system is used on other trains internationally, so this is worth trying on other services with Wifi as well. I’d love to hear if you get it working.</p>
+
+<p>There’s a private <a href="https://datafeeds.networkrail.co.uk/ntrod/">API</a> for live train information now, but I don’t know it’s current status. I’ve heard literally nothing about it.</p>
+
+<p><strong>UPDATE</strong> (7th February 2012): I’ve now <a href="/2013/02/07/train-data-revisited/">written more about the Network Rail API</a>. If you’re interested in more than just playing around whilst on East Coast trains it’ll interest you more.</p>
+
+  </section>
+<article>
+
+  <script>
   // Tracking
   if (document.location.hostname != "localhost") {
     // GoSquared
@@ -86,6 +114,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
   }
-	</script>
+  </script>
 </body>
 </html>

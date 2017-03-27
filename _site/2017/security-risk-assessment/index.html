@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-  <title>Security Risk Assessments of Semi-Autonomous Vehicles - 46b.it</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
-  <link href="/css/master-rebuild.css" rel="stylesheet">
-  <link rel="alternate" type="application/atom+xml" href="/meta/feed.atom">
-  
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="/2017/security-risk-assessment/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/feed.xml">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Security Risk Assessments of Semi-Autonomous Vehicles - 46b.it</title>
 </head>
 <body>
   <header id="header">
     <div class="wrapper">
       <h1><a href="/">46b.it</a></h1>
       <nav>
+        
         <ul>
-          <li><a href="/">Writing</a></li>
+          <li class="active"><a href="/">Writing</a></li>
           <li><a href="/wiki/">Wiki</a></li>
-          <li><a href="/about/">About</a></li>
+          <li ><a href="/about/">About</a></li>
           <li><a href="https://github.com/46bit">Github</a></li>
         </ul>
       </nav>
@@ -25,33 +32,60 @@
   <article>
   <header class="prelude">
     <div class="wrapper">
-      <p class="meta">March 13, 2017 <!--<i>&nbsp;&bullet;&nbsp; saturday &nbsp;&bullet;&nbsp; by Michael Mokrysz</i>--></p>
-      <h1><a href="/2017/security-risk-assessment">Security Risk Assessments of Semi-Autonomous Vehicles</a></h1>
+      <p class="meta">
+        Mar 13, 2017
+        <!--
+        &nbsp;&bullet;&nbsp; saturday
+        &nbsp;&bullet;&nbsp; by Michael Mokrysz
+        -->
+      </p>
+      
+      <h1><a href="$url$">Security Risk Assessments of Semi-Autonomous Vehicles</a></h1>
+      
     </div>
   </header>
-  <section class="wrapper">
+  <section class="wrapper narrowtop balancedbottom">
     <p>I’m in my 4<sup>th</sup> year at York, the Masters year of my MEng Computer Science degree. This term I’ve taken the Topics in Privacy and Security (PSEC) module, which takes a wide technical swath through privacy and security issues. But the assessment is mostly focused on password cracking and doing a security risk assessment for automated road convoys.</p>
-<p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</p>
-<p><img src="/img/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600"> <!--more--></p>
-<h2 id="risksviability-of-commercial-deployment">Risks/viability of commercial deployment</h2>
-<p>Deploying this commercially is to move from a proof-of-concept to a live system. The most immediate issue I’ve identified is with this concept of following drivers not paying attention to the road: in the demonstrator, following vehicles had professional drivers who were paying attention.</p>
-<p>On an actual highway unexpected things happen. If the platoon (convoy) is to return control to drivers should a sudden, unexpected thing happen then drivers cannot be doing other activities - they need road awareness.</p>
-<p>The Parliamentary Science and Technology Office came up with a <a href="http://researchbriefings.parliament.uk/ResearchBriefing/Summary/POST-PN-443">classification system for automated road vehicles.</a> <em>Under this classification the proof-of-concept only meets the concept of Partial Autonomy.</em></p>
-<p><img src="/img/hoc-autonomous-vehicle-levels.png" alt="UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy"></p>
-<p><em>Drivers not having to be attentive is classed as High Autonomy.</em> As with my musings, they’ve identified it as a hard step to take.</p>
-<p>The demonstrator dissolved convoys by having vehicles automatically back off to 50m separations and 50km/h speeds. Thus drivers could regain control in a gentle manner. Sadly this isn’t all that practical - in my opinion - on the road.</p>
-<h2 id="collective-vs-individual-appeal">Collective vs Individual appeal</h2>
-<p>The European Commision sees a major advantage of this project being reduced carbon emissions. The slipstream from vehicles a few metres ahead reduces the fuel used by vehicles in the platoon.</p>
-<p>The reduced fuel usage appeals to all drivers in the form of lower costs. That is, it has individualistic appeal. Having the necessary equipment fitted can apparently pay itself back within 3 years on trucks - if produced at scale something similar seems plausible for cars.</p>
-<p>Reducing CO<sub>2</sub> emissions is still more of a collective issue. As Europeans we’re seeing oddities in the climate but not particularly as a critical issue every day. I suspect when it becomes a more individually-obvious issue there will finally be the will to take serious action, but at that point it may be too late to try anything but climate engineering.</p>
-<p>The problem for this project is that to the public, reduced fuel usage might not be worth the attention costs. If drivers are automatically monitored for paying attention to the road it is plausible to keep them attentive or evict them from a platoon. But staying immersed in the road environment when taking no action would be very tedious over long periods. As such I don’t think people will go for the project in high numbers unless this issue of having to pay constant attention is resolved.</p>
-<h2 id="summing-up">Summing up</h2>
-<p>It isn’t clear how directly this is being taken further in the real world. But it’s a nice model for semi-automated road vehicles, if only the emergency recovery of control can be worked out.</p>
-<p>I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.</p>
-  </section>
-</article>
 
-	<script>
+<p>We’re assessing how to bring an EU-funded project, <a href="https://en.wikipedia.org/wiki/Safe_Road_Trains_for_the_Environment">SARTRE</a>, to market. The concept, “Safe Road Trains for the Environment,” allows an equipped car to automatically follow ~6m behind a Lead Vehicle. You could sit back and watch a movie—er, do productive work.</p>
+
+<p><img src="/assets/sartre-drivers-doing-activities.png" alt="SARTRE following drivers doing immersive non-driving tasks" width="600" />
+<!--more--></p>
+
+<h2 id="risksviability-of-commercial-deployment">Risks/viability of commercial deployment</h2>
+
+<p>Deploying this commercially is to move from a proof-of-concept to a live system. The most immediate issue I’ve identified is with this concept of following drivers not paying attention to the road: in the demonstrator, following vehicles had professional drivers who were paying attention.</p>
+
+<p>On an actual highway unexpected things happen. If the platoon (convoy) is to return control to drivers should a sudden, unexpected thing happen then drivers cannot be doing other activities - they need road awareness.</p>
+
+<p>The Parliamentary Science and Technology Office came up with a <a href="http://researchbriefings.parliament.uk/ResearchBriefing/Summary/POST-PN-443">classification system for automated road vehicles.</a> <em>Under this classification the proof-of-concept only meets the concept of Partial Autonomy.</em></p>
+
+<p><img src="/assets/hoc-autonomous-vehicle-levels.png" alt="UK Parliamentary Office of Science and Technology Analysis of scales of vehicle autonomy" /></p>
+
+<p><em>Drivers not having to be attentive is classed as High Autonomy.</em> As with my musings, they’ve identified it as a hard step to take.</p>
+
+<p>The demonstrator dissolved convoys by having vehicles automatically back off to 50m separations and 50km/h speeds. Thus drivers could regain control in a gentle manner. Sadly this isn’t all that practical - in my opinion - on the road.</p>
+
+<h2 id="collective-vs-individual-appeal">Collective vs Individual appeal</h2>
+
+<p>The European Commision sees a major advantage of this project being reduced carbon emissions. The slipstream from vehicles a few metres ahead reduces the fuel used by vehicles in the platoon.</p>
+
+<p>The reduced fuel usage appeals to all drivers in the form of lower costs. That is, it has individualistic appeal. Having the necessary equipment fitted can apparently pay itself back within 3 years on trucks - if produced at scale something similar seems plausible for cars.</p>
+
+<p>Reducing CO<sub>2</sub> emissions is still more of a collective issue. As Europeans we’re seeing oddities in the climate but not particularly as a critical issue every day. I suspect when it becomes a more individually-obvious issue there will finally be the will to take serious action, but at that point it may be too late to try anything but climate engineering.</p>
+
+<p>The problem for this project is that to the public, reduced fuel usage might not be worth the attention costs. If drivers are automatically monitored for paying attention to the road it is plausible to keep them attentive or evict them from a platoon. But staying immersed in the road environment when taking no action would be very tedious over long periods. As such I don’t think people will go for the project in high numbers unless this issue of having to pay constant attention is resolved.</p>
+
+<h2 id="summing-up">Summing up</h2>
+
+<p>It isn’t clear how directly this is being taken further in the real world. But it’s a nice model for semi-automated road vehicles, if only the emergency recovery of control can be worked out.</p>
+
+<p>I’ve spent quite awhile with security-related topics before but this is my first time doing risk assessment exercises. I appreciate this work a lot more now. It can be dull, but that’s because it involves a lot of gathering information before any serious analysis can be done. That this is the first such exercise I’ve performed naturally means I’m being conservative in how I go about it - in real-life there’d be more freedom to do more iterations and get solid facts.</p>
+
+  </section>
+<article>
+
+  <script>
   // Tracking
   if (document.location.hostname != "localhost") {
     // GoSquared
@@ -82,6 +116,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
   }
-	</script>
+  </script>
 </body>
 </html>

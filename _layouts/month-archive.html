@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article>
+  <header class="prelude">
+    <div class="wrapper">
+      <h1>Posts from {{ page.date | date: "%B %Y" }}</h1>
+    </div>
+  </header>
+  {% include post-list.html %}
+</article>
