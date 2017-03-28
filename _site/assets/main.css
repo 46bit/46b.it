@@ -71,7 +71,9 @@ article .prelude {
   color: #fff;
   background: #d9560e;
   padding: 33px 0;
-  font: 300 24px/38px 'Merriweather', serif;
+  font: 300 24px/38px 'Merriweather', serif; }
+
+article .prelude.yellowlined {
   border-bottom: 6px solid #ffee36; }
 
 article .prelude .wrapper {
