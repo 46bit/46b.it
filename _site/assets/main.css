@@ -290,8 +290,8 @@ a[href*="github.com"]::after {
     padding: 10px; }
 
   article .prelude {
-    padding-left: 20px;
-    padding-right: 20px; }
+    padding-top: 20px;
+    padding-bottom: 20px; }
 
   article .prelude .intro {
     display: none; }
