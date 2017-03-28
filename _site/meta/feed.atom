@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-28T11:25:05+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">Designing a better home for writing.</title><link href="/2017/a-better-home-for-writing/" rel="alternate" type="text/html" title="Designing a better home for writing." /><published>2017-03-28T00:00:00+01:00</published><updated>2017-03-28T00:00:00+01:00</updated><id>/2017/a-better-home-for-writing</id><content type="html" xml:base="/2017/a-better-home-for-writing/">&lt;p&gt;This blog experienced a lull from &lt;code class=&quot;highlighter-rouge&quot;&gt;2014-07-07&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;2017-02-27&lt;/code&gt;, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-28T20:38:40+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">Designing a better home for writing.</title><link href="/2017/a-better-home-for-writing/" rel="alternate" type="text/html" title="Designing a better home for writing." /><published>2017-03-28T00:00:00+01:00</published><updated>2017-03-28T00:00:00+01:00</updated><id>/2017/a-better-home-for-writing</id><content type="html" xml:base="/2017/a-better-home-for-writing/">&lt;p&gt;This blog experienced a lull from &lt;code class=&quot;highlighter-rouge&quot;&gt;2014-07-07&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;2017-02-27&lt;/code&gt;, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.&lt;/p&gt;
 
 &lt;p&gt;What didn’t change was that the old design, well, sucked. I don’t mean that it was the worst thing ever, but it was underwhelming as a place to write. So I’m going to talk through the redesign process.&lt;/p&gt;
 
@@ -12,19 +12,29 @@
 
 &lt;h2 id=&quot;redesign-narrative&quot;&gt;Redesign narrative&lt;/h2&gt;
 
+&lt;h3 id=&quot;i-need-some-fonts&quot;&gt;I need some fonts&lt;/h3&gt;
+
+&lt;p&gt;As someone who dabbles in frontend and hasn’t done intense JavaScript work since 2013, one of the brilliant things of 201x is webfonts. Being able to pick out pleasant fonts that suit your design is so much more powerful than relying on the client computer to have nice fonts. In my teens it was common to embed nicely-fonted text as images, with the actual text &lt;code class=&quot;highlighter-rouge&quot;&gt;text-indent: -9999px;&lt;/code&gt; out the way.&lt;/p&gt;
+
+&lt;p&gt;At one point I had a paid &lt;a href=&quot;&quot;&gt;Typekit&lt;/a&gt; subscription, but more recently &lt;a href=&quot;&quot;&gt;Google Fonts&lt;/a&gt; offers free and liberally licensed fonts. Rather than being second-best, many or all of them are very high quality. Some seem curiously similar to hyper-expensive fonts I used in days gone by, on which I’ve no comment.&lt;/p&gt;
+
+&lt;p&gt;Anyhow. I rather liked a Serif font in use by &lt;a href=&quot;https://www.barrucadu.co.uk&quot;&gt;Michael Walker&lt;/a&gt; (also of York Comp Sci), &lt;span style=&quot;font-family: Merriweather, serif;&quot;&gt;Merriweather&lt;/span&gt;, so I picked that. At some point during the process I also recruited Open Sans which is the font you’re reading right now.&lt;/p&gt;
+
 &lt;h3 id=&quot;i-need-some-colours&quot;&gt;I need some colours&lt;/h3&gt;
 
-&lt;p&gt;From past experience it helps me to get an initial colour palette. Many experienced designers seem to design in grayscale and treat the colours as second to content. I however find I struggle with how to colorize a design and make it pop. I wanted to stick with &lt;code class=&quot;highlighter-rouge&quot;&gt;hakyll&lt;/code&gt;, a Haskell static site generator, and I didn’t want to change the content.&lt;/p&gt;
+&lt;p&gt;From past experience it helps me to get an initial colour palette. Many experienced designers seem to design in grayscale and treat the colours as second to content. However I find I can struggle with how to colorize a design and make it ‘pop.’ The content was largely already present - I wanted to stick with &lt;code class=&quot;highlighter-rouge&quot;&gt;hakyll&lt;/code&gt;, a Haskell static site generator, and I didn’t want to make major content alterations.&lt;/p&gt;
 
 &lt;p&gt;I’ve always liked maroony reds, so that was my startpoint. Ten minutes of Adobe Kuler later, I had &lt;a href=&quot;https://color.adobe.com/46bit-color-theme-9379807/&quot;&gt;this&lt;/a&gt;:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/new-colours.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;The intensity of the cyans was concerning, but that was something to try and see. In practice the cyans are barely used, with a bright yellow and a deep blue instead. But the three, intense reds are the key to the design.&lt;/p&gt;
+
 &lt;h3 id=&quot;first-sketch&quot;&gt;First sketch&lt;/h3&gt;
 
-&lt;p&gt;I chose to use my &lt;a href=&quot;/2017/coldfusion-insecure-escape-spaces/&quot;&gt;Securing legacy ColdFusion or: Why escape spaces against XSS?&lt;/a&gt; post as the content for the redesign. It isn’t my best post ever, but the mix of text and code is quite representative of what I’ll be writing here.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-1.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-1.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I chose to use my &lt;a href=&quot;/2017/coldfusion-insecure-escape-spaces/&quot;&gt;Securing legacy ColdFusion or: Why escape spaces against XSS?&lt;/a&gt; post as the content for the redesign. It isn’t my best post ever, but the mix of text and code is quite representative of what I’ll be writing here.&lt;/p&gt;
 
 &lt;p&gt;A half hour in this is looking quite effective. The navigation colours don’t work, the logo text is too heavy, but the basic structure works.&lt;/p&gt;
 
@@ -32,47 +42,41 @@
 
 &lt;p&gt;Out of necessity I’m jumping ahead a way.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-4.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-4.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;At this point I’d copied in more content. This seemed essential in understanding how a long post would perform. I’ve previously found that simple designs with the header out of sight can be monochrome.&lt;/p&gt;
 
 &lt;h3 id=&quot;sixth-sketch&quot;&gt;Sixth sketch&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-6.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-6.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As someone who does a lot of business with the US and rest-of-the-world, I’m quite a fan of the &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD&lt;/code&gt; date format. But here I started experimenting with including the day of the week, and in the final design I concluded a ‘human’ format would surprise users less.&lt;/p&gt;
 
 &lt;h3 id=&quot;eleventh-sketch&quot;&gt;Eleventh sketch&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-11.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-11.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I tried to bring in more colours from the colourscheme, building a big header. This does sort-of work - but so much cyan is a risk when it comes to flexibility later.&lt;/p&gt;
 
 &lt;h3 id=&quot;eighteenth-sketch&quot;&gt;Eighteenth sketch&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-18.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-18.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I tried dropping the header and adding a bar below the navigation to enhance the structural connection to the active navigation item. This seemed like a great idea.&lt;/p&gt;
 
 &lt;h3 id=&quot;nineteenth-sketch-the-final-one&quot;&gt;Nineteenth sketch, the final one&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/redesign-19.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/redesign-19.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Inspired, I brought the reds and the more active navigation together. I loved it and decided this was enough to start implementing. Further changes could be made in the browser.&lt;/p&gt;
 
 &lt;h2 id=&quot;whats-live-now&quot;&gt;What’s live now&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/new-homepage.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/new-homepage.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You might notice - the narrow yellow line below the title bar originated in Sketch 11. It isn’t in the colourscheme at all; I picked it up by chance. But it has made it into the live design, dividing the title bar and the post date on pages that list posts. It was on other pages for a while, but it split up the title and the text too much - the Achilles Heel of this design.&lt;/p&gt;
 
 &lt;p&gt;As of last night I’ve built in mobile support. Something I haven’t done with this design is use Flexbox - I’m still using floats for positioning the logo and navigation. I’ve my MEng project to do and am under a lot of time pressure, so it was the wrong time to learn that.&lt;/p&gt;
-
-&lt;p&gt;So having written this post, one new priority is finding a better layout for this post on wider screens.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/the-redesign-post.png&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I probably want to display images and text side by side. (Much of the text ugliness here is down to me having zoomed out.)&lt;/p&gt;
 
 &lt;p&gt;There is still a long way to go, but this is a design that can grow easily.&lt;/p&gt;</content><author><name></name></author><summary type="html">This blog experienced a lull from 2014-07-07 to 2017-02-27, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python. What didn’t change was that the old design, well, sucked. I don’t mean that it was the worst thing ever, but it was underwhelming as a place to write. So I’m going to talk through the redesign process.</summary></entry><entry><title type="html">I’ve been published!</title><link href="/2017/writing-again/" rel="alternate" type="text/html" title="I've been published!" /><published>2017-03-14T00:00:00+00:00</published><updated>2017-03-14T00:00:00+00:00</updated><id>/2017/writing-again</id><content type="html" xml:base="/2017/writing-again/">&lt;h2 id=&quot;in-the-last-month-ive-published-twice-in-our-campus-newspaper-nouse&quot;&gt;In the last month I’ve published twice in our campus newspaper, Nouse&lt;/h2&gt;
 
