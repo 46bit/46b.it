@@ -18,7 +18,7 @@ body {
   font: 400 19px 'Open Sans', sans-serif; }
 
 .wrapper {
-  width: 1140px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 30px;
@@ -136,7 +136,7 @@ article section a {
 article section a:hover, article section a:active {
   border-bottom: 1px solid #005c8c; }
 
-article section h2, h3, h4, h5 {
+article section h2, article section h3, article section h4, article section h5 {
   font-weight: 400;
   margin-bottom: 12px;
   padding-bottom: 12px; }
@@ -159,10 +159,10 @@ article section h3 a {
 article section h3 a:hover, article section h3 a:active {
   border-bottom: 1px solid #000; }
 
-article section p, ul, ol, pre {
+article section p, article section ul, article section ol, article section pre {
   margin-bottom: 18px; }
 
-article section ul, ol {
+article section ul, article section ol {
   margin-left: 40px; }
 
 article section ul {
@@ -205,7 +205,7 @@ article section .intro a {
   border-bottom: 1px solid #005c8c; }
 
 article section .topspace {
-  margin-top: 18px; }
+  padding-top: 16px; }
 
 article section img {
   max-width: 100%;
@@ -266,3 +266,57 @@ a[href*="github.com"]::after {
   content: " \0041";
 }
 */
+@media (max-width: 560px) {
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  #header h1 {
+    float: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px; }
+
+  #header nav {
+    float: none;
+    text-align: center; }
+
+  #header nav ul li {
+    float: none;
+    display: inline-block;
+    margin-right: 11px; }
+
+  #header nav ul li a {
+    padding: 10px; }
+
+  article .prelude {
+    padding-left: 20px;
+    padding-right: 20px; }
+
+  article .prelude .intro {
+    display: none; }
+
+  article .prelude .avatar {
+    display: none; }
+
+  article section {
+    margin-bottom: 10px; }
+
+  article section .topspace {
+    padding-top: 0; }
+
+  article section h2 {
+    clear: both;
+    font-size: 28px;
+    font-weight: 600; } }
+@media (max-width: 410px) {
+  #header .wrapper {
+    padding-left: 0;
+    padding-right: 0; }
+
+  #header nav ul li {
+    margin-right: 0; }
+
+  article .prelude {
+    padding-left: 0;
+    padding-right: 0; } }

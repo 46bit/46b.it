@@ -2,8 +2,10 @@
 title: Michael Mokrysz
 layout: page
 ---
+<div>
 <img class="avatar botspace" src="/assets/avatar.jpg">
 <p class="intro topspace">I’m a 23-year-old software engineer with interests in <a href="https://www.rust-lang.org">Rust</a>, systems and civic data. Until June I'm based in <a href="https://46b.it/wiki/york/">York, UK</a>. Email me at <a href="mailto:hi@46b.it">hi@46b.it</a> or grab my <a href="https://r.46b.it/cv.pdf">Resume/CV</a>.</p>
+</div>
 
 ## Engineering
 
