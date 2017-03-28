@@ -73,6 +73,10 @@ article .prelude {
   padding: 33px 0;
   font: 300 24px/38px 'Merriweather', serif; }
 
+article .prelude.narrow {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 article .prelude.yellowlined {
   border-bottom: 6px solid #ffee36; }
 
@@ -315,8 +319,4 @@ a[href*="github.com"]::after {
     padding-right: 0; }
 
   #header nav ul li {
-    margin-right: 0; }
-
-  article .prelude {
-    padding-left: 0;
-    padding-right: 0; } }
+    margin-right: 0; } }

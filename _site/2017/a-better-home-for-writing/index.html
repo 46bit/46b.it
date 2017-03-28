@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="/2017/a-better-home-for-writing/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/feed.xml">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Designing a better home for writing. - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude narrow">
+    <div class="wrapper">
+      <p class="meta">
+        Mar 28, 2017
+        <!--
+        &nbsp;&bullet;&nbsp; saturday
+        &nbsp;&bullet;&nbsp; by Michael Mokrysz
+        -->
+      </p>
+      
+      <h1><a href="$url$">Designing a better home for writing.</a></h1>
+      
+    </div>
+  </header>
+  <section class="wrapper narrowtop balancedbottom">
+    <p>This blog experienced a lull from <code class="highlighter-rouge">2014-07-07</code> to <code class="highlighter-rouge">2017-02-27</code>, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.</p>
+
+<p>What didn’t change was that the old design, well, sucked. I don’t mean that it was the worst thing ever, but it was underwhelming as a place to write. So I’m going to talk through the redesign process.</p>
+
+<p><img src="/assets/old-new-aside.png" width="1000" /></p>
+
+<!--more-->
+
+<p>I’m not a UI designer, but I have a pretty good grasp of UX from working at a web agency and a consumer-focused startup. I think this showed: this design was perfectly functional, links were quite visible, and the important text stood out. But the UI was very <code class="highlighter-rouge">LaTeX</code>y-monochrome, perhaps a reflection of how I was feeling when I made it.</p>
+
+<p>When I started writing again I was nervous about how well I could write. I am not a naturally talented writer. But as with many skills worth learning, you just need to practice it enough that it becomes second nature. As I get more used to writing my writing should improve. I might build an audience of Rustaceans. My writing elsewhere should become clearer and easier. But part of this is having a pleasing place to write.</p>
+
+<h2 id="redesign-narrative">Redesign narrative</h2>
+
+<h3 id="i-need-some-colours">I need some colours</h3>
+
+<p>From past experience it helps me to get an initial colour palette. Many experienced designers seem to design in grayscale and treat the colours as second to content. I however find I struggle with how to colorize a design and make it pop. I wanted to stick with <code class="highlighter-rouge">hakyll</code>, a Haskell static site generator, and I didn’t want to change the content.</p>
+
+<p>I’ve always liked maroony reds, so that was my startpoint. Ten minutes of Adobe Kuler later, I had <a href="https://color.adobe.com/46bit-color-theme-9379807/">this</a>:</p>
+
+<p><img src="/assets/new-colours.png" width="600" /></p>
+
+<h3 id="first-sketch">First sketch</h3>
+
+<p>I chose to use my <a href="/2017/coldfusion-insecure-escape-spaces/">Securing legacy ColdFusion or: Why escape spaces against XSS?</a> post as the content for the redesign. It isn’t my best post ever, but the mix of text and code is quite representative of what I’ll be writing here.</p>
+
+<p><img src="/assets/redesign-1.png" width="600" /></p>
+
+<p>A half hour in this is looking quite effective. The navigation colours don’t work, the logo text is too heavy, but the basic structure works.</p>
+
+<h3 id="fourth-sketch">Fourth sketch</h3>
+
+<p>Out of necessity I’m jumping ahead a way.</p>
+
+<p><img src="/assets/redesign-4.png" width="600" /></p>
+
+<p>At this point I’d copied in more content. This seemed essential in understanding how a long post would perform. I’ve previously found that simple designs with the header out of sight can be monochrome.</p>
+
+<h3 id="sixth-sketch">Sixth sketch</h3>
+
+<p><img src="/assets/redesign-6.png" width="600" /></p>
+
+<p>As someone who does a lot of business with the US and rest-of-the-world, I’m quite a fan of the <code class="highlighter-rouge">YYYY-MM-DD</code> date format. But here I started experimenting with including the day of the week, and in the final design I concluded a ‘human’ format would surprise users less.</p>
+
+<h3 id="eleventh-sketch">Eleventh sketch</h3>
+
+<p><img src="/assets/redesign-11.png" width="600" /></p>
+
+<p>I tried to bring in more colours from the colourscheme, building a big header. This does sort-of work - but so much cyan is a risk when it comes to flexibility later.</p>
+
+<h3 id="eighteenth-sketch">Eighteenth sketch</h3>
+
+<p><img src="/assets/redesign-18.png" width="600" /></p>
+
+<p>I tried dropping the header and adding a bar below the navigation to enhance the structural connection to the active navigation item. This seemed like a great idea.</p>
+
+<h3 id="nineteenth-sketch-the-final-one">Nineteenth sketch, the final one</h3>
+
+<p><img src="/assets/redesign-19.png" width="600" /></p>
+
+<p>Inspired, I brought the reds and the more active navigation together. I loved it and decided this was enough to start implementing. Further changes could be made in the browser.</p>
+
+<h2 id="whats-live-now">What’s live now</h2>
+
+<p><img src="/assets/new-homepage.png" width="600" /></p>
+
+<p>You might notice - the narrow yellow line below the title bar originated in Sketch 11. It isn’t in the colourscheme at all; I picked it up by chance. But it has made it into the live design, dividing the title bar and the post date on pages that list posts. It was on other pages for a while, but it split up the title and the text too much - the Achilles Heel of this design.</p>
+
+<p>As of last night I’ve built in mobile support. Something I haven’t done with this design is use Flexbox - I’m still using floats for positioning the logo and navigation. I’ve my MEng project to do and am under a lot of time pressure, so it was the wrong time to learn that.</p>
+
+<p>So having written this post, one new priority is finding a better layout for this post on wider screens.</p>
+
+<p><img src="/assets/the-redesign-post.png" width="600" /></p>
+
+<p>I probably want to display images and text side by side. (Much of the text ugliness here is down to me having zoomed out.)</p>
+
+<p>There is still a long way to go, but this is a design that can grow easily.</p>
+
+  </section>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>
