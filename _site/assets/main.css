@@ -163,7 +163,7 @@ article section h3 a {
 article section h3 a:hover, article section h3 a:active {
   border-bottom: 1px solid #000; }
 
-article section p, article section ul, article section ol, article section pre {
+article section p, article section ul, article section ol, article section pre, article section blockquote {
   margin-bottom: 18px; }
 
 article section ul, article section ol {
@@ -246,6 +246,12 @@ article code {
   background: #fff1e9;
   padding: 0 6px 2px;
   font-family: 'Operator Mono', monospace; }
+
+article blockquote {
+  background: #fff1e9;
+  line-height: 24px;
+  font-size: 20px;
+  padding: 20px 0 2px 20px; }
 
 article section .pull-left {
   float: left;

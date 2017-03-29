@@ -74,6 +74,14 @@ I tried dropping the header and adding a bar below the navigation to enhance the
 
 Inspired, I brought the reds and the more active navigation together. I loved it and decided this was enough to start implementing. Further changes could be made in the browser.
 
+### A logo revived
+
+<img src="/assets/46bit-paper-large.png" width="192" class="pull-left">
+
+In 2010 I hired [Anthony Bullock](https://dribbble.com/sitelotus) to build me a much nicer freelance portfolio than what I had been using. The aim was to get more work from a more pleasing internet presence, and I think it was successful. I was 16 at the time.
+
+I noticed the above designs could do with a nice logo. So I opened up my old one, that Anthony designed. I lightened some text, changed the hue of the "bit," and played with the correct size. And it works nicely! Thanks again, Anthony.
+
 ## What's live now
 
 <img src="/assets/new-homepage.png" width="600" class="pull-left">

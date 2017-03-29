@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-28T20:38:40+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">Designing a better home for writing.</title><link href="/2017/a-better-home-for-writing/" rel="alternate" type="text/html" title="Designing a better home for writing." /><published>2017-03-28T00:00:00+01:00</published><updated>2017-03-28T00:00:00+01:00</updated><id>/2017/a-better-home-for-writing</id><content type="html" xml:base="/2017/a-better-home-for-writing/">&lt;p&gt;This blog experienced a lull from &lt;code class=&quot;highlighter-rouge&quot;&gt;2014-07-07&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;2017-02-27&lt;/code&gt;, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-29T01:26:03+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">Designing a better home for writing.</title><link href="/2017/a-better-home-for-writing/" rel="alternate" type="text/html" title="Designing a better home for writing." /><published>2017-03-28T00:00:00+01:00</published><updated>2017-03-28T00:00:00+01:00</updated><id>/2017/a-better-home-for-writing</id><content type="html" xml:base="/2017/a-better-home-for-writing/">&lt;p&gt;This blog experienced a lull from &lt;code class=&quot;highlighter-rouge&quot;&gt;2014-07-07&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;2017-02-27&lt;/code&gt;, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.&lt;/p&gt;
 
 &lt;p&gt;What didn’t change was that the old design, well, sucked. I don’t mean that it was the worst thing ever, but it was underwhelming as a place to write. So I’m going to talk through the redesign process.&lt;/p&gt;
 
@@ -69,6 +69,14 @@
 &lt;p&gt;&lt;img src=&quot;/assets/redesign-19.png&quot; width=&quot;600&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Inspired, I brought the reds and the more active navigation together. I loved it and decided this was enough to start implementing. Further changes could be made in the browser.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-logo-revived&quot;&gt;A logo revived&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/46bit-paper-large.png&quot; width=&quot;192&quot; class=&quot;pull-left&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In 2010 I hired &lt;a href=&quot;https://dribbble.com/sitelotus&quot;&gt;Anthony Bullock&lt;/a&gt; to build me a much nicer freelance portfolio than what I had been using. The aim was to get more work from a more pleasing internet presence, and I think it was successful. I was 16 at the time.&lt;/p&gt;
+
+&lt;p&gt;I noticed the above designs could do with a nice logo. So I opened up my old one, that Anthony designed. I lightened some text, changed the hue of the “bit,” and played with the correct size. And it works nicely! Thanks again, Anthony.&lt;/p&gt;
 
 &lt;h2 id=&quot;whats-live-now&quot;&gt;What’s live now&lt;/h2&gt;
 
