@@ -2,21 +2,15 @@
 layout: default
 ---
 <article>
-  <header class="prelude narrow">
+  <header class="prelude">
     <div class="wrapper">
-      <p class="meta">
-        {{ page.date | date: "%b %-d, %Y" }}
-        <!--
-        &nbsp;&bullet;&nbsp; saturday
-        &nbsp;&bullet;&nbsp; by Michael Mokrysz
-        -->
-      </p>
       {% if page.title %}
       <h1><a href="$url$">{{ page.title }}</a></h1>
       {% endif %}
     </div>
   </header>
-  <section class="wrapper narrowtop balancedbottom">
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}</p>
     {{ content }}
   </section>
 <article>

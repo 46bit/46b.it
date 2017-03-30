@@ -30,21 +30,15 @@
     </div>
   </header>
   <article>
-  <header class="prelude narrow">
+  <header class="prelude">
     <div class="wrapper">
-      <p class="meta">
-        Feb 28, 2017
-        <!--
-        &nbsp;&bullet;&nbsp; saturday
-        &nbsp;&bullet;&nbsp; by Michael Mokrysz
-        -->
-      </p>
       
       <h1><a href="$url$">Generating expression trees in Rust</a></h1>
       
     </div>
   </header>
-  <section class="wrapper narrowtop balancedbottom">
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">Feb 28, 2017</p>
     <p>I’ve been writing a lot of Rust. Since <a href="https://github.com/Taneb">\@Taneb</a> persuaded me to try it the language has grown phenomenally on me. I’ve always shied away from getting too attached to tools and focused more on systems but for the first time since my early Ruby days I’ve become a language fanboy.</p>
 
 <p>While building my <a href="https://github.com/46bit/evco">Genetic Programming</a> library I needed a convenient way to represent and generate syntax trees. More than anything I wanted users to write a minimum of code. I used an <strong>interesting but problematic</strong> Recursive Enum approach that’s worth discussing.</p>
