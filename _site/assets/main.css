@@ -29,7 +29,7 @@ a {
 
 #header {
   color: #fff;
-  background: #ba4809;
+  background: #ac4308;
   overflow: hidden; }
 
 #header a {
@@ -61,7 +61,7 @@ a {
 
 #header nav ul li.active a, #header nav ul li.active a:hover, #header nav ul li.active a:active {
   color: #fff;
-  background: #d9560e;
+  background: #c75110;
   font-weight: 600; }
 
 #header nav ul li a:hover, #header nav ul li a:active {
@@ -69,7 +69,7 @@ a {
 
 article .prelude {
   color: #fff;
-  background: #d9560e;
+  background: #c75110;
   padding: 33px 0;
   font: 300 24px/38px 'Merriweather', serif; }
 
