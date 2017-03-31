@@ -81,12 +81,12 @@ a {
   padding: 22px; }
 
 #header nav ul li.active a, #header nav ul li.active a:hover, #header nav ul li.active a:active {
-  color: #3b3b3b;
-  background: #efefef;
+  color: #ffee36;
+  background: #c31244;
   font-weight: 600; }
 
 #header nav ul li a:hover, #header nav ul li a:active {
-  background: #c2627d; }
+  background: #b71643; }
 
 article .prelude {
   color: #a61941;
@@ -114,10 +114,10 @@ article section.yellowlined {
   border-top: 6px solid #ffee36; }
 
 article section a {
-  color: #005c8c; }
+  color: #007cbf; }
 
 article section a:hover, article section a:active {
-  border-bottom: 1px solid #005c8c; }
+  border-bottom: 1px solid #007cbf; }
 
 article section h2, article section h3, article section h4, article section h5 {
   font-weight: 400;
@@ -265,6 +265,13 @@ article section .pull-left {
 
   #header nav ul li a {
     padding: 10px; }
+
+  #header nav ul li a:hover, #header nav ul li a:active {
+    background: #c2627d; }
+
+  #header nav ul li.active a {
+    color: #3b3b3b;
+    background: #efefef; }
 
   article .prelude {
     padding-top: 20px;
