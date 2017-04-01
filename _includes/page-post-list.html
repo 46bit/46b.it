@@ -1,7 +1,7 @@
 {% for post in page.posts %}
 <section class="wrapper zerotop yellowlined">
   <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-  <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
   {{ post.excerpt }}
   <a class="read-more" href="{{ post.url | relative_url }}">Continue reading&hellip;</a>
 </section>
