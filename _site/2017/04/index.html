@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="/2017/04/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/feed.xml">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude yellowlined">
+    <div class="wrapper">
+      <h1>Posts from April 2017</h1>
+    </div>
+  </header>
+  
+<section class="wrapper zerotop yellowlined">
+  <p class="meta">Apr 5, 2017</p>
+  <h2 class="post-title"><a href="/2017/building-an-encrypted-drive-with-fuse/">Building an encrypted virtual drive with FUSE.</a></h2>
+  <p>Today I’ve been at a mini-hackday in Liverpool, part of the <a href="https://www.heacademy.ac.uk/training-events/national-conference-learning-and-teaching-cyber-security">National Conference for Learning and Teaching in Cyber Security</a>. Day 1 has some cybersecurity competitions, and a team of 3 of us participated in the Software Development stream.</p>
+
+<p>I’ve been to a lot of hackdays—between 16 and 20 I won prizes in at least six of them. I picked up a minimal-product/prototyping mindset, but it was hard to keep going afterwards. Over time my enthusiasm waned. The time limits, intensity and limited feedback hindered stretching my boundaries.</p>
+
+<p><strong>This competition seemed quite interesting because writing Cryptography-related software is hard.</strong> It’s hard to start off in the right direction, and very easy to screw up later on. As such having professional feedback on an interesting day of work sounded great.</p>
+
+<p>So, <strong>our task was to build encrypted local partitions.</strong> We had to build a system which stored encrypted keys on USB keys. Inserting such a USB key automatically prompted users to authenticate for a particular key. The encrypted volume was then to be used as a virtual drive.</p>
+
+
+  <a class="read-more" href="/2017/building-an-encrypted-drive-with-fuse/">Continue reading&hellip;</a>
+</section>
+
+
+</article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>
