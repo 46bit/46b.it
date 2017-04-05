@@ -32,6 +32,8 @@ This final issue was that files were mysteriously having `NUL` bytes appended ea
 
 One method of the FUSE API that filesystems implement is `getattr`. This provides metadata on items in the filesystem, including the sizes of files. Sam had built things with FUSE before and had realised that we were passing through the size of the encrypted files rather than the decrypted ones! This was rather bad: our encrypted files were padded with a nonce value.
 
+Our code was built in a hurry. Nonetheless, **see [liverpool on Github](https://github.com/46bit/liverpool)**.
+
 ## Cybersecurity as a career direction?
 
 I was rather interested to have our Cryptography-related work reviewed, but in practice this didn't work so well. I'm not sure if the judges were non-technical or just had a "gold standard" they were seeking but there wasn't very effective feedback. Nonetheless a very enjoyable day and we've reviewed things ourselves on the train back to York.
