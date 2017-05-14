@@ -8,6 +8,7 @@ Tilewater is a little sandbox game I've built in Rust. It's a sandbox game, wher
 Sims arrive by train, move into their <span style="padding: 0 6px; background: green; color: white; font-weight: bold;">houses</span>, visit <span style="padding: 0 6px; background: purple; color: white; font-weight: bold;">general stores</span> for their groceries, visit <span style="padding: 0 6px; background: blue; color: white; font-weight: bold;">saloons</span> to drink and find work, and then work in <span style="padding: 0 6px; background: red; color: white; font-weight: bold;">factories</span>. Play the video to see it in action:
 
 <p><div style="position:relative;width:100%;height:0;padding-bottom:90.05%;"><iframe width='500' height='294' style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube-nocookie.com/embed/Z_5WOXicQbc?rel=0&showinfo=0&modestbranding=1" frameborder="0"></iframe></div></p>
+<!--more-->
 
 It's still very early days and I've been experimenting with sims building their own roads, more efficient pathfinding, and properly simulating an economy. The representation of buildings as `1x1` squares is something I find very cute, and I plan to make them bigger on the inside than the outside similar to [Factorissimo](https://mods.factorio.com/mods/MagmaMcFry/Factorissimo).
 
