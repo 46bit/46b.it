@@ -12,3 +12,4 @@ layout: page
 * [Information Avoidance paper](http://pubs.aeaweb.org/doi/pdfplus/10.1257/jel.20151245)
 * [Ten Reasons People Resist Change](https://hbr.org/2012/09/ten-reasons-people-resist-chang)
 * [Intellectual Humility](https://news.ycombinator.com/item?id=13902710)
+* [Technology is a marvel – now let’s make it moral](https://www.theguardian.com/commentisfree/2017/apr/10/ethical-technology-women-britain-internet) [(thoughts)](https://twitter.com/46bit/status/851539265821577217)
