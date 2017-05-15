@@ -8,16 +8,16 @@ I handed in my dissertation two weeks ago. There's a few things to finish up but
 The Masters year was exhausting and I'm a little burned out, so I'm hoping not to rush into anything. I've wanted to go travelling in Europe for a few years now but kept finding interesting internships instead. Now between University and what-comes-after I have a natural gap.
 <!--more-->
 
-Friends, culture and history put Paris, Amsterdam, Berlin and Greece on the list. I'd like to follow Archaeological data I worked with into the Troodos Mountains in Cyprus, but I think that will be a trip in itself.
+Friends, culture and history put Paris, Amsterdam, Berlin and Greece on the list. I'd like to follow Archaeological data I worked with into the Troodos Mountains in Cyprus, but that would be a trip in itself.
 
 <blockquote>
   <p style="font-size: 18px;">“And the danger is that in this move toward new horizons and far directions, that I may lose what I have now, and not find anything except loneliness.”
 <br>—Sylvia Plath, The Unabridged Journals of Sylvia Plath</p>
 </blockquote>
 
-That quote above is one a friend sent me. They're moving back to Asia, away from the friends they've made here in York and back to a very different culture. I sympathise in my own way: I grew up in an isolated village and adopted York as my hometown.
+That quote above is one a friend sent me. They're moving back to east Asia, away from the friends they've made here in York and back to a different culture. I sympathise in my own way: I grew up in an isolated village and adopted York as my hometown.
 
-Over these six years London, Hamburg, the San Francisco Bay Area, Cambridge, MA and a few other cities in the U.S. have gained wonderful memories as well. This totally means I don't have to worry, and yet the Plath quote remains.
+Over these six years London, Hamburg, the San Francisco Bay Area, Cambridge, MA and a few other cities in the U.S. have gained wonderful memories as well. This shows I don't have to worry, and yet the Plath quote remains.
 
 I've chatted with a lot of people about what to do next. It needs to be a step up, and yet it's hard to know what a step up from effective-CTO of a technically hard startup would be. Delivering in a larger organisation? "Cross-functional agile teams?" Engineering technically-harder things? Making better startup decisions the second time around?
 

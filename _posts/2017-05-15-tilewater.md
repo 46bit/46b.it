@@ -16,6 +16,6 @@ Tilewater originated out of a bit of ennui. I submitted my dissertation, **[Time
 
 Suddenly I had a lot of free time! I slept and cycled and partied and had a great time. I'd been acting like a workaholic since March 22nd, and it takes time to fix that burnout. But after a few days started to feel a bit dissatisfied and aimless. So I took a project idea and ran with it. This time last year was when we started working on [sirpent](https://github.com/sirpent-team/sirpent-rust).
 
-I've been watching a lot of Westworld lately, and I loved the idea of simulating frontier towns. In practice Tilewater is a long way from that idea but having bandits run into town might happen in time.
+I've been watching a lot of Westworld lately, and I loved the idea of simulating frontier towns. In practice Tilewater is a long way from that idea, but having bandits run into town might happen in time.
 
 I don't know how much further I'll develop Tilewater for the time being - I've been enjoying the sunshine and my books a bit more. But provided you're a little bit technical you can **[play Tilewater by following the directions on Github](https://github.com/46bit/tilewater)**.
