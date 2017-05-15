@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-05-14T22:32:04+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">Tilewater, a miniature city builder.</title><link href="/2017/tilewater/" rel="alternate" type="text/html" title="Tilewater, a miniature city builder." /><published>2017-05-15T00:00:00+01:00</published><updated>2017-05-15T00:00:00+01:00</updated><id>/2017/tilewater</id><content type="html" xml:base="/2017/tilewater/">&lt;p&gt;Tilewater is a little sandbox game I’ve built in Rust. It’s a sandbox game, where you place roads and buildings and simulated people (&lt;em&gt;sims&lt;/em&gt;) live out their lives in the world you’ve built.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-05-15T03:03:24+01:00</updated><id>/</id><title type="html">46b.it</title><entry><title type="html">New horizons</title><link href="/2017/new-horizons/" rel="alternate" type="text/html" title="New horizons" /><published>2017-05-16T00:00:00+01:00</published><updated>2017-05-16T00:00:00+01:00</updated><id>/2017/new-horizons</id><content type="html" xml:base="/2017/new-horizons/">&lt;!--Something I've done quite a bit this year is push back against being dismissed as a, &quot;new Grad.&quot; When I've interviewed on that level I've literally been rejected for having more experience.--&gt;
+
+&lt;!--My dissertation has been handed in for near two weeks now. A group project, a final not-so-welcome farewell to University, continues until June 9th. Graduation is July 12th.--&gt;
+
+&lt;p&gt;I handed in my dissertation two weeks ago. There’s a few things to finish up but the major things I’ve wanted to deliver this year - a cryptanalysis report, an evolutionary computing experiment, my video processing dissertation - are all done. So from my perspective I’m pretty much done and awaiting Graduation come July!&lt;/p&gt;
+
+&lt;p&gt;The Masters year was exhausting and I’m a little burned out, so I’m hoping not to rush into anything. I’ve wanted to go travelling in Europe for a few years now but kept finding interesting internships instead. Now between University and what-comes-after I have a natural gap.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Friends, culture and history put Paris, Amsterdam, Berlin and Greece on the list. I’d like to follow Archaeological data I worked with into the Troodos Mountains in Cyprus, but I think that will be a trip in itself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p style=&quot;font-size: 18px;&quot;&gt;“And the danger is that in this move toward new horizons and far directions, that I may lose what I have now, and not find anything except loneliness.”
+&lt;br /&gt;—Sylvia Plath, The Unabridged Journals of Sylvia Plath&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That quote above is one a friend sent me. They’re moving back to Asia, away from the friends they’ve made here in York and back to a very different culture. I sympathise in my own way: I grew up in an isolated village and adopted York as my hometown.&lt;/p&gt;
+
+&lt;p&gt;Over these six years London, Hamburg, the San Francisco Bay Area, Cambridge, MA and a few other cities in the U.S. have gained wonderful memories as well. This totally means I don’t have to worry, and yet the Plath quote remains.&lt;/p&gt;
+
+&lt;p&gt;I’ve chatted with a lot of people about what to do next. It needs to be a step up, and yet it’s hard to know what a step up from effective-CTO of a technically hard startup would be. Delivering in a larger organisation? “Cross-functional agile teams?” Engineering technically-harder things? Making better startup decisions the second time around?&lt;/p&gt;
+
+&lt;!--End of the day, it just has to be rewarding and worthwhile while either paying the bills or working around them.--&gt;
+
+&lt;p&gt;I’m gonna find out.&lt;/p&gt;
+
+&lt;!--
+The UK has taken a disturbing turn in the last year, and I don't quite know what it means for my or our future.
+
+If I want to focus on engineering I'd like to work with Distributed Systems at an organisation that does good. If I want to mix product and engineering I'd either look at Product Manager or head back into startups. If I want to
+
+The UK has taken a disturbing turn in the last year, and I don't quite know what it means for my or our future.
+
+head back into startups I have a choice of doing my own - Dreamforge taught me a lot about the early-stage - or finding a team and direction I like.
+
+I've chatted with a lot of people about what to do next. Deciding on a career direction is tricky. If I want to focus on engineering I'd like to work with Microservices and Distributed Systems somewhere that does good. If I want to head back into startups I have a choice of doing my own - Dreamforge taught me a lot about the early-stage - or finding a team and direction I like.
+--&gt;</content><author><name></name></author><summary type="html">I handed in my dissertation two weeks ago. There’s a few things to finish up but the major things I’ve wanted to deliver this year - a cryptanalysis report, an evolutionary computing experiment, my video processing dissertation - are all done. So from my perspective I’m pretty much done and awaiting Graduation come July! The Masters year was exhausting and I’m a little burned out, so I’m hoping not to rush into anything. I’ve wanted to go travelling in Europe for a few years now but kept finding interesting internships instead. Now between University and what-comes-after I have a natural gap.</summary></entry><entry><title type="html">Tilewater, a miniature city builder.</title><link href="/2017/tilewater/" rel="alternate" type="text/html" title="Tilewater, a miniature city builder." /><published>2017-05-15T00:00:00+01:00</published><updated>2017-05-15T00:00:00+01:00</updated><id>/2017/tilewater</id><content type="html" xml:base="/2017/tilewater/">&lt;p&gt;Tilewater is a little sandbox game I’ve built in Rust. It’s a sandbox game, where you place roads and buildings and simulated people (&lt;em&gt;sims&lt;/em&gt;) live out their lives in the world you’ve built.&lt;/p&gt;
 
 &lt;p&gt;Sims arrive by train, move into their &lt;span style=&quot;padding: 0 6px; background: green; color: white; font-weight: bold;&quot;&gt;houses&lt;/span&gt;, visit &lt;span style=&quot;padding: 0 6px; background: purple; color: white; font-weight: bold;&quot;&gt;general stores&lt;/span&gt; for their groceries, visit &lt;span style=&quot;padding: 0 6px; background: blue; color: white; font-weight: bold;&quot;&gt;saloons&lt;/span&gt; to drink and find work, and then work in &lt;span style=&quot;padding: 0 6px; background: red; color: white; font-weight: bold;&quot;&gt;factories&lt;/span&gt;. Play the video to see it in action:&lt;/p&gt;
 
@@ -411,38 +447,4 @@ A few weeks later I came back with more thoroughly analysed findings. In summary
 
 &lt;p&gt;However this does limit flexibility. Using a generic tree datastructure would allow for easily introducing or removing sorts of nodes at compile time. I found that in DEAP this sort of flexibility helped for experimenting but tended not to stick around, so it might well be better.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;That’s all for now, it’s time for bed. Sometime soon I’d like to write about &lt;a href=&quot;https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups&quot;&gt;diversity experiences in tech&lt;/a&gt;, and how EVCO generates trees.&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I mused about an implementation of expression trees in Rust two days ago. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems. As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above. There are two common ways to represent a tree datastructure:</summary></entry><entry><title type="html">Introduction to Evolutionary Computing</title><link href="/2017/evolutionary-computing/" rel="alternate" type="text/html" title="Introduction to Evolutionary Computing" /><published>2017-03-02T00:00:00+00:00</published><updated>2017-03-02T00:00:00+00:00</updated><id>/2017/evolutionary-computing</id><content type="html" xml:base="/2017/evolutionary-computing/">&lt;p&gt;I took an Evolutionary Computation course last semester, &lt;a href=&quot;https://www.cs.york.ac.uk/postgraduate/modules/evco.html&quot;&gt;EVCO&lt;/a&gt;. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course:&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/uxourrlPlf8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
-
-&lt;p&gt;I’d like to thank &lt;a href=&quot;https://www.york.ac.uk/biology/research/ecology-evolution/daniel-franks/&quot;&gt;Dr Daniel Franks&lt;/a&gt; for a great course, enthusiastic teaching and many of the examples here.&lt;/p&gt;
-
-&lt;p&gt;Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my &lt;code class=&quot;highlighter-rouge&quot;&gt;evco&lt;/code&gt; examples &lt;a href=&quot;https://github.com/46bit/evco/blob/v0.2.1/examples/snake.rs&quot;&gt;evolves Snake players&lt;/a&gt;. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.&lt;!--more--&gt; So if you want to approximate some data you might:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Randomly generate a population of equations. Each equation forms a genome of sorts.&lt;/li&gt;
-  &lt;li&gt;Test how good an approximation each equation (“individual”) gives.&lt;/li&gt;
-  &lt;li&gt;Select the best equations to take forward.&lt;/li&gt;
-  &lt;li&gt;Simulate sexual reproduction by swapping some randomly chosen parts of equations.&lt;/li&gt;
-  &lt;li&gt;Simulate random mutations by randomly changing some terms in the equations.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;how-effective-can-this-be-impressively-creative&quot;&gt;How effective can this be? Impressively creative.&lt;/h2&gt;
-
-&lt;p&gt;This process can be excellent at finding creative solutions. Over sufficient timescales biological evolution is remarkably creative - just look at your own body.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/evolved-antenna.jpg&quot; alt=&quot;**NASA [evolved this antenna](https://en.wikipedia.org/wiki/Evolved_antenna) for a 2006 mission.**&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But I’ve found that tuning an evolutionary process is quite intensive: it takes a lot of programmer time and (the challenge) a lot of unguided experimentation.&lt;/p&gt;
-
-&lt;p&gt;Evolution often reaches local maxima: it isn’t generating individuals which act in usefully different ways and so all individuals bottleneck around the same maximum fitness. As the best individuals are bred preferentially, when an innovation occurs the effect in improving average fitness can be dramatic. A biological example of this might be how life on Earth was single-celled for billions of years before multicellular eukaryotes came along.&lt;/p&gt;
-
-&lt;p&gt;Six months has taught me that Evolutionary Computing is quite time-intensive but a brilliant hobby. These processes are stochastic: while subject to random variation they can be analysed. A lot of computation and analysis is necessary to understand how well a process is working.&lt;/p&gt;
-
-&lt;h2 id=&quot;genetic-programming-in-python-with-deap&quot;&gt;Genetic Programming in Python with DEAP&lt;/h2&gt;
-
-&lt;p&gt;York’s course used the &lt;a href=&quot;http://deap.readthedocs.io/en/master/&quot;&gt;DEAP&lt;/a&gt; library for Python. This feels something of a hobbyist’s tool: it contains implementations of the ingredients necessary for evolutionary computing but doesn’t get overly sophisticated.&lt;/p&gt;
-
-&lt;p&gt;One drawback with DEAP is that a lot of examples and suggested tooling don’t work well with PyPy. (PyPy is a Just In Time compiler that can run many times faster than the reference CPython implementation.) For the assessment we had to evolve automated snake players, and it proved frustrating how much potential efficiency was lost.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;As a hobby project I decided to see how far I could get implementing things in Rust. I’ll talk some more about that tomorrow.&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I took an Evolutionary Computation course last semester, EVCO. This is a family of techniques where you simulate evolution to find good solutions to problems. Let’s watch an evolutionary process evolve vehicles that can get through a course: I’d like to thank Dr Daniel Franks for a great course, enthusiastic teaching and many of the examples here. Let’s say you want to learn an equation that approximates a function. This is a simple example - one of my evco examples evolves Snake players. We’ll use an evolutionary approach called Genetic Programming, which evolves trees representing expressions.</summary></entry></feed>
+&lt;p&gt;&lt;em&gt;That’s all for now, it’s time for bed. Sometime soon I’d like to write about &lt;a href=&quot;https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups&quot;&gt;diversity experiences in tech&lt;/a&gt;, and how EVCO generates trees.&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Hacking" /><summary type="html">I mused about an implementation of expression trees in Rust two days ago. This is to build a Genetic Programming library in Rust - an biologically-inspired approach to finding robust solutions to difficult problems. As discussed elsewhere I’ve become a keen fan of Rust. This language’s limited generics pose interesting problems for expressing and generating equations as described above. There are two common ways to represent a tree datastructure:</summary></entry></feed>
