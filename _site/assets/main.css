@@ -233,8 +233,9 @@ article code {
 article blockquote {
   background: #fff1e9;
   line-height: 24px;
-  font-size: 20px;
   padding: 20px 0 2px 20px; }
+  article blockquote, article blockquote p {
+    font-size: 18px; }
 
 article section .pull-left {
   float: left;

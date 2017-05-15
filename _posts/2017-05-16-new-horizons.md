@@ -10,10 +10,9 @@ The Masters year was exhausting and I'm a little burned out, so I'm hoping not t
 
 Friends, culture and history put Paris, Amsterdam, Berlin and Greece on the list. I'd like to follow Archaeological data I worked with into the Troodos Mountains in Cyprus, but that would be a trip in itself.
 
-<blockquote>
-  <p style="font-size: 18px;">“And the danger is that in this move toward new horizons and far directions, that I may lose what I have now, and not find anything except loneliness.”
-<br>—Sylvia Plath, The Unabridged Journals of Sylvia Plath</p>
-</blockquote>
+> “And the danger is that in this move toward new horizons and far directions, that I may lose what I have now, and not find anything except loneliness.”
+>
+> —Sylvia Plath, The Unabridged Journals of Sylvia Plath
 
 That quote above is one a friend sent me. They're moving back to east Asia, away from the friends they've made here in York and back to a different culture. I sympathise in my own way: I grew up in an isolated village and adopted York as my hometown.
 
