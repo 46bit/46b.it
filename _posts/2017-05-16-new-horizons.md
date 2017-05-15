@@ -3,10 +3,6 @@ title: New horizons
 layout: post
 ---
 
-<!--Something I've done quite a bit this year is push back against being dismissed as a, "new Grad." When I've interviewed on that level I've literally been rejected for having more experience.-->
-
-<!--My dissertation has been handed in for near two weeks now. A group project, a final not-so-welcome farewell to University, continues until June 9th. Graduation is July 12th.-->
-
 I handed in my dissertation two weeks ago. There's a few things to finish up but the major things I've wanted to deliver this year - a cryptanalysis report, an evolutionary computing experiment, my video processing dissertation - are all done. So from my perspective I'm pretty much done and awaiting Graduation come July!
 
 The Masters year was exhausting and I'm a little burned out, so I'm hoping not to rush into anything. I've wanted to go travelling in Europe for a few years now but kept finding interesting internships instead. Now between University and what-comes-after I have a natural gap.
@@ -25,11 +21,11 @@ Over these six years London, Hamburg, the San Francisco Bay Area, Cambridge, MA 
 
 I've chatted with a lot of people about what to do next. It needs to be a step up, and yet it's hard to know what a step up from effective-CTO of a technically hard startup would be. Delivering in a larger organisation? "Cross-functional agile teams?" Engineering technically-harder things? Making better startup decisions the second time around?
 
-<!--End of the day, it just has to be rewarding and worthwhile while either paying the bills or working around them.-->
-
 I'm gonna find out.
 
 <!--
+End of the day, it just has to be rewarding and worthwhile while either paying the bills or working around them.
+
 The UK has taken a disturbing turn in the last year, and I don't quite know what it means for my or our future.
 
 If I want to focus on engineering I'd like to work with Distributed Systems at an organisation that does good. If I want to mix product and engineering I'd either look at Product Manager or head back into startups. If I want to

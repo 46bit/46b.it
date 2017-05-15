@@ -11,7 +11,7 @@ This would seem to be true. WannaCrypt did not exfiltrate data from SMB shares, 
 
 <!--This gives an excellent view of how effective an attacker with different motives could be. WannaCrypt is a BitCoin extortion scheme, but other attackers (such as the vulnerability's presumed original discover, the NSA) are probably more interested in gathering information. It's clear this malware reached computers used to access highly-confidential patient databases and handle medical scans. WannaCrypt disabled the systems, but a more systematic attack could retrieve or manipulate information.-->
 
-The UK Government bought an extension when Microsoft ended Windows XP support in 2014, [and then ended it in 2015](https://governmenttechnology.blog.gov.uk/2015/05/22/update-on-the-customer-support-agreement-for-windows-xp/). The idea seems to be that individual areas of government would buy support if needed, but whether this is being done in practice has to be unclear in light of so many NHS machines being vulnerable two months after the patch was released.
+The UK Government bought an extension when Microsoft ended Windows XP support in 2014, [and then ended it in 2015](https://governmenttechnology.blog.gov.uk/2015/05/22/update-on-the-customer-support-agreement-for-windows-xp/). The idea seems to be that individual areas of government would buy support if needed, but with so many NHS machines vulnerable two months after a patch was released for this vulnerability we can assume that didn't go to plan.
 
 > “It effectively means that unless individual trusts were willing to pay Microsoft for an extended support deal, since May 2015 their operating systems have been extremely vulnerable to being hacked.”
 >
