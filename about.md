@@ -9,15 +9,15 @@ layout: page
 
 ## Engineering
 
-Some years ago I participated in and won quite a few open data hackdays. This lead to a front-page feature in [The Observer](https://www.theguardian.com/education/2012/mar/31/young-coders-ideas-for-change). Shortly after that I lead development at a Y Combinator startup working on Computational Geometry for 3D Printing - you can see our early prototype [Cookie Caster](http://www.cookiecaster.com). Our former CEO [Nemil's blog](https://www.nemil.com/musings/) is a fantastic read.
+Some years ago I participated in and won quite a few open data hackdays. This led to a front-page feature in [The Observer](https://www.theguardian.com/education/2012/mar/31/young-coders-ideas-for-change). Shortly after that I led development at a Y Combinator startup working on Computational Geometry for 3D Printing - you can see our early prototype [Cookie Caster](http://www.cookiecaster.com). Our former CEO [Nemil's blog](https://www.nemil.com/musings/) is a fantastic read.
 
-I've a deep background in fullstack Web Development, but over the last few years I've grown more interested in backend and systems. Some of the public things I've built:
+I've a deep background in full-stack Web Development, but over the last few years I've grown more interested in backend and systems. Some of the public things I've built:
 
 * **[Cookie Caster](http://www.cookiecaster.com)**: Draw your own custom cookie casters and have them 3D printed. Proof-of-concept for a Y Combinator startup I lead development at in 2012-13. See below.
 * **[sirpent-rust](https://github.com/sirpent-team/sirpent-rust)**: A high-performance asynchronous server written in Rust. As something that isn't Request-Response it breaks new ground for the [futures-rs](https://github.com/alexcrichton/futures-rs/) and [tokio](https://tokio.rs) libraries.
     * [seequence](https://github.com/46bit/seequence): A quite simple server to understand the problem-solving approach those libraries use.
     * **[comms](https://github.com/46bit/comms)**, an experimental library for working with multiple asynchronous server clients in Tokio. This is a very new high-performance ecosystem and I'm hoping to see this library very widely used.
-* **[bind_before_connect](https://github.com/46bit/bind_before_connect)**: A library to allow binding to particular IP addresses and ports in Rust. I built the code for this in order to (socially-responsibly) connect 250 bots to IRC.
+* [bind_before_connect](https://github.com/46bit/bind_before_connect): A library to allow binding to particular IP addresses and ports in Rust. I built the code for this in order to (socially-responsibly) connect 250 bots to IRC.
 * **[uoyb.us](http://uoyb.us)**: A specialised bus times aggregator for the University of York. The competing bus services that made it valuable are gone but you can read about the design choices at [UoYBus: bus times for the University of York](/2014/uoybus/).
 * [evco](https://github.com/46bit/evco): An experimental evolutionary computing library. At the time of writing I'm deciding between specifying syntax trees at runtime or compile-time. The former allows pragmatic flexibility but the latter makes for lovely typed code.
 

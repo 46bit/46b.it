@@ -31,7 +31,7 @@ That this support is still available is remarkable - but necessary. Relatively f
 
 These issues may be getting worse over time. The situation is apparently *worse* with Android: modern phones would seem to be properly supported for about two years. Even during that time, security patches can be delayed a long time by the phone's vendor.
 
-Earlier this year I briefly talked about an engineering role with NHS Digital. What I saw of salaries there was extremely underwhelming even on a Leeds cost-of-living, although I can't be certain of its accuracy. If salaries are so low then they rule themselves out of a great deal of talent, and either way it's clear that the NHS is in need of a major funding boost.
+<!--Earlier this year I briefly talked about an engineering role with NHS Digital. What I saw of salaries there was extremely underwhelming even on a Leeds cost-of-living, although I can't be certain of its accuracy. If salaries are so low then they rule themselves out of a great deal of talent, and either way it's clear that the NHS is in need of a major funding boost.-->
 
 Optimistically this front-page news story (and potentially deaths!) will lead to a major investment and improvement to NHS and Government IT. In practice I am less than convinced such efforts will be sustained. Immediate, obvious issues will be fixed but as time moves on it might be forgotten until this happens again.
 
