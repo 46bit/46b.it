@@ -3,16 +3,17 @@
 ---
 @charset "utf-8";
 
-/*@font-face {
+@font-face {
     font-family: 'fa-minified';
-    src: url('../fonts/fa-minified.eot');
-    src: url('../fonts/fa-minified.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fa-minified.woff') format('woff'),
-         url('../fonts/fa-minified.ttf') format('truetype'),
-         url('../fonts/fa-minified.svg#fa-minified') format('svg');
+    src: url('fa-minified.eot');
+    src: url('fa-minified.eot?#iefix') format('embedded-opentype'),
+         url('fa-minified.woff') format('woff'),
+         url('fa-minified.ttf') format('truetype'),
+         url('fa-minified.svg#fa-minified') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+/*
 a[href*="//"]::after {
   font-family: fa-minified;
   font-weight: normal;
@@ -34,6 +35,13 @@ a[href*="github.com"]::after {
   font-size: 70%;
   content: " \0041";
 }*/
+a.ext[href*="//"]::after {
+  font-family: fa-minified;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 70%;
+  content: " \0043";
+}
 
 * {
   margin: 0;
@@ -105,12 +113,15 @@ a {
       font-family: 'Merriweather', serif;
       a.post-title {
         color: #007cbf;
-        background: white;
+        background: #fff;
         padding: 10px 13px;
         display: inline-block;
         &:hover, &:active {
           background: #007cbf;
           color: #fff;
+        }
+        &.ext {
+          background: rgba(255,255,255,0.6);
         }
       }
       .post-date {

@@ -1,5 +1,5 @@
 ---
-title: Tilewater, a miniature city builder.
+title: Simulating miniature cities with Tilewater
 layout: post
 ---
 

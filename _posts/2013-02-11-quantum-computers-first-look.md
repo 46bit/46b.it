@@ -2,6 +2,7 @@
 title: A first look at Quantum Computers
 tags: Comp Sci
 layout: post
+hide: yes
 ---
 The computer in front of you is pretty powerful, but it can't factor a 600-digit number before Earth gets cooked by the Sun. No supercomputer humanity does or could build could do that either, so it seemed a sure bet to base the security of some encryption schemes on factoring being (exponentially) hard.
 <!--more-->

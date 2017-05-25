@@ -1,5 +1,5 @@
 ---
-title: Designing a better home for writing, part 1.
+title: Designing a better home for writing, part 1
 layout: post
 ---
 This blog experienced a lull from `2014-07-07` to `2017-02-27`, some 966 days. A lot happened in that timespan - I went through a long period of therapy, spent awhile reverse-engineering Dig data from dead ESRI databases in an Archaeology department, and got into everything from Swing Dancing to Python.

@@ -1,14 +1,11 @@
 @charset "UTF-8";
-/*@font-face {
-    font-family: 'fa-minified';
-    src: url('../fonts/fa-minified.eot');
-    src: url('../fonts/fa-minified.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fa-minified.woff') format('woff'),
-         url('../fonts/fa-minified.ttf') format('truetype'),
-         url('../fonts/fa-minified.svg#fa-minified') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@font-face {
+  font-family: 'fa-minified';
+  src: url("fa-minified.eot");
+  src: url("fa-minified.eot?#iefix") format("embedded-opentype"), url("fa-minified.woff") format("woff"), url("fa-minified.ttf") format("truetype"), url("fa-minified.svg#fa-minified") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*
 a[href*="//"]::after {
   font-family: fa-minified;
   font-weight: normal;
@@ -30,6 +27,13 @@ a[href*="github.com"]::after {
   font-size: 70%;
   content: " \0041";
 }*/
+a.ext[href*="//"]::after {
+  font-family: fa-minified;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 70%;
+  content: " \0043"; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -88,6 +92,28 @@ a {
 #header nav ul li a:hover, #header nav ul li a:active {
   background: #b71643; }
 
+.post-list {
+  list-style: none; }
+  .post-list li {
+    margin-bottom: 10px; }
+    .post-list li p {
+      font-size: 22px;
+      line-height: 30px;
+      font-family: 'Merriweather', serif; }
+      .post-list li p a.post-title {
+        color: #007cbf;
+        background: #fff;
+        padding: 10px 13px;
+        display: inline-block; }
+        .post-list li p a.post-title:hover, .post-list li p a.post-title:active {
+          background: #007cbf;
+          color: #fff; }
+        .post-list li p a.post-title.ext {
+          background: rgba(255, 255, 255, 0.6); }
+      .post-list li p .post-date {
+        font-size: 16px;
+        padding-right: 20px; }
+
 article .prelude {
   color: #a61941;
   padding: 33px 0;
@@ -106,7 +132,7 @@ article section {
   line-height: 24px;
   background: white;
   padding-top: 40px;
-  padding-bottom: 22px;
+  padding-bottom: 6px;
   overflow: hidden;
   margin-bottom: 30px; }
 
@@ -127,12 +153,13 @@ article section h2, article section h3, article section h4, article section h5 {
 article section h2 {
   clear: both;
   font-size: 32px;
-  padding-top: 12px;
   line-height: 40px;
-  border-bottom: 1px solid #eee; }
+  padding-bottom: 0;
+  font-family: 'Merriweather', serif; }
 
 article section h2.post-title a {
-  color: #000; }
+  color: #a61941;
+  border-bottom-color: #a61941; }
 
 article section h3 {
   clear: both;
@@ -211,7 +238,7 @@ article section .meta {
   border-bottom: 1px solid #eee;
   padding: 10px;
   display: inline-block;
-  margin-top: 0;
+  margin: 0 0 15px;
   font-family: 'Merriweather', serif; }
 
 article pre {

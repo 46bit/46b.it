@@ -1,5 +1,5 @@
 ---
-title: 'Securing legacy ColdFusion or: Why escape spaces against XSS?'
+title: Why we escape spaces against XSS
 tags: Hacking
 layout: post
 ---

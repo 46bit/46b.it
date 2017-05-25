@@ -2,6 +2,7 @@
 title: You can't unsell Hospital Records
 tags: Data
 layout: post
+hide: yes
 ---
 The Telegraph reported today that hospital records from 1997-2010 have been [sold to insurance companies](http://www.telegraph.co.uk/health/healthnews/10656893/Hospital-records-of-all-NHS-patients-sold-to-insurers.html). They appear to be referring to HSCIC's [Hospital Episode Statistics](http://www.hscic.gov.uk/hes), a database of NHS hospital records.
 <!--more-->

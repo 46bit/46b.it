@@ -2,7 +2,7 @@
 {% for year in postsByYear %}
   <header class="prelude yellowlined redundant-with-stacked-nav" style="padding-bottom: 10px;">
     <div class="wrapper">
-      <h1>{{ year.name }}</h1>
+      <h1><a href="/{{ year.name }}/">{{ year.name }}</a></h1>
     </div>
   </header>
   <div class="wrapper">
@@ -13,7 +13,13 @@
       {% endif %}
       <li>
         <!--<p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>-->
-        <p> <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></p>
+        {% if post.external_url %}
+        <dd class="{{ post.external_site }}">
+          <p><a class="ext post-title" href="{{ post.external_url }}">{{ post.title | escape }}</a></p>
+        </dd>
+        {% else %}
+        <p><a class="post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></p>
+        {% endif %}
         <!--{{ post.excerpt }}-->
         <!--<a class="read-more" href="{{ post.url | relative_url }}">Continue reading&hellip;</a>-->
       </li>

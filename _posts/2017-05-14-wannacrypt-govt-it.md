@@ -1,6 +1,7 @@
 ---
 title: WannaCrypt and Government IT
 layout: post
+hide: yes
 ---
 WannaCrypt is the malware whose remarkable spread from mass emails to leaping across vulnerable SMB servers has led to major problems for many organisations in the last few days - in particular the NHS. Much has been written about its spread and [MalwareTech's heroic but accidental halting of its spread](https://www.malwaretech.com/2017/05/how-to-accidentally-stop-a-global-cyber-attacks.html).
 

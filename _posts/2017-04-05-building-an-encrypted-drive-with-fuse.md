@@ -1,5 +1,5 @@
 ---
-title: Building an encrypted virtual drive with FUSE.
+title: Prototyping an encrypted filesystem with FUSE
 layout: post
 ---
 
