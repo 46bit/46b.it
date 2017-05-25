@@ -95,6 +95,32 @@ a {
   background: #b71643;
 }
 
+.post-list {
+  list-style: none;
+  li {
+    margin-bottom: 10px;
+    p {
+      font-size: 22px;
+      line-height: 30px;
+      font-family: 'Merriweather', serif;
+      a.post-title {
+        color: #007cbf;
+        background: white;
+        padding: 10px 13px;
+        display: inline-block;
+        &:hover, &:active {
+          background: #007cbf;
+          color: #fff;
+        }
+      }
+      .post-date {
+        font-size: 16px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
 article .prelude {
   color: #a61941;
   padding: 33px 0;
@@ -114,7 +140,7 @@ article section {
   line-height: 24px;
   background: white;
   padding-top: 40px;
-  padding-bottom: 22px;
+  padding-bottom: 6px;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -135,12 +161,13 @@ article section h2, article section h3, article section h4, article section h5 {
 article section h2 {
   clear: both;
   font-size: 32px;
-  padding-top: 12px;
   line-height: 40px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 0;
+  font-family: 'Merriweather', serif;
 }
 article section h2.post-title a {
-  color: #000;
+  color: #a61941;
+  border-bottom-color: #a61941;
 }
 article section h3 {
   clear: both;
@@ -219,7 +246,7 @@ article section .meta {
   border-bottom: 1px solid #eee;
   padding: 10px;
   display: inline-block;
-  margin-top: 0;
+  margin: 0 0 15px;
   font-family: 'Merriweather', serif;
 }
 article pre {
