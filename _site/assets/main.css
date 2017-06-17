@@ -93,23 +93,20 @@ a {
   background: #b71643; }
 
 .post-list {
-  list-style: none; }
+  color: #444;
+  list-style: disc inside; }
   .post-list li {
-    margin-bottom: 10px; }
+    margin-bottom: 9px; }
     .post-list li p {
-      font-size: 22px;
+      display: inline;
+      font-size: 21px;
       line-height: 30px;
       font-family: 'Merriweather', serif; }
       .post-list li p a.post-title {
-        color: #007cbf;
-        background: #fff;
-        padding: 10px 13px;
-        display: inline-block; }
+        color: #007cbf; }
         .post-list li p a.post-title:hover, .post-list li p a.post-title:active {
-          background: #007cbf;
-          color: #fff; }
-        .post-list li p a.post-title.ext {
-          background: rgba(255, 255, 255, 0.6); }
+          color: #005c9f;
+          border-bottom: 1px solid #007cbf; }
       .post-list li p .post-date {
         font-size: 16px;
         padding-right: 20px; }

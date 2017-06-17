@@ -14,9 +14,7 @@
       <li>
         <!--<p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>-->
         {% if post.external_url %}
-        <dd class="{{ post.external_site }}">
-          <p><a class="ext post-title" href="{{ post.external_url }}">{{ post.title | escape }}</a></p>
-        </dd>
+        <p><a class="ext post-title" href="{{ post.external_url }}">{{ post.title | escape }}</a></p>
         {% else %}
         <p><a class="post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></p>
         {% endif %}

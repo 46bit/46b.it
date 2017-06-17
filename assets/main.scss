@@ -104,24 +104,20 @@ a {
 }
 
 .post-list {
-  list-style: none;
+  color: #444;
+  list-style: disc inside;
   li {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     p {
-      font-size: 22px;
+      display: inline;
+      font-size: 21px;
       line-height: 30px;
       font-family: 'Merriweather', serif;
       a.post-title {
         color: #007cbf;
-        background: #fff;
-        padding: 10px 13px;
-        display: inline-block;
         &:hover, &:active {
-          background: #007cbf;
-          color: #fff;
-        }
-        &.ext {
-          background: rgba(255,255,255,0.6);
+          color: #005c9f;
+          border-bottom: 1px solid #007cbf;
         }
       }
       .post-date {
