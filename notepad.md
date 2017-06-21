@@ -13,3 +13,38 @@ layout: page
 * [Ten Reasons People Resist Change](https://hbr.org/2012/09/ten-reasons-people-resist-chang)
 * [Intellectual Humility](https://news.ycombinator.com/item?id=13902710)
 * [Technology is a marvel – now let’s make it moral](https://www.theguardian.com/commentisfree/2017/apr/10/ethical-technology-women-britain-internet) [(thoughts)](https://twitter.com/46bit/status/851539265821577217)
+
+### June/July 2017 post intentions
+
+* Paris–Amsterdam–Hanover–Berlin–Prague
+  * Approximately daily posts during/after trip
+* Independence Day, looking forward to GDS and London
+  * GDS coming up soon
+  * Review Uni decision
+  * Graduation and heading towards Senior
+* Job hunt postmortem
+  * The position I was in
+  * Larger vs small companies
+  * Trello board
+  * Refining good question topics
+
+<!--The big bullet points:
+
+* I'm heading around Europe by train for two weeks.
+* I'm moving to north London.
+* I'm joining the [Government Digital Service]() as a Developer.
+
+I hope to write lots about all three, but for now I'm focusing on my holiday.
+
+I know the U.S. incredibly well. I've been visiting all my life and have visited roughly half of the states. This is really quite awesome, but it goes alongside having not visited the rest of Europe very much. I think I'm going to spend the next few years addressing this gap and diversifying my destinations.
+
+To that end I've chosen to visit a chain of interesting (if touristy) cities across north-western Europe. Having moved away from York yesterday, I'm back near Wakefield for a few days.-->
+
+<!--In the past I found London an exciting but fairly gritty and unappealing city, even when I was doing on a high income. But in the last couple of years I've visited some nicer areas more similar to the areas of York or Cambridgeport that I like. I'll try and settle there and hopefully quite like it. I don't know if I'm brave enough to cycle on London's road network, but I could live near a big park and go cycling there.
+
+There's a lot to say about my job hunt*, but I'll come back to it once I've started. I might try keeping Week Notes as people have at GDS [in the past](https://jordanh.net/posts/). The two things I would say: [a Trello board helps](https://www.reddit.com/r/cscareerquestions/comments/64dawf/this_was_my_job_searching_trello_board_from_2015/) for morale and improving, and asking questions of interviewers can be a godsend in avoiding bad workplaces.
+
+Third, I'm off to travel Europe by train for two weeks. Having moved out of York yesterday I'm at my parents for a few days.-->
+<!--Moving to London is an interesting choice in light of the ongoing Brexit brouhaha. Until these latest election results we seemed set for an extremely hostile negotiation with the EU. I have some hope now that the eventual deal might be largely business-as-usual. Incidentally, joining GDS means I'll be subject to the Civil Service Code, so I'll probably need to steer clear of politics here in future.
+
+I had some interesting discussions with companies in Berlin, Boston and the Bay Area, but ultimately I didn't find a compelling route there.-->
