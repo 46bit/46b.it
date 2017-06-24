@@ -68,6 +68,6 @@ We just stopped in a place named Hamm. 80 minutes to go.
 
 <img src="/assets/hamm.jpg" width="600">
 
-## Hannover
+## An evening in Hannover
 
 It seems like a really nice place.
