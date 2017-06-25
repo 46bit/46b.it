@@ -11,6 +11,8 @@ Amsterdam has a lot of sides to it. You could spend a partyish few days smoking 
 
 <img src="/assets/amsterdam-selfie.jpg" width="600">
 
+## Amsterdam Museum
+
 I started out by visiting the [Amsterdam Museum](https://www.amsterdammuseum.nl/en), with permanent exhibits on Amsterdam's history (independence from Spain, the Golden Age, the building of the canal layout, the Nazi Occupation and 60s/70s counterculture) and temporary exhibits on fascinating bits of culture (Puck and Hans fashion designers.)
 
 I'd love to go back in time and try wearing the below as school uniform.
@@ -19,7 +21,9 @@ I'd love to go back in time and try wearing the below as school uniform.
 
 I'm really quite proud of how I've dressed so far this trip. I've been overweight for a long time, which naturally means a degree of body image problems. But this trip I've been wearing short-sleeves and shorts and it's been great. It is no longer 35°C outside but 24°C is easily sufficient.
 
-Next I followed a [tip from The Guardian](https://www.theguardian.com/world/2017/jun/20/chips-are-down-for-belgian-frites-as-eu-acts-on-chemical) and went to [get some frites.](https://goo.gl/maps/MjGKSYg1n5k) They were indeed very gorgeous, especially with some sort of mayonaise that I picked at random off a list in Dutch.
+Next I followed a [tip from The Guardian](https://www.theguardian.com/world/2017/jun/20/chips-are-down-for-belgian-frites-as-eu-acts-on-chemical) and went to **[get some frites.](https://goo.gl/maps/MjGKSYg1n5k)** They were indeed very gorgeous, especially with some sort of mayonaise that I picked at random off a list in Dutch.
+
+## Canal Tour
 
 I've walked a very long way every day of this trip so far. My feet hurt. Thus I needed something to do sitting down. By pure chance, Amsterdam is a city with canals whose view of the city beats that of the streets. So I went on a canal tour, for €11.
 

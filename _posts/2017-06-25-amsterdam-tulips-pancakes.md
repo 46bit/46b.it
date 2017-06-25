@@ -17,6 +17,8 @@ I've wanted to visit ever since I saw the movie adaptation of A Fault In Our Sta
 
 <img src="/assets/amsterdam-day-2-canal-2.jpg" width="600">
 
+## Tulips and Pancakes
+
 My first stop was a little esoteric: the [Tulip Museum](http://www.amsterdamtulipmuseum.com/en/) in the Jordaan neighbourhood. It discusses the origins of Tulips, their introduction to Tulip Mania and how the Dutch ended up in Tulip Mania: a major price bubble in 1637 where the newly-introduced tulips were being exchanged for apparently extraordinary prices. Sadly I don't have a great photo for this, but it's worth a visit!
 
 <img src="/assets/amsterdam-tulip-museum.jpg" width="600">
@@ -30,6 +32,8 @@ So next, I got pancakes! I must say, York's [Double Dutch Pancake House](https:/
 At about this time, the glorious weather thus far with 32+°C days and 20+°C nights broke in spectacular fashion. We got hit by a big rain shower, from which I had to hide a postcard as I had no bag. Then as I was hurrying back towards the central island (Centrum?) when a rather intense thunderstorm hit. As if from nowhere the people on the street changed from t-shirt-and-shorts-clad to long-sleeves-and-jeans.
 
 <img src="/assets/amsterdam-storm.jpg" width="600">
+
+## Bodies
 
 I'd hoped to visit [Body Worlds](https://en.wikipedia.org/wiki/Body_Worlds) while in Amsterdam and this proved an excellent place to take shelter. Lightning hit something rather close as I got my ticket, and everything shook. Thankfully the power stayed on!
 
