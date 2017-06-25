@@ -267,6 +267,17 @@ article section .pull-left {
   margin-right: 18px;
   margin-bottom: 24px; }
 
+article .prev-next-jump {
+  overflow: hidden;
+  font-weight: 400;
+  padding-bottom: 30px; }
+  article .prev-next-jump a {
+    color: #a61941; }
+  article .prev-next-jump .prev {
+    float: left; }
+  article .prev-next-jump .next {
+    float: right; }
+
 @media (max-width: 954px) {
   article section .pull-left {
     float: none;
@@ -321,7 +332,14 @@ article section .pull-left {
   article section h2 {
     clear: both;
     font-size: 28px;
-    font-weight: 600; } }
+    font-weight: 600; }
+
+  article .prev-next-jump .prev, article .prev-next-jump .next {
+    float: none;
+    display: block;
+    padding: 5px 0; }
+  article .prev-next-jump .next {
+    text-align: right; } }
 @media (max-width: 410px) {
   #header .wrapper {
     padding-left: 0;

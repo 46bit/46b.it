@@ -10,10 +10,6 @@ Today's plan was simple: get up around 9am, finish packing, go to Amsterdam Cent
 
 **Why Hannover?** It's about halfway into the 6-hour train from Amsterdam and Berlin, and is host to [The Royal Gardens of Herrenhausen](https://en.wikipedia.org/wiki/Herrenhausen_Gardens). It's also in the West of Germany, in the countryside, and smaller than the capital cities which otherwise make up my trip - therefore different and interesting.
 
-<!--
-<p><div style="position:relative;width:100%;height:0;padding-bottom:90.05%;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5965.481180443901!2d9.693881703646845!3d52.38798026606271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8aba2eb652d94572!2sHerrenhausen+Gardens!5e1!3m2!1sen!2sde!4v1498337882836" width="600" height="450" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe></div></p>
--->
-
 The 30°C summer weather has definitely broken. I got up to find it wet and drizzly outside. As a result I'm wearing both long-sleeves and trousers for the first time this trip! I only have one long-sleeved item so hopefully it won't be needed for long, although I am doing laundry in Berlin tomorrow so it might be workable.
 
 <img src="/assets/amsterdam-airbnb-street.jpg" width="600">

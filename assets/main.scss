@@ -287,6 +287,21 @@ article section .pull-left {
   margin-bottom: 24px;
 }
 
+article .prev-next-jump {
+  overflow: hidden;
+  font-weight: 400;
+  padding-bottom: 30px;
+  a {
+    color: #a61941;
+  }
+  .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
+}
+
 @media (max-width: 954px) {
   article section .pull-left {
      float: none;
@@ -357,6 +372,17 @@ article section .pull-left {
     clear: both;
     font-size: 28px;
     font-weight: 600;
+  }
+
+  article .prev-next-jump {
+    .prev, .next {
+      float: none;
+      display: block;
+      padding: 5px 0;
+    }
+    .next {
+      text-align: right;
+    }
   }
 }
 
