@@ -56,6 +56,28 @@ The original palace was destroyed in WWII. In the early 2000s it was rebuilt (be
 
 I don't have too much to report for the journey East to Berlin. It rained a lot, the architecture changed but not in a way I could pinpoint until Berlin, and I'm pretty tired.
 
+<img src="/assets/dull-near-hannover.jpg" width="600">
+
+A little later the rain had become quite intense, the entire window a waterfall.
+
+<img src="/assets/rain-near-hannover.jpg" width="600">
+
+Things cleared up just in time to see a train carrying BMWs. I suppose it's an efficient way to get them to port.
+
+<img src="/assets/weather-cleared-near-berlin.jpg" width="600">
+
+<img src="/assets/car-transporter-near-berlin.jpg" width="600">
+
 Berlin Hauptbahnhof is somewhat more complicated (5 storeys all open plan) than I'd anticipated, and finding where tourist information was to buy a [Berlin Welcome Card](https://www.visitberlin.de/en/berlin-welcome-card) (3 days of public transport and free/discounted attractions) took some doing.
+
+<img src="/assets/berlin-hauptbahnhof-1.jpg" width="600">
+
+<img src="/assets/berlin-hauptbahnhof-2.jpg" width="600">
+
+Something I meant to do throughout this trip was to document the design of everyday buildings and objects. It's too late to make a good study of that now, but here is the design of Deutsche Bahn departure signs and a U-Bahn station in eastern Berlin.
+
+<img src="/assets/hannover-db-sign.jpg" width="600">
+
+<img src="/assets/berlin-ubahn-station.jpg" width="600">
 
 I'm going to rest up. I have two full days to enjoy Berlin, which is clearly insufficient, but I have a plan I'll hopefully write about tomorrow. Bye for now!

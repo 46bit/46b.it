@@ -66,4 +66,40 @@ We just stopped in a place named Hamm. 80 minutes to go.
 
 ## An evening in Hannover
 
-It seems like a really nice place.
+It seems like a really nice place. I dropped my bag off at [my hotel](http://www.grandhotel.de) opposite the Hauptbahnhof and then went to explore. This first shot is of a tunnel connecting the Hauptbahnhof to the central U-Bahn station.
+
+<img src="/assets/hannover-hauptbahnhof.jpg" width="600">
+
+I spotted a huge church of (to me) unusual design in the distance and went to investigate. This is the Lutheran [Marktkirche](https://en.wikipedia.org/wiki/Marktkirche,_Hanover). It's really hard to convey how large this building is - far larger than it appears in photographs.
+
+<img src="/assets/hannover-architecture-1.jpg" width="600">
+
+<img src="/assets/hannover-architecture-2.jpg" width="600">
+
+I headed for the [Maschsee](https://en.wikipedia.org/wiki/Maschsee), a vast lake to the south of the city centre. Along the way I saw the [Old Town Hall](https://www.hannover.de/en/Tourism-Culture/Places-of-Interest-City-Tours/Tourist-Highlights/The-Old-Town-Hall), again with architectural features new to me. It was rather exciting.
+
+<img src="/assets/hannover-architecture-3.jpg" width="600">
+
+The [New Town Hall](https://en.wikipedia.org/wiki/New_Town_Hall_\(Hanover\)) is vast and impressive. I was momentarily stunned.
+
+<img src="/assets/hannover-city-hall-1.jpg" width="600">
+
+<img src="/assets/hannover-city-hall-3.jpg" width="600">
+
+Reaching the [Maschsee](https://en.wikipedia.org/wiki/Maschsee) I was stunned again. It's about 1.5 miles long, an unusual sight when right next to a landlocked city centre!
+
+<img src="/assets/hannover-lake-1.jpg" width="600">
+
+At the near end are pitches to play [Kayak polo](https://en.wikipedia.org/wiki/Canoe_polo) and a championship match was underway!
+
+<img src="/assets/hannover-kayak-polo.jpg" width="600">
+
+The park of the New Town Hall is quite charming. It is almost marshy, reminiscent of University of York's older campus that I know and love.
+
+<img src="/assets/hannover-city-hall-2.jpg" width="600">
+
+I'm already very glad to have made this stop in Hannover, and there is still The Royal Gardens of Herrenhausen to come [tomorrow](/2017/hannover-to-berlin/). It's different to the capital cities I'm visiting, but far more 'real' while still quite modern and cosmopolitan. (Also, I got a very good deal on the hotel and the mood-lit shower plays Raindrops Keep Falling On My Head!)
+
+You might wonder why I keep typing Hannover rather than the anglicised Hanover. I got in this habit because none of my reservations show up if I search for Hanover!
+
+Goodnight!
