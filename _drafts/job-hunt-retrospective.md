@@ -1,7 +1,16 @@
 ---
-title: Takeaways from GDS interview
+title: 'Job Hunt Retrospective'
 layout: post
 ---
+https://lobste.rs/s/tne8s4/how_much_work_is_it_reasonable_ask_for_take#c_pmj8lf and how companies that ask for a multi-hour coding test immediately after a screening interview were consistently the ones that seemed to decide late they wanted someone more senior. Bizarre as someone more senior in my book might take longer to create a basic application.
+
+How The Guardian's interview and their pairing exercises were great prep for GDS.
+
+Competency based interviews and how they're difficult to do if coming from a slightly odd background as you have to do enough to swap lots of old memories into your head to use as further examples? I don't think I could write clearly about this.
+
+The critical thing may be to preserve a diversity of interview approaches. Each approach is opinionated and will favour different people of those who would be good (or bad) at the job. If everyone selects that same subset it's not good for everyone, so people using a variety of approaches but hopefully getting better at inclusivity where people are visibly excuded (women, PoC, etc) would be good.
+
+## Copied from other draft: Takeaways from GDS interview
 
 Leading up to the Government Digital Service interview today I'd been really, really nervous. Part of that is from post-dissertation burnout, but some of it results from my background. Most of the work I've done has been individual or in small teams, which naturally makes it harder to relate to competency-based questions. In practice I've been rather good at them on the spot because I have quite such a diversity and depth of experience, but I feel that the smaller environments mean team-related questions tend to lack a certain 'oomph' that I can definitely provide for more technical or sole-contributor-related questions.
 

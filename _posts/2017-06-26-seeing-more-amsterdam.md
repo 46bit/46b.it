@@ -4,6 +4,7 @@ layout: post
 ---
 
 [On Day 5](/2017/amsterdam-tulips-pancakes/) I saw the Tulip Museum and Body Worlds, had pancakes, rode the tram and wandered a bit. For a few hours I'd considered staying an extra day in Amsterdam, spending most of it sunbathing in Vondelpark, and skipping Hannover. But then the 30°C weather broke and that option became relatively less appealing. Thus today is my last day here, and I wanted to round it out by learning a bit more about Amsterdam itself.
+<!--more-->
 
 <img src="/assets/amsterdam-palace.jpg" width="600">
 

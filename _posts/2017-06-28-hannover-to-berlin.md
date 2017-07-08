@@ -80,4 +80,4 @@ Something I meant to do throughout this trip was to document the design of every
 
 <img src="/assets/berlin-ubahn-station.jpg" width="600">
 
-I'm going to rest up. I have two full days to enjoy Berlin, which is clearly insufficient, but I have a plan I'll hopefully write about tomorrow. Bye for now!
+I have two full days to enjoy Berlin, and I'm rather fatigued. Thus I got dinner at a burger place outside the hotel (*hallo! ich möchte einen Cheeseburger und Süßkartoffelpommes, bitte*), napped for awhile and then read up on what to do in Berlin. Bye for now!
