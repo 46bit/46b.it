@@ -46,29 +46,35 @@ My hotel is around the corner from a large Muslim community centre, which was a 
 
 Over the course of the rest of the day I visited Gendarmenmarkt, the Brandenburg Gate, the Holocaust Memorial and Checkpoint Charlie. I must confess that this is presented a little out-of-order: I skipped Gendarmenmarkt at first, only to later realise that it would have been the area to stop for lunch, and headed back there for dinner later.
 
+<img src="/assets/berlin-gendarmenmarkt-3.jpg" width="600">
+
 Gendarmenmarkt is a large square with several magnificent large buildings.
 
-[Gendarmenmarkt photos and explanation]
+<img src="/assets/berlin-gendarmenmarkt-1.jpg" width="600">
+
+<img src="/assets/berlin-gendarmenmarkt-2.jpg" width="600">
 
 A little further West, the area of the Brandenburg Gate reminds me of Trafalgar Square. Both are concretey urban and have impressive stonework, but I feel both somehow fail to justify their apparent tourist appeal. The area does have some things of interest - notably the Reichstag and the edge of Tiergarten.
 
-[Brandenburg Gate Photos]
+<img src="/assets/berlin-brandenburg-gate.jpg" width="600">
+
+<img src="/assets/berlin-brandenburg-gate-interior.jpg" width="600">
 
 A few minutes south is The Memorial to the Murdered Jews of Europe (more commonly known as The Holocaust Memorial.) On the surface this consists of supernumerary concrete blocks set out in a disturbing, undulating grid pattern. Underneath is a Holocaust Museum that wasn't open today.
 
-[Holocaust Memorial photo]
+<img src="/assets/berlin-holocaust-memorial.jpg" width="600">
 
 Checkpoint Charlie was the main crossing point between West and East Berlin for much of the Cold War. As with much of Berlin the area has been completely redeveloped since, and all that remains of what was once there is the little hut in the middle of the road.
 
-[Checkpoint Charlie hut photo]
+<img src="/assets/berlin-checkpoint-charlie.jpg" width="600">
 
-This area is quite the tourist trap and the most in-depth Berlin Wall places to visit seem to be elsewhere. But there is remarkably detailed information for such a public site along a few walls on the roadside.
-
-[Info photos?]
+This area is quite the tourist trap and the Berlin Wall places to visit seem to be elsewhere. But there is remarkably detailed information for such a public site along a few walls on the roadside.
 
 ## Topography of Terror
 
 I don't have the words to convey this experience, not without blubbering them out through pillows. This free collection of exhibits, on the site of the former SS headquarters, deconstructs how the Nazis built their terrible state and committed so many evils.
+
+<img src="/assets/berlin-topography-of-terrors.jpg" width="600">
 
 <!-- There isn't much to say about this place. It's a detailed and haunting look at how the Nazis came to power, how they consolidated their control of the government, how they kept the populace on side, and how they pursued their terrible ends. -->
 
