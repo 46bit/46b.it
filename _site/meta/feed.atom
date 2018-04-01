@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-03-31T16:06:31+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">15 years of web development</title><link href="https://46b.it/2018/15-years-from-messy-php-to-microservices/" rel="alternate" type="text/html" title="15 years of web development" /><published>2018-03-31T00:00:00+01:00</published><updated>2018-03-31T00:00:00+01:00</updated><id>https://46b.it/2018/15-years-from-messy-php-to-microservices</id><content type="html" xml:base="https://46b.it/2018/15-years-from-messy-php-to-microservices/">&lt;p&gt;When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-04-02T00:28:24+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">📝 Leader Election</title><link href="https://46b.it/2018/leader-election/" rel="alternate" type="text/html" title="📝 Leader Election" /><published>2018-04-02T00:00:00+01:00</published><updated>2018-04-02T00:00:00+01:00</updated><id>https://46b.it/2018/leader-election</id><content type="html" xml:base="https://46b.it/2018/leader-election/">&lt;p&gt;&lt;a href=&quot;/assets/leader-election.jpg&quot;&gt;&lt;img src=&quot;/assets/leader-election.jpg&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve decided I want to try Sketchnoting. I don’t have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Character design is hard &lt;a href=&quot;https://t.co/L6jeXqlVDG&quot;&gt;pic.twitter.com/L6jeXqlVDG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michael (Miki) Mokrysz (@46bit) &lt;a href=&quot;https://twitter.com/46bit/status/980382508738002944?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I have my characters! &lt;a href=&quot;https://t.co/nGySx8vzJb&quot;&gt;pic.twitter.com/nGySx8vzJb&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michael (Miki) Mokrysz (@46bit) &lt;a href=&quot;https://twitter.com/46bit/status/980386876891783168?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">I’ve decided I want to try Sketchnoting. I don’t have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first: Character design is hard pic.twitter.com/L6jeXqlVDG&amp;mdash; Michael (Miki) Mokrysz (@46bit) April 1, 2018 I have my characters! pic.twitter.com/nGySx8vzJb&amp;mdash; Michael (Miki) Mokrysz (@46bit) April 1, 2018</summary></entry><entry><title type="html">15 years of web development</title><link href="https://46b.it/2018/15-years-from-messy-php-to-microservices/" rel="alternate" type="text/html" title="15 years of web development" /><published>2018-03-31T00:00:00+01:00</published><updated>2018-03-31T00:00:00+01:00</updated><id>https://46b.it/2018/15-years-from-messy-php-to-microservices</id><content type="html" xml:base="https://46b.it/2018/15-years-from-messy-php-to-microservices/">&lt;p&gt;When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.&lt;/p&gt;
 
 &lt;p&gt;That single codebase &lt;em&gt;was&lt;/em&gt; the website. It received web requests directly from its users, it talked directly to the database that stored the website’s state, it decided all the business logic of how the website worked, and it rendered HTML to be sent back to the user.&lt;/p&gt;
 
@@ -519,45 +527,4 @@ Conclusions from Paris
 - I want to go back having learned more French (Duolingo.) Perhaps to the countryside or a different city, however.
 
 &lt;img src=&quot;/assets/eurostar-st-pancras.jpg&quot; width=&quot;600&quot;&gt;
---&gt;</content><author><name></name></author><summary type="html">As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.</summary></entry><entry><title type="html">Day 2: Walking Paris</title><link href="https://46b.it/2017/walking-paris/" rel="alternate" type="text/html" title="Day 2: Walking Paris" /><published>2017-06-21T00:00:00+01:00</published><updated>2017-06-21T00:00:00+01:00</updated><id>https://46b.it/2017/walking-paris</id><content type="html" xml:base="https://46b.it/2017/walking-paris/">&lt;p&gt;The first city in &lt;a href=&quot;/2017/northwestern-europe/&quot;&gt;my big rail trip&lt;/a&gt; has been Paris. I’ve been here before with family, but my memories were limited to a hawker at the Eiffel Tower and getting my shoelace stuck in an escalator at the Disneyland Paris train station.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;!--First a confession: I disliked French at school. I didn't know much of anything about France, didn't holiday there and I believe the first French person I spent serious time with was a French teacher who moved over from France and my interest in the subject did dramatically increase when under their tutoring. Perhaps the French person I know best know from startups days is Mathieu, but I haven't had time to see them.--&gt;
-
-&lt;!--I have two full days in Paris, Amsterdam and Berlin which gives one day to explore and one day to do particular activities (perhaps, later in the trip, sleep.) Paris was a weird one in that I'm expecting to hop back by Eurostar sometime soon and had already booked Disneyland Paris for that second full day.--&gt;
-
-&lt;p&gt;I didn’t have time to include in &lt;a href=&quot;/2017/wakefield-to-paris/&quot;&gt;Day 1’s post&lt;/a&gt; our trip to the Eiffel Tower on the first night we got there, reaching the summit a little after 10pm and just as the lights came on!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/eiffel-over-buildings.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/live-street.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/sunset-over-la-defense.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When we had trouble on the way to Paris we had joked that a McDonalds near the hotel was open until 2am if we were to get in that late. As it turned out we did resort to eating there, at about 1am on the way back from the Eiffel Tower! We’d assumed that it would be the only place serving food, but in hindsight I get the impression that a proper French bistro would have been able to feed us.&lt;/p&gt;
-
-&lt;p&gt;I couldn’t sleep (as is typical my first night somewhere) so got up pretty late the next day. I caught up with Sarah on the Champs de Mars (the D.C. Mall-style area in front of the Eiffel Tower), and we took in an obvious tourist route from there to the Trocadero, up past the Arc de Triomphe, down the Champs-Elysees, through the Louvre and to Notre Dame - a few hours walk. My companion wasn’t a huge fan of figuring out public transport, so walking was a little easier.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/sunny-street.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/trocadero-statue.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I like building up mental maps of cities, but in hindsight I think the route was a mistake. Between the Trocadero and the Petit Palace end of Champs-Elysees was a fair distance and not hugely remarkable compared to the 15th we were staying in. In hindsight I’ve have caught the Metro towards Place de la Republique and spent an hour in a museum near in the Louvre, but it was still a nice walk through the architecture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/petit-palais.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That’s me on the steps of Petit Palais, in a Yorkie Swing Dance t-shirt.&lt;/p&gt;
-
-&lt;p&gt;When we reached Place de la Republique by foot we were quite exhausted. The temperature was around 35°C and the trees lining the boulevards have a gap near there (and the breeze slowed.) We stumbled on through the gardens, still having fun but really in need of a drink, and targeted a Starbucks next to the Louvre. Our eventual arrival had us both limping… a bit of fun. Jumping for the coldest thing I could imagine, I ordered a Yaourt Banana Creme: a smoothie of (frozen?) yoghurt, banana, cream and ice. It was indeed the most cooling drink I could imagine.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/louvre-pyramids.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;After a long recuperation in the cool, I headed out to wander the Louvre and reach Notre Dame. I got some nice shots of the Louvre pyramids and then got severely harassed by a group of fake petitioners who evidently thought me a good target - the point where six of them started to surround me was a little scary, but I distracted them long enough to get the hell out of there! I’m curious what their relationship with the police is - if not violent they might be left alone and yet the line between the harassment and violence is very thin.&lt;/p&gt;
-
-&lt;p&gt;After that fright, I got a drink (in French, although I think I mistook how seating was supposed to work) and sat near Notre Dame. We planned to have a nice meal at a nice restaurant that evening, and I still had a few hours to use up before getting the Metro back.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/metro.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I’d eyed a few places on Place Cambronne that had a lot of everyday French customers and looked quite nice, and we picked . It was a nice meal - Seabass and Vegetable Taglietele (spiralised and nicely cooked vegetables.) I’d been fancying some Rosé wine for days, and it is France, so I had… a little too much.&lt;/p&gt;
-
-&lt;p&gt;Day 3 was Disneyland Paris, but I’m not going to write that up quite yet.&lt;/p&gt;</content><author><name></name></author><summary type="html">The first city in my big rail trip has been Paris. I’ve been here before with family, but my memories were limited to a hawker at the Eiffel Tower and getting my shoelace stuck in an escalator at the Disneyland Paris train station.</summary></entry></feed>
+--&gt;</content><author><name></name></author><summary type="html">As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.</summary></entry></feed>
