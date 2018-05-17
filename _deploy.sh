@@ -13,7 +13,7 @@ echo $release > ./_release
 git add ./_release
 git commit -m "Performing release $release"
 git tag -a $release -m "Release $release"
-git push origin release
+git push -f origin release
 git push origin $release
 
 # Check develop back out. It would be nicer to require fast-forward merges so
