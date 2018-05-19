@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <header class="prelude">
+    <div class="wrapper">
+      {% if page.title %}
+      <h1>{{ page.title }}</h1>
+      {% endif %}
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    {{ content }}
+  </section>
+  <div class="wrapper prev-next-jump">
+    {% if page.previous.url %}
+      <a class="prev" href="{{page.previous.url}}">&larr; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next" href="{{page.next.url}}">{{page.next.title}} &rarr;</a>
+    {% endif %}
+  </div>
+<article>

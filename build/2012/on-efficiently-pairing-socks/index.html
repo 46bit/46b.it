@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2012/on-efficiently-pairing-socks/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>On efficiently pairing socks - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>On efficiently pairing socks</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">May 1, 2012</p>
+    <p>Anyone who has done an appreciable amount of laundry has probably noticed the time commonly taken matching up socks of different styles and colours.</p>
+
+<p>My efforts to optimise the process have led me to the curious practice of un-matching: making pairs of socks so as to deliberately <strong>not</strong> be a matching pair. It’s much faster, much simpler to compute and yet because there is a process behind it you have a defence against allegations of laziness.
+<!--more--></p>
+
+<p><img src="/assets/different-coloured-socks.jpg" alt="" /></p>
+
+<p>If you consider the normal process of matching socks, a sock is picked from the top of the pile, then the pile is traversed to find a matching sock (a <a href="http://en.wikipedia.org/wiki/Linear_search">Linear search</a>). As such, we’re discussing a horribly brute-forced example of the <a href="http://en.wikipedia.org/wiki/Stable_roommates_problem">stable roommates problem</a>.</p>
+
+<p>Optimisations to the matching algorithm were <a href="http://www.mail-archive.com/kragen-tol@canonical.org/msg00084.html">discussed back in 2003</a>:</p>
+
+<blockquote>
+	<p>"I maintain an "unpaired sock buffer", usually on my leg, which is initially empty. Then, for each sock in the sequence, I do a sequential search through this buffer for its mate. If I find the mate, I remove it from the buffer and form a pair; if I do not, I add the new sock to the buffer &hellip;</p>
+	<p>The worst case for this problem is to compare every sock against every other sock. The worst case for the naive sock-buffer method isn't that bad; it happens when the sock sequence is palindromic. Here, you need only compare to half the other socks at most, and a quarter of them on average, which is four times better than the worst case."</p>
+	<p>&mdash; <cite>[On the complexity of sock-matching](http://www.mail-archive.com/kragen-tol@canonical.org/msg00084.html) by Kragen Sitaker</cite></p>
+</blockquote>
+
+<p>My concept of unmatching provides for a major speed boost to this process. Whereas previously two given socks might have had a 20% chance of being a valid pair, that now becomes a 80% chance. Providing that there is no major bias towards a given style of sock, this provides a massive speedup. The worst case may in fact be the best case for ordinary matching: when every sock is next to a matching sock in the pile.</p>
+
+<p><em>With luck, nobody will ever again ask why my socks don’t match.</em></p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2012/irepl/">&larr; iREPL</a>
+    
+    
+      <a class="next" href="/2012/hacking-with-imessage/">Building services with iMessage &rarr;</a>
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

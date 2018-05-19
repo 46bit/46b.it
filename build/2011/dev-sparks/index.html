@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2011/dev-sparks/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Development Sparks - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Development Sparks</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">August 29, 2011</p>
+    <p>When we encounter a problem as developers, there’s usually 3 ways to solve it. There’s the hacky way with its attendant long-term maintainance costs. There’s a way which works without too much trouble. And there’s the spark of genius that solves all the troubles with the minimum of effort.
+<!--more--></p>
+
+<p>As I’m sure you’ll like me appreciate doing the latter when possible, I thought I’d share a couple of them - one for keeping private config details of git repos, and the other for letting you write neater code for sliders and the like. I’m planning on making this into a regular series of posts whenever I come across similarly helpful tricks.</p>
+
+<h2 id="config-templates-in-git">Config templates in Git</h2>
+
+<p>When developing a site, it’s more than easy to update your local database config file and then include that in your next code commit - and usually, that’s fine. The problem is that things like this make it easier for a compromise of one thing (your code repository for instance) to allow access to something potentially even more private (say, your company databases).</p>
+
+<p>By default, there’s no obvious-to-all way to stop git from quite happily adding updated config files, short of making sure you remember not to every time you commit. Adding a path to .gitignore does nothing if it’s already in previous commits - and you don’t really want to have to manually add a config file every time you check code out.</p>
+
+<p>The solution is the quite simple spark I <a href="http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/">first discovered here</a>: <code class="highlighter-rouge">git update-index --assume-unchanged path</code>. Simply run that and git will never notice any changes to the file. This way, you can add a basic template configuration file, and then change it to appropriate local details without having to worry about accidentally exposing them elsewhere.</p>
+
+<h2 id="everything-is-easy-with-the-modulus">Everything is easy with the modulus</h2>
+
+<p>A lot of the time, especially when dealing with sliders and the like, you come across code that requires a conditional check for a special case - going back to the first slide if you go past the last for instance. Whilst this works, there’s a trick to making it far neater and reliable: the modulus.</p>
+
+<p>In this context, getting the modulus amounts to <strong>getting the remainder when one number is divided by another</strong>, and the symbol in programming is usually %. For example, <code class="highlighter-rouge">5 % 2 == 1</code> because <code class="highlighter-rouge">5 - 2 - 2 == 1</code>.</p>
+
+<p>Say you’re coding a jQuery slider and want to go back to slide 1 once you reach the end. Counting from 0, the index of the next slide could be coded as <code class="highlighter-rouge">slideN = (slideN + 1 &lt;= slides.length) ? 0 : slideN + 1</code>. This checks if you are on the last slide, and if so then goes to the 0th slide rather than the next slide. On the other hand, it’s easier to write <code class="highlighter-rouge">slideN = (slideN + 1) % slides.length</code>. This does exactly the same.</p>
+
+<p>Now the really neat thing: previous slides. Conditionally it’d be <code class="highlighter-rouge">slideN = (slideN - 1 &gt; 0) ? slides.length - 1 : slideN - 1</code>, which goes to the last slide if you’re on the first one. Using a modulo, it’s neater <code class="highlighter-rouge">slideN = (slideN - 1 + slides.length) % slides.length</code>. When you can actually express the next slide as <code class="highlighter-rouge">slideN = (slideN + 1 + slides.length) % slides.length</code> as well, this gives you a really nice way to not have to worry about the scrolling direction for which logic to use, simply incrementing or decrementing as need be.</p>
+
+<p>Once you get used to using %, neat uses pop up all over the place both in UI work and elsewhere.</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+    
+      <a class="next" href="/2012/irepl/">iREPL &rarr;</a>
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

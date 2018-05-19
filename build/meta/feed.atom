@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-05-19T01:24:02+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">📝 Leader Election</title><link href="https://46b.it/2018/leader-election/" rel="alternate" type="text/html" title="📝 Leader Election" /><published>2018-04-02T00:00:00+01:00</published><updated>2018-04-02T00:00:00+01:00</updated><id>https://46b.it/2018/leader-election</id><content type="html" xml:base="https://46b.it/2018/leader-election/">&lt;p&gt;&lt;a href=&quot;/assets/leader-election.jpg&quot;&gt;&lt;img src=&quot;/assets/leader-election.jpg&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve decided I want to try Sketchnoting. I don’t have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Character design is hard &lt;a href=&quot;https://t.co/L6jeXqlVDG&quot;&gt;pic.twitter.com/L6jeXqlVDG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michael (Miki) Mokrysz (@46bit) &lt;a href=&quot;https://twitter.com/46bit/status/980382508738002944?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I have my characters! &lt;a href=&quot;https://t.co/nGySx8vzJb&quot;&gt;pic.twitter.com/nGySx8vzJb&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michael (Miki) Mokrysz (@46bit) &lt;a href=&quot;https://twitter.com/46bit/status/980386876891783168?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">I’ve decided I want to try Sketchnoting. I don’t have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first: Character design is hard pic.twitter.com/L6jeXqlVDG&amp;mdash; Michael (Miki) Mokrysz (@46bit) April 1, 2018 I have my characters! pic.twitter.com/nGySx8vzJb&amp;mdash; Michael (Miki) Mokrysz (@46bit) April 1, 2018</summary></entry><entry><title type="html">15 years of web development</title><link href="https://46b.it/2018/15-years-from-messy-php-to-microservices/" rel="alternate" type="text/html" title="15 years of web development" /><published>2018-03-31T00:00:00+01:00</published><updated>2018-03-31T00:00:00+01:00</updated><id>https://46b.it/2018/15-years-from-messy-php-to-microservices</id><content type="html" xml:base="https://46b.it/2018/15-years-from-messy-php-to-microservices/">&lt;p&gt;When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.&lt;/p&gt;
+
+&lt;p&gt;That single codebase &lt;em&gt;was&lt;/em&gt; the website. It received web requests directly from its users, it talked directly to the database that stored the website’s state, it decided all the business logic of how the website worked, and it rendered HTML to be sent back to the user.&lt;/p&gt;
+
+&lt;p&gt;Lots has changed. Some of this might be about the quality of environments I’m working in, but I don’t think very much.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-quality&quot;&gt;Code quality&lt;/h2&gt;
+
+&lt;p&gt;At the time, most of the code I saw from other programmers embedded SQL queries directly into HTML templates:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;A website&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+Visitor count: &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mysql_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;INSERT INTO visitors (ip_address) VALUES (&quot;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_SERVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'REMOTE_ADDR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;);&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_fetch_row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mysql_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SELECT COUNT(*) FROM visitors;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I haven’t run that code, but it’s quite typical of what freelance web developers were doing in the early 2000s. It rarely had proper error handling, rarely prevented SQL Injection, and almost never prevented XSS Injection.&lt;/p&gt;
+
+&lt;p&gt;I got a lot of feedback about how good I was at avoiding these problems, but I eventually decided that relying on my attention to detail to avoid these problems didn’t work. Hence I picked up MySQL query parameters to avoid SQL Injection, and eventually PHP frameworks like CodeIgniter to avoid XSS Injection.&lt;/p&gt;
+
+&lt;p&gt;We’ve come a long way in our tooling since then. Modern frameworks automatically escape data being output into HTML templates against XSS attacks. Modern frameworks often have an architecture that would make it inconvenient and difficult to embed database queries into HTML. Modern frameworks are often used with ORMs or other mechanisms that make SQL Injection much less likely.&lt;/p&gt;
+
+&lt;p&gt;All of this means you don’t have to think as much. Basic web application security and basic web application architecture is almost an automatic.&lt;/p&gt;
+
+&lt;h2 id=&quot;coupling-of-components&quot;&gt;Coupling of components&lt;/h2&gt;
+
+&lt;p&gt;Earlier, I described how 2000s-era websites generally had one codebase for everything and deployed a single thing onto their webservers. This can work very happily when you first build a website, but it starts to have problems if you get a lot of traffic.&lt;/p&gt;
+
+&lt;p&gt;If you want to change how data is stored, for instance to add caching around it, your first task becomes to abstract the data layer from the rest of your codebase. This could consume weeks of work without delivering any user value.&lt;/p&gt;
+
+&lt;p&gt;Since the mid/late 2000s, mainstream frameworks started to separate the data layer out, for instance keeping it in the Models if following an MVC pattern. This meant that your changes only affect a more concentrated part of the codebase. But you ultimately still have one codebase and very little abstraction.&lt;/p&gt;
+
+&lt;p&gt;Things have marched on since then. These days you commonly deploy several components, rather than just one. You’ll have an API component that exposes ways to access your data but abstracts most of the details of how that’s done. You’ll have a backend component that performs business logic on data it gets and sets using the API. Then you’ll have a frontend component that directly interacts with user requests and talks to the backend.&lt;/p&gt;
+
+&lt;p&gt;You won’t necessarily have all these components. You can achieve a lot of the benefits by keeping this pattern in mind at an early stage. But if you’re a microservices architecture like GOV.UK you have several data layer APIs, many backends, and then relatively few frontends. Separating these components keeps each piece small enough to be effectively worked on.&lt;/p&gt;
+
+&lt;h2 id=&quot;frontend-sophistication&quot;&gt;Frontend sophistication&lt;/h2&gt;
+
+&lt;p&gt;Over those 15 years, JavaScript has gotten a lot faster and a lot more capable. Web browser APIs have gotten a lot more featureful, offering 3D graphics and videocalls and many other things besides.&lt;/p&gt;
+
+&lt;p&gt;User experience has gotten a lot better and a lot higher expectations (except for new weirdnesses like click-through cookie law banners.)&lt;/p&gt;
+
+&lt;p&gt;I started as more of a front-end developer, and then got to know the back-end as well. For many years I did freelance projects that were front-end, back-end or both and wouldn’t say I did one side better than the other.&lt;/p&gt;
+
+&lt;p&gt;I think full-stack development has become less plausible. Expectations of user experience have gotten a lot higher, and the complexity of front-end development has exploded in a new search for the best ways of doing things.&lt;/p&gt;
+
+&lt;p&gt;The challenge we seem to be left with is where business logic belongs. The frontend is nicest if you can make it a thin wrapper and push that onto the backend; the backend is nicest if you can make it a thin wrapper and push that onto the frontend.&lt;/p&gt;
+
+&lt;p&gt;At this stage I identify as a backend/operations person. I’m sure I’ll work heavily with the frontend again one day, but I don’t think I can do both any longer.&lt;/p&gt;
+
+&lt;h2 id=&quot;testing-and-operational-sophistication&quot;&gt;Testing and operational sophistication&lt;/h2&gt;
+
+&lt;p&gt;Tests used to be purely for your business logic. You’d test that your code calculated the correct prices. Deployment often meant FTPing your code onto a shared hosting environment. It was a mess.&lt;/p&gt;
+
+&lt;p&gt;Things have changed for the better. Source control is almost universal. Infrastructure has gotten more accessible to developers, which is a good thing for me. Testing of running/deploying websites is much more common.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-hasnt-changed&quot;&gt;What hasn’t changed?&lt;/h2&gt;
+
+&lt;p&gt;Very often we still want things to “just work!” But what things working look like is getting better and better, and that’s a good thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties. That single codebase was the website. It received web requests directly from its users, it talked directly to the database that stored the website’s state, it decided all the business logic of how the website worked, and it rendered HTML to be sent back to the user. Lots has changed. Some of this might be about the quality of environments I’m working in, but I don’t think very much. Code quality At the time, most of the code I saw from other programmers embedded SQL queries directly into HTML templates: &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;A website&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; Visitor count: &amp;lt;?php mysql_exec(&quot;INSERT INTO visitors (ip_address) VALUES (&quot; . $_SERVER['REMOTE_ADDR'] . &quot;);&quot;); echo mysql_fetch_row(mysql_query(&quot;SELECT COUNT(*) FROM visitors;&quot;)); ?&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; I haven’t run that code, but it’s quite typical of what freelance web developers were doing in the early 2000s. It rarely had proper error handling, rarely prevented SQL Injection, and almost never prevented XSS Injection. I got a lot of feedback about how good I was at avoiding these problems, but I eventually decided that relying on my attention to detail to avoid these problems didn’t work. Hence I picked up MySQL query parameters to avoid SQL Injection, and eventually PHP frameworks like CodeIgniter to avoid XSS Injection. We’ve come a long way in our tooling since then. Modern frameworks automatically escape data being output into HTML templates against XSS attacks. Modern frameworks often have an architecture that would make it inconvenient and difficult to embed database queries into HTML. Modern frameworks are often used with ORMs or other mechanisms that make SQL Injection much less likely. All of this means you don’t have to think as much. Basic web application security and basic web application architecture is almost an automatic. Coupling of components Earlier, I described how 2000s-era websites generally had one codebase for everything and deployed a single thing onto their webservers. This can work very happily when you first build a website, but it starts to have problems if you get a lot of traffic. If you want to change how data is stored, for instance to add caching around it, your first task becomes to abstract the data layer from the rest of your codebase. This could consume weeks of work without delivering any user value. Since the mid/late 2000s, mainstream frameworks started to separate the data layer out, for instance keeping it in the Models if following an MVC pattern. This meant that your changes only affect a more concentrated part of the codebase. But you ultimately still have one codebase and very little abstraction. Things have marched on since then. These days you commonly deploy several components, rather than just one. You’ll have an API component that exposes ways to access your data but abstracts most of the details of how that’s done. You’ll have a backend component that performs business logic on data it gets and sets using the API. Then you’ll have a frontend component that directly interacts with user requests and talks to the backend. You won’t necessarily have all these components. You can achieve a lot of the benefits by keeping this pattern in mind at an early stage. But if you’re a microservices architecture like GOV.UK you have several data layer APIs, many backends, and then relatively few frontends. Separating these components keeps each piece small enough to be effectively worked on. Frontend sophistication Over those 15 years, JavaScript has gotten a lot faster and a lot more capable. Web browser APIs have gotten a lot more featureful, offering 3D graphics and videocalls and many other things besides. User experience has gotten a lot better and a lot higher expectations (except for new weirdnesses like click-through cookie law banners.) I started as more of a front-end developer, and then got to know the back-end as well. For many years I did freelance projects that were front-end, back-end or both and wouldn’t say I did one side better than the other. I think full-stack development has become less plausible. Expectations of user experience have gotten a lot higher, and the complexity of front-end development has exploded in a new search for the best ways of doing things. The challenge we seem to be left with is where business logic belongs. The frontend is nicest if you can make it a thin wrapper and push that onto the backend; the backend is nicest if you can make it a thin wrapper and push that onto the frontend. At this stage I identify as a backend/operations person. I’m sure I’ll work heavily with the frontend again one day, but I don’t think I can do both any longer. Testing and operational sophistication Tests used to be purely for your business logic. You’d test that your code calculated the correct prices. Deployment often meant FTPing your code onto a shared hosting environment. It was a mess. Things have changed for the better. Source control is almost universal. Infrastructure has gotten more accessible to developers, which is a good thing for me. Testing of running/deploying websites is much more common. What hasn’t changed? Very often we still want things to “just work!” But what things working look like is getting better and better, and that’s a good thing.</summary></entry><entry><title type="html">❄ Blizzards 🌨</title><link href="https://46b.it/2018/blizzard/" rel="alternate" type="text/html" title="❄ Blizzards 🌨" /><published>2018-03-02T00:00:00+00:00</published><updated>2018-03-02T00:00:00+00:00</updated><id>https://46b.it/2018/blizzard</id><content type="html" xml:base="https://46b.it/2018/blizzard/">&lt;p&gt;It’s been quite the Winter for snow in North London. My first winter here has been just as lucky as
+was my first in York, which is when I took this photograph.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uoy-cse-snowman.jpg&quot; width=&quot;600&quot; alt=&quot;The base of a very large snowman being rolled into place outside University of York's Computer Science building&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I live in a city, I don’t drive and I rely on my feet, bicycles and public transport to get around.
+Unless I need to cycle somewhere, I’m in the perfect position to enjoy and get excited by snow. And
+I have! And it’s really pretty around here.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/stroud-green-crouch-end-snow.jpg&quot;&gt;&lt;img src=&quot;/assets/stroud-green-crouch-end-snow-small.jpg&quot; width=&quot;600&quot; alt=&quot;A snow-covered vista from Stroud Green over Crouch End towards Alexandra Palace&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I thought I’d gotten lucky with a few days of snow in early December. I threw some snowballs,
+admired dozens of snowpeople in Finsbury Park (no time to build one, sadly) and got to feel festive.
+Getting another week of snow wasn’t something I hoped for.&lt;/p&gt;
+
+&lt;p&gt;It’s been a blizzard on my hill at times, watching snowflakes zoom down or snow from the ground
+whipped up into the air. That’s been kind of cool, but also a little scary sometimes. Living in a
+conservation zone is really nice in some ways, but old-fashioned sash windows really aren’t airtight
+and I’ve had to improvise to seal up some holes.&lt;/p&gt;
+
+&lt;p&gt;I have a habit of visiting New England in December, a time of year when it gets awfully cold
+weather and blizzards. Last December the wind chill one daygot down to about -22°C. Another day
+I walked about six miles through half of a foot of snow from Cambridge, MA to Downtown Boston. That
+day was when I took this next photo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/cambridge-snowpeople.jpg&quot; width=&quot;600&quot; alt=&quot;A group of small snowpeople in Cambridge, MA last year&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We haven’t quite had that here yet but 4 days of snowing and a week of cold weather make me feel
+like I’m there. It feels great.&lt;/p&gt;
+
+&lt;p&gt;But that’s not the whole story. The cold giving us snow should be growing sea ice in the Arctic. We
+might be having fun (unless you’re trapped on a train overnight!) but Polar Bears in the Arctic will
+have less hunting territory. I don’t know how to change the vast problem that is reducing CO₂
+emissions. We’re not willing to have lower living standards for it, especially when they’re already
+eroding, even if there was a way to negotiate that.&lt;/p&gt;
+
+&lt;p&gt;It’s a tragedy and, whatever happens to human civilization, much of what made this world so amazing
+will be changed.&lt;/p&gt;</content><author><name></name></author><summary type="html">It’s been quite the Winter for snow in North London. My first winter here has been just as lucky as was my first in York, which is when I took this photograph.</summary></entry><entry><title type="html">I’m finding London hard</title><link href="https://46b.it/2017/finding-london-hard/" rel="alternate" type="text/html" title="I'm finding London hard" /><published>2017-12-04T00:00:00+00:00</published><updated>2017-12-04T00:00:00+00:00</updated><id>https://46b.it/2017/finding-london-hard</id><content type="html" xml:base="https://46b.it/2017/finding-london-hard/">&lt;p&gt;I haven’t posted here in 5 months. That’s when I moved to London, which has been really hard for me. So much change. Not being in York. Not being a student.&lt;/p&gt;
+
+&lt;p&gt;It’s not like being in York was always easy. I got quite horribly traumatised. I went through a lot of therapy. I took 6 years to finish a 4 year degree–even if I spent 18 months of that leading the tech side of a startup, 6 months processing archaeological data, helped run half a dozen societies, wrote articles analysing representation in student government, helped build an amateur dramatic set, etc. But York was what I knew, and I’d learned to be happy there.&lt;/p&gt;
+
+&lt;p&gt;Working in a large, flat team (now ~20 people) is nice–but a definite stressor for me. I’ve found my communication skills challenged in lots of new ways. Lots of new situations that I had to understand and adapt to. Lots of different ways of life–meeting people in somewhat different life situations, with different needs and points of view. Enjoyable, but challenging in a way I don’t think most people understand.&lt;/p&gt;
+
+&lt;p&gt;On a related note, I chased an assessment letter from York and am finally coming to terms with some things about myself and why communication might be hard. I’m trying not to self-censor here. It’s hard. Give me time. Okay. I’m autistic.&lt;/p&gt;
+
+&lt;p&gt;In terms of the work I’ve delivered, I’m quite happy. I lacked a lot of career direction as I finished my MEng. I’ve done so much web development between 11 and 24 that I find it relatively uninteresting. Joining GDS I’d hoped to find a very different (but in a good way) environment to the small organisations I’ve thrived in before now. By luck (or because I was fiddling with implementing distributed hash tables in my spare time) I’ve ended up working on the GOV.UK PaaS. While my job title is Developer, I felt very much like my first three months were being retrained in Ops. It’s not that I couldn’t do opsy things before, but it’s learning how to make responsible decisions in a somewhat different context.&lt;/p&gt;
+
+&lt;p&gt;I’m having to slowly form a new life in London. It’s an opportunity: new communities more relevant to who I am now, like an LGBTQ choir I went to the other day. But it’s also quite frightening. I went back to University because there were lots of people at a time in their life where they’re quite available, and hundreds of societies, and yet the Uni degree as some structure. Non-Uni life isn’t quite like that. But I’ve found a room in a lovely flat near Finsbury Park, near some nice walks, and I’m hoping to be very happy in time.&lt;/p&gt;</content><author><name></name></author><summary type="html">I haven’t posted here in 5 months. That’s when I moved to London, which has been really hard for me. So much change. Not being in York. Not being a student. It’s not like being in York was always easy. I got quite horribly traumatised. I went through a lot of therapy. I took 6 years to finish a 4 year degree–even if I spent 18 months of that leading the tech side of a startup, 6 months processing archaeological data, helped run half a dozen societies, wrote articles analysing representation in student government, helped build an amateur dramatic set, etc. But York was what I knew, and I’d learned to be happy there. Working in a large, flat team (now ~20 people) is nice–but a definite stressor for me. I’ve found my communication skills challenged in lots of new ways. Lots of new situations that I had to understand and adapt to. Lots of different ways of life–meeting people in somewhat different life situations, with different needs and points of view. Enjoyable, but challenging in a way I don’t think most people understand. On a related note, I chased an assessment letter from York and am finally coming to terms with some things about myself and why communication might be hard. I’m trying not to self-censor here. It’s hard. Give me time. Okay. I’m autistic. In terms of the work I’ve delivered, I’m quite happy. I lacked a lot of career direction as I finished my MEng. I’ve done so much web development between 11 and 24 that I find it relatively uninteresting. Joining GDS I’d hoped to find a very different (but in a good way) environment to the small organisations I’ve thrived in before now. By luck (or because I was fiddling with implementing distributed hash tables in my spare time) I’ve ended up working on the GOV.UK PaaS. While my job title is Developer, I felt very much like my first three months were being retrained in Ops. It’s not that I couldn’t do opsy things before, but it’s learning how to make responsible decisions in a somewhat different context. I’m having to slowly form a new life in London. It’s an opportunity: new communities more relevant to who I am now, like an LGBTQ choir I went to the other day. But it’s also quite frightening. I went back to University because there were lots of people at a time in their life where they’re quite available, and hundreds of societies, and yet the Uni degree as some structure. Non-Uni life isn’t quite like that. But I’ve found a room in a lovely flat near Finsbury Park, near some nice walks, and I’m hoping to be very happy in time.</summary></entry><entry><title type="html">Day 9: Welcome to Berlin</title><link href="https://46b.it/2017/welcome-to-berlin/" rel="alternate" type="text/html" title="Day 9: Welcome to Berlin" /><published>2017-07-08T00:00:00+01:00</published><updated>2017-07-08T00:00:00+01:00</updated><id>https://46b.it/2017/welcome-to-berlin</id><content type="html" xml:base="https://46b.it/2017/welcome-to-berlin/">&lt;p&gt;Yesterday I &lt;a href=&quot;/2017/hannover-to-berlin/&quot;&gt;left Hannover for Berlin&lt;/a&gt; on the second-to-last leg of &lt;a href=&quot;/2017/northwestern-europe/&quot;&gt;my rail trip across Europe&lt;/a&gt;! I can’t believe this trip is nearly over - I fly home from Prague a little before 9pm on Day 12.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;alexanderplatz-and-the-pergamon-museum&quot;&gt;Alexanderplatz and the Pergamon Museum&lt;/h2&gt;
+
+&lt;p&gt;The natural starting point for a day walking across the centre of Berlin seemed to be Alexanderplatz. It is a large area with monumental buildings, which leads on to Museum Island (see below) and the rest of Central Berlin. The highly-recognisable Berlin TV Tower is here, as is a Rotes Rathaus (a building I’ve seen in City Simulation games for many years with knowing where it was.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-tv-tower.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-alexanderplatz-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The detailing on this church seems similar to &lt;a href=&quot;/2017/amsterdam-to-hannover/&quot;&gt;the Old City Hall in Hannover&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-alexanderplatz-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Berlin’s Museum Island has a remarkable concentration of excellent museums. I feel that I could spend a week looking through them, easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-museum-island-cathedral.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[MUSEUM ISLAND PICTURES]&lt;/p&gt;
+
+&lt;p&gt;I went to the Pergamon Museum, which exhibits major reconstructions of large ancient structures. It’s really rather impressive but the context of the structures isn’t introduced very well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-ishtar-wall.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-roman-gate.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I didn’t even try to get great photos of these. They’re too large relative to the rooms to be easily photographed, and the ceiling lets in too much light to avoid glare. See Google or go to the Museum for yourself! Similar to the British Museum they have smaller artifacts as well, some of them plaster casts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-lions.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-figure.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My hotel is around the corner from a large Muslim community centre, which was a reminder of how little I know about Islam and its cultural history. I wandered around an exhibit on Islamic Art at The Pergamon until my feet got tired, but I did find an amazing work that I believe is a vase.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-islamic-art-jug-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-pergamon-islamic-art-jug-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;brandenburg-gate-holocaust-memorial-and-checkpoint-charlie&quot;&gt;Brandenburg Gate, Holocaust Memorial and Checkpoint Charlie&lt;/h2&gt;
+
+&lt;p&gt;Over the course of the rest of the day I visited Gendarmenmarkt, the Brandenburg Gate, the Holocaust Memorial and Checkpoint Charlie. I must confess that this is presented a little out-of-order: I skipped Gendarmenmarkt at first, only to later realise that it would have been the area to stop for lunch, and headed back there for dinner later.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-gendarmenmarkt-3.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gendarmenmarkt is a large square with several magnificent large buildings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-gendarmenmarkt-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-gendarmenmarkt-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A little further West, the area of the Brandenburg Gate reminds me of Trafalgar Square. Both are concretey urban and have impressive stonework, but I feel both somehow fail to justify their apparent tourist appeal. The area does have some things of interest - notably the Reichstag and the edge of Tiergarten.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-brandenburg-gate.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-brandenburg-gate-interior.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A few minutes south is The Memorial to the Murdered Jews of Europe (more commonly known as The Holocaust Memorial.) On the surface this consists of supernumerary concrete blocks set out in a disturbing, undulating grid pattern. Underneath is a Holocaust Museum that wasn’t open today.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-holocaust-memorial.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Checkpoint Charlie was the main crossing point between West and East Berlin for much of the Cold War. As with much of Berlin the area has been completely redeveloped since, and all that remains of what was once there is the little hut in the middle of the road.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-checkpoint-charlie.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This area is quite the tourist trap and the Berlin Wall places to visit seem to be elsewhere. But there is remarkably detailed information for such a public site along a few walls on the roadside.&lt;/p&gt;
+
+&lt;h2 id=&quot;topography-of-terror&quot;&gt;Topography of Terror&lt;/h2&gt;
+
+&lt;p&gt;I don’t have the words to convey this experience, not without blubbering them out through pillows. This free collection of exhibits, on the site of the former SS headquarters, deconstructs how the Nazis built their terrible state and committed so many evils.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-topography-of-terrors.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- There isn't much to say about this place. It's a detailed and haunting look at how the Nazis came to power, how they consolidated their control of the government, how they kept the populace on side, and how they pursued their terrible ends. --&gt;
+
+&lt;p&gt;I don’t think I’ve ever been somewhere where every visitor was so silent or so close to tears. If not for children, footsteps and the occasional tourguide it might be nearly silent. It mixes evidence, pictures, personal accounts and higher-level information in a way that one can’t help but find haunting.&lt;/p&gt;
+
+&lt;p&gt;I’m very glad I went. The information on &lt;em&gt;how&lt;/em&gt; they got the populace on side and how they &lt;em&gt;kept&lt;/em&gt; the populace on side through so many horrors is a valuable cautionary tale. But if you go then try to go with someone you can hug afterwards, or take tissues.&lt;/p&gt;</content><author><name></name></author><summary type="html">Yesterday I left Hannover for Berlin on the second-to-last leg of my rail trip across Europe! I can’t believe this trip is nearly over - I fly home from Prague a little before 9pm on Day 12.</summary></entry><entry><title type="html">Day 8: Hannover–Berlin</title><link href="https://46b.it/2017/hannover-to-berlin/" rel="alternate" type="text/html" title="Day 8: Hannover–Berlin" /><published>2017-06-28T00:00:00+01:00</published><updated>2017-06-28T00:00:00+01:00</updated><id>https://46b.it/2017/hannover-to-berlin</id><content type="html" xml:base="https://46b.it/2017/hannover-to-berlin/">&lt;p&gt;Yesterday I got to Hannover, Germany. I’m here on the way to Berlin, visiting a more realistic, non-capital-city and yet thoroughly pleasant city. &lt;a href=&quot;/2017/amsterdam-to-hannover/&quot;&gt;Last night&lt;/a&gt; I wandered through much of the Old Town and down to the large Maschsee lake. Today I’m visiting &lt;a href=&quot;https://en.wikipedia.org/wiki/Herrenhausen_Gardens&quot;&gt;The Royal Gardens of Herrenhausen&lt;/a&gt; and hopping back on a Deutsche Bahn ICE train to Berlin.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-royal-gardens-of-herrenhausen&quot;&gt;The Royal Gardens of Herrenhausen&lt;/h2&gt;
+
+&lt;p&gt;The gardens are divided into two areas, with half composed of short greenery and the other half of quite tall trees. The best way to show this is a satellite view, so please forgive the size of the Google Map below.&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&quot;position:relative;width:100%;height:0;padding-bottom:90.05%;&quot;&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5965.481180443901!2d9.693881703646845!3d52.38798026606271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8aba2eb652d94572!2sHerrenhausen+Gardens!5e1!3m2!1sen!2sde!4v1498337882836&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;To make my 12:31pm train, I got there shortly after it opened at 9am. I seemed to be the second or third visitor of the day, which was great for getting photos without people in them. Access was remarkably easy: Hannover’s main train station and main U-Bahn station are linked by a subterranean shopping mall, and from there it’s an 8 minute journey running every 7 minutes. If you visit, note that the fountains turn on from about 10am.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-circlefountain.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-gardens-front-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Statues guarding the front garden remind me of Weeping Angels from Doctor Who…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-gardens-front.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Further back there are an assortment of smaller gardens, some with roses and others with more artistic bushes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-rose-garden.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-rose.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-little-garden.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The rear garden is largely composed of trees. It has an incredibly tall waterfall, which Wikipedia claims can reach 80m high in calm weather.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-fountains.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It started to rain at this point, so I tried hiding under a tree while putting on my anorak. This tree turned out be in the spray from the fountain, which was far worse than the rain.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-fountain-spray.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The east and west in particular have beautiful geometry from long rows of trees.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-tree-row.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-tree-row-building.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The garden is encircled by a small canal. This ornate bridge presumably dates from the original construction.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-boundary-bridge.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The original palace was destroyed in WWII. In the early 2000s it was rebuilt (below), and now houses a Museum that I didn’t get to visit - a shame, as I’d have loved to hear more of the history.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-palace.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;hannoverberlin&quot;&gt;Hannover–Berlin&lt;/h2&gt;
+
+&lt;p&gt;I don’t have too much to report for the journey East to Berlin. It rained a lot, the architecture changed but not in a way I could pinpoint until Berlin, and I’m pretty tired.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/dull-near-hannover.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A little later the rain had become quite intense, the entire window a waterfall.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rain-near-hannover.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Things cleared up just in time to see a train carrying BMWs. I suppose it’s an efficient way to get them to port.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/weather-cleared-near-berlin.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/car-transporter-near-berlin.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Berlin Hauptbahnhof is somewhat more complicated (5 storeys all open plan) than I’d anticipated, and finding where tourist information was to buy a &lt;a href=&quot;https://www.visitberlin.de/en/berlin-welcome-card&quot;&gt;Berlin Welcome Card&lt;/a&gt; (3 days of public transport and free/discounted attractions) took some doing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-hauptbahnhof-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-hauptbahnhof-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Something I meant to do throughout this trip was to document the design of everyday buildings and objects. It’s too late to make a good study of that now, but here is the design of Deutsche Bahn departure signs and a U-Bahn station in eastern Berlin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-db-sign.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/berlin-ubahn-station.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have two full days to enjoy Berlin, and I’m rather fatigued. Thus I got dinner at a burger place outside the hotel (&lt;em&gt;hallo! ich möchte einen Cheeseburger und Süßkartoffelpommes, bitte&lt;/em&gt;), napped for awhile and then read up on what to do in Berlin. Bye for now!&lt;/p&gt;</content><author><name></name></author><summary type="html">Yesterday I got to Hannover, Germany. I’m here on the way to Berlin, visiting a more realistic, non-capital-city and yet thoroughly pleasant city. Last night I wandered through much of the Old Town and down to the large Maschsee lake. Today I’m visiting The Royal Gardens of Herrenhausen and hopping back on a Deutsche Bahn ICE train to Berlin.</summary></entry><entry><title type="html">Day 7: Amsterdam–Hannover</title><link href="https://46b.it/2017/amsterdam-to-hannover/" rel="alternate" type="text/html" title="Day 7: Amsterdam–Hannover" /><published>2017-06-27T00:00:00+01:00</published><updated>2017-06-27T00:00:00+01:00</updated><id>https://46b.it/2017/amsterdam-to-hannover</id><content type="html" xml:base="https://46b.it/2017/amsterdam-to-hannover/">&lt;p&gt;Previous days have been written in retrospective, as there’s been much to do and by some bizarre bad luck I managed to go away without a pen! Today however I’m able to write from trains, and between yesterday evening and today I’ve caught right up!
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Today’s plan was simple: get up around 9am, finish packing, go to Amsterdam Centraal station and catch a Deutsche Bahn InterCity train to Hannover.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why Hannover?&lt;/strong&gt; It’s about halfway into the 6-hour train from Amsterdam and Berlin, and is host to &lt;a href=&quot;https://en.wikipedia.org/wiki/Herrenhausen_Gardens&quot;&gt;The Royal Gardens of Herrenhausen&lt;/a&gt;. It’s also in the West of Germany, in the countryside, and smaller than the capital cities which otherwise make up my trip - therefore different and interesting.&lt;/p&gt;
+
+&lt;p&gt;The 30°C summer weather has definitely broken. I got up to find it wet and drizzly outside. As a result I’m wearing both long-sleeves and trousers for the first time this trip! I only have one long-sleeved item so hopefully it won’t be needed for long, although I am doing laundry in Berlin tomorrow so it might be workable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-airbnb-street.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I set off around 10:40am with a few hours to spare before the train. First stop was getting some cheap lunch from a supermarket - I’ve discovered the Albert Heijn chain has a big store near where I’m staying. For €3 they sell a very nice “Eggwrap Gerookte Zalm.” I’ve yet to translate that, but it’s sort of like an omelette wrapped around salmon, spinach and egg.&lt;/p&gt;
+
+&lt;p&gt;In Hannover I’m staying at a very nice hotel for one night, as it’s a somewhat cheaper city and therefore the cost is much less. They have a lovely-looking restaurant serving proper German food and I’d like to try it, so despite a mile of cobbles and worse I walked/carried my suitcase to Centraal to save money over getting a taxi.&lt;/p&gt;
+
+&lt;h2 id=&quot;diverted-to-the-ruhr&quot;&gt;Diverted to the Ruhr&lt;/h2&gt;
+
+&lt;p&gt;Once there I found an email from Deutsche Bahn warning of disruption to my journey. I then discovered my 1pm train no longer started from Amsterdam but from someplace a long way East into Germany! I wasn’t entirely sure who to talk to but ended up at the International Railteam Service Desk inside Centraal.&lt;/p&gt;
+
+&lt;p&gt;I got three answers as to what to do. The person handing out tickets to wait for help said I’d need to catch a domestic train and then a bus to join my train later in the journey (ew!) The other person near them said I could get the 3pm train instead, which wasn’t reassuring when discovering the 11am had also been disrupted. Somewhat worried about the hassle of a bus journey, I was pleasantly surprised by the helpdesk.&lt;/p&gt;
+
+&lt;p&gt;After about 30 seconds my number got called by the helpdesk. Their immediate reaction was really rather annoyed - they evidently hadn’t been told about the disruption and had no information on what to do. They quickly rang someone up in German, presumably Deutsche Bahn, had a lively discussion and then offered me an alternative rail journey that got to Hannover at about the same time.&lt;/p&gt;
+
+&lt;p&gt;That new journey Amsterdam–Duisburg–Hannover has turned out to be a lot of fun. I’ve been taking two ICE (InterCity Express) high-speed trains. The first is on the most modern ICE trains on the Amsterdam–Frankfurt route. The second is a slightly older ICE train running the Frankfurt–Berlin route, the same one through Hannover that I plan to get tomorrow afternoon to Berlin!&lt;/p&gt;
+
+&lt;h2 id=&quot;amsterdamduisburg&quot;&gt;Amsterdam–Duisburg&lt;/h2&gt;
+
+&lt;p&gt;I’ve noticed today how The Netherlands has a lot of sound barriers around its trainlines near settlements whereas the UK, France and Germany seem to almost never have them. It’s a real kindness to the villages and towns one passes though, particular if at night, although it does rather prevent photos!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ice-amsterdam-frankfurt.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ice-amsterdam-frankfurt-platform.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- &lt;img src=&quot;/assets/ice-amsterdam-frankfurt-interior.jpg&quot; width=&quot;600&quot;&gt; --&gt;
+
+&lt;p&gt;My friend is named after Doorn, a village 5 miles in this direction:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/doorn-direction.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;duisburg&quot;&gt;Duisburg&lt;/h2&gt;
+
+&lt;p&gt;Getting on ICE trains for an extra four hours has been quite comfortable and interesting. In Duisburg I talked to someone from Holland for half an hour about the local area. I’d found myself in the Ruhr, an industrial area of Germany that was singled out for crippling in the old Treaty of Versailles… anyhow. Apparently the locals describe themselves as being from “the pit” because it is such a big coal mining area.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rail-depot-near-hamm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/house-near-hamm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/greenhouses-near-hamm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;duisburghannover&quot;&gt;Duisburg–Hannover&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ice-frankfurt-berlin.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ice-frankfurt-berlin-interior.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we speak I’m bound for Hannover, the last stop of this train before Berlin. I am slightly tempted to rejig hotels and just go to Berlin now, but I built this pitstop in to see something which wasn’t a national capital (it’s still the state capital of Lower Saxony), take a little time out and see formal gardens, a lake and a forested park. I think it’s probably a good idea!&lt;/p&gt;
+
+&lt;p&gt;We just stopped in a place named Hamm. 80 minutes to go.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hamm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;an-evening-in-hannover&quot;&gt;An evening in Hannover&lt;/h2&gt;
+
+&lt;p&gt;It seems like a really nice place. I dropped my bag off at &lt;a href=&quot;http://www.grandhotel.de&quot;&gt;my hotel&lt;/a&gt; opposite the Hauptbahnhof and then went to explore. This first shot is of a tunnel connecting the Hauptbahnhof to the central U-Bahn station.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-hauptbahnhof.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I spotted a huge church of (to me) unusual design in the distance and went to investigate. This is the Lutheran &lt;a href=&quot;https://en.wikipedia.org/wiki/Marktkirche,_Hanover&quot;&gt;Marktkirche&lt;/a&gt;. It’s really hard to convey how large this building is - far larger than it appears in photographs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-architecture-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-architecture-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I headed for the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maschsee&quot;&gt;Maschsee&lt;/a&gt;, a vast lake to the south of the city centre. Along the way I saw the &lt;a href=&quot;https://www.hannover.de/en/Tourism-Culture/Places-of-Interest-City-Tours/Tourist-Highlights/The-Old-Town-Hall&quot;&gt;Old Town Hall&lt;/a&gt;, again with architectural features new to me. It was rather exciting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-architecture-3.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/New_Town_Hall_\(Hanover\)&quot;&gt;New Town Hall&lt;/a&gt; is vast and impressive. I was momentarily stunned.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-city-hall-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-city-hall-3.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reaching the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maschsee&quot;&gt;Maschsee&lt;/a&gt; I was stunned again. It’s about 1.5 miles long, an unusual sight when right next to a landlocked city centre!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-lake-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At the near end are pitches to play &lt;a href=&quot;https://en.wikipedia.org/wiki/Canoe_polo&quot;&gt;Kayak polo&lt;/a&gt; and a championship match was underway!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-kayak-polo.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The park of the New Town Hall is quite charming. It is almost marshy, reminiscent of University of York’s older campus that I know and love.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/hannover-city-hall-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m already very glad to have made this stop in Hannover, and there is still The Royal Gardens of Herrenhausen to come &lt;a href=&quot;/2017/hannover-to-berlin/&quot;&gt;tomorrow&lt;/a&gt;. It’s different to the capital cities I’m visiting, but far more ‘real’ while still quite modern and cosmopolitan. (Also, I got a very good deal on the hotel and the mood-lit shower plays Raindrops Keep Falling On My Head!)&lt;/p&gt;
+
+&lt;p&gt;You might wonder why I keep typing Hannover rather than the anglicised Hanover. I got in this habit because none of my reservations show up if I search for Hanover!&lt;/p&gt;
+
+&lt;p&gt;Goodnight!&lt;/p&gt;</content><author><name></name></author><summary type="html">Previous days have been written in retrospective, as there’s been much to do and by some bizarre bad luck I managed to go away without a pen! Today however I’m able to write from trains, and between yesterday evening and today I’ve caught right up!</summary></entry><entry><title type="html">Day 6: Seeing more of Amsterdam</title><link href="https://46b.it/2017/seeing-more-amsterdam/" rel="alternate" type="text/html" title="Day 6: Seeing more of Amsterdam" /><published>2017-06-26T00:00:00+01:00</published><updated>2017-06-26T00:00:00+01:00</updated><id>https://46b.it/2017/seeing-more-amsterdam</id><content type="html" xml:base="https://46b.it/2017/seeing-more-amsterdam/">&lt;p&gt;&lt;a href=&quot;/2017/amsterdam-tulips-pancakes/&quot;&gt;On Day 5&lt;/a&gt; I saw the Tulip Museum and Body Worlds, had pancakes, rode the tram and wandered a bit. For a few hours I’d considered staying an extra day in Amsterdam, spending most of it sunbathing in Vondelpark, and skipping Hannover. But then the 30°C weather broke and that option became relatively less appealing. Thus today is my last day here, and I wanted to round it out by learning a bit more about Amsterdam itself.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-palace.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Amsterdam has a lot of sides to it. You could spend a partyish few days smoking weed, partying, walking through the Red Light District and (presumably not in that district) trying to get laid - but, to be honest, that only sounds fun when bringing friends along. You could spend a painful few days visiting the Anne Frank Museum and the like - but I’m mostly leaving that part of history until Berlin. You could spend a chill few days enjoying the architecture, parks, history, museums - and that’s largely what I’ve done.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-selfie.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;amsterdam-museum&quot;&gt;Amsterdam Museum&lt;/h2&gt;
+
+&lt;p&gt;I started out by visiting the &lt;a href=&quot;https://www.amsterdammuseum.nl/en&quot;&gt;Amsterdam Museum&lt;/a&gt;, with permanent exhibits on Amsterdam’s history (independence from Spain, the Golden Age, the building of the canal layout, the Nazi Occupation and 60s/70s counterculture) and temporary exhibits on fascinating bits of culture (Puck and Hans fashion designers.)&lt;/p&gt;
+
+&lt;p&gt;I’d love to go back in time and try wearing the below as school uniform.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-museum-puck-hans.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m really quite proud of how I’ve dressed so far this trip. I’ve been overweight for a long time, which naturally means a degree of body image problems. But this trip I’ve been wearing short-sleeves and shorts and it’s been great. It is no longer 35°C outside but 24°C is easily sufficient.&lt;/p&gt;
+
+&lt;p&gt;Next I followed a &lt;a href=&quot;https://www.theguardian.com/world/2017/jun/20/chips-are-down-for-belgian-frites-as-eu-acts-on-chemical&quot;&gt;tip from The Guardian&lt;/a&gt; and went to &lt;strong&gt;&lt;a href=&quot;https://goo.gl/maps/MjGKSYg1n5k&quot;&gt;get some frites.&lt;/a&gt;&lt;/strong&gt; They were indeed very gorgeous, especially with some sort of mayonaise that I picked at random off a list in Dutch.&lt;/p&gt;
+
+&lt;h2 id=&quot;canal-tour&quot;&gt;Canal Tour&lt;/h2&gt;
+
+&lt;p&gt;I’ve walked a very long way every day of this trip so far. My feet hurt. Thus I needed something to do sitting down. By pure chance, Amsterdam is a city with canals whose view of the city beats that of the streets. So I went on a canal tour, for €11.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-canaltour.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ooh, the Tulip Museum I visited &lt;a href=&quot;/2017/amsterdam-tulips-pancakes/&quot;&gt;yesterday&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-tulip-museum-tour.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Aah, the Canal-side Rebuild I saw &lt;a href=&quot;/2017/amsterdam-tulips-pancakes/&quot;&gt;yesterday&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-canalside-rebuild-tour.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The building in the distance below is &lt;a href=&quot;https://www.hetscheepvaartmuseum.nl&quot;&gt;The National Maritime Museum&lt;/a&gt;. I didn’t get a chance to visit but I’m sure it’s amazing given Dutch history and Google reviews.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-maritime-museum.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Towards the end we went near a vast area of modern 10-storey buildings. I think the waterfront has been recently redeveloped.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-shore-newdevelopments.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Eventually, I found myself back in Vondelpark and started to write &lt;a href=&quot;/2017/amsterdam-tulips-pancakes/&quot;&gt;yesterday’s post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-ducks-again.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Heading East towards Berlin and Prague, I think I might read the Diary of Anne Frank. I need a new book to read and while I haven’t managed to visit this trip I certainly would in future - but make sure to &lt;a href=&quot;http://www.annefrank.org&quot;&gt;book online&lt;/a&gt; a week or two in advance!&lt;/p&gt;
+
+&lt;p&gt;Here’s a bonus picture, as I love the height difference of the black house:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-black-house.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">On Day 5 I saw the Tulip Museum and Body Worlds, had pancakes, rode the tram and wandered a bit. For a few hours I’d considered staying an extra day in Amsterdam, spending most of it sunbathing in Vondelpark, and skipping Hannover. But then the 30°C weather broke and that option became relatively less appealing. Thus today is my last day here, and I wanted to round it out by learning a bit more about Amsterdam itself.</summary></entry><entry><title type="html">Day 5: Amsterdam in tulips, pancakes &amp;amp; bodies</title><link href="https://46b.it/2017/amsterdam-tulips-pancakes/" rel="alternate" type="text/html" title="Day 5: Amsterdam in tulips, pancakes &amp; bodies" /><published>2017-06-25T00:00:00+01:00</published><updated>2017-06-25T00:00:00+01:00</updated><id>https://46b.it/2017/amsterdam-tulips-pancakes</id><content type="html" xml:base="https://46b.it/2017/amsterdam-tulips-pancakes/">&lt;p&gt;&lt;strong&gt;Content Warning: dissected human bodies at &lt;a href=&quot;https://en.wikipedia.org/wiki/Body_Worlds&quot;&gt;Body Worlds&lt;/a&gt; (not icky.)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-cycle-oops.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Compared to Paris the architecture feels a lot more variable and to me a lot more charming. It’s also a lot harder to photograph: from the street you’re obstructed by the trees, and I’ve noticed that the Amsterdam Museum has a painting which deliberately omits the trees in order to focus upon the architecture.&lt;/p&gt;
+
+&lt;p&gt;I’ve wanted to visit ever since I saw the movie adaptation of A Fault In Our Stars. While a major tourist destination, it had never been on my radar until I saw how cute and exciting it was. On a related note, I really dislike how in the book they stayed in a cheap hotel sharing rooms but in the movie they had them in a fancy, expensive hotel with individual rooms…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-day-2-canal-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-day-2-canal-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tulips-and-pancakes&quot;&gt;Tulips and Pancakes&lt;/h2&gt;
+
+&lt;p&gt;My first stop was a little esoteric: the &lt;a href=&quot;http://www.amsterdamtulipmuseum.com/en/&quot;&gt;Tulip Museum&lt;/a&gt; in the Jordaan neighbourhood. It discusses the origins of Tulips, their introduction to Tulip Mania and how the Dutch ended up in Tulip Mania: a major price bubble in 1637 where the newly-introduced tulips were being exchanged for apparently extraordinary prices. Sadly I don’t have a great photo for this, but it’s worth a visit!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-tulip-museum.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;About this time I’d started to feel a little bit lonely. I’m used to enjoying my own company from my teen years, but it always takes some getting used to. My sister headed home from Paris and it’s just me for the rest of the trip (another week to go!) At first I wasn’t sure how best to overcome this, so resolved to keep going about the day I’d started to plan out in my head.&lt;/p&gt;
+
+&lt;p&gt;So next, I got pancakes! I must say, York’s &lt;a href=&quot;https://doubledutchpancakehouse.com&quot;&gt;Double Dutch Pancake House&lt;/a&gt; really stood its ground against what’s apparently a renowned (if touristy) pancake house. Mine was baked rather than fried, but otherwise was quite comparable. The below was about as much as I could eat.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-half-pancake.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At about this time, the glorious weather thus far with 32+°C days and 20+°C nights broke in spectacular fashion. We got hit by a big rain shower, from which I had to hide a postcard as I had no bag. Then as I was hurrying back towards the central island (Centrum?) when a rather intense thunderstorm hit. As if from nowhere the people on the street changed from t-shirt-and-shorts-clad to long-sleeves-and-jeans.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-storm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bodies&quot;&gt;Bodies&lt;/h2&gt;
+
+&lt;p&gt;I’d hoped to visit &lt;a href=&quot;https://en.wikipedia.org/wiki/Body_Worlds&quot;&gt;Body Worlds&lt;/a&gt; while in Amsterdam and this proved an excellent place to take shelter. Lightning hit something rather close as I got my ticket, and everything shook. Thankfully the power stayed on!&lt;/p&gt;
+
+&lt;p&gt;As the rain hit I started to feel a lot better. The hardest thing about spending lots of time by yourself (or in charge) is keeping a sense of direction, and having formed one for the rest of the day I just enjoyed the novelty of a rainstorm after so many days of Florida-like weather.&lt;/p&gt;
+
+&lt;p&gt;Body Worlds proved one of the most unique and fascinating exhibitions I’ve visited. It’s actually a partnership between Body Worlds and The Happiness Project, and the mix of the two works surprisingly well. Each floor is a mix of the human body (e.g., the nervous system) and the human condition (e.g., positive mindsets.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-arteries.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-saxophone.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The top floor has the nervous system from real human bodies. Both individual ‘pieces’ and the entire thing. It’s not for the squeamish but I understand a whole lot more about my body now, and I don’t know how I would possibly have learned that without seeing quite so many bodies and parts of bodies. I’ll… stop talking before this sounds creepy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-nervoussystem.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Frightfully interesting stuff.&lt;/p&gt;</content><author><name></name></author><summary type="html">Content Warning: dissected human bodies at Body Worlds (not icky.) Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.</summary></entry><entry><title type="html">Day 4: Paris–Amsterdam</title><link href="https://46b.it/2017/paris-to-amsterdam/" rel="alternate" type="text/html" title="Day 4: Paris–Amsterdam" /><published>2017-06-24T00:00:00+01:00</published><updated>2017-06-24T00:00:00+01:00</updated><id>https://46b.it/2017/paris-to-amsterdam</id><content type="html" xml:base="https://46b.it/2017/paris-to-amsterdam/">&lt;p&gt;As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/vondelpark-ducks-fountains.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have a quiet couple of days before reaching Berlin, so it’s time to catch up with my writing starting with Day 4’s journey from Paris to Amsterdam.&lt;/p&gt;
+
+&lt;p&gt;First thing on Day 4, I needed to get some eyedrops. I suffer from dry eyes sometimes and they’re handy to have around. For more or less the first time I didn’t even try to ask for them in French - I thought the name would be far too esoteric to guess at. But they have a name I could have grasped at: &lt;em&gt;l’hydration les yeux&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second we caught a taxi from our hotel to Gare Du Nord, Paris’ north-bound station. The taxi was a Tesla and, while a big LCD screen is cool, I was surprised how simple its interior decor otherwise is.&lt;/p&gt;
+
+&lt;p&gt;With about an hour to spare I found a few things to do. I got a sausage baguette and what I’d expected to be a Tartalette Citron. As it turned out I think they gave me an apple one by mistake, but it still proved a delicious farewell to Paris. I helped a few London-bound Americans who were staring at the Eurostar trains unsure how to access them - the answer being to turn right, walk 100m down the concourse to an out-of-sight escalator, and go upstairs (really rather tricky to spot.)&lt;/p&gt;
+
+&lt;p&gt;I had a pretty long chat with a few Americans who were also getting lunch. Originally we started talking because the three of us seemed to be prime targets for beggars - the extent of it in Paris was honestly a surprise. For better or for worse, my experiences at the Louvre have me &lt;em&gt;extremely&lt;/em&gt; wary. But it was interesting to talk to fellow travellers.&lt;/p&gt;
+
+&lt;h2 id=&quot;parisamsterdam&quot;&gt;Paris–Amsterdam&lt;/h2&gt;
+
+&lt;p&gt;I was on the 12:28 Thalys service from Paris Gare Du Nord–Amsterdam Centraal, a 3h51m journey by modern high-speed train. The overhead baggage racks could contain remarkably luggage, and then I somehow managed to sit in the seat in front of mine which was rather embarrassing.&lt;/p&gt;
+
+&lt;p&gt;Heading North towards Lille and the Belgian border was quite similar to Day 1’s Eurostar journey, although I’m not sure if we were on the same train tracks. Our first major stop was Brussels-Midi (seen below), roughly 18 hours after a failed/foiled bomber at Brussels-Centrale.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/brussels-station-approach.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My position on terror attacks largely focuses on the actual risk. Few terrorist attacks in the West have come close to existential damage to their people or infrastructure, and thus it is generally safe to disregard them day-to-day. But the risk to society seems somewhat greater—the media profile and political urge to take some sort of action about even the smallest attack is vast. Carrying on and keeping calm seems the immediate way to counter that individually.&lt;/p&gt;
+
+&lt;p&gt;Heading on into The Netherlands I received my third new reason to thank the EU of my trip: a text from Vodafone taking credit for no roaming charges and my data/texts/minutes working throughout the EU. This only came into force last week and has made my trip far easier, cheaper and perhaps safer than it otherwise would have been!&lt;/p&gt;
+
+&lt;p&gt;The final leg to Amsterdam was very cute. The fields with regular drainage ditches reminded me of the Norfolk Broads only on a fantastically larger scale. The motorways and a lot of the houses seemed surprisingly reminiscent of UK suburbia. Something eye-opening was the train crossing a large body of water by bridge and immediately on the other side going sharply down below the waterlevel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/netherland-drainage-intersection.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rotterdam-platform.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;first-evening-in-amsterdam&quot;&gt;First evening in Amsterdam&lt;/h2&gt;
+
+&lt;p&gt;Amsterdam did prove to be lovely in the sun. The heatwave had temperatures around 30°C. After an fun hour wandering to my AirBNB, I was rather happy to relax in a nearby park (the Vondelpark I mention above) and do some reading. Oh, and go to a gay bar.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-canal.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vondelpark is absolutely gorgeous in 30°C - sadly I doubt it gets that weather too often:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/vondelpark-fountain.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-type-of-boy-sandwich.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;!--
+Conclusions from Paris
+- The walk bit not worth doing, go towards 16th or Sacre-Coeur instead
+- Paris eats and drinks late
+- Use CityMapper to get around (even more useful than in London, as the transport map is quite complex)
+- Paris largely because I'd have company. In practice an extremely enjoyable destination.
+- I want to go back having learned more French (Duolingo.) Perhaps to the countryside or a different city, however.
+
+&lt;img src=&quot;/assets/eurostar-st-pancras.jpg&quot; width=&quot;600&quot;&gt;
+--&gt;</content><author><name></name></author><summary type="html">As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.</summary></entry></feed>

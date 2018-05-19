@@ -1,0 +1,6 @@
+# WELCOME ROBOTS.
+
+User-agent: *
+Disallow: /blog/drafts/
+Disallow: /about/colophon/
+Disallow: /admin/

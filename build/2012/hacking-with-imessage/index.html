@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2012/hacking-with-imessage/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Building services with iMessage - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Building services with iMessage</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">November 1, 2012</p>
+    <p>Earlier this year, <a href="http://dpk.org.uk">David Kendal</a> and I discovered you can fairly easily <strong>send and receive iMessages using Ruby</strong>. The key is to interact with OS X’s Messages app, more specifically it’s AppleScript bindings. We built and released <a href="http://irepl.im">iREPL</a>, a Scheme programming environment that you can use on your iPhone/iPad without having to jailbreak. I’ve been using it for months when I fancied hacking some Lisp.
+<!--more--></p>
+
+<p><img src="/assets/imessage-irepl-example.jpg" alt="" /></p>
+
+<p>An example of using iREPL to run some Scheme. The executed replies are entirely automated and come back in roughly 1 second. It’s run without crashing since April, on a 2010 Mac Mini of mine.</p>
+
+<p>I’m going to show you how to get started on your own iMessage hack, that bounces your iMessages back to you. Let’s get started.</p>
+
+<h2 id="what-youll-need">What you’ll need</h2>
+<p>These instructions are for OSX Mountain Lion, but should work for Lion onwards. If using Lion you’ll have to <a href="http://appldnld.apple.com/MessagesBeta/041-4274.20120216.z5km/MessagesBeta.dmg">manually install Messages Beta</a>. I’ll talk about some tools you can use to go beyond this tutorial later.</p>
+
+<h2 id="about-applescript">About AppleScript</h2>
+<p>Included with OSX is a programming language called AppleScript, designed to resemble natural language as opposed to the syntax of languages like C or even Ruby. Open up the Preferences pane of Messages.app and click the Alerts tab. You’ll notice a long list of events with the option to “Run an Applescript script”.</p>
+
+<p><img src="/assets/imessage-events-intro.png" alt="" /></p>
+
+<p>Notice the AppleScript option. This is how we’ll hook our programs up to iMessage.</p>
+
+<h2 id="getting-going">Getting going</h2>
+<p>The first thing to bear in mind is that Messages is heavily based on the previous iChat app. So much so, in fact, that even for iMessage it still forces you to “Accept” a new contact. The first thing to do therefore is to work around this by scripting it. Save the following script as <code class="highlighter-rouge">imessage-accept.scpt</code>:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">using terms from</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"Messages"</span><span class="w">
+  </span><span class="nb">on</span><span class="w"> </span><span class="nv">recieved</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="nv">invitation</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w"> </span><span class="nb">for</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+    </span><span class="nv">accept</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">using terms from</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Now tell Messages to run this whenever a new chat is initated. In the app Preferences, browse to Events, select the Text Invitation event and Choose your <code class="highlighter-rouge">imessage-accept.scpt</code> script.</p>
+
+<p><img src="/assets/imessage-autoaccept.png" alt="" /></p>
+
+<p>If you send yourself an iMessage now, then you’ll notice nothing’s changed from before. You might think this script is pointless, and you’d be correct: it’s just needed if we’re to intercept the first iMessage.</p>
+
+<h2 id="replying-to-imessages">Replying to iMessages</h2>
+<p>Next up is the actual replying. To keep things simple we’re just going to reply to an iMessage saying the same thing (that is, we’ll ‘bounce’ the iMessage). Save the following as <code class="highlighter-rouge">imessage-received.scpt</code>:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">using terms from</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"Messages"</span><span class="w">
+  </span><span class="nb">on</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w"> </span><span class="nb">for</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+    </span><span class="nv">send</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">using terms from</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Similarly to what you did with <code class="highlighter-rouge">imessage-accept.scpt</code>, set the Message Received Event to run your new <code class="highlighter-rouge">imessage-received.scpt</code> script. If you</p>
+
+<p>You’ll also need to update your <code class="highlighter-rouge">imessage-accept.scpt</code> script by adding the <code class="highlighter-rouge">send text to buddy</code> line, so that the first iMessage from a new contact also gets replied to. You’ll need to reselect for the Text Invitation Event to update it’s copy of your script. If you’ve done that right, <code class="highlighter-rouge">imessage-accept.scpt</code> should now look like this:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">using terms from</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"Messages"</span><span class="w">
+  </span><span class="nb">on</span><span class="w"> </span><span class="nv">recieved</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="nv">invitation</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w"> </span><span class="nb">for</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+    </span><span class="nv">accept</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+    </span><span class="nv">send</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">using terms from</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>You’re probably starting to get the picture. Every time you alter a script you need to reselect it for the Event, and Text Invitation runs exclusively for the first message you recieve from an iMessage user.</p>
+
+<h2 id="where-to-go-from-here">Where to go from here</h2>
+<p>You’ve more than one option. What we did for iREPL was to use <a href="http://macruby.org">MacRuby</a>, a Ruby implementation designed for working closely with OS X. MacRuby makes it easy to interact with AppleScript bindings from a more popular programming language.</p>
+
+<p>If you’d like to look into a bit more of how we put iREPL together, examine the source in it’s <a href="https://github.com/46Bit/irepl">Github repository</a>.</p>
+
+<p>One final bit of help: as an example of how to run shell commands securely, protected from shell-injection vulnerabilities:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">using terms from</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"iChat"</span><span class="w">
+  </span><span class="nb">on</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w"> </span><span class="nv">the_message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w"> </span><span class="nb">for</span><span class="w"> </span><span class="nv">the_chat</span><span class="w">
+    </span><span class="k">set</span><span class="w"> </span><span class="nv">quoted_message</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">quoted form</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">the_message</span><span class="w">
+    </span><span class="k">set</span><span class="w"> </span><span class="nv">quoted_id</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">quoted form</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="p">(</span><span class="na">id</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">the_buddy</span><span class="w"> </span><span class="k">as </span><span class="nc">text</span><span class="p">)</span><span class="w">
+    </span><span class="nb">do shell script</span><span class="w"> </span><span class="s2">"echo "</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">quoted_message</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">" | ~/your-script-here.sh "</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">quoted_id</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="nv">received</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">using terms from</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><a href="/contact/">Let me know</a> if you’d like a further tutorial on the MacRuby side of things as used in iREPL - although I can’t claim to have more than a limited working knowledge.</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2012/on-efficiently-pairing-socks/">&larr; On efficiently pairing socks</a>
+    
+    
+      <a class="next" href="/2012/two-weeks-with-go/">Two weeks with Go: an initial review &rarr;</a>
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

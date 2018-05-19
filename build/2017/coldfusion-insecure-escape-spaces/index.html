@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2017/coldfusion-insecure-escape-spaces/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Why we escape spaces against XSS - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Why we escape spaces against XSS</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">March 1, 2017</p>
+    <p>I’m in my Masters year at the moment, which means I have a lot fewer classes but a lot higher expectations in assignments. I’m also undertaking an MEng project (I’ll write about this sometime.) So I have a lot more unreserved time but a bit more work to do. I’ve been filling one day a week doing security and maintainance work on old ColdFusion web applications.</p>
+
+<p>ColdFusion is an old web technology that Macromedia put out. It’s like you implementated of PHP in HTML tags. For I have been working with it - trying to secure a large number of small webapps built with it in years gone by.</p>
+
+<p>There’s a bit of a problem with securing these legacy apps. They’re a mess, and <strong>ColdFusion is insecure by default.</strong> Let’s take some typical Ruby <code class="highlighter-rouge">erb</code> markup:
+<!--more--></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">input</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"forename"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"&lt;%= forename %&gt;"</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">&lt;%= … %&gt;</code> tags automatically escape what’s being printed against XSS. The default case is the safe one. Outputting without escaping has to be explictly specified with the <code class="highlighter-rouge">raw</code> function. Sadly, ColdFusion only autoescapes in special cases - and I’ve been warned that even then it isn’t bulletproof.</p>
+
+<pre><code class="language-coldfusion">&lt;cfinput name="forename" value="#form.forename#"&gt;
+</code></pre>
+
+<p>People running ColdFusion are generally moving to the open source <a href="@TODO">Railo</a> and <a href="@TODO">Lucee</a> servers. These applied a sanity pass to what they should support.</p>
+
+<p>A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.</p>
+
+<p><img src="/assets/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="600" /></p>
+
+<p>The intersection of secure and available in both is to import the <a href="https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API">OSASP ESAPI API</a> from Java.</p>
+
+<pre><code class="language-coldfusion">&lt;cfoutput&gt;
+    &lt;input name="forename" value="#request.esapi.encodeForHTMLAttribute(form.forename)#"&gt;
+&lt;/cfoutput&gt;
+</code></pre>
+
+<p>Yuck, huh? You might notice we’re using <code class="highlighter-rouge">cfoutput</code> and <code class="highlighter-rouge">input</code> tags now. As I’ll explain, this works around double-escaping issues.</p>
+
+<h2 id="why-escape-spaces-against-xss">Why Escape Spaces against XSS?</h2>
+
+<p>In one of these application I was escaping a <code class="highlighter-rouge">cfinput value</code> with ESAPI:</p>
+
+<pre><code class="language-coldfusion">&lt;cfinput name="forename" value="#request.esapi.encodeForHTMLAttribute(form.forename)#"&gt;
+</code></pre>
+
+<p>But on Lucee <code class="highlighter-rouge">cfinput</code> is running <code class="highlighter-rouge">encodeForHTMLAttribute</code> itself and so we’re double-escaping <code class="highlighter-rouge">form.forename</code>. So some characters got double escaped: ` ` (space) → <code class="highlighter-rouge">&amp;#32;</code> → <code class="highlighter-rouge">&amp;amp;#32;</code>.</p>
+
+<p>Instead of <code class="highlighter-rouge">Stranger Things</code> your prefilled form field now says <code class="highlighter-rouge">Stranger&amp;#32;Things</code>.</p>
+
+<p>You wanted this: <input value="Stranger&#32;Things" /><br />
+You get this: <input value="Stranger&amp;#32;Things" /></p>
+
+<p>This could have the approach of escaping almost any character outside <code class="highlighter-rouge">/a-z0-9/i</code> but I was genuinely surprised that spaces are escaped. I found myself wondering why. Turns out there is a very good reason. Let’s go back to <code class="highlighter-rouge">erb</code>, which escapes by default.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"forename"</span> <span class="na">value=</span><span class="s">&lt;%=</span> <span class="na">forename</span> <span class="err">%</span><span class="nt">&gt;</span>&gt;
+</code></pre>
+</div>
+
+<p>See how there’s no quotation marks for the <code class="highlighter-rouge">value</code> attribute? HTML is happy without them. So a library that doesn’t escape spaces would leave you vulnerable.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>forename = 'Stranger<span class="ni">&amp;amp;</span>Things onload=alert("XSS")'
+
+<span class="nt">&lt;input</span> <span class="na">value=</span><span class="s">Stranger&amp;amp;Things</span> <span class="na">onload=</span><span class="s">alert('XSS')</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>I think this fits into Defence In Depth. Attribute tags <em>should</em> have the quotation marks, but mistakes happen and nobody is looking for that particular mistake. You have a problem when it only takes one missing quotation mark to open up your website to XSS. Escaping spaces is therefore quite important.</p>
+
+<h2 id="salvaging-legacy-applications">Salvaging legacy applications</h2>
+
+<p>I’ve found this a frustrating but enjoyable bit of work. Legacy is always a bit fascinating - at Archaeology Data Service I was reverse-engineering some ‘interesting’ ESRI XML formats.</p>
+
+<p>I don’t know how completely one can secure applications by hand when they’re messy, insecure by default, and number in the dozens. I’m doing my very best and making heavy use to regexes to check every last <code class="highlighter-rouge">#…#</code> and use of <code class="highlighter-rouge">cf</code> tags. But this is only a very small slice of ColdFusion’s weirdness: by default it acts like <a href="https://en.wikibooks.org/wiki/PHP_Programming/Configuration:_Register_Globals">PHP with <code class="highlighter-rouge">register_globals</code> turned on</a>.</p>
+
+<p>Well-built software has lingering undiscovered security problems; with sufficient mess one is guaranteed to miss some. But my regexes and discipline does allow eliminating some error classes in near-entirety.</p>
+
+<p>I think my next step should be to fuzz these applications. That’s how they’ll be attacked, so I think it’s absolutely necessary to do it ourselves. I should also take a look into the <code class="highlighter-rouge">X-XSS-Protection</code> header, but I’m guessing it isn’t something to rely upon.</p>
+
+<p>Until next time,<br />
+— 46bit</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2017/rust-generating-syntax-trees/">&larr; Generating expression trees in Rust</a>
+    
+    
+      <a class="next" href="/2017/evolutionary-computing/">Introduction to Evolutionary Computing &rarr;</a>
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

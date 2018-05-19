@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2014/uoybus/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>UoYBus: Aggregating live bus routes to University - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>UoYBus: Aggregating live bus routes to University</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">July 7, 2014</p>
+    <p>Since November I’ve been quietly running <a href="http://uoyb.us">UoYBus</a>, a live bus times webapp focused on the particular whims of the #4 and #44 bus routes serving <a href="http://york.ac.uk">University of York</a>. Today I released a big improvement.
+<!--more--></p>
+
+<p>Both bus routes go to the Railway Station and the far end of Campus, but in both the City Centre and on Campus they take quite different routes. Thus it’s quite handy to be able to get times for both sets of stops quickly.</p>
+
+<p>In January we put a jQuery UI-based frontend on it, but this bolt-on interface left much to be resolved in user experience. Since it’s holidays and I’ve had to take a month off, I decided to sketch up an improved design.</p>
+
+<h2 id="difficulties-in-design">Difficulties in design</h2>
+<p>The key thing about UoYBus is that it isn’t a generalised bus app, of which dozens exist already. Thus it needs a dead simple interface of (a) where in York are you and (b) where are you going?</p>
+
+<p>I’m not a huge fan of geolocation, so for now I’ve stuck to a traditional web interface. I assume most app users are going to be experienced Yorkers, thus the issue is more deciding which stop to go to than how to get there. This is going to change when I add on a full journey planner, hopefully in time for September’s new students.</p>
+
+<p>To begin with the redesign I took inspiration from the 1D user interface of Yo - a list of big, bright rectangle buttons. This proved reasonably effective but the user feedback wasn’t so good. It also doesn’t allow much room for expansion, as anything but big buttons look out of place.</p>
+
+<p><img src="/assets/uoybus-yo.png" alt="" /></p>
+
+<p>That’s too bold a design, and picking so many colours proved tricky.</p>
+
+<h2 id="route-based-design">Route-based design</h2>
+
+<p>Following this I decided to pick up the route concept from National Rail Enquiries and CityMapper, considering the line of stops buses make rather than a dislocated series of stops. This led me to the final design concept.</p>
+
+<p><img src="/assets/uoybus-home.png" alt="" /></p>
+
+<p>This is remarkably flexible but also familiar to users of other travel apps. Since the first and last stop areas have implicit directions, there’s no need for the extra direction option present in the jQuery UI design. A similar screen suffices for choosing which way you’re going.</p>
+
+<p><img src="/assets/uoybus-result.png" alt="" /></p>
+
+<p>The final results page includes two minor nice features. The stop list is abbreviated to give the final stop only, with a wider dotted line to indicate skipped stops. Whilst not live yet I can use the final stop to give more information like walking directions and the current weather - a lot of bus journeys aren’t worth the cost when you have to wait.</p>
+
+<h2 id="open-development">Open development</h2>
+
+<p>The code behind UOYBus needs a lot of work, but is MIT-licensed on <a href="https://github.com/46bit/uoybus">Github</a>. Beyond adding a lot of useful information to UoYBus itself, I’d like to make the app easier to repurpose.</p>
+
+<p>I want to factor out the York-specific data and enable anyone to run this for their local busroute within minutes. I’ve some ideas about doing this, but it’s tricky to do.</p>
+
+<h2 id="commercial-viability">Commercial viability</h2>
+
+<p>The difficulty running this sort of live bus app is paying for the <a href="http://transportapi.com">API calls</a> when effectively nonprofit. I’m going to try ads whilst promoting UoYBus, given a lot of companies in York want to promote things to students.</p>
+
+<p>My big hope for this long-term is to build a Yorkshire guide integrating attractions, events, transport. Something of a travel guide for locals and non-locals alike. York is the perfect place to pilot something like this.</p>
+
+<p>For now, give <a href="http://uoyb.us">UoYBus</a> a try!</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2014/cannot-unsell-hospital-records/">&larr; You can't unsell Hospital Records</a>
+    
+    
+      <a class="next" href="/2017/yusu-election-colleges/">Battle of the colleges: who’s got the BNOCs &rarr;</a>
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>
