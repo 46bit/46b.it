@@ -25,6 +25,8 @@ twitter_username: 46bit
 github_username:  46bit
 
 # Build settings
+source: source
+destination: build
 markdown: kramdown
 gems:
   - jekyll-feed
