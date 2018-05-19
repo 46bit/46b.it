@@ -1,7 +1,7 @@
-git checkout -b release
+git checkout release
 
 # Contain ./release file within release branch. Read only once checked out.
-let release_number=`cat _release | sed -e s/r//g`+1
+let release_number=`cat release | sed -e s/r//g`+1
 release="r$release_number"
 echo "Performing release $release"
 
@@ -9,8 +9,8 @@ echo "Performing release $release"
 git merge develop
 
 # Write, commit, tag and push new release name.
-echo $release > ./_release
-git add ./_release
+echo $release > ./release
+git add ./release
 git commit -m "Performing release $release"
 git tag -a $release -m "Release $release"
 git push -f origin release
