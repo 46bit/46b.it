@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2018/introduction-to-comms/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>An introduction to Comms - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>An introduction to Comms</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">May 19, 2018</p>
+    <p class="intro"><em>This post introduces my experimental Rust library, <a href="https://github.com/46bit/comms"><code>comms</code></a>. Comms makes it much easier to build asynchronous servers with Futures and Tokio by implementing common operations in reliable, convenient code. There is a lot left to do but the functionality presented here is working and most is well tested.</em></p>
+
+<p class="intro">When building network servers you're working with packets across a network. These are inherently very complex, so we use the TCP or UDP protocols. These are inherently complex, so Tokio implements <code>Encoder</code> and <code>Decoder</code> traits to process bytes into something higher-level.</p>
+
+<h2 id="working-with-a-single-connection">Working with a single connection</h2>
+
+<p><code class="highlighter-rouge">comms::Client</code> is rather simple conceptually. It stores a connection to a client (generally a <code class="highlighter-rouge">Framed</code>-wrapped <code class="highlighter-rouge">TcpStream</code>) along with an identifier for the connection.</p>
+
+<!-- ``` rust
+// Sometimes we use an unidentified `Client`. Here we set the ID to an empty tuple `()`.
+Client::new((), socket)
+``` -->
+
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="c">// Send a hello message and then wait indefinitely for a message.</span>
+<span class="n">client</span><span class="nf">.transmit</span><span class="p">(</span><span class="nn">Msg</span><span class="p">::</span><span class="n">Hello</span><span class="p">)</span>
+  <span class="nf">.and_then</span><span class="p">(|</span><span class="n">client</span><span class="p">|</span> <span class="n">client</span><span class="nf">.receive</span><span class="p">())</span>
+  <span class="nf">.and_then</span><span class="p">(|(</span><span class="n">client</span><span class="p">,</span> <span class="n">msg</span><span class="p">)|</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Received {:?}"</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
+  <span class="p">});</span>
+
+<span class="c">// If using a raw Framed socket, this is very similar.</span>
+<span class="n">conn</span><span class="nf">.send</span><span class="p">(</span><span class="nn">Msg</span><span class="p">::</span><span class="n">Hello</span><span class="p">)</span>
+  <span class="nf">.and_then</span><span class="p">(|</span><span class="n">conn</span><span class="p">|</span> <span class="n">conn</span><span class="nf">.into_future</span><span class="p">())</span>
+  <span class="nf">.and_then</span><span class="p">(|(</span><span class="n">conn</span><span class="p">,</span> <span class="n">msg</span><span class="p">)|</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Received {:?}"</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Receiving here blocks forever, or at least until the underlying connection drops. In general you want to use a timeout:</p>
+
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="c">// Send a hello message and wait 5 seconds for a message to appear.</span>
+<span class="c">// Disconnect the client if no message is received.</span>
+<span class="k">let</span> <span class="n">timer</span> <span class="o">=</span> <span class="nn">tokio_timer</span><span class="p">::</span><span class="nn">Timer</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+<span class="k">let</span> <span class="n">timeout_duration</span> <span class="o">=</span> <span class="nn">Duration</span><span class="p">::</span><span class="nf">from_secs</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">client</span><span class="nf">.receive</span><span class="p">()</span><span class="nf">.with_hard_timeout</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+  <span class="nf">.and_then</span><span class="p">(|(</span><span class="n">client</span><span class="p">,</span> <span class="n">msg</span><span class="p">)|</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Received {:?}"</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
+  <span class="p">});</span>
+
+<span class="c">// The code for doing this with raw `tokio_timer` would be much nastier.</span>
+</code></pre>
+</div>
+
+<p>Sometimes we don’t want to disconnect the client if no message is received. We just want to wait a little while to see if a message is received.</p>
+
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="c">// Send a hello message and wait 5 seconds for a message to appear.</span>
+<span class="c">// Keep the client connected if no message is received.</span>
+<span class="k">let</span> <span class="n">timer</span> <span class="o">=</span> <span class="nn">tokio_timer</span><span class="p">::</span><span class="nn">Timer</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+<span class="k">let</span> <span class="n">timeout_duration</span> <span class="o">=</span> <span class="nn">Duration</span><span class="p">::</span><span class="nf">from_secs</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">client</span><span class="nf">.receive</span><span class="p">()</span><span class="nf">.with_soft_timeout</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+  <span class="nf">.and_then</span><span class="p">(|(</span><span class="n">client</span><span class="p">,</span> <span class="n">maybe_msg</span><span class="p">)|</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">=</span> <span class="n">maybe_msg</span> <span class="p">{</span>
+      <span class="nd">println!</span><span class="p">(</span><span class="s">"Received {:?}"</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nd">println!</span><span class="p">(</span><span class="s">"Timed out without receiving a message."</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="c">// As I understand it, this is yet to even be possible without a custom implementation of Future.</span>
+</code></pre>
+</div>
+
+<h2 id="working-with-many-connections">Working with many connections</h2>
+
+<p>Where my library shines is in working with many client connections. It’s very common that we want to communicate with lots of clients at once.</p>
+
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="k">mut</span> <span class="n">room</span> <span class="o">=</span> <span class="nn">Room</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+<span class="n">room</span><span class="nf">.insert</span><span class="p">(</span><span class="n">client0</span><span class="p">);</span>
+<span class="n">room</span><span class="nf">.insert</span><span class="p">(</span><span class="n">client1</span><span class="p">);</span>
+<span class="n">room</span><span class="nf">.transmit</span><span class="p">(</span><span class="nn">Msg</span><span class="p">::</span><span class="n">Hello</span><span class="p">)</span>
+  <span class="nf">.and_then</span><span class="p">();</span>
+</code></pre>
+</div>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

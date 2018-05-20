@@ -11,6 +11,9 @@
       {% if post.hide %}
         {% continue %}
       {% endif %}
+      {% if post.draft %}
+        {% continue %}
+      {% endif %}
       <li>
         <!--<p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>-->
         {% if post.external_url %}

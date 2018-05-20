@@ -34,6 +34,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+show_drafts: true
 excerpt_separator: "<!--more-->"
 jekyll-archives:
   enabled:

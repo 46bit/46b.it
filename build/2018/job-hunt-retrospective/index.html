@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2018/job-hunt-retrospective/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Job Hunt Retrospective - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li class="active"><a href="/">Writing</a></li>
+          <li ><a href="/about/">About</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="https://github.com/46bit">Github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Job Hunt Retrospective</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">May 19, 2018</p>
+    <p>https://lobste.rs/s/tne8s4/how_much_work_is_it_reasonable_ask_for_take#c_pmj8lf and how companies that ask for a multi-hour coding test immediately after a screening interview were consistently the ones that seemed to decide late they wanted someone more senior. Bizarre as someone more senior in my book might take longer to create a basic application.</p>
+
+<p>How The Guardian’s interview and their pairing exercises were great prep for GDS.</p>
+
+<p>Competency based interviews and how they’re difficult to do if coming from a slightly odd background as you have to do enough to swap lots of old memories into your head to use as further examples? I don’t think I could write clearly about this.</p>
+
+<p>The critical thing may be to preserve a diversity of interview approaches. Each approach is opinionated and will favour different people of those who would be good (or bad) at the job. If everyone selects that same subset it’s not good for everyone, so people using a variety of approaches but hopefully getting better at inclusivity where people are visibly excuded (women, PoC, etc) would be good.</p>
+
+<h2 id="copied-from-other-draft-takeaways-from-gds-interview">Copied from other draft: Takeaways from GDS interview</h2>
+
+<p>Leading up to the Government Digital Service interview today I’d been really, really nervous. Part of that is from post-dissertation burnout, but some of it results from my background. Most of the work I’ve done has been individual or in small teams, which naturally makes it harder to relate to competency-based questions. In practice I’ve been rather good at them on the spot because I have quite such a diversity and depth of experience, but I feel that the smaller environments mean team-related questions tend to lack a certain ‘oomph’ that I can definitely provide for more technical or sole-contributor-related questions.</p>
+
+<p>What I did was to study the relevant Civil Service Competencies, summarising each in a few words and then taking each trait and relating an aspect of past experience. Surprisingly few experiences came up repeatedly, although a few experiences (such as the Cyberpracticals) had enough team-related difficulties, actions and successes that they acted as something of a ‘catch-all’. Each competency went on an index card, largely in case I got stuck in the interview and needed a prompt. These summaries were a big help in answering larger, tougher questions because it meant I better understood the underlying experiences I could narrate.</p>
+
+<p>As well as this I worked on doing more TDD. Right up until I started the coding test I wasn’t sure whether to use Python or Rust, but I chose Python for two equal reasons. First, because the problem to be solved would be no easier in Rust for me. Second, because time spent narrating Rust to the interviewer would be time not spent narrating my abilities. If applying to teach software or as an expert in programming languages this would have been fine, but focusing on my strengths is better. One thing I tried to really cap my practicing was to build a REST API, using Python and Flask, in a TDD style. This was really quite difficult for me, for reasons largely unrelated to an API or REST. A certain level of boilerplate is needed for it to work, and in Python I struggled to find inspiration of how to reduce it. In Rust I didn’t find convincing examples, with some relevant libraries expecting the passing of a query string as a string.</p>
+
+<p>I think rapport went well, they got to the edge of my knowledge (scaling past the point of sharding, non-relational/geospatial/timeseries databases, key-value stores, and building efficient features such as Twitter’s timeline.) They also seemed to respond well to my questions, and appreciate how narrative I was in the coding test. There were a few times where I was coding a quick few lines without narrating where it was going, which worked well given rapport but might not have worked well with a less engaged interviewer.</p>
+
+<blockquote>
+  <p>I definitely didn’t know everything I was asked in the interview but being prompted allows you to realise you know more than you think you do.</p>
+
+  <p>—<a href="https://digitalpeople.blog.gov.uk/2017/03/08/digital-people-michaela-benyohai-developer-for-data-at-gds/">Digital People: Michaela Benyohai, Tech Lead for data at GDS</a></p>
+</blockquote>
+
+<p>It’s true. A few times, when it comes to the benefits of splitting things out into separate tables vs embedding them in a single document, I found my knowledge while talking through something else.</p>
+
+<p>Something interviews aren’t very good for is teaching exact terminology. I couldn’t describe SQL databases in terms of the various concepts, more how they are used. Databases in general are definitely something I should get stronger with.</p>
+
+<p>I guess I’ll see next week if I get a Developer position. Fingers, toes, everything crossed. The panel definitely got a fair impression of me, so whereas sometimes a bad interview makes you miserable when you get declined I think I’d find this relatively empowering provided I could get feedback on the areas that GDS and similar orgs would like me to demonstrate more of.</p>
+
+<p><strong>Coding interview points</strong></p>
+
+<ul>
+  <li>Always be talking about how and why, including things like the design space you’re architecting it within and keeping clearing up any ambiguities.</li>
+  <li>Ask about whether they’d like you to refactor or keep implementing</li>
+  <li>Write types, but no implementation, then write tests, then write implementations.</li>
+  <li>It’s best to start with a straightforward representation of state, and at some point you might start feeling like your state representations are largely working around its issues. At that point you might be too short on time to properly resolve things, so give the interviewer your best impression of how to change the state representation to remove those transformations and offer them the choice between doing that refactoring and continuing with the spec.</li>
+</ul>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+    
+  </div>
+<article>
+
+  <script>
+  // Tracking
+  if (document.location.hostname != "localhost") {
+    // GoSquared
+    var GoSquared = {};
+    GoSquared.acct = "GSN-207291-Q";
+    (function(w){
+      function gs(){
+        w._gstc_lt = +new Date;
+        var d = document, g = d.createElement("script");
+        g.type = "text/javascript";
+        g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(g, s);
+      }
+      w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+
+    // Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22921213-1']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  </script>
+</body>
+</html>

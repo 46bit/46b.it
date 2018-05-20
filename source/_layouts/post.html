@@ -14,11 +14,11 @@ layout: default
     {{ content }}
   </section>
   <div class="wrapper prev-next-jump">
-    {% if page.previous.url %}
+    {% if page.previous.url %}{% unless page.previous.draft %}
       <a class="prev" href="{{page.previous.url}}">&larr; {{page.previous.title}}</a>
-    {% endif %}
-    {% if page.next.url %}
+    {% endunless %}{% endif %}
+    {% if page.next.url %}{% unless page.next.draft %}
       <a class="next" href="{{page.next.url}}">{{page.next.title}} &rarr;</a>
-    {% endif %}
+    {% endunless %}{% endif %}
   </div>
 <article>
