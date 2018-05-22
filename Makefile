@@ -2,8 +2,8 @@
 
 .PHONY: preview
 preview: ## run a webserver for previewing the site
-	rm -rf build
-	bundle exec jekyll server
+	rm -rf _preview
+	bundle exec jekyll server --destination ./_preview
 
 .PHONY: build
 build: ## build the site to a deployable state
