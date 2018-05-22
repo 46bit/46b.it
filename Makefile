@@ -1,14 +1,14 @@
 .DEFAULT_GOAL := help
 
-.PHONY: build
-build: ## build the site
-	rm -rf build
-	bundle exec jekyll build
-
-.PHONY: server
-server: ## run a webserver for previewing the site
+.PHONY: preview
+preview: ## run a webserver for previewing the site
 	rm -rf build
 	bundle exec jekyll server
+
+.PHONY: build
+build: ## build the site to a deployable state
+	rm -rf build
+	bundle exec jekyll build
 
 .PHONY: release
 release: ## release and deploy the master branch
