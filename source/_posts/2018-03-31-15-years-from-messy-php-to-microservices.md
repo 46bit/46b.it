@@ -4,6 +4,7 @@ layout: post
 ---
 
 When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.
+<!--more-->
 
 That single codebase *was* the website. It received web requests directly from its users, it talked directly to the database that stored the website's state, it decided all the business logic of how the website worked, and it rendered HTML to be sent back to the user.
 
