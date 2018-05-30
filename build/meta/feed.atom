@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-05-29T22:39:12+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">📝 Leader Election</title><link href="https://46b.it/2018/leader-election/" rel="alternate" type="text/html" title="📝 Leader Election" /><published>2018-04-02T00:00:00+01:00</published><updated>2018-04-02T00:00:00+01:00</updated><id>https://46b.it/2018/leader-election</id><content type="html" xml:base="https://46b.it/2018/leader-election/">&lt;p&gt;&lt;a href=&quot;/assets/leader-election.jpg&quot;&gt;&lt;img src=&quot;/assets/leader-election.jpg&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-05-30T23:18:40+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">Weeknote 1</title><link href="https://46b.it/2018/weeknote-1/" rel="alternate" type="text/html" title="Weeknote 1" /><published>2018-05-27T00:00:00+01:00</published><updated>2018-05-27T00:00:00+01:00</updated><id>https://46b.it/2018/weeknote-1</id><content type="html" xml:base="https://46b.it/2018/weeknote-1/">&lt;p&gt;Since joining GDS I’ve learned a lot about infrastructure and ways of working like agile and XP. And I’ve contributed a lot back to my team from that. But after 10 months I needed to get some wider context, and see how other teams work. To that end I’m helping a product team deploy its infrastructure for private beta.&lt;/p&gt;
+
+&lt;p&gt;I spent last week starting to understand my new team’s culture and mission, investigating the project I’m helping deploy, researching ways of packaging Java/JVM projects for release (e.g., fat JARs), and arranging community things.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.meetup.com/Queer-Code-London/&quot;&gt;Queer Code London&lt;/a&gt; need a new venue for their Saturday lunchtime coding events, and I’ve been checking that we’re OK to host it in the GDS office. (We can!)&lt;/p&gt;
+
+&lt;p&gt;I went to leaving drinks for Dan and Graham, both of whom were on the PaaS team when I first joined. A bit sad—both were fantastic to work with—and yet lovely to see such experienced people finding new challenges.&lt;/p&gt;
+
+&lt;p&gt;I learned from my time on the &lt;a href=&quot;https://www.cloud.service.gov.uk&quot;&gt;GOV.UK PaaS&lt;/a&gt; team that structured summary notes are incredibly valuable, so I condensed a lot of historical experimentation into some Markdown notes.&lt;/p&gt;
+
+&lt;p&gt;I tried to get this project running on the PaaS, my old team’s Cloud Foundry platform, but it didn’t work because the file layout is very odd. There’s a lot of external policy we have to work with, limiting what we can change.&lt;/p&gt;
+
+&lt;p&gt;Shortly after that I changed my approach. I’m only helping this team for a few weeks, so I shouldn’t try to Get Things Done or directly make problems disappear. Instead I’ll act like a mentor, boosting the team’s own confidence with infrastructure. This process has a learning curve for me but is less pressure and quite enjoyable!&lt;/p&gt;
+
+&lt;p&gt;I got upset this week, having left my familiar team and feeling a bit out of place in the Ops community. I haven’t observed the group dynamics enough to understand why it’s so male, and the last year has taught me to be careful about investing my energy in culture problems.&lt;/p&gt;
+
+&lt;p&gt;As ever the small, lunchtime Meditation Club got me through the week. Having people about me for reassurance and wellbeing skills is an utter joy.&lt;/p&gt;</content><author><name></name></author><summary type="html">Since joining GDS I’ve learned a lot about infrastructure and ways of working like agile and XP. And I’ve contributed a lot back to my team from that. But after 10 months I needed to get some wider context, and see how other teams work. To that end I’m helping a product team deploy its infrastructure for private beta. I spent last week starting to understand my new team’s culture and mission, investigating the project I’m helping deploy, researching ways of packaging Java/JVM projects for release (e.g., fat JARs), and arranging community things.</summary></entry><entry><title type="html">📝 Leader Election</title><link href="https://46b.it/2018/leader-election/" rel="alternate" type="text/html" title="📝 Leader Election" /><published>2018-04-02T00:00:00+01:00</published><updated>2018-04-02T00:00:00+01:00</updated><id>https://46b.it/2018/leader-election</id><content type="html" xml:base="https://46b.it/2018/leader-election/">&lt;p&gt;&lt;a href=&quot;/assets/leader-election.jpg&quot;&gt;&lt;img src=&quot;/assets/leader-election.jpg&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve decided I want to try Sketchnoting. I don’t have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first:&lt;/p&gt;
 
@@ -475,58 +493,4 @@ will be changed.&lt;/p&gt;</content><author><name></name></author><summary type=
 
 &lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-nervoussystem.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Frightfully interesting stuff.&lt;/p&gt;</content><author><name></name></author><summary type="html">Content Warning: dissected human bodies at Body Worlds (not icky.) Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.</summary></entry><entry><title type="html">Day 4: Paris–Amsterdam</title><link href="https://46b.it/2017/paris-to-amsterdam/" rel="alternate" type="text/html" title="Day 4: Paris–Amsterdam" /><published>2017-06-24T00:00:00+01:00</published><updated>2017-06-24T00:00:00+01:00</updated><id>https://46b.it/2017/paris-to-amsterdam</id><content type="html" xml:base="https://46b.it/2017/paris-to-amsterdam/">&lt;p&gt;As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/vondelpark-ducks-fountains.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I have a quiet couple of days before reaching Berlin, so it’s time to catch up with my writing starting with Day 4’s journey from Paris to Amsterdam.&lt;/p&gt;
-
-&lt;p&gt;First thing on Day 4, I needed to get some eyedrops. I suffer from dry eyes sometimes and they’re handy to have around. For more or less the first time I didn’t even try to ask for them in French - I thought the name would be far too esoteric to guess at. But they have a name I could have grasped at: &lt;em&gt;l’hydration les yeux&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Second we caught a taxi from our hotel to Gare Du Nord, Paris’ north-bound station. The taxi was a Tesla and, while a big LCD screen is cool, I was surprised how simple its interior decor otherwise is.&lt;/p&gt;
-
-&lt;p&gt;With about an hour to spare I found a few things to do. I got a sausage baguette and what I’d expected to be a Tartalette Citron. As it turned out I think they gave me an apple one by mistake, but it still proved a delicious farewell to Paris. I helped a few London-bound Americans who were staring at the Eurostar trains unsure how to access them - the answer being to turn right, walk 100m down the concourse to an out-of-sight escalator, and go upstairs (really rather tricky to spot.)&lt;/p&gt;
-
-&lt;p&gt;I had a pretty long chat with a few Americans who were also getting lunch. Originally we started talking because the three of us seemed to be prime targets for beggars - the extent of it in Paris was honestly a surprise. For better or for worse, my experiences at the Louvre have me &lt;em&gt;extremely&lt;/em&gt; wary. But it was interesting to talk to fellow travellers.&lt;/p&gt;
-
-&lt;h2 id=&quot;parisamsterdam&quot;&gt;Paris–Amsterdam&lt;/h2&gt;
-
-&lt;p&gt;I was on the 12:28 Thalys service from Paris Gare Du Nord–Amsterdam Centraal, a 3h51m journey by modern high-speed train. The overhead baggage racks could contain remarkably luggage, and then I somehow managed to sit in the seat in front of mine which was rather embarrassing.&lt;/p&gt;
-
-&lt;p&gt;Heading North towards Lille and the Belgian border was quite similar to Day 1’s Eurostar journey, although I’m not sure if we were on the same train tracks. Our first major stop was Brussels-Midi (seen below), roughly 18 hours after a failed/foiled bomber at Brussels-Centrale.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/brussels-station-approach.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;My position on terror attacks largely focuses on the actual risk. Few terrorist attacks in the West have come close to existential damage to their people or infrastructure, and thus it is generally safe to disregard them day-to-day. But the risk to society seems somewhat greater—the media profile and political urge to take some sort of action about even the smallest attack is vast. Carrying on and keeping calm seems the immediate way to counter that individually.&lt;/p&gt;
-
-&lt;p&gt;Heading on into The Netherlands I received my third new reason to thank the EU of my trip: a text from Vodafone taking credit for no roaming charges and my data/texts/minutes working throughout the EU. This only came into force last week and has made my trip far easier, cheaper and perhaps safer than it otherwise would have been!&lt;/p&gt;
-
-&lt;p&gt;The final leg to Amsterdam was very cute. The fields with regular drainage ditches reminded me of the Norfolk Broads only on a fantastically larger scale. The motorways and a lot of the houses seemed surprisingly reminiscent of UK suburbia. Something eye-opening was the train crossing a large body of water by bridge and immediately on the other side going sharply down below the waterlevel.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/netherland-drainage-intersection.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/rotterdam-platform.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;first-evening-in-amsterdam&quot;&gt;First evening in Amsterdam&lt;/h2&gt;
-
-&lt;p&gt;Amsterdam did prove to be lovely in the sun. The heatwave had temperatures around 30°C. After an fun hour wandering to my AirBNB, I was rather happy to relax in a nearby park (the Vondelpark I mention above) and do some reading. Oh, and go to a gay bar.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-canal.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Vondelpark is absolutely gorgeous in 30°C - sadly I doubt it gets that weather too often:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/vondelpark-fountain.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-type-of-boy-sandwich.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;!--
-Conclusions from Paris
-- The walk bit not worth doing, go towards 16th or Sacre-Coeur instead
-- Paris eats and drinks late
-- Use CityMapper to get around (even more useful than in London, as the transport map is quite complex)
-- Paris largely because I'd have company. In practice an extremely enjoyable destination.
-- I want to go back having learned more French (Duolingo.) Perhaps to the countryside or a different city, however.
-
-&lt;img src=&quot;/assets/eurostar-st-pancras.jpg&quot; width=&quot;600&quot;&gt;
---&gt;</content><author><name></name></author><summary type="html">As I write this it is Day 6 and quite appropriately I’m sitting by 6 fountains in Amsterdam’s Vondelpark.</summary></entry></feed>
+&lt;p&gt;Frightfully interesting stuff.&lt;/p&gt;</content><author><name></name></author><summary type="html">Content Warning: dissected human bodies at Body Worlds (not icky.) Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.</summary></entry></feed>
