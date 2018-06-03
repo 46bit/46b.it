@@ -43,6 +43,8 @@
 
 <!--more-->
 
+<h2 id="aws-lambda">AWS Lambda</h2>
+
 <p>Some teams within GDS are experimenting with using <a href="https://aws.amazon.com/lambda/">AWS Lambda</a>, a service that runs your code for you and saves worrying about servers or containers and only charges you for its compute time. The team I’m visiting is trying it for deploying an hourly batch job, and I’m helping because of delays with the main thing I’m there for.</p>
 
 <p>The system’s aim is for a web endpoint that fetches several resources, verifies their signatures, and saves them into an object store. It’s a cache that also verifies signatures. We’re using a Lambda function for that web endpoint, and an S3 bucket as the object store, but there’s several more components needed.</p>
@@ -52,6 +54,8 @@
 <p>Borrowing from an approach AWS advised, we’ve created an extra Lambda function and S3 bucket. This “update” function has IAM permissions to change the code of the function we care about. When a JAR file is placed in the S3 bucket, a SNS notification calls the update function (based on <a href="https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#add-notification-configuration-to-lambda-function">this</a> Terraform example.)</p>
 
 <p>I have mixed feelings. This might work and never need touching again—or have unexpected problems that are hard to investigate because so many of Amazon’s services (e.g., IAM) are black boxes and don’t log their decision-making. I prefer systems where things are more explicit, because how they work can be investigated and rediscovered. But this will teach us something, and I hope I can put in place testing to highlight <em>what</em> is broken if things break.</p>
+
+<h2 id="bringing-more-of-myself-to-work">Bringing more of myself to work</h2>
 
 <p>In my own time I’ve been trying to bring more of myself to work, and act less. Not pretending happiness when unhappy is a bit scary around other people, but gosh it’s relieving. I resorted to a guide of <a href="https://worddreams.wordpress.com/2009/10/07/how-to-show-not-tell-an-emotion-a-to-d/">how to show emotions</a> to figure out healthy ways to express myself without causing problems for others. It seems to be going well—next week I hope to find a way to ask for feedback about it.</p>
 
