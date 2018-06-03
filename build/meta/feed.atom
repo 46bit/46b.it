@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-05-31T23:10:05+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">Weeknote 1</title><link href="https://46b.it/2018/weeknote-1/" rel="alternate" type="text/html" title="Weeknote 1" /><published>2018-05-27T00:00:00+01:00</published><updated>2018-05-27T00:00:00+01:00</updated><id>https://46b.it/2018/weeknote-1</id><content type="html" xml:base="https://46b.it/2018/weeknote-1/">&lt;p&gt;Since joining GDS I’ve learned a lot about infrastructure and ways of working like agile and XP. And I’ve contributed a lot back to my team from that. But after 10 months I needed to get some wider context, and see how other teams work. To that end I’m helping a product team deploy its infrastructure for private beta.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2018-06-03T23:06:51+01:00</updated><id>https://46b.it/</id><title type="html">46b.it</title><entry><title type="html">Weeknote 2</title><link href="https://46b.it/2018/weeknote-2/" rel="alternate" type="text/html" title="Weeknote 2" /><published>2018-06-02T00:00:00+01:00</published><updated>2018-06-02T00:00:00+01:00</updated><id>https://46b.it/2018/weeknote-2</id><content type="html" xml:base="https://46b.it/2018/weeknote-2/">&lt;p&gt;This was a short week. Monday was a Bank Holiday. On Wednesday I stayed at home because of sinus fatigue (hayfever sucks!) and didn’t get much done. But I did some proper infrastructure work this week.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Some teams within GDS are experimenting with using &lt;a href=&quot;https://aws.amazon.com/lambda/&quot;&gt;AWS Lambda&lt;/a&gt;, a service that runs your code for you and saves worrying about servers or containers and only charges you for its compute time. The team I’m visiting is trying it for deploying an hourly batch job, and I’m helping because of delays with the main thing I’m there for.&lt;/p&gt;
+
+&lt;p&gt;The system’s aim is for a web endpoint that fetches several resources, verifies their signatures, and saves them into an object store. It’s a cache that also verifies signatures. We’re using a Lambda function for that web endpoint, and an S3 bucket as the object store, but there’s several more components needed.&lt;/p&gt;
+
+&lt;p&gt;We’re using &lt;a href=&quot;https://www.terraform.io&quot;&gt;Terraform&lt;/a&gt; to define the infrastructure into code, but sadly this isn’t in the open. To be consistent with other projects we don’t want to use Terraform to deploy code to the Lambda, so we’ve had to find a different way to do that.&lt;/p&gt;
+
+&lt;p&gt;Borrowing from an approach AWS advised, we’ve created an extra Lambda function and S3 bucket. This “update” function has IAM permissions to change the code of the function we care about. When a JAR file is placed in the S3 bucket, a SNS notification calls the update function (based on &lt;a href=&quot;https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#add-notification-configuration-to-lambda-function&quot;&gt;this&lt;/a&gt; Terraform example.)&lt;/p&gt;
+
+&lt;p&gt;I have mixed feelings. This might work and never need touching again—or have unexpected problems that are hard to investigate because so many of Amazon’s services (e.g., IAM) are black boxes and don’t log their decision-making. I prefer systems where things are more explicit, because how they work can be investigated and rediscovered. But this will teach us something, and I hope I can put in place testing to highlight &lt;em&gt;what&lt;/em&gt; is broken if things break.&lt;/p&gt;
+
+&lt;p&gt;In my own time I’ve been trying to bring more of myself to work, and act less. Not pretending happiness when unhappy is a bit scary around other people, but gosh it’s relieving. I resorted to a guide of &lt;a href=&quot;https://worddreams.wordpress.com/2009/10/07/how-to-show-not-tell-an-emotion-a-to-d/&quot;&gt;how to show emotions&lt;/a&gt; to figure out healthy ways to express myself without causing problems for others. It seems to be going well—next week I hope to find a way to ask for feedback about it.&lt;/p&gt;
+
+&lt;p&gt;Next week will be quite interesting. I’m shadowing a Delivery Manager; hoping to learn more about what they do, how it might suit me, and how to protect my own energy better. Given that this infrastructure relies on events happening as expected, I also hope to put in place some automated testing.&lt;/p&gt;</content><author><name></name></author><summary type="html">This was a short week. Monday was a Bank Holiday. On Wednesday I stayed at home because of sinus fatigue (hayfever sucks!) and didn’t get much done. But I did some proper infrastructure work this week.</summary></entry><entry><title type="html">Weeknote 1</title><link href="https://46b.it/2018/weeknote-1/" rel="alternate" type="text/html" title="Weeknote 1" /><published>2018-05-27T00:00:00+01:00</published><updated>2018-05-27T00:00:00+01:00</updated><id>https://46b.it/2018/weeknote-1</id><content type="html" xml:base="https://46b.it/2018/weeknote-1/">&lt;p&gt;Since joining GDS I’ve learned a lot about infrastructure and ways of working like agile and XP. And I’ve contributed a lot back to my team from that. But after 10 months I needed to get some wider context, and see how other teams work. To that end I’m helping a product team deploy its infrastructure for private beta.&lt;/p&gt;
 
 &lt;p&gt;I spent last week starting to understand my new team’s culture and mission, investigating the project I’m helping deploy, researching ways of packaging Java/JVM projects for release (e.g., fat JARs), and arranging community things.&lt;/p&gt;
 
@@ -446,51 +462,4 @@ will be changed.&lt;/p&gt;</content><author><name></name></author><summary type=
 
 &lt;p&gt;Here’s a bonus picture, as I love the height difference of the black house:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-black-house.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">On Day 5 I saw the Tulip Museum and Body Worlds, had pancakes, rode the tram and wandered a bit. For a few hours I’d considered staying an extra day in Amsterdam, spending most of it sunbathing in Vondelpark, and skipping Hannover. But then the 30°C weather broke and that option became relatively less appealing. Thus today is my last day here, and I wanted to round it out by learning a bit more about Amsterdam itself.</summary></entry><entry><title type="html">Day 5: Amsterdam in tulips, pancakes &amp;amp; bodies</title><link href="https://46b.it/2017/amsterdam-tulips-pancakes/" rel="alternate" type="text/html" title="Day 5: Amsterdam in tulips, pancakes &amp; bodies" /><published>2017-06-25T00:00:00+01:00</published><updated>2017-06-25T00:00:00+01:00</updated><id>https://46b.it/2017/amsterdam-tulips-pancakes</id><content type="html" xml:base="https://46b.it/2017/amsterdam-tulips-pancakes/">&lt;p&gt;&lt;strong&gt;Content Warning: dissected human bodies at &lt;a href=&quot;https://en.wikipedia.org/wiki/Body_Worlds&quot;&gt;Body Worlds&lt;/a&gt; (not icky.)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-cycle-oops.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Compared to Paris the architecture feels a lot more variable and to me a lot more charming. It’s also a lot harder to photograph: from the street you’re obstructed by the trees, and I’ve noticed that the Amsterdam Museum has a painting which deliberately omits the trees in order to focus upon the architecture.&lt;/p&gt;
-
-&lt;p&gt;I’ve wanted to visit ever since I saw the movie adaptation of A Fault In Our Stars. While a major tourist destination, it had never been on my radar until I saw how cute and exciting it was. On a related note, I really dislike how in the book they stayed in a cheap hotel sharing rooms but in the movie they had them in a fancy, expensive hotel with individual rooms…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-day-2-canal-1.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-day-2-canal-2.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;tulips-and-pancakes&quot;&gt;Tulips and Pancakes&lt;/h2&gt;
-
-&lt;p&gt;My first stop was a little esoteric: the &lt;a href=&quot;http://www.amsterdamtulipmuseum.com/en/&quot;&gt;Tulip Museum&lt;/a&gt; in the Jordaan neighbourhood. It discusses the origins of Tulips, their introduction to Tulip Mania and how the Dutch ended up in Tulip Mania: a major price bubble in 1637 where the newly-introduced tulips were being exchanged for apparently extraordinary prices. Sadly I don’t have a great photo for this, but it’s worth a visit!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-tulip-museum.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;About this time I’d started to feel a little bit lonely. I’m used to enjoying my own company from my teen years, but it always takes some getting used to. My sister headed home from Paris and it’s just me for the rest of the trip (another week to go!) At first I wasn’t sure how best to overcome this, so resolved to keep going about the day I’d started to plan out in my head.&lt;/p&gt;
-
-&lt;p&gt;So next, I got pancakes! I must say, York’s &lt;a href=&quot;https://doubledutchpancakehouse.com&quot;&gt;Double Dutch Pancake House&lt;/a&gt; really stood its ground against what’s apparently a renowned (if touristy) pancake house. Mine was baked rather than fried, but otherwise was quite comparable. The below was about as much as I could eat.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-half-pancake.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At about this time, the glorious weather thus far with 32+°C days and 20+°C nights broke in spectacular fashion. We got hit by a big rain shower, from which I had to hide a postcard as I had no bag. Then as I was hurrying back towards the central island (Centrum?) when a rather intense thunderstorm hit. As if from nowhere the people on the street changed from t-shirt-and-shorts-clad to long-sleeves-and-jeans.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-storm.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;bodies&quot;&gt;Bodies&lt;/h2&gt;
-
-&lt;p&gt;I’d hoped to visit &lt;a href=&quot;https://en.wikipedia.org/wiki/Body_Worlds&quot;&gt;Body Worlds&lt;/a&gt; while in Amsterdam and this proved an excellent place to take shelter. Lightning hit something rather close as I got my ticket, and everything shook. Thankfully the power stayed on!&lt;/p&gt;
-
-&lt;p&gt;As the rain hit I started to feel a lot better. The hardest thing about spending lots of time by yourself (or in charge) is keeping a sense of direction, and having formed one for the rest of the day I just enjoyed the novelty of a rainstorm after so many days of Florida-like weather.&lt;/p&gt;
-
-&lt;p&gt;Body Worlds proved one of the most unique and fascinating exhibitions I’ve visited. It’s actually a partnership between Body Worlds and The Happiness Project, and the mix of the two works surprisingly well. Each floor is a mix of the human body (e.g., the nervous system) and the human condition (e.g., positive mindsets.)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-arteries.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-saxophone.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The top floor has the nervous system from real human bodies. Both individual ‘pieces’ and the entire thing. It’s not for the squeamish but I understand a whole lot more about my body now, and I don’t know how I would possibly have learned that without seeing quite so many bodies and parts of bodies. I’ll… stop talking before this sounds creepy.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-bodyworlds-nervoussystem.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Frightfully interesting stuff.&lt;/p&gt;</content><author><name></name></author><summary type="html">Content Warning: dissected human bodies at Body Worlds (not icky.) Amsterdam really is full of bicycles. It’s remarkably prevalent and cyclists are remarkably confident in their right-of-way. As a cyclist myself it’s really quite stunning to watch. Sadly only watch: I tripped and grazed my hands exactly where you hold handlebars. The segregated red bicycle lanes are sometimes very clear as a pedestrian - and sometimes not.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/amsterdam-black-house.jpg&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">On Day 5 I saw the Tulip Museum and Body Worlds, had pancakes, rode the tram and wandered a bit. For a few hours I’d considered staying an extra day in Amsterdam, spending most of it sunbathing in Vondelpark, and skipping Hannover. But then the 30°C weather broke and that option became relatively less appealing. Thus today is my last day here, and I wanted to round it out by learning a bit more about Amsterdam itself.</summary></entry></feed>
