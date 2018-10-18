@@ -7,7 +7,7 @@ I'd like to publish more of my writing, and so this post is somewhat shorter and
 
 Today I'm discussing what we owe to each other and what we owe to ourselves. In particular, how responsible are we for the feelings of others?
 
-One school of thought is that we are entirely responsible. In this world we are responsible for how our messages are received, as well as what messages we send. Another is that we are not responsible at all, and that at most we are responsible for is what messages we send.
+One school of thought is that we are entirely responsible. In this world we are wholly responsible for how our messages are received. Another model is that we are not responsible at all: we are responsible for nothing more than our intent. These are two extremes.
 <!--more-->
 
 I've experienced both of these extremes of responsibility and I think that they can be effective adaptations to toxic situations. For instance, when someone is causing regular pain and not responding to complaints, your responsibility to them must drop if you are to avoid self-blame. But I think these extremes are both toxic.
