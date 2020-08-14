@@ -1,13 +1,15 @@
 .DEFAULT_GOAL := help
 
+.PHONY: clean
+clean: ## delete build cache
+	rm -rf build
+
 .PHONY: preview
-preview: ## run a webserver for previewing the site
-	rm -rf _preview
-	bundle exec jekyll server --destination _preview --drafts --future
+preview: clean ## run a webserver for previewing the site
+	bundle exec jekyll server
 
 .PHONY: build
-build: ## build the site to a deployable state
-	rm -rf build
+build: clean ## build the site to a deployable state
 	bundle exec jekyll build
 
 .PHONY: help
