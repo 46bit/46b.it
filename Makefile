@@ -3,16 +3,12 @@
 .PHONY: preview
 preview: ## run a webserver for previewing the site
 	rm -rf _preview
-	bundle exec jekyll server --destination ./_preview --drafts --future
+	bundle exec jekyll server --destination _preview --drafts --future
 
 .PHONY: build
 build: ## build the site to a deployable state
 	rm -rf build
 	bundle exec jekyll build
-
-.PHONY: release
-release: ## release and deploy the master branch
-	./deploy.sh
 
 .PHONY: help
 help:
