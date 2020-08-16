@@ -1,9 +1,9 @@
 ---
-title: Michael (“Miki”) Mokrysz
+title: Miki Mokrysz
 layout: page
 ---
 <div style="overflow: hidden;">
-  <img class="avatar botspace" src="/assets/avatar.png">
+  <img class="avatar botspace" src="/assets/avatar.jpg">
   <p class="intro">I'm a developer with experience of full-stack web development, cybersecurity and computationally-heavy projects. My interests are infrastructure, and agile, XP and compassionate ways of working.</p>
 </div>
 
@@ -15,4 +15,4 @@ layout: page
 * I'm fascinated by cultural practices on teams
 * I'm accustomed to small teams which offer initiative and responsibility
 
-You can email me at **[michael@46b.it](mailto:michael@46b.it)**. I have a [notepad of things worth writing about](/notepad) you're welcome to suggest additions to.
+You can email me at **[michael@46b.it](mailto:michael@46b.it)**.
