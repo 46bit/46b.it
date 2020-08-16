@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article>
+  <header class="prelude">
+    <div class="wrapper">
+      {% if page.title %}
+      <h1>{{ page.title }}</h1>
+      {% endif %}
+    </div>
+  </header>
+  <div class="wrapper">
+    <img src="{{ page.image_url }}" alt="{{ page.title | escape }}" style="max-width: 100%;">
+  </div>
+  <div class="wrapper prev-next-jump">
+    {% if page.previous.url %}{% unless page.previous.draft %}
+      <a class="prev" href="{{page.previous.url}}">&larr; {{page.previous.title}}</a>
+    {% endunless %}{% endif %}
+    {% if page.next.url %}{% unless page.next.draft %}
+      <a class="next" href="{{page.next.url}}">{{page.next.title}} &rarr;</a>
+    {% endunless %}{% endif %}
+  </div>
+<article>

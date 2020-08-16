@@ -128,6 +128,20 @@ a {
   }
 }
 
+.artwork-list {
+  color: #444;
+  list-style: none;
+  max-width: 840px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  li {
+    margin-bottom: 11px;
+    .artwork-thumb {
+      width: 200px;
+    }
+  }
+}
+
 article .prelude {
   color: #a61941;
   padding: 33px 0;

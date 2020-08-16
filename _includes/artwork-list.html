@@ -1,0 +1,20 @@
+<header class="prelude yellowlined redundant-with-stacked-nav">
+  <div class="wrapper">
+    <h1>Art</h1>
+  </div>
+</header>
+<div class="wrapper">
+  <ul class="artwork-list">
+  {% for artwork in site.artworks %}
+    {% if artwork.hide %}
+      {% continue %}
+    {% endif %}
+    {% if artwork.draft %}
+      {% continue %}
+    {% endif %}
+    <li>
+      <a class="post-title" href="{{ artwork.url | relative_url }}"><img class="artwork-thumb" src="{{ artwork.thumb_url }}" alt="{{ artwork.title | escape }}" title="{{ artwork.title | escape }}"></a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

@@ -47,3 +47,8 @@ jekyll-archives:
 permalink: /:categories/:year/:title/
 feed:
   path: /meta/feed.atom
+
+collections:
+  artworks:
+    output: true
+    permalink: /art/:name
