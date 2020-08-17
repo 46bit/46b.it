@@ -133,11 +133,14 @@ a {
   list-style: none;
   max-width: 840px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   li {
-    margin-bottom: 11px;
+    text-align: center;
+    line-height: 0;
     .artwork-thumb {
-      width: 200px;
+      width: 100%;
     }
   }
 }
