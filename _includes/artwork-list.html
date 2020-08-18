@@ -12,6 +12,27 @@
     {% if artwork.draft %}
       {% continue %}
     {% endif %}
+    {% if artwork.category == "photos" %}
+      {% continue %}
+    {% endif %}
+    <li>
+      <a class="post-title" href="{{ artwork.url | relative_url }}"><img class="artwork-thumb" src="{{ artwork.thumb_url }}" alt="{{ artwork.title | escape }}" title="{{ artwork.title | escape }}"></a>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h2 style="color: #3b3b3b; font: 300 24px/28px 'Merriweather', serif; font-weight: 300; margin: 35px 0 10px;">Photos</h2>
+  <ul class="artwork-list">
+  {% for artwork in site.artworks %}
+    {% if artwork.hide %}
+      {% continue %}
+    {% endif %}
+    {% if artwork.draft %}
+      {% continue %}
+    {% endif %}
+    {% unless artwork.category == "photos" %}
+      {% continue %}
+    {% endunless %}
     <li>
       <a class="post-title" href="{{ artwork.url | relative_url }}"><img class="artwork-thumb" src="{{ artwork.thumb_url }}" alt="{{ artwork.title | escape }}" title="{{ artwork.title | escape }}"></a>
     </li>
