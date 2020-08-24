@@ -8,7 +8,7 @@ Anyone who has done an appreciable amount of laundry has probably noticed the ti
 My efforts to optimise the process have led me to the curious practice of un-matching: making pairs of socks so as to deliberately **not** be a matching pair. It's much faster, much simpler to compute and yet because there is a process behind it you have a defence against allegations of laziness.
 <!--more-->
 
-![](/assets/different-coloured-socks.jpg)
+![](/assets/writing/different-coloured-socks.jpg)
 
 If you consider the normal process of matching socks, a sock is picked from the top of the pile, then the pile is traversed to find a matching sock (a [Linear search](http://en.wikipedia.org/wiki/Linear_search)). As such, we're discussing a horribly brute-forced example of the [stable roommates problem](http://en.wikipedia.org/wiki/Stable_roommates_problem).
 

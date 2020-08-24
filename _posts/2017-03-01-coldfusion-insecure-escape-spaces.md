@@ -20,7 +20,7 @@ The `<%= … %>` tags automatically escape what's being printed against XSS. The
 <cfinput name="forename" value="#form.forename#">
 ```
 
-People running ColdFusion are generally moving to the open source [Railo](@TODO) and [Lucee](@TODO) servers. These applied a sanity pass to what they should support.
+People running ColdFusion are generally moving to the open source Railo and Lucee servers. These applied a sanity pass to what they should support.
 
 A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.
 

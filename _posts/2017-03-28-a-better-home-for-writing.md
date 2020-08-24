@@ -6,7 +6,7 @@ This blog experienced a lull from `2014-07-07` to `2017-02-27`, some 966 days. A
 
 What didn't change was that the old design, well, sucked. I don't mean that it was the worst thing ever, but it was underwhelming as a place to write. So I'm going to talk through the redesign process.
 
-<img src="/assets/old-new-aside.png" width="1000">
+<img src="/assets/writing/old-new-aside.png" width="1000">
 
 <!--more-->
 

@@ -12,6 +12,10 @@ preview: clean ## run a webserver for previewing the site
 build: clean ## build the site to a deployable state
 	bundle exec jekyll build
 
+.PHONY: test
+test: build ## check the site for dead links
+	bundle exec htmlproofer ./build
+
 .PHONY: help
 help:
 	@awk -F":.*## " '$$2&&$$1~/^[a-zA-Z_%-]+/{printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)

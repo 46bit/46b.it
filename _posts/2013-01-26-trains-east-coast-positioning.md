@@ -37,4 +37,4 @@ I know the same Ombord system is used on other trains internationally, so this i
 
 There's a private [API](https://datafeeds.networkrail.co.uk/ntrod/) for live train information now, but I don't know it's current status. I've heard literally nothing about it.
 
-**UPDATE** (7th February 2012): I've now [written more about the Network Rail API](/2013/02/07/train-data-revisited/). If you're interested in more than just playing around whilst on East Coast trains it'll interest you more.
+**UPDATE** (7th February 2012): I've now [written more about the Network Rail API](/2013/train-data-revisited/). If you're interested in more than just playing around whilst on East Coast trains it'll interest you more.

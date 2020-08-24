@@ -21,7 +21,7 @@ Let's say you want to learn an equation that approximates a function. This is a 
 
 This process can be excellent at finding creative solutions. Over sufficient timescales biological evolution is remarkably creative - just look at your own body.
 
-![**NASA [evolved this antenna](https://en.wikipedia.org/wiki/Evolved_antenna) for a 2006 mission.**](/assets/evolved-antenna.jpg)
+![**NASA [evolved this antenna](https://en.wikipedia.org/wiki/Evolved_antenna) for a 2006 mission.**](/assets/writing/evolved-antenna.jpg)
 
 But I've found that tuning an evolutionary process is quite intensive: it takes a lot of programmer time and (the challenge) a lot of unguided experimentation.
 
