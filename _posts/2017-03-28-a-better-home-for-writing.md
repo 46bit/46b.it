@@ -30,13 +30,13 @@ From past experience it helps me to get an initial colour palette. Many experien
 
 I've always liked maroony reds, so that was my startpoint. Ten minutes of Adobe Kuler later, I had [this](https://color.adobe.com/46bit-color-theme-9379807/):
 
-<img src="/assets/new-colours.png" width="600">
+<img src="/assets/writing/new-colours.png" width="600">
 
 The intensity of the cyans was concerning, but that was something to try and see. In practice the cyans are barely used, with a bright yellow and a deep blue instead. But the three, intense reds are the key to the design.
 
 ### First sketch
 
-<img src="/assets/redesign-1.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-1.png" width="600" class="pull-left">
 
 I chose to use my [Securing legacy ColdFusion or: Why escape spaces against XSS?](/2017/coldfusion-insecure-escape-spaces/) post as the content for the redesign. It isn't my best post ever, but the mix of text and code is quite representative of what I'll be writing here.
 
@@ -46,37 +46,37 @@ A half hour in this is looking quite effective. The navigation colours don't wor
 
 Out of necessity I'm jumping ahead a way.
 
-<img src="/assets/redesign-4.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-4.png" width="600" class="pull-left">
 
 At this point I'd copied in more content. This seemed essential in understanding how a long post would perform. I've previously found that simple designs with the header out of sight can be monochrome.
 
 ### Sixth sketch
 
-<img src="/assets/redesign-6.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-6.png" width="600" class="pull-left">
 
 As someone who does a lot of business with the US and rest-of-the-world, I'm quite a fan of the `YYYY-MM-DD` date format. But here I started experimenting with including the day of the week, and in the final design I concluded a 'human' format would surprise users less.
 
 ### Eleventh sketch
 
-<img src="/assets/redesign-11.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-11.png" width="600" class="pull-left">
 
 I tried to bring in more colours from the colourscheme, building a big header. This does sort-of work - but so much cyan is a risk when it comes to flexibility later.
 
 ### Eighteenth sketch
 
-<img src="/assets/redesign-18.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-18.png" width="600" class="pull-left">
 
 I tried dropping the header and adding a bar below the navigation to enhance the structural connection to the active navigation item. This seemed like a great idea.
 
 ### Nineteenth sketch, the final one
 
-<img src="/assets/redesign-19.png" width="600" class="pull-left">
+<img src="/assets/writing/redesign-19.png" width="600" class="pull-left">
 
 Inspired, I brought the reds and the more active navigation together. I loved it and decided this was enough to start implementing. Further changes could be made in the browser.
 
 ### A logo revived
 
-<img src="/assets/46bit-paper-large.png" width="192" class="pull-left">
+<img src="/assets/writing/46bit-paper-large.png" width="192" class="pull-left">
 
 In 2010 I hired [Anthony Bullock](https://dribbble.com/sitelotus) to build me a much nicer freelance portfolio than what I had been using. The aim was to get more work from a more pleasing internet presence, and I think it was successful. I was 16 at the time.
 
@@ -84,7 +84,7 @@ I noticed the above designs could do with a nice logo. So I opened up my old one
 
 ## What's live now
 
-<img src="/assets/new-homepage.png" width="600" class="pull-left">
+<img src="/assets/writing/new-homepage.png" width="600" class="pull-left">
 
 You might notice - the narrow yellow line below the title bar originated in Sketch 11. It isn't in the colourscheme at all; I picked it up by chance. But it has made it into the live design, dividing the title bar and the post date on pages that list posts. It was on other pages for a while, but it split up the title and the text too much - the Achilles Heel of this design.
 

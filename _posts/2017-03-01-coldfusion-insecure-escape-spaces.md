@@ -24,7 +24,7 @@ People running ColdFusion are generally moving to the open source [Railo](@TODO)
 
 A decision I support is expecting the webapps to work and be secure on both old and new servers. This rules out using anything that was insecure in ColdFusion. It also rules out anything that was new in Railo/Lucee.
 
-<img src="/assets/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="600">
+<img src="/assets/writing/coldfusion-insecure-intersection.png" alt="Pictorial depiction of which solutions can be used." width="600">
 
 The intersection of secure and available in both is to import the [OSASP ESAPI API](https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API) from Java.
 

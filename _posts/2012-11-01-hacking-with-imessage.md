@@ -18,7 +18,7 @@ These instructions are for OSX Mountain Lion, but should work for Lion onwards. 
 ## About AppleScript
 Included with OSX is a programming language called AppleScript, designed to resemble natural language as opposed to the syntax of languages like C or even Ruby. Open up the Preferences pane of Messages.app and click the Alerts tab. You'll notice a long list of events with the option to "Run an Applescript script".
 
-![](/assets/imessage-events-intro.png)
+![](/assets/writing/imessage-events-intro.png)
 
 Notice the AppleScript option. This is how we'll hook our programs up to iMessage.
 
@@ -35,7 +35,7 @@ end using terms from
 
 Now tell Messages to run this whenever a new chat is initated. In the app Preferences, browse to Events, select the Text Invitation event and Choose your `imessage-accept.scpt` script.
 
-![](/assets/imessage-autoaccept.png)
+![](/assets/writing/imessage-autoaccept.png)
 
 If you send yourself an iMessage now, then you'll notice nothing's changed from before. You might think this script is pointless, and you'd be correct: it's just needed if we're to intercept the first iMessage.
 

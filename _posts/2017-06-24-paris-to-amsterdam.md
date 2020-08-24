@@ -6,7 +6,7 @@ layout: post
 As I write this it is Day 6 and quite appropriately I'm sitting by 6 fountains in Amsterdam's Vondelpark.
 <!--more-->
 
-<img src="/assets/vondelpark-ducks-fountains.jpg" width="600">
+<img src="/assets/writing/vondelpark-ducks-fountains.jpg" width="600">
 
 I have a quiet couple of days before reaching Berlin, so it's time to catch up with my writing starting with Day 4's journey from Paris to Amsterdam.
 
@@ -24,7 +24,7 @@ I was on the 12:28 Thalys service from Paris Gare Du Nord–Amsterdam Centraal, 
 
 Heading North towards Lille and the Belgian border was quite similar to Day 1's Eurostar journey, although I'm not sure if we were on the same train tracks. Our first major stop was Brussels-Midi (seen below), roughly 18 hours after a failed/foiled bomber at Brussels-Centrale.
 
-<img src="/assets/brussels-station-approach.jpg" width="600">
+<img src="/assets/writing/brussels-station-approach.jpg" width="600">
 
 My position on terror attacks largely focuses on the actual risk. Few terrorist attacks in the West have come close to existential damage to their people or infrastructure, and thus it is generally safe to disregard them day-to-day. But the risk to society seems somewhat greater—the media profile and political urge to take some sort of action about even the smallest attack is vast. Carrying on and keeping calm seems the immediate way to counter that individually.
 
@@ -32,21 +32,21 @@ Heading on into The Netherlands I received my third new reason to thank the EU o
 
 The final leg to Amsterdam was very cute. The fields with regular drainage ditches reminded me of the Norfolk Broads only on a fantastically larger scale. The motorways and a lot of the houses seemed surprisingly reminiscent of UK suburbia. Something eye-opening was the train crossing a large body of water by bridge and immediately on the other side going sharply down below the waterlevel.
 
-<img src="/assets/netherland-drainage-intersection.jpg" width="600">
+<img src="/assets/writing/netherland-drainage-intersection.jpg" width="600">
 
-<img src="/assets/rotterdam-platform.jpg" width="600">
+<img src="/assets/writing/rotterdam-platform.jpg" width="600">
 
 ## First evening in Amsterdam
 
 Amsterdam did prove to be lovely in the sun. The heatwave had temperatures around 30°C. After an fun hour wandering to my AirBNB, I was rather happy to relax in a nearby park (the Vondelpark I mention above) and do some reading. Oh, and go to a gay bar.
 
-<img src="/assets/amsterdam-canal.jpg" width="600">
+<img src="/assets/writing/amsterdam-canal.jpg" width="600">
 
 Vondelpark is absolutely gorgeous in 30°C - sadly I doubt it gets that weather too often:
 
-<img src="/assets/vondelpark-fountain.jpg" width="600">
+<img src="/assets/writing/vondelpark-fountain.jpg" width="600">
 
-<img src="/assets/amsterdam-type-of-boy-sandwich.jpg" width="600">
+<img src="/assets/writing/amsterdam-type-of-boy-sandwich.jpg" width="600">
 
 <!--
 Conclusions from Paris
@@ -56,5 +56,5 @@ Conclusions from Paris
 - Paris largely because I'd have company. In practice an extremely enjoyable destination.
 - I want to go back having learned more French (Duolingo.) Perhaps to the countryside or a different city, however.
 
-<img src="/assets/eurostar-st-pancras.jpg" width="600">
+<img src="/assets/writing/eurostar-st-pancras.jpg" width="600">
 -->

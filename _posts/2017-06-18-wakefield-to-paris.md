@@ -15,7 +15,7 @@ The Wakefield Westgate ticket office couldn't help, and my sister was booked on 
 
 We had another 10 minutes before the train - far too little to talk to Eurostar and straighten things out - so we went to WHSmiths. Then we heard that our train to London was cancelled. Uh oh. So we waited an hour and got on the next service down - trusting that our thru-booking with Eurostar ensured no problems getting on the next leg to Paris.
 
-<img src="/assets/eurostar-st-pancras.jpg" width="600">
+<img src="/assets/writing/eurostar-st-pancras.jpg" width="600">
 
 Having made it to London St Pancras, Eurostar Support were fantastic in person, and we got on the 15:31 to Paris (two hours later than planned) with some vouchers to make things up to us.
 
@@ -23,8 +23,8 @@ We're about 5 minutes into the Channel Tunnel now. It's remarkable how little li
 
 Having just emerged into France, I'm struck by how huge the fields are compared to back home. Even the sparsely farmed hills of my origin are only 5 minutes walk a side - some of these I'm seeing must be as much as 20 minutes, but it does vary. I also notice the ballast is a much lighter colour, the houses a more angular and cleaner design. The pylons are different - not a million miles different, but noticably different.
 
-<img src="/assets/eurostar-france-house.jpg" width="600">
+<img src="/assets/writing/eurostar-france-house.jpg" width="600">
 
 We've spent the evening going up the Eiffel Tower, but I'm out of time to finish writing or find good nighttime pictures.
 
-<img src="/assets/tour-eiffel-looking-up.jpg" width="600">
+<img src="/assets/writing/tour-eiffel-looking-up.jpg" width="600">

@@ -12,7 +12,7 @@ Today's plan was simple: get up around 9am, finish packing, go to Amsterdam Cent
 
 The 30°C summer weather has definitely broken. I got up to find it wet and drizzly outside. As a result I'm wearing both long-sleeves and trousers for the first time this trip! I only have one long-sleeved item so hopefully it won't be needed for long, although I am doing laundry in Berlin tomorrow so it might be workable.
 
-<img src="/assets/amsterdam-airbnb-street.jpg" width="600">
+<img src="/assets/writing/amsterdam-airbnb-street.jpg" width="600">
 
 I set off around 10:40am with a few hours to spare before the train. First stop was getting some cheap lunch from a supermarket - I've discovered the Albert Heijn chain has a big store near where I'm staying. For €3 they sell a very nice "Eggwrap Gerookte Zalm." I've yet to translate that, but it's sort of like an omelette wrapped around salmon, spinach and egg.
 
@@ -32,71 +32,71 @@ That new journey Amsterdam–Duisburg–Hannover has turned out to be a lot of f
 
 I've noticed today how The Netherlands has a lot of sound barriers around its trainlines near settlements whereas the UK, France and Germany seem to almost never have them. It's a real kindness to the villages and towns one passes though, particular if at night, although it does rather prevent photos!
 
-<img src="/assets/ice-amsterdam-frankfurt.jpg" width="600">
+<img src="/assets/writing/ice-amsterdam-frankfurt.jpg" width="600">
 
-<img src="/assets/ice-amsterdam-frankfurt-platform.jpg" width="600">
+<img src="/assets/writing/ice-amsterdam-frankfurt-platform.jpg" width="600">
 
-<!-- <img src="/assets/ice-amsterdam-frankfurt-interior.jpg" width="600"> -->
+<!-- <img src="/assets/writing/ice-amsterdam-frankfurt-interior.jpg" width="600"> -->
 
 My friend is named after Doorn, a village 5 miles in this direction:
 
-<img src="/assets/doorn-direction.jpg" width="600">
+<img src="/assets/writing/doorn-direction.jpg" width="600">
 
 ## Duisburg
 
 Getting on ICE trains for an extra four hours has been quite comfortable and interesting. In Duisburg I talked to someone from Holland for half an hour about the local area. I'd found myself in the Ruhr, an industrial area of Germany that was singled out for crippling in the old Treaty of Versailles… anyhow. Apparently the locals describe themselves as being from "the pit" because it is such a big coal mining area.
 
-<img src="/assets/rail-depot-near-hamm.jpg" width="600">
+<img src="/assets/writing/rail-depot-near-hamm.jpg" width="600">
 
-<img src="/assets/house-near-hamm.jpg" width="600">
+<img src="/assets/writing/house-near-hamm.jpg" width="600">
 
-<img src="/assets/greenhouses-near-hamm.jpg" width="600">
+<img src="/assets/writing/greenhouses-near-hamm.jpg" width="600">
 
 ## Duisburg–Hannover
 
-<img src="/assets/ice-frankfurt-berlin.jpg" width="600">
+<img src="/assets/writing/ice-frankfurt-berlin.jpg" width="600">
 
-<img src="/assets/ice-frankfurt-berlin-interior.jpg" width="600">
+<img src="/assets/writing/ice-frankfurt-berlin-interior.jpg" width="600">
 
 As we speak I'm bound for Hannover, the last stop of this train before Berlin. I am slightly tempted to rejig hotels and just go to Berlin now, but I built this pitstop in to see something which wasn't a national capital (it's still the state capital of Lower Saxony), take a little time out and see formal gardens, a lake and a forested park. I think it's probably a good idea!
 
 We just stopped in a place named Hamm. 80 minutes to go.
 
-<img src="/assets/hamm.jpg" width="600">
+<img src="/assets/writing/hamm.jpg" width="600">
 
 ## An evening in Hannover
 
 It seems like a really nice place. I dropped my bag off at [my hotel](http://www.grandhotel.de) opposite the Hauptbahnhof and then went to explore. This first shot is of a tunnel connecting the Hauptbahnhof to the central U-Bahn station.
 
-<img src="/assets/hannover-hauptbahnhof.jpg" width="600">
+<img src="/assets/writing/hannover-hauptbahnhof.jpg" width="600">
 
 I spotted a huge church of (to me) unusual design in the distance and went to investigate. This is the Lutheran [Marktkirche](https://en.wikipedia.org/wiki/Marktkirche,_Hanover). It's really hard to convey how large this building is - far larger than it appears in photographs.
 
-<img src="/assets/hannover-architecture-1.jpg" width="600">
+<img src="/assets/writing/hannover-architecture-1.jpg" width="600">
 
-<img src="/assets/hannover-architecture-2.jpg" width="600">
+<img src="/assets/writing/hannover-architecture-2.jpg" width="600">
 
 I headed for the [Maschsee](https://en.wikipedia.org/wiki/Maschsee), a vast lake to the south of the city centre. Along the way I saw the [Old Town Hall](https://www.hannover.de/en/Tourism-Culture/Places-of-Interest-City-Tours/Tourist-Highlights/The-Old-Town-Hall), again with architectural features new to me. It was rather exciting.
 
-<img src="/assets/hannover-architecture-3.jpg" width="600">
+<img src="/assets/writing/hannover-architecture-3.jpg" width="600">
 
 The [New Town Hall](https://en.wikipedia.org/wiki/New_Town_Hall_\(Hanover\)) is vast and impressive. I was momentarily stunned.
 
-<img src="/assets/hannover-city-hall-1.jpg" width="600">
+<img src="/assets/writing/hannover-city-hall-1.jpg" width="600">
 
-<img src="/assets/hannover-city-hall-3.jpg" width="600">
+<img src="/assets/writing/hannover-city-hall-3.jpg" width="600">
 
 Reaching the [Maschsee](https://en.wikipedia.org/wiki/Maschsee) I was stunned again. It's about 1.5 miles long, an unusual sight when right next to a landlocked city centre!
 
-<img src="/assets/hannover-lake-1.jpg" width="600">
+<img src="/assets/writing/hannover-lake-1.jpg" width="600">
 
 At the near end are pitches to play [Kayak polo](https://en.wikipedia.org/wiki/Canoe_polo) and a championship match was underway!
 
-<img src="/assets/hannover-kayak-polo.jpg" width="600">
+<img src="/assets/writing/hannover-kayak-polo.jpg" width="600">
 
 The park of the New Town Hall is quite charming. It is almost marshy, reminiscent of University of York's older campus that I know and love.
 
-<img src="/assets/hannover-city-hall-2.jpg" width="600">
+<img src="/assets/writing/hannover-city-hall-2.jpg" width="600">
 
 I'm already very glad to have made this stop in Hannover, and there is still The Royal Gardens of Herrenhausen to come [tomorrow](/2017/hannover-to-berlin/). It's different to the capital cities I'm visiting, but far more 'real' while still quite modern and cosmopolitan. (Also, I got a very good deal on the hotel and the mood-lit shower plays Raindrops Keep Falling On My Head!)
 

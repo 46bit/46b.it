@@ -3,7 +3,7 @@ title: 📝 Leader Election
 layout: post
 ---
 
-<a href="/assets/leader-election.jpg"><img src="/assets/leader-election.jpg" style="width: 100%;"></a>
+<a href="/assets/writing/leader-election.jpg"><img src="/assets/writing/leader-election.jpg" style="width: 100%;"></a>
 
 I've decided I want to try Sketchnoting. I don't have much experience of drawing things, and I thought a friendly character would be a good start. So I focused on finding that character first:
 
