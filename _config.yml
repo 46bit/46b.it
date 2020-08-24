@@ -25,6 +25,7 @@ twitter_username: 46bit
 github_username:  46bit
 
 # Build settings
+repository: github.com/46bit.git
 destination: build
 markdown: kramdown
 plugins:
@@ -33,6 +34,13 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
+  - tmp
+  - .github
+  - .ruby-version
+  - CNAME
+  - Makefile
+  - .gitignore
 excerpt_separator: "<!--more-->"
 jekyll-archives:
   enabled:
