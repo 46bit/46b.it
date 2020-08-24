@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2012/remian-vm/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-22921213-1');
+  </script>
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Remian: a modern virtual machine - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li ><a href="/art/">art</a></li>
+          <li class="active"><a href="/writing/">writing</a></li>
+          <li><a href="https://github.com/46bit">github</a></li>
+          <li><a href="https://twitter.com/46bit">twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Remian: a modern virtual machine</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">December 19, 2012</p>
+    <p>Anyone who <a href="https://twitter.com/46Bit">follows me on Twitter</a> has probably read that <strong>I’m building a virtual machine of my own, named <a href="https://github.com/46Bit/remian">Remian</a></strong>. I’ve reached v0.1.1 and an initial release, so now is the perfect time to talk about why you should try it.
+<!--more--></p>
+
+<p>A powerful property of any true computer is the ability to simulate any other computer given sufficient time. This is known as Turing Completeness, and means that we can program our own computers: instead of designing a computer and wiring it up, we can build it in software as a virtual machine.</p>
+
+<h2 id="understanding-computers-improves-you-as-a-programmer">Understanding computers improves you as a programmer</h2>
+<p>As modern programmers we use high-level languages whenever possible, since programmer productivity tends to drop as we move to higher-performance languages. Yet when we try to solve difficult problems, <strong>it is all too easy to accidentally cripple code performance because you don’t understand what the computer is doing</strong>.</p>
+
+<p>The best way to avoid these problems is to learn about computer architecture and the basics of Assembly programming. Most programming code is executed as something like assembly code, so understanding it better can be invaluable. This might be unlikely to turn into your day job, but it’ll help you make better decisions.</p>
+
+<h2 id="the-bad-bad-and-ugly-of-x86-assembly">The bad, bad and ugly of x86 Assembly</h2>
+<p>Unfortunately, getting <strong>practical experience with Assembly proves not to be straightforward</strong>. Most modern computer processors are based on decades-old designs. As opposed to the instruction sets you might find in an undergraduate-level text, there’s decades-worth of rabbit-hole to follow before you can stop running into bizarre bugs.</p>
+
+<p>Finding a modern Assembly reference that’s not written for experts is difficult. Whilst I’ve written up notes on the matter, I’m interested in Assembly programming as a mere curiosity. I don’t want to program all my software in it, <strong>I just want others to be able to dive into hacking Assembly as easily as they might JavaScript</strong>.</p>
+
+<h2 id="virtual-machines-for-assembly">Virtual machines for Assembly</h2>
+<p><strong>The solution used by Universities seems to be virtual machines, in the form of unpolished software.</strong>.You sit in front of a GUI and type in your code. However all the experience with such software I’ve accrued suggests that <strong>the toolchains suck</strong>. At best you’ll have a working textarea to type in; at worst you’ll have constant crashes.</p>
+
+<p>Remian is built from my experience of this. There’s no bloated Windows installer, no barely-functional Java UI. <strong>Just install Remian with <code class="language-plaintext highlighter-rouge">gem install remian</code> and watch the instructions execute <code class="language-plaintext highlighter-rouge">remian execute your-assembly-file.rem</code></strong>.</p>
+
+<p>For now there’s a fairly short list of instructions and just one computer design, but the machine has deliberately been designed for flexibility. The long term plan is to support a wide range of computer designs, from tape-based Turing Machines to stack-based computation.</p>
+
+<p><strong>If you’d like to find out more, browse <a href="https://github.com/46Bit/remian">Remian’s source on Github</a> or take a look at a <a href="https://github.com/46Bit/remian/blob/develop/examples/multiply.rem">program I built earlier</a>.</strong></p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2012/two-weeks-with-go/">&larr; Two weeks with Go: an initial review</a>
+    
+    
+      <a class="next" href="/2013/trains-east-coast-positioning/">Trains and East Coast positioning data &rarr;</a>
+    
+  </div>
+<article>
+
+</body>
+</html>

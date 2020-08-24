@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2013/train-data-revisited/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-22921213-1');
+  </script>
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Railway Data Revisited - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li ><a href="/art/">art</a></li>
+          <li class="active"><a href="/writing/">writing</a></li>
+          <li><a href="https://github.com/46bit">github</a></li>
+          <li><a href="https://twitter.com/46bit">twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Railway Data Revisited</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">February 7, 2013</p>
+    <p>I mentioned Network Rail’s feeds briefly last time but hadn’t yet looked into them much. Thanks to <a href="https://twitter.com/SMLittley/status/295175976818728963">Samuel Littley</a> for letting me know a bit more about them. <a href="https://datafeeds.networkrail.co.uk/ntrod/">Sign up</a> and your access will be activated within an hour or so. Given that mine was granted at 3am GMT I suspect it’s automated.
+<!--more--></p>
+
+<p>My interest in this data comes down to how much I take trains to London, Manchester and elsewhere. Ever since I <a href="/2011/08/13/yrs2011/">built TrainTrackr</a> in 2011 I’ve wanted to get a better idea of how late trains really are. These open data <s>feeds</s> firehoses offer me that chance.</p>
+
+<h2 id="using-the-data">Using the data</h2>
+<p><strong>After getting access I discovered that the entire Data Feeds is almost as close to undocumented as you can get.</strong> Thankfully I’d signed up to a talk at the <a href="http://www.theodi.org">Open Data Institute</a> on this topic, given by <a href="https://twitter.com/madprof">Jonathan Raper</a>.</p>
+
+<p>The honest truth is that it seems to be quite a pain. A few immediate problems:</p>
+
+<ul>
+  <li>Network Rail may have released access to live train times, but the documentation around it is extremely lacking. This is apparently a result of the convoluted system the railways operate under.</li>
+  <li><strong>The volume of data during the day is pretty big.</strong> At least 500 messages a second. There’s no reason you can’t deal with that amount of data but the real problem is that <strong>your API connection often drops</strong>, causing you to miss some trains setting off. If you miss trains setting off from their first station, you’ll struggle to work out where it’s going along the entire route.</li>
+</ul>
+
+<p>You then face the fact there’s half a dozen different datasets: the train timetable, the live updates, changes to train journeys - and when trains have to divert you can lose track of where it’s going altogether.</p>
+
+<h2 id="learning-more">Learning more</h2>
+<p>Unsurprisingly the train community got to this before I did, so there’s quite a bit of useful things out there. I’ve not managed to find any overview/introduction that’s up to date, so I might end up writing one next month.</p>
+
+<p>If you want train data in a format where it’s ready to build a Mobile API, try <strong><a href="https://developer.transportapi.com">Placr’s Transport API</a></strong>. Free for &lt;1000 hits a day, paid above that. Placr’s founder gave the ODI talk I mentioned, the slides are <strong><a href="http://www.scribd.com/doc/123365071/Friday-Lunchtime-Lectures-at-the-ODI-How-can-Open-Data-Revolutionise-your-Rail-Travel">available online</a></strong>.</p>
+
+<p>For an example of what can be done in terms of end-user applications, see <strong><a href="http://www.realtimetrains.co.uk">Real Time Trains</a></strong> by Tom Cairns. There’s also plenty of information <strong><a href="http://thomas-cairns.co.uk">on his blog</a></strong> regarding the different data formats - and better, lots of relevant code <strong><a href="https://github.com/swlines">on Github</a></strong>.</p>
+
+<p><strong><a href="http://blog.poggs.com">Peter Hicks</a></strong> also has some <strong><a href="https://github.com/poggs">useful code</a></strong> available, although seemingly focused on timetables rather than the live data. He gave a <strong><a href="http://blog.poggs.com/2012/09/okfestival/">relevant talk</a></strong> last September in Helsinki that dives a bit more into licensing issues and so forth.</p>
+
+<h2 id="my-next-step">My next step</h2>
+<p>I’ve got a much better idea what I’m doing than a couple of weeks ago, so I’m going to go out and start getting the data. Next post on this probably a few weeks away. <strong>Thanks a lot to all mentioned for their help.</strong></p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2013/trains-east-coast-positioning/">&larr; Trains and East Coast positioning data</a>
+    
+    
+      <a class="next" href="/2013/quantum-computers-first-look/">A first look at Quantum Computers &rarr;</a>
+    
+  </div>
+<article>
+
+</body>
+</html>

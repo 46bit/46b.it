@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2017/engineering-discipline-and-craft/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-22921213-1');
+  </script>
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Engineering as slowly as possible - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li ><a href="/art/">art</a></li>
+          <li class="active"><a href="/writing/">writing</a></li>
+          <li><a href="https://github.com/46bit">github</a></li>
+          <li><a href="https://twitter.com/46bit">twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Engineering as slowly as possible</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">February 27, 2017</p>
+    <p>I’ve become a fan of developing, “as slowly as possible.” It’s proven hard to crystallise what feelings this sums up, but I relate it to <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">slow, logical, conscious System Two</a> thinking.</p>
+
+<p>The way you start a project indicates a lot about how it will progress. Something that gets a testsuite early on will probably keep one going; something that is essentially untested is hard to improve. This hill can be climbed over if one is lazy or very disciplined - but sustained effort to undo unforced mistakes is hard.</p>
+
+<p>So making the right decisions at the right time is important. Ideally we should favour sustained velocity over quickly hacking something together and forgetting about it. We should have good craft <em>in order to</em> still move fast: building things well rather than just building them.
+<!--more--></p>
+
+<p>There’s a balance between productivity (immediate gratification) and quality of craft. Small hacks and hobby projects which might be thrown away should favor early productivity. Larger projects, ones worked on infrequently, or ones shared with others should favor craft. One needs to pick correctly.</p>
+
+<p>The natural question is where do you place projects with potential? If a prototype can lead to bigger things but also be in the bin inside a week?</p>
+
+<ul>
+  <li>Throwaway projects can have a long lifetime. I hacked together some scraping and cleanup tools for University of York Student Union candidates last year, but at least twenty people I had to email for their information. This year I <a href="http://www.nouse.co.uk/2017/02/18/battle-of-the-colleges-whos-got-the-bnocs/">published an analysis piece in Nouse student newspaper</a> on a 36-hour turnaround. My quick hack now had to automate the entire process because of time constraints.<br /><br /></li>
+  <li>Involved projects can have a surprisingly short lifetime. The high-quality cybersecurity practicals I worked on all last summer have yet to see the light of day. The ambitious systems I built at Dreamforge in 2012-13 have mostly been offline for two years now - our proof-of-concept <a href="http://cookiecaster.com">Cookie Caster</a> is the sole brilliant survivor.<br /><br /></li>
+  <li>Poor craft tends to bite you in the butt when you can least afford it. Our software at Dreamforge worked quite well for Cookie Caster and for much of the Fraemes project. Where it let us down was in trying to make Fraemes scale.<br /><br />Five minutes checking for regressions after making changes is trivially affordable in the early months of a new project; 10× five minutes a day is unaffordable when you’re overworked and expending available brainpower working on complex things.</li>
+</ul>
+
+<p>Experience is a good teacher. The benefit of experience is identifying when to make tradeoffs and how to avoid tradeoffs you don’t have to make. I’ve been reading with a lot of interest about continuous deployment at <a href="https://www.theguardian.com/info/developer-blog/2016/dec/20/testing-in-production-rethinking-the-conventional-deployment-pipeline">The Guardian</a> and <a href="http://codevoyagers.com/2016/10/31/from-20-to-2-million-releases-a-year-part-2/">SkyScanner</a>.</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2017/yusu-election-colleges/">&larr; Battle of the colleges: who’s got the BNOCs</a>
+    
+    
+      <a class="next" href="/2017/rust-generating-syntax-trees/">Generating expression trees in Rust &rarr;</a>
+    
+  </div>
+<article>
+
+</body>
+</html>
