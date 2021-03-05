@@ -5,6 +5,8 @@ layout: post
 
 I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
 
+This post is aimed is at software engineers with DevOps skills who already run Prometheus and Grafana. If you don't have those skills then I'd be interested in figuring out how to make this more widely available–contact me.
+
 In **[the first post](/2021/getting-alerted-when-cycle-paths-flood/)** I explained how to get River Water Level data exposed in a way that Prometheus can scrape. In this post we'll get Prometheus scraping the data, and then look at how we can get alerts and see the data in Grafana.
 
 ## Scraping river water levels into Prometheus
