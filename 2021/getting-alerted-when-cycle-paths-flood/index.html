@@ -6,7 +6,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
   <link href="/assets/main.css" rel="stylesheet">
-  <link rel="canonical" href="https://46b.it/2021/getting-local-river-levels-into-grafana/">
+  <link rel="canonical" href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
@@ -20,7 +20,7 @@
   <script src="/js/mathjax/MathJax.js?config=46bit"></script>
   $endif$ -->
 
-  <title>Getting local river levels into Grafana - 46b.it</title>
+  <title>Getting alerted when cycle paths flood - 46b.it</title>
 </head>
 <body>
   <header id="header">
@@ -41,12 +41,12 @@
   <header class="prelude">
     <div class="wrapper">
       
-      <h1>Getting local river levels into Grafana</h1>
+      <h1>Getting alerted when cycle paths flood</h1>
       
     </div>
   </header>
   <section class="wrapper zerotop yellowlined">
-    <p class="meta">March 5, 2021</p>
+    <p class="meta">March 4, 2021</p>
     <p>I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
 <!--more--></p>
 
@@ -112,13 +112,17 @@ river_level_max_on_record{rloi_id="8208",station_name="Viking Recorder",town="Yo
 
 <p>I’ve made a public Docker image for this if you want to re-use it: <code class="language-plaintext highlighter-rouge">ghcr.io/46bit/flood-exporter</code>.</p>
 
-<p>The next step is to configure Prometheus or Grafana Cloud Agent to scrape that endpoint. I’ll cover that in my next post.</p>
+<h2 id="whats-next">What’s next?</h2>
+
+<p>The next step is to configure Prometheus to scrape that endpoint, and Grafana to render some pretty graphics and send alerts. I cover that in <strong><a href="/2021/getting-alerted-when-cycle-paths-flood-part-two/">my next post</a></strong>.</p>
 
   </section>
   <div class="wrapper prev-next-jump">
     
       <a class="prev" href="/2018/how-responsible-are-we-for-others/">&larr; How responsible are we for the feelings of others?</a>
     
+    
+      <a class="next" href="/2021/getting-alerted-when-cycle-paths-flood-part-two/">Getting alerted when cycle paths flood: part two &rarr;</a>
     
   </div>
 <article>

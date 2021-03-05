@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2021-03-05T00:34:05+00:00</updated><id>https://46b.it/meta/feed.atom</id><title type="html">46b.it</title><entry><title type="html">Getting local river levels into Grafana</title><link href="https://46b.it/2021/getting-local-river-levels-into-grafana/" rel="alternate" type="text/html" title="Getting local river levels into Grafana" /><published>2021-03-05T00:00:00+00:00</published><updated>2021-03-05T00:00:00+00:00</updated><id>https://46b.it/2021/getting-local-river-levels-into-grafana</id><content type="html" xml:base="https://46b.it/2021/getting-local-river-levels-into-grafana/">&lt;p&gt;I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2021-03-05T01:27:16+00:00</updated><id>https://46b.it/meta/feed.atom</id><title type="html">46b.it</title><entry><title type="html">Getting alerted when cycle paths flood: part two</title><link href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/" rel="alternate" type="text/html" title="Getting alerted when cycle paths flood: part two" /><published>2021-03-05T00:00:00+00:00</published><updated>2021-03-05T00:00:00+00:00</updated><id>https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two</id><content type="html" xml:base="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/">&lt;p&gt;I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;&lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood/&quot;&gt;the first post&lt;/a&gt;&lt;/strong&gt; I explained how to get River Water Level data exposed in a way that Prometheus can scrape. In this post we’ll get Prometheus scraping the data, and then look at how we can get alerts and see the data in Grafana.&lt;/p&gt;
+
+&lt;h2 id=&quot;scraping-river-water-levels-into-prometheus&quot;&gt;Scraping river water levels into Prometheus&lt;/h2&gt;
+
+&lt;p&gt;I have deployed the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter&lt;/code&gt; we built in &lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood/&quot;&gt;my last post&lt;/a&gt;, and it’s running at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter.k8s.46b.it&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Scraping this endpoint into Prometheus is simple (since I’m very familiar with Prometheus.) Here’s the YAML config:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrape_configs:
+- job_name: river_level_metrics
+  scheme: https
+  static_configs:
+  - targets:
+    - flood-exporter.k8s.46b.it
+  metrics_path: /probe
+  scrape_interval: 180s
+  params:
+    target:
+      - https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json&lt;/code&gt; is specific to York. See &lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood/&quot;&gt;the previous post&lt;/a&gt; to understand how to get river data for a different place.&lt;/p&gt;
+
+&lt;p&gt;This should “just work” :)&lt;/p&gt;
+
+&lt;p&gt;There are three metrics available:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;river_level_measurement&lt;/code&gt;, storing the current river level in metres&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;river_level_min_on_record&lt;/code&gt;, storing the lowest river level that’s been measured&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;river_level_miaxon_record&lt;/code&gt;, storing the highest river level that’s been measured&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In York the river level is updated every 15 minutes, so the Prometheus config only bothers to scrape every few minutes. I don’t know if it’s different elsewhere.&lt;/p&gt;
+
+&lt;h2 id=&quot;building-a-dashboard-in-grafana&quot;&gt;Building a dashboard in Grafana&lt;/h2&gt;
+
+&lt;p&gt;Now that the data’s in Prometheus, we’re free to use it in a Grafana dashboard.&lt;/p&gt;
+
+&lt;p&gt;Some of the Grafana dashboard is going to be specific to York, but I’ll give you my config and you can tune it to your needs.&lt;/p&gt;
+
+&lt;p&gt;The river levels used for these alerts are from &lt;a href=&quot;http://nosearmy.com/isitflooded/&quot;&gt;nosearmy.com/isitflooded/&lt;/a&gt;. All credit to them.&lt;/p&gt;
+
+&lt;p&gt;Here’s what my dashboard looks like when things are OK:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/writing/york-cycle-path-dashboard-happy.png&quot;&gt;&lt;img src=&quot;/assets/writing/york-cycle-path-dashboard-happy.png&quot; alt=&quot;A Grafana dashboard showing that the River Ouse is low and there are no flooded cycle paths&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s what my dashboard looks like when there’s a flood (only simulated as there hasn’t been one since I deployed this):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/writing/york-cycle-path-dashboard-flooding.png&quot;&gt;&lt;img src=&quot;/assets/writing/york-cycle-path-dashboard-flooding.png&quot; alt=&quot;A Grafana dashboard showing that the River Ouse is high and there are several deeply flooded cycle paths&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The really cool thing about this is that the right-hand side panel tells me how deeply paths are flooded. On a bicycle I can go through a few centimetres, but not 20 or 30cm.&lt;/p&gt;
+
+&lt;p&gt;You can get the source code for my Grafana dashboard at &lt;a href=&quot;https://gist.github.com/46bit/a05a6d5bd1f2dc9a4bdfa0c87d328452&quot;&gt;gist.github.com/46bit/a05a6d5bd1f2dc9a4bdfa0c87d328452&lt;/a&gt;. Install it into your Grafana and it should just work, provided you’ve got Prometheus scraping the data.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-alerts&quot;&gt;Setting up alerts&lt;/h2&gt;
+
+&lt;p&gt;I’m using &lt;a href=&quot;https://grafana.com/products/cloud/&quot;&gt;Grafana Cloud&lt;/a&gt; to run my Grafana, so it’s easier to use Grafana Alerts than to configure Alertmanager.&lt;/p&gt;
+
+&lt;p&gt;The Grafana dashboard above includes a bunch of alerts for each of the different paths. I’ve got them forwarding messages to a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#cycling&lt;/code&gt; channel in York-specific Slack group that I’m in:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/writing/york-cycle-path-slack-alert.png&quot; alt=&quot;A Slack message posted by Grafana to warn that a York cycle path is flooded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rather than trying to teach you how to use Grafana Alerts, install my dashboard and tweak it for your purposes. Expand the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Path flood alerts&lt;/code&gt; row at the bottom of the dashboard and you can edit the alerts in there.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise. In the first post I explained how to get River Water Level data exposed in a way that Prometheus can scrape. In this post we’ll get Prometheus scraping the data, and then look at how we can get alerts and see the data in Grafana. Scraping river water levels into Prometheus I have deployed the flood-exporter we built in my last post, and it’s running at flood-exporter.k8s.46b.it. Scraping this endpoint into Prometheus is simple (since I’m very familiar with Prometheus.) Here’s the YAML config: scrape_configs: - job_name: river_level_metrics scheme: https static_configs: - targets: - flood-exporter.k8s.46b.it metrics_path: /probe scrape_interval: 180s params: target: - https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json is specific to York. See the previous post to understand how to get river data for a different place. This should “just work” :) There are three metrics available: river_level_measurement, storing the current river level in metres river_level_min_on_record, storing the lowest river level that’s been measured river_level_miaxon_record, storing the highest river level that’s been measured In York the river level is updated every 15 minutes, so the Prometheus config only bothers to scrape every few minutes. I don’t know if it’s different elsewhere. Building a dashboard in Grafana Now that the data’s in Prometheus, we’re free to use it in a Grafana dashboard. Some of the Grafana dashboard is going to be specific to York, but I’ll give you my config and you can tune it to your needs. The river levels used for these alerts are from nosearmy.com/isitflooded/. All credit to them. Here’s what my dashboard looks like when things are OK: Here’s what my dashboard looks like when there’s a flood (only simulated as there hasn’t been one since I deployed this): The really cool thing about this is that the right-hand side panel tells me how deeply paths are flooded. On a bicycle I can go through a few centimetres, but not 20 or 30cm. You can get the source code for my Grafana dashboard at gist.github.com/46bit/a05a6d5bd1f2dc9a4bdfa0c87d328452. Install it into your Grafana and it should just work, provided you’ve got Prometheus scraping the data. Setting up alerts I’m using Grafana Cloud to run my Grafana, so it’s easier to use Grafana Alerts than to configure Alertmanager. The Grafana dashboard above includes a bunch of alerts for each of the different paths. I’ve got them forwarding messages to a #cycling channel in York-specific Slack group that I’m in: Rather than trying to teach you how to use Grafana Alerts, install my dashboard and tweak it for your purposes. Expand the Path flood alerts row at the bottom of the dashboard and you can edit the alerts in there.</summary></entry><entry><title type="html">Getting alerted when cycle paths flood</title><link href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood/" rel="alternate" type="text/html" title="Getting alerted when cycle paths flood" /><published>2021-03-04T00:00:00+00:00</published><updated>2021-03-04T00:00:00+00:00</updated><id>https://46b.it/2021/getting-alerted-when-cycle-paths-flood</id><content type="html" xml:base="https://46b.it/2021/getting-alerted-when-cycle-paths-flood/">&lt;p&gt;I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;There is already a very useful website for seeing which routes in York are flooded: &lt;a href=&quot;http://nosearmy.com/isitflooded/&quot;&gt;nosearmy.com/isitflooded/&lt;/a&gt;. But it’s annoying having to check my phone before I go cycling–especially when I’m trying to quickly fit six miles in at lunchtime. I’d rather get alerts when cycle paths flood.&lt;/p&gt;
@@ -63,7 +128,9 @@ river_level_max_on_record{rloi_id=&quot;8208&quot;,station_name=&quot;Viking Rec
 
 &lt;p&gt;I’ve made a public Docker image for this if you want to re-use it: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ghcr.io/46bit/flood-exporter&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The next step is to configure Prometheus or Grafana Cloud Agent to scrape that endpoint. I’ll cover that in my next post.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.</summary></entry><entry><title type="html">How responsible are we for the feelings of others?</title><link href="https://46b.it/2018/how-responsible-are-we-for-others/" rel="alternate" type="text/html" title="How responsible are we for the feelings of others?" /><published>2018-10-18T00:00:00+00:00</published><updated>2018-10-18T00:00:00+00:00</updated><id>https://46b.it/2018/how-responsible-are-we-for-others</id><content type="html" xml:base="https://46b.it/2018/how-responsible-are-we-for-others/">&lt;p&gt;I’d like to publish more of my writing, and so this post is somewhat shorter and stream-of-consciousness than I’ve written before.&lt;/p&gt;
+&lt;h2 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h2&gt;
+
+&lt;p&gt;The next step is to configure Prometheus to scrape that endpoint, and Grafana to render some pretty graphics and send alerts. I cover that in &lt;strong&gt;&lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood-part-two/&quot;&gt;my next post&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.</summary></entry><entry><title type="html">How responsible are we for the feelings of others?</title><link href="https://46b.it/2018/how-responsible-are-we-for-others/" rel="alternate" type="text/html" title="How responsible are we for the feelings of others?" /><published>2018-10-18T00:00:00+00:00</published><updated>2018-10-18T00:00:00+00:00</updated><id>https://46b.it/2018/how-responsible-are-we-for-others</id><content type="html" xml:base="https://46b.it/2018/how-responsible-are-we-for-others/">&lt;p&gt;I’d like to publish more of my writing, and so this post is somewhat shorter and stream-of-consciousness than I’ve written before.&lt;/p&gt;
 
 &lt;p&gt;Today I’m discussing what we owe to each other and what we owe to ourselves. In particular, how responsible are we for the feelings of others?&lt;/p&gt;
 
@@ -272,43 +339,4 @@ Visitor count: &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
 &lt;h2 id=&quot;what-hasnt-changed&quot;&gt;What hasn’t changed?&lt;/h2&gt;
 
-&lt;p&gt;Very often we still want things to “just work!” But what things working look like is getting better and better, and that’s a good thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.</summary></entry><entry><title type="html">❄ Blizzards 🌨</title><link href="https://46b.it/2018/blizzard/" rel="alternate" type="text/html" title="❄ Blizzards 🌨" /><published>2018-03-02T00:00:00+00:00</published><updated>2018-03-02T00:00:00+00:00</updated><id>https://46b.it/2018/blizzard</id><content type="html" xml:base="https://46b.it/2018/blizzard/">&lt;p&gt;It’s been quite the Winter for snow in North London. My first winter here has been just as lucky as
-was my first in York, which is when I took this photograph.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/writing/uoy-cse-snowman.jpg&quot; width=&quot;600&quot; alt=&quot;The base of a very large snowman being rolled into place outside University of York's Computer Science building&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I live in a city, I don’t drive and I rely on my feet, bicycles and public transport to get around.
-Unless I need to cycle somewhere, I’m in the perfect position to enjoy and get excited by snow. And
-I have! And it’s really pretty around here.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/writing/stroud-green-crouch-end-snow.jpg&quot;&gt;&lt;img src=&quot;/assets/writing/stroud-green-crouch-end-snow-small.jpg&quot; width=&quot;600&quot; alt=&quot;A snow-covered vista from Stroud Green over Crouch End towards Alexandra Palace&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I thought I’d gotten lucky with a few days of snow in early December. I threw some snowballs,
-admired dozens of snowpeople in Finsbury Park (no time to build one, sadly) and got to feel festive.
-Getting another week of snow wasn’t something I hoped for.&lt;/p&gt;
-
-&lt;p&gt;It’s been a blizzard on my hill at times, watching snowflakes zoom down or snow from the ground
-whipped up into the air. That’s been kind of cool, but also a little scary sometimes. Living in a
-conservation zone is really nice in some ways, but old-fashioned sash windows really aren’t airtight
-and I’ve had to improvise to seal up some holes.&lt;/p&gt;
-
-&lt;p&gt;I have a habit of visiting New England in December, a time of year when it gets awfully cold
-weather and blizzards. Last December the wind chill one daygot down to about -22°C. Another day
-I walked about six miles through half of a foot of snow from Cambridge, MA to Downtown Boston. That
-day was when I took this next photo.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/writing/cambridge-snowpeople.jpg&quot; width=&quot;600&quot; alt=&quot;A group of small snowpeople in Cambridge, MA last year&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We haven’t quite had that here yet but 4 days of snowing and a week of cold weather make me feel
-like I’m there. It feels great.&lt;/p&gt;
-
-&lt;p&gt;But that’s not the whole story. The cold giving us snow should be growing sea ice in the Arctic. We
-might be having fun (unless you’re trapped on a train overnight!) but Polar Bears in the Arctic will
-have less hunting territory. I don’t know how to change the vast problem that is reducing CO₂
-emissions. We’re not willing to have lower living standards for it, especially when they’re already
-eroding, even if there was a way to negotiate that.&lt;/p&gt;
-
-&lt;p&gt;It’s a tragedy and, whatever happens to human civilization, much of what made this world so amazing
-will be changed.&lt;/p&gt;</content><author><name></name></author><summary type="html">It’s been quite the Winter for snow in North London. My first winter here has been just as lucky as was my first in York, which is when I took this photograph.</summary></entry></feed>
+&lt;p&gt;Very often we still want things to “just work!” But what things working look like is getting better and better, and that’s a good thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">When I started web development in the early 2000s, your typical medium sized website ran on a single codebase that ran in exactly the same way on a few webservers. The frontend, things like accessibility and JavaScript, felt like novelties.</summary></entry></feed>
