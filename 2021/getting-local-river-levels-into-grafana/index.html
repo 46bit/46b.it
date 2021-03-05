@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="/assets/main.css" rel="stylesheet">
+  <link rel="canonical" href="https://46b.it/2021/getting-local-river-levels-into-grafana/">
+  <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-22921213-1');
+  </script>
+  <!-- $if(math)$
+  <script src="/js/mathjax/MathJax.js?config=46bit"></script>
+  $endif$ -->
+
+  <title>Getting local river levels into Grafana - 46b.it</title>
+</head>
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <h1><a href="/"><img src="/assets/logo.png" alt="46b.it" width="75"></a></h1>
+      <nav>
+        
+        <ul>
+          <li ><a href="/art/">art</a></li>
+          <li ><a href="/writing/">writing</a></li>
+          <li><a href="https://github.com/46bit">github</a></li>
+          <li><a href="https://twitter.com/46bit">twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <article>
+  <header class="prelude">
+    <div class="wrapper">
+      
+      <h1>Getting local river levels into Grafana</h1>
+      
+    </div>
+  </header>
+  <section class="wrapper zerotop yellowlined">
+    <p class="meta">March 5, 2021</p>
+    <p>I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
+<!--more--></p>
+
+<p>There is already a very useful website for seeing which routes in York are flooded: <a href="http://nosearmy.com/isitflooded/">nosearmy.com/isitflooded/</a>. But it’s annoying having to check my phone before I go cycling–especially when I’m trying to quickly fit six miles in at lunchtime. I’d rather get alerts when cycle paths flood.</p>
+
+<p>I have a Grafana and Prometheus monitoring stack, so I’m going to use those to notify me. This makes sense if you’re an engineer with DevOps skills; less so for an ordinary person.</p>
+
+<h2 id="where-to-find-data-on-river-water-levels">Where to find data on river water levels</h2>
+
+<p>To do this I’m going to use freely available River Level data from the Environment Agency. Data for York’s main river level station, Viking Recorder, is online at <a href="https://check-for-flooding.service.gov.uk/station/8208">check-for-flooding.service.gov.uk/station/8208</a>.</p>
+
+<p>There’s also an API. It uses different ID numbers, but you can translate IDs. The <code class="language-plaintext highlighter-rouge">RLOIid</code> field on <a href="https://environment.data.gov.uk/flood-monitoring/id/stations?_limit=50000">environment.data.gov.uk/flood-monitoring/id/stations?_limit=50000</a> matches the human-readable pages, and the <code class="language-plaintext highlighter-rouge">wiskiID</code> field is what to use for the API.</p>
+
+<p>You can then fetch the latest river level reading for your station from <a href="https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json">environment.data.gov.uk/flood-monitoring/id/stations/L2406.json</a>. There’s a few API endpoints to choose from but this one has the most metadata.</p>
+
+<h2 id="how-to-get-the-data-into-prometheus">How to get the data into Prometheus</h2>
+
+<p>Next challenge is how to get this into Prometheus. The river level API returns JSON, so we can use the off-the-shelf <a href="https://github.com/prometheus-community/json_exporter">github.com/prometheus-community/json_exporter</a>.</p>
+
+<p>There are many different choices in how to file metrics from this JSON. I’ve ended up assuming there’ll only be one <code class="language-plaintext highlighter-rouge">latestReading</code> for each station–that’s true at this station, but you should see if it’s true for yours.</p>
+
+<p>The final config I’ve made for the json exporter is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+metrics:
+- name: river_level
+  path: "{ .items }"
+  type: object
+  values:
+    measurement: "{ .measures[*].latestReading.value }"
+    max_on_record: "{ .stageScale.maxOnRecord.value }"
+    min_on_record: "{ .stageScale.minOnRecord.value }"
+  labels:
+    rloi_id: "{ .RLOIid }"
+    wiski_id: "{ .wiskiID }"
+    name: "{ .label }"
+    town: "{ .town }"
+</code></pre></div></div>
+
+<p>Start up the JSON Exporter using that config:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./json_exporter --config.file config.yml &amp;
+[…]
+</code></pre></div></div>
+
+<p>Then scrape the exporter, providing the station data URL:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl "http://localhost:7979/probe?target=https://environment.data.gov.uk/flood-monitoring/id/stations/L2406.json"
+# HELP river_level_measurement river_level
+# TYPE river_level_measurement untyped
+river_level_measurement{rloi_id="8208",station_name="Viking Recorder",town="York",wiski_id="L2406"} 0.649
+
+# HELP river_level_min_on_record river_level
+# TYPE river_level_min_on_record untyped
+river_level_min_on_record{rloi_id="8208",station_name="Viking Recorder",town="York",wiski_id="L2406"} -0.082
+
+# HELP river_level_max_on_record river_level
+# TYPE river_level_max_on_record untyped
+river_level_max_on_record{rloi_id="8208",station_name="Viking Recorder",town="York",wiski_id="L2406"} 5.4
+</code></pre></div></div>
+
+<p>Unfortunately the JSON Exporter doesn’t support measurement units. It does support help text but I don’t need that for myself (something to do later.) What I have done is configured some useful labels, including the IDs mentioned up the top of this article.</p>
+
+<p>I’ve made a public Docker image for this if you want to re-use it: <code class="language-plaintext highlighter-rouge">ghcr.io/46bit/flood-exporter</code>.</p>
+
+<p>The next step is to configure Prometheus or Grafana Cloud Agent to scrape that endpoint. I’ll cover that in my next post.</p>
+
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2018/how-responsible-are-we-for-others/">&larr; How responsible are we for the feelings of others?</a>
+    
+    
+  </div>
+<article>
+
+</body>
+</html>
