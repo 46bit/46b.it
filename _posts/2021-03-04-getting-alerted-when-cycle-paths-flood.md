@@ -1,5 +1,5 @@
 ---
-title: 'Getting local river levels into Grafana'
+title: 'Getting alerted when cycle paths flood'
 layout: post
 ---
 
@@ -71,4 +71,6 @@ Unfortunately the JSON Exporter doesn't support measurement units. It does suppo
 
 I've made a public Docker image for this if you want to re-use it: `ghcr.io/46bit/flood-exporter`.
 
-The next step is to configure Prometheus or Grafana Cloud Agent to scrape that endpoint. I'll cover that in my next post.
+## What's next?
+
+The next step is to configure Prometheus to scrape that endpoint, and Grafana to render some pretty graphics and send alerts. I cover that in **[my next post](/2021/getting-alerted-when-cycle-paths-flood-part-two/)**.
