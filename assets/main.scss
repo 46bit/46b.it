@@ -201,7 +201,7 @@ article section h3 {
 article section h3 a:hover, article section h3 a:active {
   border-bottom: 1px solid #000;
 }
-article section p, article section ul, article section ol, article section pre, article section blockquote {
+article section p, article section ul, article section ol, article section pre, article section blockquote, article section table {
   margin-bottom: 18px;
 }
 article section ul, article section ol {
@@ -296,6 +296,13 @@ article blockquote {
   &, p {
     font-size: 18px;
   }
+}
+article table {
+  border-collapse: collapse;
+}
+article table td, article table th {
+  border: 1px solid #000000;
+  padding: 3px 6px;
 }
 article section .pull-left {
   float: left;
