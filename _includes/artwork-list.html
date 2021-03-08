@@ -3,8 +3,8 @@
     <h1>Art</h1>
   </div>
 </header>
-<div class="wrapper">
-  <h2 style="color: #3b3b3b; font: 300 24px/28px 'Merriweather', serif; font-weight: 300; margin: 0 0 10px;">Interactive</h2>
+<section class="wrapper">
+  <h2>Interactive</h2>
   <ul class="artwork-list">
   {% for artwork in site.artworks %}
     {% if artwork.hide %}
@@ -21,7 +21,7 @@
   {% endfor %}
   </ul>
 
-  <h2 style="color: #3b3b3b; font: 300 24px/28px 'Merriweather', serif; font-weight: 300; margin: 35px 0 10px;">Drawings</h2>
+  <h2>Drawings</h2>
   <ul class="artwork-list">
   {% for artwork in site.artworks %}
     {% if artwork.hide %}
@@ -38,7 +38,7 @@
   {% endfor %}
   </ul>
 
-  <h2 style="color: #3b3b3b; font: 300 24px/28px 'Merriweather', serif; font-weight: 300; margin: 35px 0 10px;">Photos</h2>
+  <h2>Photos</h2>
   <ul class="artwork-list">
   {% for artwork in site.artworks %}
     {% if artwork.hide %}
@@ -54,4 +54,4 @@
     {% endif %}
   {% endfor %}
   </ul>
-</div>
+</section>

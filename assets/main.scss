@@ -48,15 +48,13 @@ a.ext[href*="//"]::after {
   padding: 0;
 }
 body {
-  background: #efefef;
+  background: #fff;
   font: 400 19px 'Merriweather', serif;
 }
 .wrapper {
-  max-width: 840px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 a {
   text-decoration: none;
@@ -112,7 +110,6 @@ a {
       display: inline;
       font-size: 21px;
       line-height: 30px;
-      font-family: 'Merriweather', serif;
       a.post-title {
         color: #007cbf;
         &:hover, &:active {
@@ -131,22 +128,31 @@ a {
 .artwork-list {
   color: #444;
   list-style: none;
-  max-width: 840px;
   display: grid;
+  margin-left: 0;
+  margin-bottom: 30px;
+  padding: 0;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   li {
     text-align: center;
     line-height: 0;
+    &:before {
+      content: none;
+    }
     .artwork-thumb {
       width: 100%;
+      border: none;
+    }
+    a:hover, a:active {
+      border: none;
     }
   }
 }
 
 article .prelude {
-  padding: 30px 0;
+  padding-top: 30px;
   font: 300 24px/38px 'Merriweather', serif;
   margin: 0 auto;
 }
@@ -158,7 +164,6 @@ article .prelude h1 {
   font-size: 36px;
   line-height: 48px;
   font-weight: 300;
-  margin-left: -30px;
 }
 article .prelude .meta {
   line-height: 28px;
@@ -166,21 +171,16 @@ article .prelude .meta {
   padding: 10px;
   display: inline-block;
   margin-bottom: 15px;
-  margin-left: -30px;
   font-size: 20px;
 }
 
 article section {
   color: #3b3b3b;
   line-height: 28px;
-  background: white;
   padding-top: 30px;
   padding-bottom: 18px;
   overflow: hidden;
-  margin-bottom: 30px;
-}
-article section.yellowlined {
-  border-top: 6px solid #ffee36;
+  margin-bottom: 12px;
 }
 article section a {
   color: #007cbf;
@@ -188,17 +188,16 @@ article section a {
 article section a:hover, article section a:active {
   border-bottom: 1px solid #007cbf;
 }
-article section h2, article section h3, article section h4, article section h5 {
+article h2, article section h3, article section h4, article section h5 {
   font-weight: 400;
   margin-bottom: 12px;
   padding-bottom: 12px;
 }
-article section h2 {
+article h2 {
   clear: both;
   font-size: 28px;
   line-height: 40px;
   padding-bottom: 0;
-  font-family: 'Merriweather', serif;
 }
 article section h2.post-title a {
   color: #a61941;
@@ -273,17 +272,6 @@ article section .avatar {
 article section .avatar.botspace {
   margin-bottom: 30px;
 }
-article section.zerotop {
-  padding-top: 0;
-}
-article section .meta {
-  background: #ffee36;
-  border-bottom: 1px solid #eee;
-  padding: 10px;
-  display: inline-block;
-  margin: 0 0 15px;
-  font-family: 'Merriweather', serif;
-}
 article pre {
   border: 3px solid #fff1e9;
   background: #fff6ef;
@@ -291,9 +279,11 @@ article pre {
   font-size: 20px;
   padding: 17px 0 17px 17px;
   font-family: 'Operator Mono', monospace;
+  overflow: scroll;
 }
 article pre code {
   background: #fff6ef;
+  padding: 0;
 }
 article code {
   background: #fff1e9;
@@ -326,8 +316,12 @@ article .prev-next-jump {
   overflow: hidden;
   font-weight: 400;
   padding-bottom: 30px;
+  text-style: italic;
   a {
     color: #a61941;
+    &:active, &:hover {
+      border-bottom: 1px solid #a61941;
+    }
   }
   .prev {
     float: left;
@@ -337,7 +331,11 @@ article .prev-next-jump {
   }
 }
 
-@media (max-width: 954px) {
+@media (max-width: 990px) {
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   article section .pull-left {
      float: none;
      margin-right: 0;
@@ -379,12 +377,16 @@ article .prev-next-jump {
 
   #header nav ul li.active a {
     color: #3b3b3b;
-    background: #efefef;
+    background: #ffffff;
   }
 
   article .prelude {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  article section {
+    padding-top: 0;
   }
 
   article .prelude .intro {
@@ -432,6 +434,9 @@ article .prev-next-jump {
   }
 
   .artwork-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     grid-template-columns: 1fr 1fr;
   }
 }

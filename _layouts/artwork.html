@@ -9,9 +9,9 @@ layout: default
       {% endif %}
     </div>
   </header>
-  <div class="wrapper">
-    <img src="{{ page.image_url }}" alt="{{ page.title | escape }}" style="max-width: 100%;">
-  </div>
+  <section class="wrapper">
+    <img src="{{ page.image_url }}" alt="{{ page.title | escape }}" style="max-width: 100%; border: none;">
+  </section>
   <div class="wrapper prev-next-jump">
     {% if page.previous.url %}{% unless page.previous.draft %}
       <a class="prev" href="{{page.previous.url}}">&larr; {{page.previous.title}}</a>
