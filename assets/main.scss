@@ -75,7 +75,7 @@ a {
 #header h1 {
   float: left;
   font-size: 30px;
-  font-weight: 300;
+  font-weight: 400;
   display: inline;
   margin-top: 16px;
 }
@@ -95,7 +95,7 @@ a {
 #header nav ul li.active a, #header nav ul li.active a:hover, #header nav ul li.active a:active {
   color: #ffee36;
   background: #c31244;
-  font-weight: 600;
+  font-weight: 700;
 }
 #header nav ul li a:hover, #header nav ul li a:active {
   background: #b71643;
@@ -153,7 +153,7 @@ a {
 
 article .prelude {
   padding-top: 30px;
-  font: 300 24px/38px 'Merriweather', serif;
+  font: 400 24px/38px 'Merriweather', serif;
   margin: 0 auto;
 }
 article .prelude a {
@@ -163,7 +163,7 @@ article .prelude h1 {
   color: #a61941;
   font-size: 36px;
   line-height: 48px;
-  font-weight: 300;
+  font-weight: 400;
 }
 article .prelude .meta {
   line-height: 28px;
@@ -189,7 +189,7 @@ article section a:hover, article section a:active {
   border-bottom: 1px solid #007cbf;
 }
 article h2, article section h3, article section h4, article section h5 {
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 12px;
   padding-bottom: 12px;
 }
@@ -206,7 +206,7 @@ article section h2.post-title a {
 article section h3 {
   clear: both;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 700;
 }
 article section h3 a:hover, article section h3 a:active {
   border-bottom: 1px solid #000;
@@ -240,7 +240,7 @@ article section ul ul > li:before {
   margin-left: -25px;
 }
 article section b, article section strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 article section hr {
   border: 0;
@@ -314,7 +314,6 @@ article section .pull-left {
 
 article .prev-next-jump {
   overflow: hidden;
-  font-weight: 400;
   padding-bottom: 30px;
   text-style: italic;
   a {
@@ -408,7 +407,7 @@ article .prev-next-jump {
   article section h2 {
     clear: both;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   article .prev-next-jump {
