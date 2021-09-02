@@ -101,8 +101,11 @@ a {
   background: #b71643;
 }
 
+article {
+  color: #3b3b3b;
+}
+
 .post-list {
-  color: #444;
   list-style: disc inside;
   li {
     margin-bottom: 9px;
@@ -111,9 +114,7 @@ a {
       font-size: 21px;
       line-height: 30px;
       a.post-title {
-        color: #007cbf;
         &:hover, &:active {
-          color: #005c9f;
           border-bottom: 1px solid #007cbf;
         }
       }
@@ -126,7 +127,6 @@ a {
 }
 
 .artwork-list {
-  color: #444;
   list-style: none;
   display: grid;
   margin-left: 0;
@@ -156,16 +156,19 @@ article .prelude {
   font: 400 24px/38px 'Merriweather', serif;
   margin: 0 auto;
 }
-article .prelude a {
-  color: #a61941;
+article a {
+  color: #007cbf;
 }
 article .prelude h1 {
-  color: #a61941;
   font-size: 36px;
   line-height: 48px;
   font-weight: 400;
 }
+article .prelude h1, article .prelude h1 a {
+  color: #a61941;
+}
 article .prelude .meta {
+  color: 3b3b3b;
   line-height: 28px;
   background: #ffee36;
   padding: 10px;
@@ -175,15 +178,11 @@ article .prelude .meta {
 }
 
 article section {
-  color: #3b3b3b;
   line-height: 28px;
   padding-top: 30px;
   padding-bottom: 18px;
   overflow: hidden;
   margin-bottom: 12px;
-}
-article section a {
-  color: #007cbf;
 }
 article section a:hover, article section a:active {
   border-bottom: 1px solid #007cbf;
@@ -252,9 +251,6 @@ article section .intro {
   font-weight: 500;
   font-size: 21px;
   line-height: 33px;
-}
-article section .intro a {
-  border-bottom: 1px solid #005c8c;
 }
 article section .topspace {
   padding-top: 16px;
@@ -440,6 +436,37 @@ article .prev-next-jump {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+  }
+  article {
+    color: #e9e9e9;
+  }
+  article .prelude h1, article .prelude h1 a {
+    color: #ec547f;
+  }
+  article a {
+    color: #5ec6fe;
+  }
+  article .prelude .meta {
+    background: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  article section .avatar {
+    width: 102px;
+    height: 102px;
+    border: none;
+  }
+  @media (max-width: 560px) {
+    #header nav ul li.active a {
+      background: #000;
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+}
 /* Solarized Light
 
 For use with Jekyll and Pygments
