@@ -320,6 +320,8 @@ article .prev-next-jump {
   }
   .prev {
     float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
   .next {
     float: right;
@@ -443,7 +445,7 @@ article .prev-next-jump {
   article {
     color: #e9e9e9;
   }
-  article .prelude h1, article .prelude h1 a {
+  article .prelude h1, article .prelude h1 a, article .prev-next-jump a {
     color: #ec547f;
   }
   article a {
