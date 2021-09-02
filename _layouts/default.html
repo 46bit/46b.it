@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="{{ "/assets/main.css" | relative_url }}" rel="stylesheet">
+  <link href="{{ "/assets/main.css" | relative_url }}?build={{ "now" | date: "%Y-%m-%dT%H-%M" }}" rel="stylesheet">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/meta/feed.atom" | relative_url }}">
 
