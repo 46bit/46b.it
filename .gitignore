@@ -1,5 +1,6 @@
 .DS_Store
 /_preview
 /build
-/tmp
+tmp
 /assets/artwork/drafts
+.jekyll-cache
