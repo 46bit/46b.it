@@ -465,6 +465,9 @@ article .prev-next-jump {
     height: 102px;
     border: none;
   }
+  article section img {
+    border-color: #333;
+  }
   @media (max-width: 560px) {
     #header nav ul li.active a {
       background: #000;
