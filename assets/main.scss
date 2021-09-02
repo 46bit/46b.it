@@ -257,6 +257,7 @@ article section .topspace {
 }
 article section img {
   max-width: 100%;
+  box-sizing: border-box;
   border: 6px solid #efefef;
 }
 article section .avatar {
