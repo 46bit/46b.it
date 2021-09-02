@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="/assets/main.css" rel="stylesheet">
+  <link href="/assets/main.css?build=2021-09-02T04-20" rel="stylesheet">
   <link rel="canonical" href="https://46b.it/2018/15-years-from-messy-php-to-microservices/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
@@ -64,8 +64,8 @@
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
 Visitor count: <span class="cp">&lt;?php</span>
-<span class="nx">mysql_exec</span><span class="p">(</span><span class="s2">"INSERT INTO visitors (ip_address) VALUES ("</span>
-  <span class="o">.</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">");"</span><span class="p">);</span>
+<span class="nf">mysql_exec</span><span class="p">(</span><span class="s2">"INSERT INTO visitors (ip_address) VALUES ("</span>
+  <span class="mf">.</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">");"</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nb">mysql_fetch_row</span><span class="p">(</span><span class="nb">mysql_query</span><span class="p">(</span><span class="s2">"SELECT COUNT(*) FROM visitors;"</span><span class="p">));</span>
 <span class="cp">?&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
