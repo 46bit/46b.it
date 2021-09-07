@@ -8,22 +8,7 @@
   <div class="wrapper">
     <ul class="post-list">
     {% for post in year.items %}
-      {% if post.hide %}
-        {% continue %}
-      {% endif %}
-      {% if post.draft %}
-        {% continue %}
-      {% endif %}
-      <li>
-        <!--<p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>-->
-        {% if post.external_url %}
-        <p><a class="ext post-title" href="{{ post.external_url }}">{{ post.title | escape }}</a></p>
-        {% else %}
-        <p><a class="post-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></p>
-        {% endif %}
-        <!--{{ post.excerpt }}-->
-        <!--<a class="read-more" href="{{ post.url | relative_url }}">Continue reading&hellip;</a>-->
-      </li>
+      {% include post-list-item.html %}
     {% endfor %}
     </ul>
   </div>

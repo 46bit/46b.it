@@ -106,6 +106,8 @@ article {
 }
 
 .post-list {
+  margin-left: 0;
+  padding-left: 0;
   list-style: disc inside;
   li {
     margin-bottom: 9px;
@@ -214,29 +216,17 @@ article section p, article section ul, article section ol, article section pre, 
   margin-bottom: 18px;
 }
 article section ul, article section ol {
-  margin-left: 40px;
+  margin-left: 0px;
 }
 article section ul {
-  padding-left: 5px;
-  list-style-type: none;
+  list-style: disc inside;
 }
 article section ul li {
   margin-top: 4px;
 }
-article section ul > li:before {
-  content: "◦";
-  width: 25px;
-  display: inline-block;
-  margin-left: -25px;
-}
 article section ul ul {
-  margin-bottom: 12px;
-}
-article section ul ul > li:before {
-  content: "–";
-  width: 25px;
-  display: inline-block;
-  margin-left: -25px;
+  margin-bottom: 0;
+  margin-left: 30px;
 }
 article section b, article section strong {
   font-weight: 700;
