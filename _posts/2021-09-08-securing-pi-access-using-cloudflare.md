@@ -1,5 +1,5 @@
 ---
-title: Securing Pi access using free CloudFlare
+title: Securing Raspberry Pi access using free CloudFlare
 layout: post
 ---
 
