@@ -1,5 +1,5 @@
 ---
-title: Securing Pi access using CloudFlare
+title: Securing Pi access using free CloudFlare
 layout: post
 ---
 
@@ -12,15 +12,16 @@ You have to be hosting your DNS with Cloudflare for this to work. Once that's do
 1. **Connecting your host to Cloudflare:** [Argo Tunnel](https://www.cloudflare.com/products/tunnel/) connection outbound from my Pi to Cloudflare. This acts as a reverse proxy. Cloudflare forwards authenticated traffic to the Pi through this
 2. **Setup inside Cloudflare:** A DNS entry pointing to a hostname identifying that tunnel, and then a [Cloudflare Access](https://www.cloudflare.com/teams/access/) app telling Cloudflare what authentication to require.
 
-The first half of this, setting up Argo Tunnel, is manual sysadmin on your Pi (or YAML engineering if you're forwarding to a cluster or something.) Cloudflare provide [good instructions on setting up the tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide).
+Setting up Argo Tunnel involves manual sysadmin on your Pi. Cloudflare provide [good instructions on setting up the tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide).
 
-The second half can be done in Cloudflare's web interface but I found that a lot of clicking around. A lot of this is exposed in their interface in two different places, making setup difficult. It's easier to configure it with Terraform, which looks like this:
+Cloudflare Access can be setup in Cloudflare's web interface, but it's exposed in their interface in a few different places. It's easiest to configure it with Terraform. Here's how to do it with the [Cloudflare Terraform Provider](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs):
 
 ```terraform
 variable "cloudflare_account_id" {
   description = "Provide your Cloudflare account ID (a 20-ish character string)"
 }
 
+# Change `46bit.cloud` to the name of your domain (DNS must be hosted in free Cloudflare)
 resource "cloudflare_zone" "_46bit_cloud" {
   zone = "46bit.cloud"
   plan = "free"
@@ -31,14 +32,17 @@ resource "cloudflare_record" "pi" {
   type    = "CNAME"
   proxied = true
 
+  # Change `pi` to the subdomain you want to use
   name  = "pi"
-  value = "77030280-fb2a-4b9a-bf5d-d6ebddca53e9.cfargotunnel.com"
+  # Change this to reflect the ID of your Argo Tunnel
+  value = "GUID-GOES-HERE.cfargotunnel.com"
 }
 
 resource "cloudflare_access_application" "pi" {
   name = "pi"
   account_id = var.cloudflare_account_id
 
+  # Change this to the subdomain you want to use
   domain           = "pi.46bit.cloud"
   type             = "ssh"
   session_duration = "24h"
@@ -55,8 +59,11 @@ resource "cloudflare_access_policy" "pi_email" {
   decision   = "allow"
 
   include {
+    # Change this to your email address domain
     email_domain = ["46b.it", "46bit.com"]
   }
 }
 
 ```
+
+Once this is setup, visiting the domain will involve a check you can access an email account on that domain before you can proceed. For automatic access you can use [Service Tokens](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/access_service_token) (sadly mTLS isn't supported in the free plan.)
