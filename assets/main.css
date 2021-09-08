@@ -83,9 +83,13 @@ article section ul, article section ol { margin-left: 0px; }
 
 article section ul { list-style: disc inside; }
 
-article section ul li { margin-top: 4px; }
+article section ol { list-style: decimal outside; padding-left: 25px; }
 
-article section ul ul { margin-bottom: 0; margin-left: 30px; }
+article section ol li { padding-left: 10px; }
+
+article section ul li, article section ol li { margin-top: 4px; }
+
+article section ul ul, article section ul ol, article section ol ul { margin-bottom: 0; margin-left: 30px; }
 
 article section b, article section strong { font-weight: 700; }
 
