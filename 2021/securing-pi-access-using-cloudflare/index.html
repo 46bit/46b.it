@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="/assets/main.css?build=2021-09-08T15-59" rel="stylesheet">
+  <link href="/assets/main.css?build=2021-09-08T16-07" rel="stylesheet">
   <link rel="canonical" href="https://46b.it/2021/securing-pi-access-using-cloudflare/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
@@ -20,7 +20,7 @@
   <script src="/js/mathjax/MathJax.js?config=46bit"></script>
   $endif$ -->
 
-  <title>Securing Pi access using CloudFlare - 46b.it</title>
+  <title>Securing Pi access using free CloudFlare - 46b.it</title>
 </head>
 <body>
   <header id="header">
@@ -42,7 +42,7 @@
     <div class="wrapper">
       <p class="meta">September 8, 2021</p>
       
-      <h1>Securing Pi access using CloudFlare</h1>
+      <h1>Securing Pi access using free CloudFlare</h1>
       
     </div>
   </header>
@@ -58,14 +58,15 @@
   <li><strong>Setup inside Cloudflare:</strong> A DNS entry pointing to a hostname identifying that tunnel, and then a <a href="https://www.cloudflare.com/teams/access/">Cloudflare Access</a> app telling Cloudflare what authentication to require.</li>
 </ol>
 
-<p>The first half of this, setting up Argo Tunnel, is manual sysadmin on your Pi (or YAML engineering if you’re forwarding to a cluster or something.) Cloudflare provide <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide">good instructions on setting up the tunnel</a>.</p>
+<p>Setting up Argo Tunnel involves manual sysadmin on your Pi. Cloudflare provide <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide">good instructions on setting up the tunnel</a>.</p>
 
-<p>The second half can be done in Cloudflare’s web interface but I found that a lot of clicking around. A lot of this is exposed in their interface in two different places, making setup difficult. It’s easier to configure it with Terraform, which looks like this:</p>
+<p>Cloudflare Access can be setup in Cloudflare’s web interface, but it’s exposed in their interface in a few different places. It’s easiest to configure it with Terraform. Here’s how to do it with the <a href="https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs">Cloudflare Terraform Provider</a>:</p>
 
 <div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">variable</span> <span class="s2">"cloudflare_account_id"</span> <span class="p">{</span>
   <span class="nx">description</span> <span class="p">=</span> <span class="s2">"Provide your Cloudflare account ID (a 20-ish character string)"</span>
 <span class="p">}</span>
 
+<span class="c1"># Change `46bit.cloud` to the name of your domain (DNS must be hosted in free Cloudflare)</span>
 <span class="k">resource</span> <span class="s2">"cloudflare_zone"</span> <span class="s2">"_46bit_cloud"</span> <span class="p">{</span>
   <span class="nx">zone</span> <span class="p">=</span> <span class="s2">"46bit.cloud"</span>
   <span class="nx">plan</span> <span class="p">=</span> <span class="s2">"free"</span>
@@ -76,14 +77,17 @@
   <span class="nx">type</span>    <span class="p">=</span> <span class="s2">"CNAME"</span>
   <span class="nx">proxied</span> <span class="p">=</span> <span class="kc">true</span>
 
+  <span class="c1"># Change `pi` to the subdomain you want to use</span>
   <span class="nx">name</span>  <span class="p">=</span> <span class="s2">"pi"</span>
-  <span class="nx">value</span> <span class="p">=</span> <span class="s2">"77030280-fb2a-4b9a-bf5d-d6ebddca53e9.cfargotunnel.com"</span>
+  <span class="c1"># Change this to reflect the ID of your Argo Tunnel</span>
+  <span class="nx">value</span> <span class="p">=</span> <span class="s2">"GUID-GOES-HERE.cfargotunnel.com"</span>
 <span class="p">}</span>
 
 <span class="k">resource</span> <span class="s2">"cloudflare_access_application"</span> <span class="s2">"pi"</span> <span class="p">{</span>
   <span class="nx">name</span> <span class="p">=</span> <span class="s2">"pi"</span>
   <span class="nx">account_id</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">cloudflare_account_id</span>
 
+  <span class="c1"># Change this to the subdomain you want to use</span>
   <span class="nx">domain</span>           <span class="p">=</span> <span class="s2">"pi.46bit.cloud"</span>
   <span class="nx">type</span>             <span class="p">=</span> <span class="s2">"ssh"</span>
   <span class="nx">session_duration</span> <span class="p">=</span> <span class="s2">"24h"</span>
@@ -100,11 +104,14 @@
   <span class="nx">decision</span>   <span class="p">=</span> <span class="s2">"allow"</span>
 
   <span class="nx">include</span> <span class="p">{</span>
+    <span class="c1"># Change this to your email address domain</span>
     <span class="nx">email_domain</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"46b.it"</span><span class="p">,</span> <span class="s2">"46bit.com"</span><span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 </code></pre></div></div>
+
+<p>Once this is setup, visiting the domain will involve a check you can access an email account on that domain before you can proceed. For automatic access you can use <a href="https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/access_service_token">Service Tokens</a> (sadly mTLS isn’t supported in the free plan.)</p>
 
   </section>
   <div class="wrapper prev-next-jump">
