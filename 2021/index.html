@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="/assets/main.css?build=2021-09-08T03-16" rel="stylesheet">
+  <link href="/assets/main.css?build=2021-09-08T07-45" rel="stylesheet">
   <link rel="canonical" href="https://46b.it/2021/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
@@ -44,6 +44,71 @@
     </div>
   </header>
   
+<section class="wrapper zerotop yellowlined">
+  <p class="meta">Sep 8, 2021</p>
+  <h2 class="post-title"><a href="/2021/securing-pi-access-using-cloudflare/">Securing Pi access using CloudFlare</a></h2>
+  <p>I’ve recently been building an environment monitoring station at home using a Raspberry Pi 4B+. It turns out to be a remarkably powerful computer, much more than I remembered from earlier versions. I’ll write more another time about the environment side of things, but today I’m going to focus on how awesome the UX is when putting it behind Cloudflare.</p>
+
+<p>This is the first time I’ve used Cloudflare for more than DNS, and it’s remarkable how much you can do for free. When I SSH to <code class="language-plaintext highlighter-rouge">pi.46bit.cloud</code>, I get redirected to a browser page to sign in – either with a one-time password emailed to me, or via Google OAuth. Only once that’s done can I actually finish SSHing. Cloudflare hides my actual home IP address and adds a strong boundary around accessing services externalyl.</p>
+
+<p>You have to be hosting your DNS with Cloudflare for this to work. Once that’s done there are two parts to this:</p>
+
+<ol>
+  <li><strong>Connecting your host to Cloudflare:</strong> <a href="https://www.cloudflare.com/products/tunnel/">Argo Tunnel</a> connection outbound from my Pi to Cloudflare. This acts as a reverse proxy. Cloudflare forwards authenticated traffic to the Pi through this</li>
+  <li><strong>Setup inside Cloudflare:</strong> A DNS entry pointing to a hostname identifying that tunnel, and then a <a href="https://www.cloudflare.com/teams/access/">Cloudflare Access</a> app telling Cloudflare what authentication to require.</li>
+</ol>
+
+<p>The first half of this, setting up Argo Tunnel, is manual sysadmin on your Pi (or YAML engineering if you’re forwarding to a cluster or something.) Cloudflare provide <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide">good instructions on setting up the tunnel</a>.</p>
+
+<p>The second half can be done in Cloudflare’s web interface but I found that a lot of clicking around. A lot of this is exposed in their interface in two different places, making setup difficult. It’s easier to configure it with Terraform, which looks like this:</p>
+
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">variable</span> <span class="s2">"cloudflare_account_id"</span> <span class="p">{</span>
+  <span class="nx">description</span> <span class="p">=</span> <span class="s2">"Provide your Cloudflare account ID (a 20-ish character string)"</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"cloudflare_zone"</span> <span class="s2">"_46bit_cloud"</span> <span class="p">{</span>
+  <span class="nx">zone</span> <span class="p">=</span> <span class="s2">"46bit.cloud"</span>
+  <span class="nx">plan</span> <span class="p">=</span> <span class="s2">"free"</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"cloudflare_record"</span> <span class="s2">"pi"</span> <span class="p">{</span>
+  <span class="nx">zone_id</span> <span class="p">=</span> <span class="nx">cloudflare_zone</span><span class="p">.</span><span class="nx">_46bit_cloud</span><span class="p">.</span><span class="nx">id</span>
+  <span class="nx">type</span>    <span class="p">=</span> <span class="s2">"CNAME"</span>
+  <span class="nx">proxied</span> <span class="p">=</span> <span class="kc">true</span>
+
+  <span class="nx">name</span>  <span class="p">=</span> <span class="s2">"pi"</span>
+  <span class="nx">value</span> <span class="p">=</span> <span class="s2">"77030280-fb2a-4b9a-bf5d-d6ebddca53e9.cfargotunnel.com"</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"cloudflare_access_application"</span> <span class="s2">"pi"</span> <span class="p">{</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">"pi"</span>
+  <span class="nx">account_id</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">cloudflare_account_id</span>
+
+  <span class="nx">domain</span>           <span class="p">=</span> <span class="s2">"pi.46bit.cloud"</span>
+  <span class="nx">type</span>             <span class="p">=</span> <span class="s2">"ssh"</span>
+  <span class="nx">session_duration</span> <span class="p">=</span> <span class="s2">"24h"</span>
+
+  <span class="nx">auto_redirect_to_identity</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"cloudflare_access_policy"</span> <span class="s2">"pi_email"</span> <span class="p">{</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">"Pi SSH access via email"</span>
+  <span class="nx">account_id</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">cloudflare_account_id</span>
+
+  <span class="nx">application_id</span> <span class="p">=</span> <span class="nx">cloudflare_access_application</span><span class="p">.</span><span class="nx">pi</span><span class="p">.</span><span class="nx">id</span>
+  <span class="nx">precedence</span> <span class="p">=</span> <span class="s2">"1"</span>
+  <span class="nx">decision</span>   <span class="p">=</span> <span class="s2">"allow"</span>
+
+  <span class="nx">include</span> <span class="p">{</span>
+    <span class="nx">email_domain</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"46b.it"</span><span class="p">,</span> <span class="s2">"46bit.com"</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+  <a class="read-more" href="/2021/securing-pi-access-using-cloudflare/">Continue reading&hellip;</a>
+</section>
+
 <section class="wrapper zerotop yellowlined">
   <p class="meta">Sep 2, 2021</p>
   <h2 class="post-title"><a href="/2021/choosing-to-focus-as-a-software-engineer/">Choosing a technical focus as a software engineer</a></h2>

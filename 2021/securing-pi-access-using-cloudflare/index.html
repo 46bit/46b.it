@@ -6,7 +6,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
   <link href="/assets/main.css?build=2021-09-08T07-45" rel="stylesheet">
-  <link rel="canonical" href="https://46b.it/2021/09/">
+  <link rel="canonical" href="https://46b.it/2021/securing-pi-access-using-cloudflare/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22921213-1"></script>
@@ -20,7 +20,7 @@
   <script src="/js/mathjax/MathJax.js?config=46bit"></script>
   $endif$ -->
 
-  <title>46b.it</title>
+  <title>Securing Pi access using CloudFlare - 46b.it</title>
 </head>
 <body>
   <header id="header">
@@ -38,16 +38,16 @@
     </div>
   </header>
   <article>
-  <header class="prelude yellowlined">
+  <header class="prelude">
     <div class="wrapper">
-      <h1>Posts from September 2021</h1>
+      <p class="meta">September 8, 2021</p>
+      
+      <h1>Securing Pi access using CloudFlare</h1>
+      
     </div>
   </header>
-  
-<section class="wrapper zerotop yellowlined">
-  <p class="meta">Sep 8, 2021</p>
-  <h2 class="post-title"><a href="/2021/securing-pi-access-using-cloudflare/">Securing Pi access using CloudFlare</a></h2>
-  <p>I’ve recently been building an environment monitoring station at home using a Raspberry Pi 4B+. It turns out to be a remarkably powerful computer, much more than I remembered from earlier versions. I’ll write more another time about the environment side of things, but today I’m going to focus on how awesome the UX is when putting it behind Cloudflare.</p>
+  <section class="wrapper">
+    <p>I’ve recently been building an environment monitoring station at home using a Raspberry Pi 4B+. It turns out to be a remarkably powerful computer, much more than I remembered from earlier versions. I’ll write more another time about the environment side of things, but today I’m going to focus on how awesome the UX is when putting it behind Cloudflare.</p>
 
 <p>This is the first time I’ve used Cloudflare for more than DNS, and it’s remarkable how much you can do for free. When I SSH to <code class="language-plaintext highlighter-rouge">pi.46bit.cloud</code>, I get redirected to a browser page to sign in – either with a one-time password emailed to me, or via Google OAuth. Only once that’s done can I actually finish SSHing. Cloudflare hides my actual home IP address and adds a strong boundary around accessing services externalyl.</p>
 
@@ -106,19 +106,14 @@
 
 </code></pre></div></div>
 
-  <a class="read-more" href="/2021/securing-pi-access-using-cloudflare/">Continue reading&hellip;</a>
-</section>
-
-<section class="wrapper zerotop yellowlined">
-  <p class="meta">Sep 2, 2021</p>
-  <h2 class="post-title"><a href="/2021/choosing-to-focus-as-a-software-engineer/">Choosing a technical focus as a software engineer</a></h2>
-  <p>Young technologists have a wonderful opportunity to explore. Software is involved in almost every company; <a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">software ate the world</a>. Whether you’re a software engineer, data scientist or product manager you can work on more-or-less anything.</p>
-
-  <a class="read-more" href="/2021/choosing-to-focus-as-a-software-engineer/">Continue reading&hellip;</a>
-</section>
-
-
-</article>
+  </section>
+  <div class="wrapper prev-next-jump">
+    
+      <a class="prev" href="/2021/choosing-to-focus-as-a-software-engineer/">&larr; Choosing a technical focus as a software engineer</a>
+    
+    
+  </div>
+<article>
 
 </body>
 </html>
