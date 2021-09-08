@@ -221,10 +221,17 @@ article section ul, article section ol {
 article section ul {
   list-style: disc inside;
 }
-article section ul li {
+article section ol {
+  list-style: decimal outside;
+  padding-left: 25px;
+}
+article section ol li {
+  padding-left: 10px;
+}
+article section ul li, article section ol li {
   margin-top: 4px;
 }
-article section ul ul {
+article section ul ul, article section ul ol, article section ol ul {
   margin-bottom: 0;
   margin-left: 30px;
 }
