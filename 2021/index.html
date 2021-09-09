@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="/assets/main.css?build=2021-09-08T19-05" rel="stylesheet">
+  <link href="/assets/main.css?build=2021-09-09T00-54" rel="stylesheet">
   <link rel="canonical" href="https://46b.it/2021/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
@@ -44,6 +44,34 @@
     </div>
   </header>
   
+<section class="wrapper zerotop yellowlined">
+  <p class="meta">Sep 9, 2021</p>
+  <h2 class="post-title"><a href="/2021/built-an-rts-in-the-browser/">I built a real-time strategy game in the browser</a></h2>
+  <p>As a child I loved real-time strategy (RTS) games. A large and fairly open world, several players, competition for resources, and a goal of producing armies to conquer my opponents. Something about the mix of freedom and strategy was an absolute joy to me.</p>
+
+<p>Games like Rise of Nations and Supreme Commander showed me how powerful computers could be. Some of my first serious programming was building community projects like gametags or modding tools.</p>
+
+<p>I always wanted to build my own RTS game from scratch. Master all the different things needed: game design, engine design, graphics design, efficient pathfinding. It’s taken a long time to get there, partly because I don’t like C++.</p>
+
+<p>Due to the pandemic, I had enough time last year to realise this old dream. Now that I’ve been making my blog more active it’s time to share it properly.</p>
+
+<h2 id="the-game">The game</h2>
+
+<p>My game is called <a href="https://rtt.46b.it">RTT</a>. Here’s a preview:</p>
+
+<iframe src="https://rtt.46b.it/demo.html" style="width: 100%; aspect-ratio: 1/1; border: none; pointer-events: none; display: inline-block;"></iframe>
+
+<p><a href="https://rtt.46b.it">RTT</a> contains all the key elements of an RTS game: resource collection, unit production, AIs, obstacles, realistic pathfinding. And it runs completely in the browser! The engine is written in TypeScript. Pathfinding is done with a mix of my own routines and the <a href="https://github.com/mikewesthad/navmesh">navmesh</a> npm library. It’s rendered using ThreeJS, WebGL and GLSL.</p>
+
+<p>There are several different types of units. Small engineers that can go build structures or collide with enemies. Larger tanks that spray out projectiles. Artillery that sends slow, powerful projectiles. And laser tanks that do exactly what it sounds like.</p>
+
+<p>Getting it performant in multiple browsers has been hell. For a long time I was close to giving up. Even once I’d dealt with the worst-profiling code, and done things like caching paths, performance inside browsers varies a lot. My 6-year-old MacBook Pro with integrated graphics runs well now, and that’s something I’m very proud of.</p>
+
+<p>There’s no proper UI right now, so all the players are AIs. There’s some difficult problems taking it further, that I’ll take about another day. But you can click-drag to select units and right-click to move them. <a href="https://rtt.46b.it">Go have a play!</a></p>
+
+  <a class="read-more" href="/2021/built-an-rts-in-the-browser/">Continue reading&hellip;</a>
+</section>
+
 <section class="wrapper zerotop yellowlined">
   <p class="meta">Sep 8, 2021</p>
   <h2 class="post-title"><a href="/2021/securing-pi-access-using-cloudflare/">Securing Raspberry Pi access using free CloudFlare</a></h2>
