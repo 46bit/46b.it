@@ -40,3 +40,5 @@ jobs:
         BRANCH: gh-pages
         FOLDER: build
         SSH: true
+        git-config-name: Github Actions
+        git-config-email: gh@46b.it
