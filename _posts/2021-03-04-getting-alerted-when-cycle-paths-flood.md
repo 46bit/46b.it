@@ -69,7 +69,7 @@ river_level_max_on_record{rloi_id="8208",station_name="Viking Recorder",town="Yo
 
 Unfortunately the JSON Exporter doesn't support measurement units. It does support help text but I don't need that for myself (something to do later.) What I have done is configured some useful labels, including the IDs mentioned up the top of this article.
 
-I've made a public Docker image for this if you want to re-use it: `ghcr.io/46bit/flood-exporter`.
+I've made a public Docker image for this if you want to re-use it: `ghcr.io/46bit/flood-exporter`. You can get the Dockerfile and a Kubernetes deployment example at [github.com/46bit/flood-exporter](https://github.com/46bit/flood-exporter).
 
 ## What's next?
 

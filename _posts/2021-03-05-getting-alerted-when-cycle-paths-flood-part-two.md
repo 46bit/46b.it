@@ -12,7 +12,7 @@ In **[the first post](/2021/getting-alerted-when-cycle-paths-flood/)** I explain
 
 ## Scraping river water levels into Prometheus
 
-I have deployed the `flood-exporter` we built in [my last post](/2021/getting-alerted-when-cycle-paths-flood/), and it's running at `flood-exporter.46bit.cloud`.
+I have deployed the `flood-exporter` we built in [my last post](/2021/getting-alerted-when-cycle-paths-flood/), and it's running at `flood-exporter.46bit.cloud`. You can also run it yourself using the example manifests in [github.com/46bit/flood-exporter](https://github.com/46bit/flood-exporter).
 
 Scraping this endpoint into Prometheus is simple (since I'm very familiar with Prometheus.) Here's the YAML config:
 
