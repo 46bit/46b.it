@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <link href="/assets/main.css?build=2021-10-11T05-11" rel="stylesheet">
+  <link href="/assets/main.css?build=2021-10-11T06-30" rel="stylesheet">
   <link rel="canonical" href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/">
   <link rel="alternate" type="application/rss+xml" title="46b.it" href="/meta/feed.atom">
 
@@ -56,7 +56,7 @@
 
 <h2 id="scraping-river-water-levels-into-prometheus">Scraping river water levels into Prometheus</h2>
 
-<p>I have deployed the <code class="language-plaintext highlighter-rouge">flood-exporter</code> we built in <a href="/2021/getting-alerted-when-cycle-paths-flood/">my last post</a>, and it’s running at <code class="language-plaintext highlighter-rouge">flood-exporter.46bit.cloud</code>.</p>
+<p>I have deployed the <code class="language-plaintext highlighter-rouge">flood-exporter</code> we built in <a href="/2021/getting-alerted-when-cycle-paths-flood/">my last post</a>, and it’s running at <code class="language-plaintext highlighter-rouge">flood-exporter.46bit.cloud</code>. You can also run it yourself using the example manifests in <a href="https://github.com/46bit/flood-exporter">github.com/46bit/flood-exporter</a>.</p>
 
 <p>Scraping this endpoint into Prometheus is simple (since I’m very familiar with Prometheus.) Here’s the YAML config:</p>
 
