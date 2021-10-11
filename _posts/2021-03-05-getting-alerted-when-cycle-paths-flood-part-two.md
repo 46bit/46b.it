@@ -12,7 +12,7 @@ In **[the first post](/2021/getting-alerted-when-cycle-paths-flood/)** I explain
 
 ## Scraping river water levels into Prometheus
 
-I have deployed the `flood-exporter` we built in [my last post](/2021/getting-alerted-when-cycle-paths-flood/), and it's running at `flood-exporter.k8s.46b.it`.
+I have deployed the `flood-exporter` we built in [my last post](/2021/getting-alerted-when-cycle-paths-flood/), and it's running at `flood-exporter.46bit.cloud`.
 
 Scraping this endpoint into Prometheus is simple (since I'm very familiar with Prometheus.) Here's the YAML config:
 
@@ -22,7 +22,7 @@ scrape_configs:
   scheme: https
   static_configs:
   - targets:
-    - flood-exporter.k8s.46b.it
+    - flood-exporter.46bit.cloud
   metrics_path: /probe
   scrape_interval: 180s
   params:

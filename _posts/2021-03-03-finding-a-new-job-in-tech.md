@@ -47,7 +47,7 @@ I had two offers to choose between: one from a late-stage startup and one from t
 
 I chose based on my favourite work. On [GOV.UK PaaS](https://www.cloud.service.gov.uk) I have found myself helping services across government by solving incidents or advising on architecture. Consulting is a great way to get similar exposure in the private sector.
 
-**Thus I'm excited to be joining [EngineerBetter](https://www.engineerbetter.com) in early April to do cloud consulting and help transform companies.**
+I've joined [EngineerBetter](https://www.engineerbetter.com) to carry on my existing work with [Cloud Foundry](https://www.cloudfoundry.org). Cloud Foundry is gradually fading, but it's quietly delivering enormous value to many large organizations. I'm not _quite_ done with it yet.
 
 ## Retrospective
 
@@ -67,4 +67,6 @@ Interviewing at Senior level feels easier than early-career. Expectations are hi
 
 Companies do a lot of interview stages. I had 20+ videocalls over two weeks. Scheduling these was very draining despite even though most companies have worldwide interviewers available at any convenient time. In hindsight I wished to have taken time off to find a new job.
 
-Private sector salaries are much higher than government, yet Civil Service pensions are very valuable. Focusing on pensions doesn't work for London's housing market and that pushes a lot of people away.
+Civil Service total compensation _is_ competitive with non-finance private sector. But so much of that compensation was as a pension. Focusing on pensions doesn't work unless basic salaries are high enough for the housing market. That pushes a lot of people away eventually, like me.
+
+Cloud Foundry is gradually turning into legacy. It's going to take decades to disappear, and the number of teams using it is still going up. But I'll be done with it within the next year.
