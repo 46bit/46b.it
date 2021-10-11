@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2021-10-11T03:16:53+00:00</updated><id>https://46b.it/meta/feed.atom</id><title type="html">46b.it</title><entry><title type="html">I built a real-time strategy game in the browser</title><link href="https://46b.it/2021/built-an-rts-in-the-browser/" rel="alternate" type="text/html" title="I built a real-time strategy game in the browser" /><published>2021-09-09T00:00:00+00:00</published><updated>2021-09-09T00:00:00+00:00</updated><id>https://46b.it/2021/built-an-rts-in-the-browser</id><content type="html" xml:base="https://46b.it/2021/built-an-rts-in-the-browser/">&lt;p&gt;As a child I loved real-time strategy (RTS) games. A large and fairly open world, several players, competition for resources, and a goal of producing armies to conquer my opponents. Something about the mix of freedom and strategy was an absolute joy to me.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://46b.it/meta/feed.atom" rel="self" type="application/atom+xml" /><link href="https://46b.it/" rel="alternate" type="text/html" /><updated>2021-10-11T05:11:11+00:00</updated><id>https://46b.it/meta/feed.atom</id><title type="html">46b.it</title><entry><title type="html">I built a real-time strategy game in the browser</title><link href="https://46b.it/2021/built-an-rts-in-the-browser/" rel="alternate" type="text/html" title="I built a real-time strategy game in the browser" /><published>2021-09-09T00:00:00+00:00</published><updated>2021-09-09T00:00:00+00:00</updated><id>https://46b.it/2021/built-an-rts-in-the-browser</id><content type="html" xml:base="https://46b.it/2021/built-an-rts-in-the-browser/">&lt;p&gt;As a child I loved real-time strategy (RTS) games. A large and fairly open world, several players, competition for resources, and a goal of producing armies to conquer my opponents. Something about the mix of freedom and strategy was an absolute joy to me.&lt;/p&gt;
 
 &lt;p&gt;Games like Rise of Nations and Supreme Commander showed me how powerful computers could be. Some of my first serious programming was building community projects like gametags or modding tools.&lt;/p&gt;
 
@@ -110,108 +110,7 @@
 
 &lt;p&gt;These days I’ve settled down in the DevOps/Cloud space. My past experience helps – particularly Cybersecurity – but I don’t expect to move into a different technical area soon. I’m more likely to move into management, as these days my learning is mostly about People issues and not Technical ones.&lt;/p&gt;
 
-&lt;p&gt;[1] Games, Frontend Web, Backend Web, Data Analysis, 3D Model Generation, Archaeological data, Cybersecurity, Signal Processing/Machine Learning, and DevOps&lt;/p&gt;</content><author><name></name></author><summary type="html">Young technologists have a wonderful opportunity to explore. Software is involved in almost every company; software ate the world. Whether you’re a software engineer, data scientist or product manager you can work on more-or-less anything.</summary></entry><entry><title type="html">Finding a new job in tech</title><link href="https://46b.it/2021/finding-a-new-job-in-tech/" rel="alternate" type="text/html" title="Finding a new job in tech" /><published>2021-03-12T00:00:00+00:00</published><updated>2021-03-12T00:00:00+00:00</updated><id>https://46b.it/2021/finding-a-new-job-in-tech</id><content type="html" xml:base="https://46b.it/2021/finding-a-new-job-in-tech/">&lt;p&gt;Inspired by &lt;a href=&quot;https://www.toby.codes/posts/2021-02-Getting-a-job-in-tech-in-2021&quot;&gt;Toby Lorne&lt;/a&gt;, I wanted to share about my recent job hunt.&lt;/p&gt;
-
-&lt;p&gt;For the last four years I have been an engineer at &lt;a href=&quot;https://gds.blog.gov.uk/about/&quot;&gt;Government Digital Service&lt;/a&gt; in London. My background is quite varied. At GDS I quickly became a DevOps expert and built, taught and operated infrastructure for &lt;a href=&quot;https://www.cloud.service.gov.uk&quot;&gt;cloud platforms&lt;/a&gt;, &lt;a href=&quot;https://www.payments.service.gov.uk&quot;&gt;payment processing&lt;/a&gt; and &lt;a href=&quot;https://www.verify.service.gov.uk&quot;&gt;digital identity&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;4 years is a long time to stay in one technology job, even with many different teams and projects. I have contributed to just about every service in GDS, and many elsewhere in government. I decided to find a new challenge elsewhere as my growth had slown down. I want to stay on the technical career track for the time being.&lt;/p&gt;
-
-&lt;p&gt;I have moved back to York as I wasn’t enjoying London during the pandemic. Quality of life here is excellent and I’m planning to stay. Remote roles are freely available.&lt;/p&gt;
-
-&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
-
-&lt;p&gt;I applied for senior-level DevOps, SRE and software engineering, roles at these types of organisations:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Government: 1&lt;/li&gt;
-  &lt;li&gt;Cloud consulting: 1&lt;/li&gt;
-  &lt;li&gt;Mid- to late-stage startups: 4&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I got lots of interest from other teams in the Civil Service. I already know I can succeed there, and they already know what I’m capable of. But after 4 years I think it’s important to see somewhere else and keep learning. I ruled out large enterprises for the same reasons. I also ruled out finance for the time being to focus on quality-of-life.&lt;/p&gt;
-
-&lt;p&gt;I applied to several startups with problems that interest me. I have past experience with a small Y Combinator startup, and helping grow some larger startups. I’m sure I’ll go back into the startup world sooner or later.&lt;/p&gt;
-
-&lt;p&gt;I also interviewed with a cloud consultancy that I’ve known for quite a long time. I haven’t done consultancy before, although I’ve done a lot of freelancing and think consulting might suit me well.&lt;/p&gt;
-
-&lt;p&gt;All the roles I applied for were mostly- or fully-remote. This ruled out a few very competitive companies but not anywhere I was desperate to work at yet.&lt;/p&gt;
-
-&lt;h2 id=&quot;progress&quot;&gt;Progress&lt;/h2&gt;
-
-&lt;p&gt;Here’s a brief summary of how I progressed in the interviews:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Stage&lt;/th&gt;
-      &lt;th&gt;Passed&lt;/th&gt;
-      &lt;th&gt;Rejected&lt;/th&gt;
-      &lt;th&gt;Withdrew&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Application&lt;/td&gt;
-      &lt;td&gt;6&lt;/td&gt;
-      &lt;td&gt;-&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CV Sift&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Phone screen&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Tech interviews&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Offer&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I got responses from every application and ended up with two offers. I withdrew one application when I decided not to stay in government, and a second that was too far behind when I got offers.&lt;/p&gt;
-
-&lt;h2 id=&quot;outcome&quot;&gt;Outcome&lt;/h2&gt;
-
-&lt;p&gt;I had two offers to choose between: one from a late-stage startup and one from the cloud consulting company. Both were quite appealing and I was confident I’d grow from both.&lt;/p&gt;
-
-&lt;p&gt;I chose based on my favourite work. On &lt;a href=&quot;https://www.cloud.service.gov.uk&quot;&gt;GOV.UK PaaS&lt;/a&gt; I have found myself helping services across government by solving incidents or advising on architecture. Consulting is a great way to get similar exposure in the private sector.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Thus I’m excited to be joining &lt;a href=&quot;https://www.engineerbetter.com&quot;&gt;EngineerBetter&lt;/a&gt; in early April to do cloud consulting and help transform companies.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;retrospective&quot;&gt;Retrospective&lt;/h2&gt;
-
-&lt;p&gt;I have a bunch of education and skills, but it felt terrible having a really good time during a pandemic that has hurt so many people.&lt;/p&gt;
-
-&lt;p&gt;Every company respected that I use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;they/them&lt;/code&gt; pronouns. I was very happy about this. Companies seem to be well into adjusting to the existence of non-binary staff.&lt;/p&gt;
-
-&lt;p&gt;It’s getting harder to find pure-technical roles that I think will challenge me. I’m not sure what to do after Senior, but sooner or later I’m going to be writing a lot less code and doing a lot more negotiation and planning.&lt;/p&gt;
-
-&lt;p&gt;Asking difficult &lt;a href=&quot;https://leetcode.com/&quot;&gt;LeetCode&lt;/a&gt;-style Computer Science puzzles seems quite rare outside of finance, enterprise and Silicon Valley startups. These problems test abstract thought, but they also exclude people without a Computer Science education. I didn’t encounter any problems that I couldn’t solve.&lt;/p&gt;
-
-&lt;p&gt;Finding fully- or mostly-remote jobs was very easy. I’m no longer in London and don’t want to travel there every day. This was not a problem for any organisation I talked to. There’s some selection bias here in terms of the company culture that appeals to me. Remote salaries were quite similar to what I’d have targeted in London.&lt;/p&gt;
-
-&lt;p&gt;Having deep experience of both development and operations is extremely valuable right now. I wasn’t very surprised to receive multiple offers. I think I got bonus points for having taught infrastructure a lot in my current role.&lt;/p&gt;
-
-&lt;p&gt;Interviewing at Senior level feels easier than early-career. Expectations are higher but I have a lot of confidence and many deep experiences to draw on. I also have a bigger network for referrals and to ask questions. I imagine Staff level would still be hard.&lt;/p&gt;
-
-&lt;p&gt;Companies do a lot of interview stages. I had 20+ videocalls over two weeks. Scheduling these was very draining despite even though most companies have worldwide interviewers available at any convenient time. In hindsight I wished to have taken time off to find a new job.&lt;/p&gt;
-
-&lt;p&gt;Private sector salaries are much higher than government, yet Civil Service pensions are very valuable. Focusing on pensions doesn’t work for London’s housing market and that pushes a lot of people away.&lt;/p&gt;</content><author><name></name></author><summary type="html">Inspired by Toby Lorne, I wanted to share about my recent job hunt. For the last four years I have been an engineer at Government Digital Service in London. My background is quite varied. At GDS I quickly became a DevOps expert and built, taught and operated infrastructure for cloud platforms, payment processing and digital identity. 4 years is a long time to stay in one technology job, even with many different teams and projects. I have contributed to just about every service in GDS, and many elsewhere in government. I decided to find a new challenge elsewhere as my growth had slown down. I want to stay on the technical career track for the time being. I have moved back to York as I wasn’t enjoying London during the pandemic. Quality of life here is excellent and I’m planning to stay. Remote roles are freely available. Applications I applied for senior-level DevOps, SRE and software engineering, roles at these types of organisations: Government: 1 Cloud consulting: 1 Mid- to late-stage startups: 4 I got lots of interest from other teams in the Civil Service. I already know I can succeed there, and they already know what I’m capable of. But after 4 years I think it’s important to see somewhere else and keep learning. I ruled out large enterprises for the same reasons. I also ruled out finance for the time being to focus on quality-of-life. I applied to several startups with problems that interest me. I have past experience with a small Y Combinator startup, and helping grow some larger startups. I’m sure I’ll go back into the startup world sooner or later. I also interviewed with a cloud consultancy that I’ve known for quite a long time. I haven’t done consultancy before, although I’ve done a lot of freelancing and think consulting might suit me well. All the roles I applied for were mostly- or fully-remote. This ruled out a few very competitive companies but not anywhere I was desperate to work at yet. Progress Here’s a brief summary of how I progressed in the interviews: Stage Passed Rejected Withdrew Application 6 -   CV Sift 5 1   Phone screen 4   1 Tech interviews 3   1 Offer 2 1   I got responses from every application and ended up with two offers. I withdrew one application when I decided not to stay in government, and a second that was too far behind when I got offers. Outcome I had two offers to choose between: one from a late-stage startup and one from the cloud consulting company. Both were quite appealing and I was confident I’d grow from both. I chose based on my favourite work. On GOV.UK PaaS I have found myself helping services across government by solving incidents or advising on architecture. Consulting is a great way to get similar exposure in the private sector. Thus I’m excited to be joining EngineerBetter in early April to do cloud consulting and help transform companies. Retrospective I have a bunch of education and skills, but it felt terrible having a really good time during a pandemic that has hurt so many people. Every company respected that I use they/them pronouns. I was very happy about this. Companies seem to be well into adjusting to the existence of non-binary staff. It’s getting harder to find pure-technical roles that I think will challenge me. I’m not sure what to do after Senior, but sooner or later I’m going to be writing a lot less code and doing a lot more negotiation and planning. Asking difficult LeetCode-style Computer Science puzzles seems quite rare outside of finance, enterprise and Silicon Valley startups. These problems test abstract thought, but they also exclude people without a Computer Science education. I didn’t encounter any problems that I couldn’t solve. Finding fully- or mostly-remote jobs was very easy. I’m no longer in London and don’t want to travel there every day. This was not a problem for any organisation I talked to. There’s some selection bias here in terms of the company culture that appeals to me. Remote salaries were quite similar to what I’d have targeted in London. Having deep experience of both development and operations is extremely valuable right now. I wasn’t very surprised to receive multiple offers. I think I got bonus points for having taught infrastructure a lot in my current role. Interviewing at Senior level feels easier than early-career. Expectations are higher but I have a lot of confidence and many deep experiences to draw on. I also have a bigger network for referrals and to ask questions. I imagine Staff level would still be hard. Companies do a lot of interview stages. I had 20+ videocalls over two weeks. Scheduling these was very draining despite even though most companies have worldwide interviewers available at any convenient time. In hindsight I wished to have taken time off to find a new job. Private sector salaries are much higher than government, yet Civil Service pensions are very valuable. Focusing on pensions doesn’t work for London’s housing market and that pushes a lot of people away.</summary></entry><entry><title type="html">Getting alerted when cycle paths flood: part two</title><link href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/" rel="alternate" type="text/html" title="Getting alerted when cycle paths flood: part two" /><published>2021-03-05T00:00:00+00:00</published><updated>2021-03-05T00:00:00+00:00</updated><id>https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two</id><content type="html" xml:base="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/">&lt;p&gt;I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
+&lt;p&gt;[1] Games, Frontend Web, Backend Web, Data Analysis, 3D Model Generation, Archaeological data, Cybersecurity, Signal Processing/Machine Learning, and DevOps&lt;/p&gt;</content><author><name></name></author><summary type="html">Young technologists have a wonderful opportunity to explore. Software is involved in almost every company; software ate the world. Whether you’re a software engineer, data scientist or product manager you can work on more-or-less anything.</summary></entry><entry><title type="html">Getting alerted when cycle paths flood: part two</title><link href="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/" rel="alternate" type="text/html" title="Getting alerted when cycle paths flood: part two" /><published>2021-03-05T00:00:00+00:00</published><updated>2021-03-05T00:00:00+00:00</updated><id>https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two</id><content type="html" xml:base="https://46b.it/2021/getting-alerted-when-cycle-paths-flood-part-two/">&lt;p&gt;I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;This post is aimed is at software engineers with DevOps skills who already run Prometheus and Grafana. If you don’t have those skills then I’d be interested in figuring out how to make this more widely available–contact me.&lt;/p&gt;
@@ -220,7 +119,7 @@
 
 &lt;h2 id=&quot;scraping-river-water-levels-into-prometheus&quot;&gt;Scraping river water levels into Prometheus&lt;/h2&gt;
 
-&lt;p&gt;I have deployed the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter&lt;/code&gt; we built in &lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood/&quot;&gt;my last post&lt;/a&gt;, and it’s running at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter.k8s.46b.it&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I have deployed the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter&lt;/code&gt; we built in &lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood/&quot;&gt;my last post&lt;/a&gt;, and it’s running at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flood-exporter.46bit.cloud&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Scraping this endpoint into Prometheus is simple (since I’m very familiar with Prometheus.) Here’s the YAML config:&lt;/p&gt;
 
@@ -229,7 +128,7 @@
   scheme: https
   static_configs:
   - targets:
-    - flood-exporter.k8s.46b.it
+    - flood-exporter.46bit.cloud
   metrics_path: /probe
   scrape_interval: 180s
   params:
@@ -346,7 +245,110 @@ river_level_max_on_record{rloi_id=&quot;8208&quot;,station_name=&quot;Viking Rec
 
 &lt;h2 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h2&gt;
 
-&lt;p&gt;The next step is to configure Prometheus to scrape that endpoint, and Grafana to render some pretty graphics and send alerts. I cover that in &lt;strong&gt;&lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood-part-two/&quot;&gt;my next post&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.</summary></entry><entry><title type="html">How responsible are we for the feelings of others?</title><link href="https://46b.it/2018/how-responsible-are-we-for-others/" rel="alternate" type="text/html" title="How responsible are we for the feelings of others?" /><published>2018-10-18T00:00:00+00:00</published><updated>2018-10-18T00:00:00+00:00</updated><id>https://46b.it/2018/how-responsible-are-we-for-others</id><content type="html" xml:base="https://46b.it/2018/how-responsible-are-we-for-others/">&lt;p&gt;I’d like to publish more of my writing, and so this post is somewhat shorter and stream-of-consciousness than I’ve written before.&lt;/p&gt;
+&lt;p&gt;The next step is to configure Prometheus to scrape that endpoint, and Grafana to render some pretty graphics and send alerts. I cover that in &lt;strong&gt;&lt;a href=&quot;/2021/getting-alerted-when-cycle-paths-flood-part-two/&quot;&gt;my next post&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently moved back to York, a city I absolutely love. One of the best things about living here is cycling. But York has two rivers, one of which brings rain from hills a long way away. Some of the best cycle routes can flood after rainfall when the rivers rise.</summary></entry><entry><title type="html">Finding a new job in tech</title><link href="https://46b.it/2021/finding-a-new-job-in-tech/" rel="alternate" type="text/html" title="Finding a new job in tech" /><published>2021-03-03T00:00:00+00:00</published><updated>2021-03-03T00:00:00+00:00</updated><id>https://46b.it/2021/finding-a-new-job-in-tech</id><content type="html" xml:base="https://46b.it/2021/finding-a-new-job-in-tech/">&lt;p&gt;Inspired by &lt;a href=&quot;https://www.toby.codes/posts/2021-02-Getting-a-job-in-tech-in-2021&quot;&gt;Toby Lorne&lt;/a&gt;, I wanted to share about my recent job hunt.&lt;/p&gt;
+
+&lt;p&gt;For the last four years I have been an engineer at &lt;a href=&quot;https://gds.blog.gov.uk/about/&quot;&gt;Government Digital Service&lt;/a&gt; in London. My background is quite varied. At GDS I quickly became a DevOps expert and built, taught and operated infrastructure for &lt;a href=&quot;https://www.cloud.service.gov.uk&quot;&gt;cloud platforms&lt;/a&gt;, &lt;a href=&quot;https://www.payments.service.gov.uk&quot;&gt;payment processing&lt;/a&gt; and &lt;a href=&quot;https://www.verify.service.gov.uk&quot;&gt;digital identity&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;4 years is a long time to stay in one technology job, even with many different teams and projects. I have contributed to just about every service in GDS, and many elsewhere in government. I decided to find a new challenge elsewhere as my growth had slown down. I want to stay on the technical career track for the time being.&lt;/p&gt;
+
+&lt;p&gt;I have moved back to York as I wasn’t enjoying London during the pandemic. Quality of life here is excellent and I’m planning to stay. Remote roles are freely available.&lt;/p&gt;
+
+&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;I applied for senior-level DevOps, SRE and software engineering, roles at these types of organisations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Government: 1&lt;/li&gt;
+  &lt;li&gt;Cloud consulting: 1&lt;/li&gt;
+  &lt;li&gt;Mid- to late-stage startups: 4&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I got lots of interest from other teams in the Civil Service. I already know I can succeed there, and they already know what I’m capable of. But after 4 years I think it’s important to see somewhere else and keep learning. I ruled out large enterprises for the same reasons. I also ruled out finance for the time being to focus on quality-of-life.&lt;/p&gt;
+
+&lt;p&gt;I applied to several startups with problems that interest me. I have past experience with a small Y Combinator startup, and helping grow some larger startups. I’m sure I’ll go back into the startup world sooner or later.&lt;/p&gt;
+
+&lt;p&gt;I also interviewed with a cloud consultancy that I’ve known for quite a long time. I haven’t done consultancy before, although I’ve done a lot of freelancing and think consulting might suit me well.&lt;/p&gt;
+
+&lt;p&gt;All the roles I applied for were mostly- or fully-remote. This ruled out a few very competitive companies but not anywhere I was desperate to work at yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;progress&quot;&gt;Progress&lt;/h2&gt;
+
+&lt;p&gt;Here’s a brief summary of how I progressed in the interviews:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Stage&lt;/th&gt;
+      &lt;th&gt;Passed&lt;/th&gt;
+      &lt;th&gt;Rejected&lt;/th&gt;
+      &lt;th&gt;Withdrew&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Application&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CV Sift&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phone screen&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tech interviews&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Offer&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I got responses from every application and ended up with two offers. I withdrew one application when I decided not to stay in government, and a second that was too far behind when I got offers.&lt;/p&gt;
+
+&lt;h2 id=&quot;outcome&quot;&gt;Outcome&lt;/h2&gt;
+
+&lt;p&gt;I had two offers to choose between: one from a late-stage startup and one from the cloud consulting company. Both were quite appealing and I was confident I’d grow from both.&lt;/p&gt;
+
+&lt;p&gt;I chose based on my favourite work. On &lt;a href=&quot;https://www.cloud.service.gov.uk&quot;&gt;GOV.UK PaaS&lt;/a&gt; I have found myself helping services across government by solving incidents or advising on architecture. Consulting is a great way to get similar exposure in the private sector.&lt;/p&gt;
+
+&lt;p&gt;I’ve joined &lt;a href=&quot;https://www.engineerbetter.com&quot;&gt;EngineerBetter&lt;/a&gt; to carry on my existing work with &lt;a href=&quot;https://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/a&gt;. Cloud Foundry is gradually fading, but it’s quietly delivering enormous value to many large organizations. I’m not &lt;em&gt;quite&lt;/em&gt; done with it yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;retrospective&quot;&gt;Retrospective&lt;/h2&gt;
+
+&lt;p&gt;I have a bunch of education and skills, but it felt terrible having a really good time during a pandemic that has hurt so many people.&lt;/p&gt;
+
+&lt;p&gt;Every company respected that I use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;they/them&lt;/code&gt; pronouns. I was very happy about this. Companies seem to be well into adjusting to the existence of non-binary staff.&lt;/p&gt;
+
+&lt;p&gt;It’s getting harder to find pure-technical roles that I think will challenge me. I’m not sure what to do after Senior, but sooner or later I’m going to be writing a lot less code and doing a lot more negotiation and planning.&lt;/p&gt;
+
+&lt;p&gt;Asking difficult &lt;a href=&quot;https://leetcode.com/&quot;&gt;LeetCode&lt;/a&gt;-style Computer Science puzzles seems quite rare outside of finance, enterprise and Silicon Valley startups. These problems test abstract thought, but they also exclude people without a Computer Science education. I didn’t encounter any problems that I couldn’t solve.&lt;/p&gt;
+
+&lt;p&gt;Finding fully- or mostly-remote jobs was very easy. I’m no longer in London and don’t want to travel there every day. This was not a problem for any organisation I talked to. There’s some selection bias here in terms of the company culture that appeals to me. Remote salaries were quite similar to what I’d have targeted in London.&lt;/p&gt;
+
+&lt;p&gt;Having deep experience of both development and operations is extremely valuable right now. I wasn’t very surprised to receive multiple offers. I think I got bonus points for having taught infrastructure a lot in my current role.&lt;/p&gt;
+
+&lt;p&gt;Interviewing at Senior level feels easier than early-career. Expectations are higher but I have a lot of confidence and many deep experiences to draw on. I also have a bigger network for referrals and to ask questions. I imagine Staff level would still be hard.&lt;/p&gt;
+
+&lt;p&gt;Companies do a lot of interview stages. I had 20+ videocalls over two weeks. Scheduling these was very draining despite even though most companies have worldwide interviewers available at any convenient time. In hindsight I wished to have taken time off to find a new job.&lt;/p&gt;
+
+&lt;p&gt;Civil Service total compensation &lt;em&gt;is&lt;/em&gt; competitive with non-finance private sector. But so much of that compensation was as a pension. Focusing on pensions doesn’t work unless basic salaries are high enough for the housing market. That pushes a lot of people away eventually, like me.&lt;/p&gt;
+
+&lt;p&gt;Cloud Foundry is gradually turning into legacy. It’s going to take decades to disappear, and the number of teams using it is still going up. But I’ll be done with it within the next year.&lt;/p&gt;</content><author><name></name></author><summary type="html">Inspired by Toby Lorne, I wanted to share about my recent job hunt. For the last four years I have been an engineer at Government Digital Service in London. My background is quite varied. At GDS I quickly became a DevOps expert and built, taught and operated infrastructure for cloud platforms, payment processing and digital identity. 4 years is a long time to stay in one technology job, even with many different teams and projects. I have contributed to just about every service in GDS, and many elsewhere in government. I decided to find a new challenge elsewhere as my growth had slown down. I want to stay on the technical career track for the time being. I have moved back to York as I wasn’t enjoying London during the pandemic. Quality of life here is excellent and I’m planning to stay. Remote roles are freely available. Applications I applied for senior-level DevOps, SRE and software engineering, roles at these types of organisations: Government: 1 Cloud consulting: 1 Mid- to late-stage startups: 4 I got lots of interest from other teams in the Civil Service. I already know I can succeed there, and they already know what I’m capable of. But after 4 years I think it’s important to see somewhere else and keep learning. I ruled out large enterprises for the same reasons. I also ruled out finance for the time being to focus on quality-of-life. I applied to several startups with problems that interest me. I have past experience with a small Y Combinator startup, and helping grow some larger startups. I’m sure I’ll go back into the startup world sooner or later. I also interviewed with a cloud consultancy that I’ve known for quite a long time. I haven’t done consultancy before, although I’ve done a lot of freelancing and think consulting might suit me well. All the roles I applied for were mostly- or fully-remote. This ruled out a few very competitive companies but not anywhere I was desperate to work at yet. Progress Here’s a brief summary of how I progressed in the interviews: Stage Passed Rejected Withdrew Application 6 -   CV Sift 5 1   Phone screen 4   1 Tech interviews 3   1 Offer 2 1   I got responses from every application and ended up with two offers. I withdrew one application when I decided not to stay in government, and a second that was too far behind when I got offers. Outcome I had two offers to choose between: one from a late-stage startup and one from the cloud consulting company. Both were quite appealing and I was confident I’d grow from both. I chose based on my favourite work. On GOV.UK PaaS I have found myself helping services across government by solving incidents or advising on architecture. Consulting is a great way to get similar exposure in the private sector. I’ve joined EngineerBetter to carry on my existing work with Cloud Foundry. Cloud Foundry is gradually fading, but it’s quietly delivering enormous value to many large organizations. I’m not quite done with it yet. Retrospective I have a bunch of education and skills, but it felt terrible having a really good time during a pandemic that has hurt so many people. Every company respected that I use they/them pronouns. I was very happy about this. Companies seem to be well into adjusting to the existence of non-binary staff. It’s getting harder to find pure-technical roles that I think will challenge me. I’m not sure what to do after Senior, but sooner or later I’m going to be writing a lot less code and doing a lot more negotiation and planning. Asking difficult LeetCode-style Computer Science puzzles seems quite rare outside of finance, enterprise and Silicon Valley startups. These problems test abstract thought, but they also exclude people without a Computer Science education. I didn’t encounter any problems that I couldn’t solve. Finding fully- or mostly-remote jobs was very easy. I’m no longer in London and don’t want to travel there every day. This was not a problem for any organisation I talked to. There’s some selection bias here in terms of the company culture that appeals to me. Remote salaries were quite similar to what I’d have targeted in London. Having deep experience of both development and operations is extremely valuable right now. I wasn’t very surprised to receive multiple offers. I think I got bonus points for having taught infrastructure a lot in my current role. Interviewing at Senior level feels easier than early-career. Expectations are higher but I have a lot of confidence and many deep experiences to draw on. I also have a bigger network for referrals and to ask questions. I imagine Staff level would still be hard. Companies do a lot of interview stages. I had 20+ videocalls over two weeks. Scheduling these was very draining despite even though most companies have worldwide interviewers available at any convenient time. In hindsight I wished to have taken time off to find a new job. Civil Service total compensation is competitive with non-finance private sector. But so much of that compensation was as a pension. Focusing on pensions doesn’t work unless basic salaries are high enough for the housing market. That pushes a lot of people away eventually, like me. Cloud Foundry is gradually turning into legacy. It’s going to take decades to disappear, and the number of teams using it is still going up. But I’ll be done with it within the next year.</summary></entry><entry><title type="html">How responsible are we for the feelings of others?</title><link href="https://46b.it/2018/how-responsible-are-we-for-others/" rel="alternate" type="text/html" title="How responsible are we for the feelings of others?" /><published>2018-10-18T00:00:00+00:00</published><updated>2018-10-18T00:00:00+00:00</updated><id>https://46b.it/2018/how-responsible-are-we-for-others</id><content type="html" xml:base="https://46b.it/2018/how-responsible-are-we-for-others/">&lt;p&gt;I’d like to publish more of my writing, and so this post is somewhat shorter and stream-of-consciousness than I’ve written before.&lt;/p&gt;
 
 &lt;p&gt;Today I’m discussing what we owe to each other and what we owe to ourselves. In particular, how responsible are we for the feelings of others?&lt;/p&gt;
 
